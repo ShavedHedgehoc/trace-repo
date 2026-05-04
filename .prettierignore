@@ -1,0 +1,9 @@
+node_modules
+dist
+.next
+pnpm-lock.yaml
+.vscode
+.knip.*
+coverage/
+.pnpm-store/
+package-lock.json

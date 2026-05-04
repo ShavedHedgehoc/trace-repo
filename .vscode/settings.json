@@ -1,0 +1,18 @@
+{
+  "editor.minimap.enabled": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorBlinking": true,
+  "files.autoSave": "onFocusChange",
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "explorer.compactFolders": false,
+  "explorer.autoReveal": false,
+  "breadcrumbs.enabled": false,
+  "workbench.startupEditor": "none",
+  "window.commandCenter": false,
+  "git.autoRepositoryDetection": "subFolders",
+  "editor.formatOnSave": true,
+  "git.ignoreLimitWarning": true,
+  "npm.autoDetect": "off",
+  "js/ts.tsc.autoDetect": "off",
+  "js/ts.tsdk.path": "node_modules\\typescript\\lib"
+}

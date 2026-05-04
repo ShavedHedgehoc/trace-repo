@@ -1,0 +1,1 @@
+export { Trademarks } from "./trademarks"

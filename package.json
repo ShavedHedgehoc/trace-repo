@@ -1,0 +1,28 @@
+{
+  "name": "repo",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "dotenv -e .env.development -- turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "knip": "knip",
+    "pre-flight": "npm run format:check && turbo lint type-check && knip && turbo build",
+    "db:generate": "turbo run --filter @repo/db-postgres  db:generate"
+  },
+  "keywords": [],
+  "author": "ShavedHedgehog",
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.2",
+  "devDependencies": {
+    "@types/node": "^22.19.17",
+    "dotenv-cli": "^11.0.0",
+    "knip": "^6.9.0",
+    "prettier": "^3.8.3",
+    "turbo": "^2.9.8",
+    "typescript": "^5.9.3"
+  }
+}

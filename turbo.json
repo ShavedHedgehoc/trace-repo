@@ -1,0 +1,46 @@
+{
+  "$schema": "https://turbo.build.json",
+  "ui": "tui",
+  "globalEnv": ["NODE_ENV"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "db:generate": {
+      "inputs": ["prisma/schema.prisma", "../../../.env.development"],
+      "outputs": ["generated/**"],
+      "cache": true
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "env": [
+        "API_PORT",
+        "DATABASE_URL",
+        "MSSQL_HOST",
+        "MSSQL_USERNAME",
+        "MSSQL_PASSWORD",
+        "MSSQL_DB",
+        "API_PORT",
+        "BOT_TOKEN",
+        "CHAT_ID",
+        "KLP_TECHNOLOGIST_CHAT_ID",
+        "PSK_TECHNOLOGIST_CHAT_ID",
+        "KLP_PACKAGING_CHAT_ID",
+        "PSK_PACKAGING_CHAT_ID",
+        "EXPRESS_API_URL",
+        "EXPRESS_API_TOKEN",
+        "DATABASE_URL_PG"
+      ]
+    },
+    "lint": {
+      "cache": true,
+      "outputs": []
+    },
+    "type-check": {
+      "cache": true,
+      "dependsOn": ["^type-check"]
+    }
+  }
+}

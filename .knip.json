@@ -1,0 +1,54 @@
+{
+  "$schema": "https://unpkg.com",
+  "ignore": [
+    "**/generated/**",
+    "packages/database/postgres/src/generated/**/*"
+  ],
+  "workspaces": {
+    ".": {},
+    "apps/api": {
+      "entry": [
+        "src/main.ts"
+      ],
+      "project": [
+        "src/**/*.ts"
+      ],
+      "ignoreDependencies": [
+        "pg",
+        "pg-hstore",
+        "mssql",
+        "@sequelize/mssql",
+        "swagger-ui-express",
+        "@types/sequelize",
+        "source-map-support"
+      ]
+    },
+    "apps/web": {
+      "entry": [
+        "src/main.{ts,tsx}"
+      ],
+      "project": [
+        "src/**/*.{ts,tsx}"
+      ],
+      "ignoreDependencies": []
+    },
+    "packages/database": {
+      "project": [
+        "src/**/*.ts"
+      ],
+      "ignore": [
+        "src/generated/**/*",
+        "**/generated/**"
+      ],
+      "ignoreDependencies": [
+        "@prisma/client"
+      ]
+    },
+    "packages/trpc": {
+      "ignore": [],
+      "ignoreDependencies": [
+        "@repo/db"
+      ]
+    }
+  }
+}

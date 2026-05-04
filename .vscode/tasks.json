@@ -1,0 +1,61 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Prisma: Generate Client",
+      "type": "shell",
+      "command": "pnpm db:generate",
+      "problemMatcher": [],
+      "group": "build",
+      "detail": "Генерирует типы Prisma для всех пакетов"
+    },
+    {
+      "label": "DEV: Run all",
+      "type": "shell",
+      "command": "pnpm dev",
+      "problemMatcher": [],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Lint all",
+      "type": "shell",
+      "command": "pnpm lint",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Lint aplication only",
+      "type": "shell",
+      "command": "pnpm --filter \"@repo/application\" lint",
+      "group": "build",
+      "problemMatcher": [
+        "$eslint-stylish"
+      ]
+    },
+    {
+      "label": "Knip",
+      "type": "shell",
+      "command": "pnpm knip",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Format all",
+      "type": "shell",
+      "command": "pnpm format",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Pre-flight",
+      "type": "shell",
+      "command": "pnpm pre-flight ",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}

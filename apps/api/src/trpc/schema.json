@@ -1,0 +1,72 @@
+{
+  "inputs": {
+    "trademark.list": {
+      "type": "object",
+      "properties": {
+        "filter": {
+          "type": "object",
+          "properties": {
+            "trademarkName": {
+              "type": "string"
+            },
+            "productName": {
+              "type": "string"
+            },
+            "productCode": {
+              "type": "string"
+            }
+          }
+        },
+        "page": {
+          "type": "number"
+        },
+        "limit": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "filter"
+      ]
+    }
+  },
+  "outputs": {
+    "trademark.list": {
+      "type": "object",
+      "properties": {
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "trademarkId": {
+                "type": "number"
+              },
+              "productId": {
+                "type": "string"
+              },
+              "trademarkName": {
+                "type": "string"
+              },
+              "productName": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "trademarkId",
+              "productId",
+              "trademarkName",
+              "productName"
+            ]
+          }
+        },
+        "total": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "rows",
+        "total"
+      ]
+    }
+  }
+}

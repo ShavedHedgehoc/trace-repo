@@ -1,0 +1,73 @@
+services:
+  postgres:
+    container_name: postgres_container
+    image: postgres:16.2-alpine
+    environment:
+      POSTGRES_DB: 'summary'
+      POSTGRES_USER: ${POSTGRES_USERNAME}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - summary-data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    restart: always
+    networks:
+      - postgres
+
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4:9.4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: 'eagle221174@gmail.com'
+      PGADMIN_DEFAULT_PASSWORD: '1'
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    ports:
+      - '5050:80'
+    restart: unless-stopped
+    networks:
+      - postgres
+  # api:
+  #   container_name: api_container
+  #   build:
+  #     context: .
+  #     dockerfile: docker/api/Dockerfile.dev
+  #     args:
+  #       - NODE_ENV=development
+  #   environment:
+  #     POSTGRESHOST: "postgres"
+  #     POSTGRES_PORT: "5432"
+  #     POSTGRES_USERNAME: "admin"
+  #     POSTGRES_PASSWORD: "password"
+  #     POSTGRES_DB: "summary"
+  #     PORT: "7000"
+  #   depends_on:
+  #     - postgres
+  #   restart: always
+  #   ports:
+  #     - "7000:7000"
+  #   networks:
+  #     - postgres
+  #     - general
+
+  # app:
+  #   container_name: app_container
+  #   build:
+  #     context: .
+  #     dockerfile: docker/app/Dockerfile.dev
+  #     args:
+  #       - NODE_ENV=development
+  #   ports:
+  #     - "3000:3000"
+  #   networks:
+  #     - general
+
+volumes:
+  summary-data:
+  pgadmin-data:
+networks:
+  # general:
+  #   driver: bridge
+  postgres:
+    driver: bridge
