@@ -43,7 +43,7 @@ export function DataViewLayout<TData, T extends PaginationParams>(
                         <CardAction>{props.picture}</CardAction>
                     </div>
                 </CardHeader>
-                <CardContent className={cn(" flex flex-col gap-6", props.data.length === 0 && "min-h-[600px]")}>
+                <CardContent className={cn(" flex flex-col gap-6", props.data && props.data.length === 0 && "min-h-[600px]")}>
                     <div
                         className={cn(
                             "sticky top-0 z-10 bg-background/95 backdrop-blur pb-4 transition-all",
