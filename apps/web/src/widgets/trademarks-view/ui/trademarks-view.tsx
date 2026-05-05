@@ -2,11 +2,11 @@ import { trpc } from '@/shared/api';
 import { DataViewLayout, type DataViewLayoutProps } from '@/shared/ui';
 import { useMemo } from 'react';
 import { getTrademarksColumns } from './columns';
-import type { TTrademarkListRow } from '@repo/trpc';
 import { useTrademarksSearchParams } from '@/entities/trademark';
 import type { TrademarksParams } from '@/entities/trademark/model';
+import type { TTrademarkListRow } from '@repo/schemas';
 
-export function TrademarkView() {
+export function TrademarksView() {
   const { params, setParams } = useTrademarksSearchParams();
 
   const { data, isFetching, isPlaceholderData } = trpc.trademark.list.useQuery(params, {

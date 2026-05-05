@@ -1,4 +1,5 @@
-import type { TTrademarkListRow } from '@repo/trpc';
+
+import type { TTrademarkListRow } from '@repo/schemas';
 import type { ColumnDef } from '@tanstack/react-table';
 
 export const baseTrademarkColumns: ColumnDef<TTrademarkListRow>[] = [
@@ -10,14 +11,14 @@ export const baseTrademarkColumns: ColumnDef<TTrademarkListRow>[] = [
     },
   },
   {
-    accessorKey: 'barcode',
+    accessorKey: 'productId',
     header: () => <div className="text-center">Код 1С</div>,
     cell: ({ row }) => {
       return <div className="text-center tabular-nums">{row.original.productId}</div>;
     },
   },
   {
-    accessorKey: 'rank_id',
+    accessorKey: 'productName',
     header: () => <div className="text-center">Наименование</div>,
     cell: ({ row }) => {
       return <div className="text-left">{row.original.productName}</div>;

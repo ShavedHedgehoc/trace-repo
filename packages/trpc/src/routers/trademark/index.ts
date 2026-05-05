@@ -1,4 +1,4 @@
-import { getTrademarksListInputSchema, trademarksListResponseSchema } from '../../schemas';
+import { getTrademarksListInputSchema, trademarksListResponseSchema } from '@repo/schemas';
 import { publicProcedure, router } from '../../trpc';
 
 export const trademarkRouter = router({

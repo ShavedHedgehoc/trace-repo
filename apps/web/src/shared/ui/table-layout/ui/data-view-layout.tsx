@@ -22,7 +22,7 @@ export function DataViewLayout<TData, T extends PaginationParams>(
   return (
     <div
       className={cn(
-        'container mx-auto py-6 transition-all duration-500 relative',
+        'w-full mx-auto py-6 transition-all duration-500 relative',
         props.className,
         isPending && 'opacity-60 grayscale-50 pointer-events-none',
       )}
@@ -30,7 +30,7 @@ export function DataViewLayout<TData, T extends PaginationParams>(
       {props.isFetching && (
         <div className="absolute top-0 left-0 right-0 h-0.5 bg-current/30 primary/30 animate-pulse z-20" />
       )}
-      <Card className="w-full bg-background shadow-none ">
+      {/* <Card className="w-full bg-background shadow-none ">
         <CardHeader className="relative">
           <div className="flex justify-between items-start">
             <div>
@@ -45,44 +45,44 @@ export function DataViewLayout<TData, T extends PaginationParams>(
             ' flex flex-col gap-6',
             props.data && props.data.length === 0 && 'min-h-[600px]',
           )}
-        >
-          <div
-            className={cn(
-              'sticky top-0 z-10 bg-background/95 backdrop-blur pb-4 transition-all',
-              isPending && 'pointer-events-none grayscale-30',
-            )}
+        > */}
+      <div
+        className={cn(
+          'sticky top-0 z-10 bg-background/95 backdrop-blur pb-4 transition-all',
+          isPending && 'pointer-events-none grayscale-30',
+        )}
+      >
+        {props.filter}
+      </div>
+      <AnimatePresence mode="wait" initial={false}>
+        {isLoadingInitial ? (
+          <motion.div
+            key="skeleton"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
           >
-            {props.filter}
-          </div>
-          <AnimatePresence mode="wait" initial={false}>
-            {isLoadingInitial ? (
-              <motion.div
-                key="skeleton"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <SkeletonTable rows={props.params.limit} columns={props.columns.length} />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="data"
-                initial={{ opacity: 0, y: 5 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className={cn(isPending && 'pointer-events-none')}>
-                  <DataTable
-                    columns={props.columns}
-                    data={props.data!}
-                    getRowClassName={props.getRowClassName}
-                  />
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </CardContent>
+            <SkeletonTable rows={props.params.limit} columns={props.columns.length} />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="data"
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className={cn(isPending && 'pointer-events-none')}>
+              <DataTable
+                columns={props.columns}
+                data={props.data!}
+                getRowClassName={props.getRowClassName}
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {/* </CardContent>
         <CardFooter
           className={cn(
             'flex flex-row justify-between items-center border-t pt-6 transition-all',
@@ -99,7 +99,7 @@ export function DataViewLayout<TData, T extends PaginationParams>(
             setParams={props.setParams}
           />
         </CardFooter>
-      </Card>
+      </Card> */}
     </div>
     // </div>
   );

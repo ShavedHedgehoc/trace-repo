@@ -11,7 +11,8 @@
     "format": "prettier --write .",
     "knip": "knip",
     "pre-flight": "npm run format:check && turbo lint type-check && knip && turbo build",
-    "db:generate": "turbo run --filter @repo/db-postgres  db:generate"
+    "db:generate": "turbo run --filter @repo/db-postgres  db:generate",
+    "schema": "turbo run --filter @repo/api schema"
   },
   "keywords": [],
   "author": "ShavedHedgehog",

@@ -15,18 +15,18 @@ export function SkeletonTable({ rows = 10, columns = 5 }: { rows?: number; colum
         <TableHeader>
           <TableRow>
             {Array.from({ length: columns }).map((_, i) => (
-              <TableHead key={i}>
-                <Skeleton className="h-4 w-[80%]" />
+              <TableHead key={i} className='h-8'>
+                <Skeleton className="h-6 w-[80%]" />
               </TableHead>
             ))}
           </TableRow>
         </TableHeader>
         <TableBody>
           {Array.from({ length: rows }).map((_, i) => (
-            <TableRow key={i}>
+            <TableRow key={i} className='h-12'>
               {Array.from({ length: columns }).map((_, j) => (
                 <TableCell key={j}>
-                  <Skeleton className="h-4 w-full" />
+                  <Skeleton className="h-8 w-full" />
                 </TableCell>
               ))}
             </TableRow>

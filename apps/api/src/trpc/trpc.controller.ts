@@ -11,7 +11,7 @@ export class TrpcController {
   constructor(
     @Inject('TRPC_SERVICE')
     private readonly trpcService: TrpcService,
-  ) {}
+  ) { }
 
   @Get('studio')
   getStudio(@Res() res: Response) {

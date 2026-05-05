@@ -1,20 +1,23 @@
 {
   "inputs": {
-    "trademark.list": {
+    "boil.list": {
       "type": "object",
       "properties": {
-        "filter": {
-          "type": "object",
-          "properties": {
-            "trademarkName": {
-              "type": "string"
-            },
-            "productName": {
-              "type": "string"
-            },
-            "productCode": {
-              "type": "string"
-            }
+        "batchName": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "string"
+        },
+        "productMarking": {
+          "type": "string"
+        },
+        "startDate": {},
+        "endDate": {},
+        "plants": {
+          "type": "array",
+          "items": {
+            "type": "string"
           }
         },
         "page": {
@@ -23,11 +26,81 @@
         "limit": {
           "type": "number"
         }
-      },
-      "required": ["filter"]
+      }
+    },
+    "trademark.list": {
+      "type": "object",
+      "properties": {
+        "trademarkName": {
+          "type": "string"
+        },
+        "productName": {
+          "type": "string"
+        },
+        "productCode": {
+          "type": "string"
+        },
+        "page": {
+          "type": "number"
+        },
+        "limit": {
+          "type": "number"
+        }
+      }
     }
   },
   "outputs": {
+    "boil.list": {
+      "type": "object",
+      "properties": {
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "boilId": {
+                "type": "number"
+              },
+              "boilDate": {
+                "type": "string",
+                "description": "ISO date string"
+              },
+              "batchName": {
+                "type": "string"
+              },
+              "productId": {
+                "type": "string"
+              },
+              "productMarking": {
+                "type": "string"
+              },
+              "plantAbb": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "boilId",
+              "boilDate",
+              "batchName",
+              "productId",
+              "productMarking",
+              "plantAbb"
+            ]
+          }
+        },
+        "total": {
+          "type": "number"
+        },
+        "totalPages": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "rows",
+        "total",
+        "totalPages"
+      ]
+    },
     "trademark.list": {
       "type": "object",
       "properties": {
@@ -49,14 +122,26 @@
                 "type": "string"
               }
             },
-            "required": ["trademarkId", "productId", "trademarkName", "productName"]
+            "required": [
+              "trademarkId",
+              "productId",
+              "trademarkName",
+              "productName"
+            ]
           }
         },
         "total": {
           "type": "number"
+        },
+        "totalPages": {
+          "type": "number"
         }
       },
-      "required": ["rows", "total"]
+      "required": [
+        "rows",
+        "total",
+        "totalPages"
+      ]
     }
   }
 }

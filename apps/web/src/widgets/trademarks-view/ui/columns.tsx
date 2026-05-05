@@ -1,6 +1,7 @@
 import type { ColumnDef } from '@tanstack/react-table';
-import type { TTrademarkListRow } from '@repo/trpc';
+
 import { baseTrademarkColumns } from '@/entities/trademark';
+import type { TTrademarkListRow } from '@repo/schemas';
 
 export const getTrademarksColumns = (): ColumnDef<TTrademarkListRow>[] => {
   return [

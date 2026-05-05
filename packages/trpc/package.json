@@ -11,10 +11,12 @@
   "packageManager": "pnpm@10.33.2",
   "dependencies": {
     "@trpc/server": "10.45.0",
+    "@repo/schemas": "workspace:*",
     "superjson": "^2.2.6",
     "zod": "^4.4.2"
   },
   "devDependencies": {
-    "@repo/db": "workspace:*"
+    "@repo/db": "workspace:*",
+    "@repo/typescript-config": "workspace:*"
   }
 }

@@ -1,5 +1,6 @@
 import MainLayout from '@/app/main-layout';
-import { Trademarks } from '@/pages';
+import { Boils, Trademarks } from '@/pages';
+import { ROUTE_PATH } from '@/shared/constants';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
@@ -13,9 +14,9 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Trademarks />,
+        element: <Boils />,
       },
-      { path: './lll', element: <></> },
+      { path: ROUTE_PATH.TRADEMARKS, element: <Trademarks /> },
     ],
   },
 ]);

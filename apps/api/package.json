@@ -19,6 +19,7 @@
     "@nestjs/platform-express": "^11.1.19",
     "@repo/db": "workspace:*",
     "@repo/trpc": "workspace:*",
+    "@repo/schemas": "workspace:*",
     "@srawad/trpc-studio": "^0.2.0",
     "@trpc/server": "10.45.0",
     "cookie-parser": "^1.4.7",
@@ -39,6 +40,7 @@
     "prettier": "^3.4.2",
     "tsx": "^4.21.0",
     "typescript": "^5.7.3",
-    "typescript-eslint": "^8.20.0"
+    "typescript-eslint": "^8.20.0",
+    "@repo/typescript-config": "workspace:*"
   }
 }

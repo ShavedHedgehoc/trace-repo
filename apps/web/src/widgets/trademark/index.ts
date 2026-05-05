@@ -1,1 +1,0 @@
-export { TrademarkView } from './ui/trademark-view';

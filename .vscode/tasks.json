@@ -10,6 +10,14 @@
       "detail": "Генерирует типы Prisma для всех пакетов"
     },
     {
+      "label": "tRPC: Load schema to API",
+      "type": "shell",
+      "command": "pnpm schema",
+      "problemMatcher": [],
+      "group": "build",
+      "detail": "Выгружает типы tRPC в Studio"
+    },
+    {
       "label": "DEV: Run all",
       "type": "shell",
       "command": "pnpm dev",

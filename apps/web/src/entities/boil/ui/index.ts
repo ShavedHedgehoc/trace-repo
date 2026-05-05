@@ -1,0 +1,1 @@
+export { baseBoilsListColumns } from './boils-list-columns';

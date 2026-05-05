@@ -1,1 +1,3 @@
-export const ROUTE_PATH = {} as const;
+export const ROUTE_PATH = {
+    TRADEMARKS: "/trademarks"
+} as const;

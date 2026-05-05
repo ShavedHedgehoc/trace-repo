@@ -1,44 +1,26 @@
 import { Injectable } from '@nestjs/common';
 import { mssqlPrisma, Prisma } from '@repo/db';
+import { ITrademarkService } from '@repo/trpc';
 import {
-  ITrademarkService,
   TGetTrademarksListInput,
   TTrademarkListResponse,
   TTrademarkListRow,
-} from '@repo/trpc';
+} from '@repo/schemas';
 
 @Injectable()
 export class TrademarkService implements ITrademarkService {
-  constructor() {}
+  constructor() { }
 
   async getTrademarks(input: TGetTrademarksListInput): Promise<TTrademarkListResponse> {
     const { trademarkName, productName, productCode, page, limit } = input;
-    // const where: Prisma.TrademarksWhereInput = {}
-    // if (trademarkName !== "") {
-    //     where.TrademarkName = { contains: trademarkName.toLowerCase() }
-    // }
-    // if (productName !== "" || productCode !== "") {
-    //     where.Lots = {
-    //         some: {
-    //             Products: {
-    //                 AND: [
-    //                     productName !== "" ? { ProductName: { contains: productName.toLocaleLowerCase() } } : {},
-    //                     productCode !== "" ? { ProductId: { contains: productCode.toLocaleLowerCase() } } : {},
-    //                 ]
-    //             }
-    //         }
-    //     }
-    // }
     const andConditions: Prisma.TrademarksWhereInput[] = [{ Lots: { some: {} } }];
 
-    // Фильтр по названию самой ТМ
     if (trademarkName !== '') {
       andConditions.push({
         TrademarkName: { contains: trademarkName.toLowerCase() },
       });
     }
 
-    // Фильтры по продуктам внутри лотов
     if (productName !== '' || productCode !== '') {
       andConditions.push({
         Lots: {
