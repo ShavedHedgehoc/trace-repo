@@ -24,9 +24,7 @@
           "type": "number"
         }
       },
-      "required": [
-        "filter"
-      ]
+      "required": ["filter"]
     }
   },
   "outputs": {
@@ -51,22 +49,14 @@
                 "type": "string"
               }
             },
-            "required": [
-              "trademarkId",
-              "productId",
-              "trademarkName",
-              "productName"
-            ]
+            "required": ["trademarkId", "productId", "trademarkName", "productName"]
           }
         },
         "total": {
           "type": "number"
         }
       },
-      "required": [
-        "rows",
-        "total"
-      ]
+      "required": ["rows", "total"]
     }
   }
 }

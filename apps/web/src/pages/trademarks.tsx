@@ -1,7 +1,5 @@
-import { TrademarkView } from "@/widgets/trademark";
+import { TrademarkView } from '@/widgets/trademark';
 
 export function Trademarks() {
-    return (
-        <TrademarkView />
-    )
+  return <TrademarkView />;
 }

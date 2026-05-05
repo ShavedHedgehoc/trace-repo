@@ -1,1 +1,1 @@
-export { Trademarks } from "./trademarks"
+export { Trademarks } from './trademarks';

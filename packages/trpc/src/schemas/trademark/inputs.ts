@@ -4,7 +4,7 @@ import { z } from 'zod';
 //   trademarkName: z.string().default(''),
 //   productName: z.string().default(''),
 //   productCode: z.string().default(''),
-//   // nameAsc: z.boolean().default(true),  
+//   // nameAsc: z.boolean().default(true),
 // });
 
 export const getTrademarksListInputSchema = z.object({

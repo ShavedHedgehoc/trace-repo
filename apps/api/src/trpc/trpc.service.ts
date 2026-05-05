@@ -10,12 +10,12 @@ export class TrpcService {
     @Inject(forwardRef(() => TrademarkService))
 
     // private readonly employeeAppService: EmployeeAppService,
-    private readonly trademarkSevice: TrademarkService
-  ) { }
+    private readonly trademarkSevice: TrademarkService,
+  ) {}
 
   createContext(_opts: trpcExpress.CreateExpressContextOptions): ITrpcContext {
     return {
-      trademarkService: this.trademarkSevice
+      trademarkService: this.trademarkSevice,
       // appEmployeeService: this.employeeAppService,
     };
   }

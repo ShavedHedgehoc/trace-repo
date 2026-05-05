@@ -1,1 +1,1 @@
-export { SkeletonTable } from "./ui/skeleton-table"
+export { SkeletonTable } from './ui/skeleton-table';

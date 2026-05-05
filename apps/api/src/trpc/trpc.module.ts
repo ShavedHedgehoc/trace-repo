@@ -7,7 +7,7 @@ import { TrademarkModule } from 'src/trademark/trademark.module';
 @Module({
   imports: [
     // EmployeeAppModule,
-    TrademarkModule
+    TrademarkModule,
   ],
   providers: [
     {
@@ -17,4 +17,4 @@ import { TrademarkModule } from 'src/trademark/trademark.module';
   ],
   controllers: [TrpcController],
 })
-export class TrpcModule { }
+export class TrpcModule {}

@@ -1,1 +1,1 @@
-export { baseTrademarkColumns } from "./columns"
+export { baseTrademarkColumns } from './columns';

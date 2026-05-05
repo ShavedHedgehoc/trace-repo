@@ -6,9 +6,9 @@ export interface IAppEmployeeService {
 }
 
 export interface ITrademarkService {
-  getTrademarks: (input: TGetTrademarksListInput) => Promise<TTrademarkListResponse>
+  getTrademarks: (input: TGetTrademarksListInput) => Promise<TTrademarkListResponse>;
 }
 export interface ITrpcContext {
   // appEmployeeService: IAppEmployeeService;
-  trademarkService: ITrademarkService
+  trademarkService: ITrademarkService;
 }
