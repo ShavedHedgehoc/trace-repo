@@ -6,6 +6,13 @@ import { format } from "date-fns"
 
 export const baseBoilsListColumns: ColumnDef<TBoilListRow>[] = [
     {
+        accessorKey: 'noPlan',
+        header: () => <div className="text-center"></div>,
+        cell: ({ row }) => {
+            return <div className="text-center">{row.original.noPlan ? "!" : "ok"}</div>;
+        },
+    },
+    {
         accessorKey: 'boilName',
         enableResizing: true,
         header: () => <div className="text-center">Варка</div>,
@@ -39,6 +46,20 @@ export const baseBoilsListColumns: ColumnDef<TBoilListRow>[] = [
         header: () => <div className="text-center">Артикул</div>,
         cell: ({ row }) => {
             return <div className="text-center">{row.original.productMarking ?? "-"}</div>;
+        },
+    },
+    {
+        accessorKey: 'wCheck',
+        header: () => <div className="text-center">Взвешивания</div>,
+        cell: ({ row }) => {
+            return <div className="text-center">{row.original.wCheck ? "ok" : "!"}</div>;
+        },
+    },
+    {
+        accessorKey: 'lCheck',
+        header: () => <div className="text-center">Загрузки</div>,
+        cell: ({ row }) => {
+            return <div className="text-center">{row.original.lCheck ? "ok" : "!"}</div>;
         },
     },
 

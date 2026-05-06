@@ -22,7 +22,7 @@ export function DataViewLayout<TData, T extends PaginationParams>(
   return (
     <div
       className={cn(
-        'w-full mx-auto py-6 transition-all duration-500 relative',
+        'w-full mx-auto py-6 transition-all duration-500 relative px-6',
         props.className,
         isPending && 'opacity-60 grayscale-50 pointer-events-none',
       )}

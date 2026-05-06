@@ -25,11 +25,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <Collapsible className="group/collapsible">
               <SidebarMenuItem>
                 <CollapsibleTrigger>
-                  <SidebarMenuButton  >
-                    <FileText />
-                    <span>Документы</span>
-                    <ChevronRight className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
-                  </SidebarMenuButton>
+                  <span>
+                    <SidebarMenuButton  >
+                      <FileText />
+                      <span>Документы</span>
+                      <ChevronRight className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
+                    </SidebarMenuButton>
+                  </span>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <SidebarMenuSub>
