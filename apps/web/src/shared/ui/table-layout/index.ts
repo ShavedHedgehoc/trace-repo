@@ -1,2 +1,2 @@
-export { DataViewLayout } from './ui/data-view-layout';
-export type { DataViewLayoutProps } from './model';
+export { TableLayout } from './ui/table-layout';
+export type { TDataTableProps } from './model';

@@ -10,6 +10,14 @@
       "detail": "Генерирует типы Prisma для всех пакетов"
     },
     {
+      "label": "Prisma: Pull database",
+      "type": "shell",
+      "command": "pnpm db:pull",
+      "problemMatcher": [],
+      "group": "build",
+      "detail": "Генерирует схему Prisma"
+    },
+    {
       "label": "tRPC: Load schema to API",
       "type": "shell",
       "command": "pnpm schema",

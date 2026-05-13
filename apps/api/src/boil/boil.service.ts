@@ -2,188 +2,305 @@ import { Injectable } from '@nestjs/common';
 import { mssqlPrisma, Prisma } from '@repo/db';
 import { IBoilService } from '@repo/trpc';
 import {
-    TGetBoilsListInput,
-    TBoilListResponse,
-    TBoilListRow,
-    TBoilListWeightingResult,
+  TGetBoilsListInput,
+  TBoilListResponse,
+  TBoilListRow,
+  TBoilListWeightingResult,
+  TGetBoilsStatsInput,
+  TBoilStatsResponse,
+  TGetBoilDetailInput,
+  TBoilDetailResponse,
+  TBoilDetailTechCardRow,
+  TBoilDetailLoadRow,
+  TBoilDetailWeightingRow,
 } from '@repo/schemas';
-
-interface IWeightingCombined {
-    ProductId: string;
-    ProductMarking: string | null;
-    ProductName: string | null;
-    PlanQty: number;
-    FactQty: number;
-    LoadQty: number;
-}
 
 @Injectable()
 export class BoilService implements IBoilService {
-    constructor() { }
+  async getStats(input: TGetBoilsStatsInput): Promise<TBoilStatsResponse> {
+    const { startDate, endDate } = input;
+    const endOfDay = new Date(endDate);
+    endOfDay.setHours(23, 59, 59, 999);
+    const where: Prisma.vw_FinalBatchStatusWhereInput = {
+      BatchDate: { gte: new Date(startDate), lte: endOfDay },
+    };
 
-    async getBoils(input: TGetBoilsListInput): Promise<TBoilListResponse> {
-        const { batchName, productId, productMarking, startDate, endDate, page, limit, plants } = input;
-        const andConditions: Prisma.BatchsWhereInput[] = [{
-            OR: [
-                { Boils: { some: {} } },
-                { Weightings: { some: {} } }
-            ]
-        }]
+    const [totalBoilsPskGroup, totalBoilsKlpGroup] = await Promise.all([
+      mssqlPrisma.vw_FinalBatchStatus.groupBy({
+        where: { AND: [where, { Plant: 'П' }] },
+        by: ['BatchPK'],
+        _count: {
+          BatchPK: true,
+        },
+        _sum: {
+          TotalLoading: true,
+        },
+      }),
+      mssqlPrisma.vw_FinalBatchStatus.groupBy({
+        where: { AND: [where, { Plant: 'К' }] },
+        by: ['BatchPK'],
+        _count: {
+          BatchPK: true,
+        },
+        _sum: {
+          TotalLoading: true,
+        },
+      }),
+    ]);
 
-        if (batchName !== '') {
-            andConditions.push({
-                BatchName: { contains: batchName.toLowerCase() },
-            });
-        }
+    const totalBoilsPsk = totalBoilsPskGroup.length;
+    const totalBoilsKlp = totalBoilsKlpGroup.length;
+    const totalLoadsPsk = totalBoilsPskGroup.reduce((acc, current) => {
+      const loadingValue = current._sum?.TotalLoading ? Number(current._sum.TotalLoading) : 0;
+      return acc + loadingValue;
+    }, 0);
+    const totalLoadsKlp = totalBoilsKlpGroup.reduce((acc, current) => {
+      const loadingValue = current._sum?.TotalLoading ? Number(current._sum.TotalLoading) : 0;
+      return acc + loadingValue;
+    }, 0);
 
-        if (productId !== '') {
-            andConditions.push({
-                BtProducts: {
-                    some: {
-                        Products: {
-                            ProductId: {
-                                contains: productId.toLowerCase()
-                            }
-                        }
-                    }
-                }
-            });
-        }
+    return {
+      totalBoilsPsk,
+      totalLoadsPsk,
+      totalBoilsKlp,
+      totalLoadsKlp,
+    };
+  }
 
-        if (productMarking !== '') {
-            andConditions.push({
-                BtProducts: {
-                    some: {
-                        Products: {
-                            ProductMarking: {
-                                contains: productMarking.toLowerCase()
-                            }
-                        }
-                    }
-                }
-            });
-        }
+  async getBoils(input: TGetBoilsListInput): Promise<TBoilListResponse> {
+    const {
+      startDate,
+      endDate,
+      page,
+      limit,
+      plants,
+      batchName,
+      productId,
+      productMarking,
+      problem,
+    } = input;
+    const skip = (page - 1) * limit;
 
-        if (startDate) {
-            andConditions.push({
-                BatchDate: { gte: startDate }
-            })
-        }
+    const endOfDay = new Date(endDate);
+    endOfDay.setHours(23, 59, 59, 999);
 
-        if (endDate) {
-            andConditions.push({
-                BatchDate: { lte: endDate }
-            })
-        }
+    const andConditions: Prisma.vw_FinalBatchStatusWhereInput[] = [
+      { BatchDate: { gte: new Date(startDate), lte: endOfDay } },
+    ];
 
-        if (plants && plants.length !== 0) {
-            andConditions.push({
-                Plant: { in: plants }
-            })
-        }
-
-        const where: Prisma.BatchsWhereInput = { AND: andConditions }
-        const [boils, total] = await Promise.all([
-            mssqlPrisma.batchs.findMany({
-                where,
-                include: {
-                    BtProducts: { include: { Products: { select: { ProductMarking: true, ProductId: true } } } },
-                    Boils: { include: { Products: { select: { ProductMarking: true, ProductName: true } } } },
-                    Weightings: { include: { Products: { select: { ProductMarking: true, ProductName: true } } } },
-                    Loads: { include: { Containers: { include: { Weightings: { include: { Products: { select: { ProductMarking: true, ProductName: true } } } } } } } }
-                },
-                skip: (page - 1) * limit,
-                take: limit,
-            }),
-            mssqlPrisma.batchs.count({ where })
-        ])
-
-        const rows: TBoilListRow[] = boils.map((b): TBoilListRow => {
-            const product = b.BtProducts?.[0]?.Products;
-            const combinedMap: Record<string, IWeightingCombined> = {};
-
-            b.Boils?.forEach((br) => {
-                const id = br.ProductId;
-                if (!combinedMap[id]) {
-                    combinedMap[id] = {
-                        ProductId: id,
-                        ProductMarking: br.Products?.ProductMarking || null,
-                        ProductName: br.Products?.ProductName || null,
-                        PlanQty: 0,
-                        FactQty: 0,
-                        LoadQty: 0
-                    };
-                }
-                combinedMap[id].PlanQty += Number(br.Quantity) || 0;
-            });
-
-            b.Weightings?.forEach((wr) => {
-                const id = wr.ProductId;
-                if (!combinedMap[id]) {
-                    combinedMap[id] = {
-                        ProductId: id,
-                        ProductMarking: wr.Products?.ProductMarking || null,
-                        ProductName: wr.Products?.ProductName || null,
-                        PlanQty: 0,
-                        FactQty: 0,
-                        LoadQty: 0
-                    };
-                }
-                combinedMap[id].FactQty += Number(wr.Quantity) || 0;
-            });
-
-            b.Loads?.forEach((load) => {
-                load.Containers?.Weightings?.forEach((lw) => {
-                    const id = lw.ProductId;
-                    if (!combinedMap[id]) {
-                        combinedMap[id] = {
-                            ProductId: id,
-                            ProductMarking: lw.Products?.ProductMarking || null,
-                            ProductName: lw.Products?.ProductName || null,
-                            PlanQty: 0, FactQty: 0, LoadQty: 0
-                        };
-                    }
-                    combinedMap[id].LoadQty += Number(lw.Quantity) || 0;
-                });
-            });
-
-            const weightingsResult = Object.values(combinedMap);
-
-            const wCheck = weightingsResult.length > 0 &&
-                weightingsResult.every(item => item.PlanQty === item.FactQty);
-
-            const lCheck = weightingsResult.length > 0 &&
-                weightingsResult.every(item => item.PlanQty === item.LoadQty);
-
-            const noPlan = weightingsResult.length === 0 ||
-                weightingsResult.every(item => item.PlanQty === 0);
-
-            const castingWeightingResult: TBoilListWeightingResult[] = weightingsResult.map((wr) => {
-                return {
-                    productId: wr.ProductId,
-                    productMarking: wr.ProductMarking,
-                    productName: wr.ProductName,
-                    planQty: wr.PlanQty,
-                    factQty: wr.FactQty,
-                    loadQty: wr.LoadQty
-                }
-
-            })
-
-            return {
-                boilId: b.BatchPK,
-                boilDate: b.BatchDate || null,
-                batchName: b.BatchName || "",
-                productId: product?.ProductId || "",
-                productMarking: product?.ProductMarking || "",
-                plantAbb: b.Plant || "",
-                weightingResult: castingWeightingResult,
-                wCheck: wCheck,
-                lCheck: lCheck,
-                noPlan: noPlan
-            }
-        })
-        const totalPages = Math.ceil(total / limit);
-        return { rows, total, totalPages }
+    if (batchName !== '') {
+      andConditions.push({ BatchName: { contains: batchName } });
     }
+    if (plants?.length) {
+      andConditions.push({ Plant: { in: plants } });
+    }
+
+    if (productId !== '') {
+      andConditions.push({
+        BatchProductId: { contains: productId.toLowerCase() },
+      });
+    }
+
+    if (productMarking !== '') {
+      andConditions.push({
+        BatchProductMarking: { contains: productMarking.toLowerCase() },
+      });
+    }
+
+    if (problem?.length) {
+      andConditions.push({
+        ProblemStatus: { not: 'OK' },
+      });
+    }
+
+    const where: Prisma.vw_FinalBatchStatusWhereInput = { AND: andConditions };
+    const groups = await mssqlPrisma.vw_FinalBatchStatus.groupBy({
+      by: ['BatchPK', 'BatchYear', 'BatchMonth', 'BatchNumber'],
+      where,
+      orderBy: [{ BatchYear: 'asc' }, { BatchMonth: 'asc' }, { BatchNumber: 'asc' }],
+    });
+    const allMatchingIds = groups.map((r) => r.BatchPK);
+    const total = allMatchingIds.length;
+    const pagedIds = allMatchingIds.slice(skip, skip + limit);
+    const boils = await mssqlPrisma.batchs.findMany({
+      where: { BatchPK: { in: pagedIds } },
+      include: { details: true },
+      orderBy: [{ BatchYear: 'asc' }, { BatchMonth: 'asc' }, { BatchNumber: 'asc' }],
+    });
+
+    const rows: TBoilListRow[] = boils.map((b): TBoilListRow => {
+      const batchHead = b.details?.[0] ?? null;
+
+      const hasWeightMismatch = b.details.some(
+        (detail) =>
+          detail.ProblemStatus === 'WEIGHT_MISMATCH' || detail.ProblemStatus === 'BOTH_MISMATCH',
+      );
+
+      const hasLoadMismatch = b.details.some(
+        (detail) =>
+          detail.ProblemStatus === 'LOADING_MISMATCH' || detail.ProblemStatus === 'BOTH_MISMATCH',
+      );
+
+      const castingWeightingResult: TBoilListWeightingResult[] = b.details.map((wr) => {
+        return {
+          productId: wr.ProductId,
+          productMarking: wr.ProductMarking,
+          productName: wr.ProductName,
+          planQty: Number(wr.TotalPlanned),
+          factQty: Number(wr.TotalWeighting),
+          loadQty: Number(wr.TotalLoading),
+        };
+      });
+
+      return {
+        boilId: b.BatchPK,
+        boilDate: b.BatchDate || null,
+        batchName: b.BatchName || '',
+        productId: batchHead?.BatchProductId || '',
+        productMarking: batchHead?.BatchProductMarking || '',
+        plantAbb: b.Plant || '',
+        weightingResult: castingWeightingResult,
+        wCheck: !hasWeightMismatch,
+        lCheck: !hasLoadMismatch,
+      };
+    });
+
+    const totalPages = Math.ceil(total / limit);
+    return { rows, total, totalPages };
+  }
+
+  async getDetail(input: TGetBoilDetailInput): Promise<TBoilDetailResponse> {
+    const boil = await mssqlPrisma.batchs.findUnique({
+      where: { BatchPK: input.boilId },
+      include: {
+        BtProducts: {
+          include: {
+            Products: true,
+          },
+        },
+        Weightings: {
+          include: {
+            Products: true,
+            Lots: true,
+            Documents: {
+              include: {
+                Authors: true,
+              },
+            },
+          },
+        },
+        details: true,
+        Loads: {
+          include: {
+            Containers: {
+              include: {
+                Weightings: {
+                  include: {
+                    Products: true,
+                    Lots: true,
+                  },
+                },
+              },
+            },
+            Documents: {
+              include: {
+                Authors: true,
+              },
+            },
+          },
+        },
+        BoilRecords: {
+          include: {
+            Operations: true,
+            Authors: true,
+          },
+        },
+      },
+    });
+
+    if (!boil) {
+      throw new Error(`Варка с id ${input.boilId} не найдена`);
+    }
+
+    const product = boil.BtProducts?.[0]?.Products;
+
+    const castingWeightingResult: TBoilListWeightingResult[] = boil.details.map((wr) => {
+      return {
+        productId: wr.ProductId,
+        productMarking: wr.ProductMarking,
+        productName: wr.ProductName,
+        planQty: Number(wr.TotalPlanned),
+        factQty: Number(wr.TotalWeighting),
+        loadQty: Number(wr.TotalLoading),
+      };
+    });
+
+    const castingWeightings: TBoilDetailWeightingRow[] = boil.Weightings.map((w) => ({
+      code: w.Products?.ProductId ?? '-',
+      name: w.Products?.ProductName ?? null,
+      marking: w.Products?.ProductMarking ?? null,
+      lotId: w.Lots?.LotPK,
+      lot: w.Lots?.LotName,
+      weight: Number(w.Quantity),
+      user: w.Documents?.Authors?.AuthorName ?? '-',
+      date: w.Documents?.CreateDate,
+    }));
+
+    const castingLoads: TBoilDetailLoadRow[] =
+      boil.Loads?.flatMap((ld) => {
+        const wRows = ld.Containers?.Weightings ?? [];
+        return wRows.map((wr) => ({
+          code: wr.Products?.ProductId ?? '-',
+          name: wr.Products?.ProductName ?? '-',
+          lot: wr.Lots?.LotName ?? '-',
+          user: ld.Documents?.Authors?.AuthorName ?? '-',
+          date: ld.Documents?.CreateDate,
+          weight: Number(wr.Quantity),
+        }));
+      }) ?? [];
+
+    const castingTechRecords: TBoilDetailTechCardRow[] = [
+      ...(boil.BoilRecords?.map((br) => ({
+        code: br.Operations?.OperationCode ?? '-',
+        name: br.Operations?.OperationName ?? '-',
+        lot: '-',
+        temp: br.Temperature ?? null,
+        user: br.Authors?.AuthorName ?? '-',
+        date: br.CreateDate,
+        weight: null,
+        isOperation: true,
+      })) ?? []),
+
+      ...(boil.Loads?.flatMap((ld) => {
+        const wRows = ld.Containers?.Weightings ?? [];
+        return wRows.map((wr) => ({
+          code: wr.Products?.ProductId ?? '-',
+          name: wr.Products?.ProductName ?? '-',
+          lot: wr.Lots?.LotName ?? '-',
+          temp: null,
+          user: ld.Documents?.Authors?.AuthorName ?? '-',
+          date: ld.Documents?.CreateDate,
+          weight: Number(wr.Quantity),
+          isOperation: false,
+        }));
+      }) ?? []),
+    ];
+
+    const sortedTechData = [...castingTechRecords].sort((a, b) => {
+      return new Date(a.date).getTime() - new Date(b.date).getTime(); // От старых к новым
+    });
+
+    return {
+      boilId: boil.BatchPK,
+      boilDate: boil.BatchDate || null,
+      batchName: boil.BatchName || '',
+      productId: product.ProductId || '',
+      productMarking: product.ProductMarking || '',
+      plantAbb: boil.Plant || '',
+      summary: castingWeightingResult,
+      weightings: castingWeightings,
+      loads: castingLoads,
+      techCard: sortedTechData,
+    };
+  }
 }

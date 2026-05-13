@@ -3,12 +3,10 @@ import { TrpcService } from './trpc.service';
 import { TrpcController } from './trpc.controller';
 import { TrademarkModule } from '../trademark/trademark.module';
 import { BoilModule } from '../boil/boil.module';
+import { AuthModule } from '../auth/auth.module';
 
 @Module({
-  imports: [
-    BoilModule,
-    TrademarkModule,
-  ],
+  imports: [BoilModule, TrademarkModule, AuthModule],
   providers: [
     {
       provide: 'TRPC_SERVICE',
@@ -17,4 +15,4 @@ import { BoilModule } from '../boil/boil.module';
   ],
   controllers: [TrpcController],
 })
-export class TrpcModule { }
+export class TrpcModule {}

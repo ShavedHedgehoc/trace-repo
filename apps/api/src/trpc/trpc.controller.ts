@@ -11,7 +11,7 @@ export class TrpcController {
   constructor(
     @Inject('TRPC_SERVICE')
     private readonly trpcService: TrpcService,
-  ) { }
+  ) {}
 
   @Get('studio')
   getStudio(@Res() res: Response) {
@@ -38,7 +38,10 @@ export class TrpcController {
       req: req as any,
       res: res as any,
       router: appRouter,
-      createContext: () => trpcService.createContext({ req, res }),
+      createContext: async (opts) => {
+        const baseContext = await trpcService.createContext(opts);
+        return baseContext;
+      },
     });
   }
 }

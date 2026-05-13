@@ -7,5 +7,5 @@ export const trademarksParamsSchema = {
   productCode: parseAsString.withDefault(''),
   limit: parseAsInteger.withDefault(10),
   page: parseAsInteger.withDefault(1),
-} satisfies Record<keyof TGetTrademarksListInput, any>;
+} satisfies Record<keyof TGetTrademarksListInput, unknown>;
 export type TrademarksParams = inferParserType<typeof trademarksParamsSchema>;

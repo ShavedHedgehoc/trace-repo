@@ -1,3 +1,5 @@
 export const ROUTE_PATH = {
-    TRADEMARKS: "/trademarks"
+  HOME: '/',
+  BOIL_DETAIL: '/:boilId',
+  TRADEMARKS: '/trademarks',
 } as const;

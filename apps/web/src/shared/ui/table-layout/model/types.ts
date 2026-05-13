@@ -5,19 +5,10 @@ export type PaginationParams = {
   [key: string]: unknown;
 };
 
-export type DataViewLayoutProps<TData, T extends PaginationParams> = {
-  title: string;
-  description: string;
+export type TDataTableProps<TData, T extends PaginationParams> = {
   data: TData[] | undefined;
   columns: ColumnDef<TData>[];
-  total: number;
-  totalPages: number;
-  picture: React.ReactNode;
-  filter: React.ReactNode;
-  params: T;
-  setParams: (
-    state: Partial<T> | ((prev: T) => Partial<T> | null) | null,
-  ) => Promise<URLSearchParams>;
+  params: T | undefined;
   className?: string;
   isFetching?: boolean;
   getRowClassName?: (row: TData) => string;

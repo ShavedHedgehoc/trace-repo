@@ -1,4 +1,3 @@
-
 import type { TTrademarkListRow } from '@repo/schemas';
 import type { ColumnDef } from '@tanstack/react-table';
 

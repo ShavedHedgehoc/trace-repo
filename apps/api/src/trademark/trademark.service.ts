@@ -1,15 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { mssqlPrisma, Prisma } from '@repo/db';
 import { ITrademarkService } from '@repo/trpc';
-import {
-  TGetTrademarksListInput,
-  TTrademarkListResponse,
-  TTrademarkListRow,
-} from '@repo/schemas';
+import { TGetTrademarksListInput, TTrademarkListResponse, TTrademarkListRow } from '@repo/schemas';
 
 @Injectable()
 export class TrademarkService implements ITrademarkService {
-  constructor() { }
+  constructor() {}
 
   async getTrademarks(input: TGetTrademarksListInput): Promise<TTrademarkListResponse> {
     const { trademarkName, productName, productCode, page, limit } = input;

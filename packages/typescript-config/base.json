@@ -1,25 +1,21 @@
 {
-    "$schema": "https://schemastore.org",
-    "compilerOptions": {
-        "strict": true,
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "incremental": true,
-        "composite": true,
-        "declaration": true,
-        "declarationMap": true,
-        "baseUrl": ".",
-        "paths": {
-            "@repo/schemas": [
-                "../../packages/schemas/src/index.ts"
-            ],
-            "@repo/trpc": [
-                "../../packages/trpc/src/index.ts"
-            ]
-        }
+  "$schema": "https://schemastore.org",
+  "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@repo/schemas": ["../../packages/schemas/src/index.ts"],
+      "@repo/trpc": ["../../packages/trpc/src/index.ts"]
     }
+  }
 }

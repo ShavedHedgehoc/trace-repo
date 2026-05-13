@@ -1,22 +1,28 @@
 // components/app-sidebar.tsx
-import { ChevronRight, Command, FileText, Settings, Users } from 'lucide-react';
+// import { ChevronRight, Command, FileText, Settings, Users } from 'lucide-react';
 import {
   Sidebar,
   SidebarContent,
-  SidebarGroup,
-  SidebarGroupLabel,
+  // SidebarGroup,
+  // SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubItem,
-  SidebarMenuSubButton,
+  // SidebarMenuSub,
+  // SidebarMenuSubItem,
+  // SidebarMenuSubButton,
   SidebarHeader,
   SidebarFooter,
 } from '@/shared/ui';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/shared/ui';
+// import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/shared/ui';
+import { HedgehogIcon } from '@/shared/assets';
+import { useAuth } from '@/app/providers/auth-provider';
+import { NavUser } from './nav-user';
+import { NavMain } from './nav-main';
+import { navItems } from './items';
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { user } = useAuth();
   return (
     // <Sidebar collapsible="offcanvas" {...props}>
     //   <SidebarContent>
@@ -54,26 +60,22 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton
-              asChild
-              className="data-[slot=sidebar-menu-button]:p-1.5!"
-            >
+            <SidebarMenuButton asChild className="data-[slot=sidebar-menu-button]:p-1.5!">
               <a href="#">
-                <Command className="size-5!" />
-                <span className="text-base font-semibold">Acme Inc.</span>
+                <HedgehogIcon className="size-5!" />
+                <span className="text-base font-semibold">Прослеживаемость 2.0</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        {/* <NavMain items={data.navMain} />
-        <NavDocuments items={data.documents} />
+        <NavMain items={navItems} />
+        {/* <NavDocuments items={data.documents} />
         <NavSecondary items={data.navSecondary} className="mt-auto" /> */}
       </SidebarContent>
       <SidebarFooter>
-        ffffff
-        {/* <NavUser user={data.user} /> */}
+        <NavUser user={user} />
       </SidebarFooter>
     </Sidebar>
   );

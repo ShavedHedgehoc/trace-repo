@@ -1,5 +1,5 @@
-import { BoilsView } from '@/widgets/boils-view/ui/boils-view';
+import { BoilsView } from '@/widgets/boils-view';
 
 export function Boils() {
-    return <BoilsView />;
+  return <BoilsView />;
 }

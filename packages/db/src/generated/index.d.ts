@@ -201,6 +201,71 @@ export type Users = $Result.DefaultSelection<Prisma.$UsersPayload>;
  *
  */
 export type Weightings = $Result.DefaultSelection<Prisma.$WeightingsPayload>;
+/**
+ * Model test
+ *
+ */
+export type test = $Result.DefaultSelection<Prisma.$testPayload>;
+/**
+ * Model lotsview
+ *
+ */
+export type lotsview = $Result.DefaultSelection<Prisma.$lotsviewPayload>;
+/**
+ * Model batchstep
+ *
+ */
+export type batchstep = $Result.DefaultSelection<Prisma.$batchstepPayload>;
+/**
+ * Model loadstep
+ *
+ */
+export type loadstep = $Result.DefaultSelection<Prisma.$loadstepPayload>;
+/**
+ * Model batchview
+ *
+ */
+export type batchview = $Result.DefaultSelection<Prisma.$batchviewPayload>;
+/**
+ * Model loadview
+ *
+ */
+export type loadview = $Result.DefaultSelection<Prisma.$loadviewPayload>;
+/**
+ * Model lotdetailview
+ *
+ */
+export type lotdetailview = $Result.DefaultSelection<Prisma.$lotdetailviewPayload>;
+/**
+ * Model Docview
+ *
+ */
+export type Docview = $Result.DefaultSelection<Prisma.$DocviewPayload>;
+/**
+ * Model boilview
+ *
+ */
+export type boilview = $Result.DefaultSelection<Prisma.$boilviewPayload>;
+/**
+ * Model vw_PlanAggregated
+ *
+ */
+export type vw_PlanAggregated = $Result.DefaultSelection<Prisma.$vw_PlanAggregatedPayload>;
+/**
+ * Model vw_FactWeighting
+ *
+ */
+export type vw_FactWeighting = $Result.DefaultSelection<Prisma.$vw_FactWeightingPayload>;
+/**
+ * Model vw_FactLoading
+ *
+ */
+export type vw_FactLoading = $Result.DefaultSelection<Prisma.$vw_FactLoadingPayload>;
+/**
+ * Model vw_FinalBatchStatus
+ *
+ */
+export type vw_FinalBatchStatus = $Result.DefaultSelection<Prisma.$vw_FinalBatchStatusPayload>;
 
 /**
  * ##  Prisma Client ʲˢ
@@ -728,6 +793,136 @@ export class PrismaClient<
    * ```
    */
   get weightings(): Prisma.WeightingsDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.test`: Exposes CRUD operations for the **test** model.
+   * Example usage:
+   * ```ts
+   * // Fetch zero or more Tests
+   * const tests = await prisma.test.findMany()
+   * ```
+   */
+  get test(): Prisma.testDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.lotsview`: Exposes CRUD operations for the **lotsview** model.
+   * Example usage:
+   * ```ts
+   * // Fetch zero or more Lotsviews
+   * const lotsviews = await prisma.lotsview.findMany()
+   * ```
+   */
+  get lotsview(): Prisma.lotsviewDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.batchstep`: Exposes CRUD operations for the **batchstep** model.
+   * Example usage:
+   * ```ts
+   * // Fetch zero or more Batchsteps
+   * const batchsteps = await prisma.batchstep.findMany()
+   * ```
+   */
+  get batchstep(): Prisma.batchstepDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.loadstep`: Exposes CRUD operations for the **loadstep** model.
+   * Example usage:
+   * ```ts
+   * // Fetch zero or more Loadsteps
+   * const loadsteps = await prisma.loadstep.findMany()
+   * ```
+   */
+  get loadstep(): Prisma.loadstepDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.batchview`: Exposes CRUD operations for the **batchview** model.
+   * Example usage:
+   * ```ts
+   * // Fetch zero or more Batchviews
+   * const batchviews = await prisma.batchview.findMany()
+   * ```
+   */
+  get batchview(): Prisma.batchviewDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.loadview`: Exposes CRUD operations for the **loadview** model.
+   * Example usage:
+   * ```ts
+   * // Fetch zero or more Loadviews
+   * const loadviews = await prisma.loadview.findMany()
+   * ```
+   */
+  get loadview(): Prisma.loadviewDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.lotdetailview`: Exposes CRUD operations for the **lotdetailview** model.
+   * Example usage:
+   * ```ts
+   * // Fetch zero or more Lotdetailviews
+   * const lotdetailviews = await prisma.lotdetailview.findMany()
+   * ```
+   */
+  get lotdetailview(): Prisma.lotdetailviewDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.docview`: Exposes CRUD operations for the **Docview** model.
+   * Example usage:
+   * ```ts
+   * // Fetch zero or more Docviews
+   * const docviews = await prisma.docview.findMany()
+   * ```
+   */
+  get docview(): Prisma.DocviewDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.boilview`: Exposes CRUD operations for the **boilview** model.
+   * Example usage:
+   * ```ts
+   * // Fetch zero or more Boilviews
+   * const boilviews = await prisma.boilview.findMany()
+   * ```
+   */
+  get boilview(): Prisma.boilviewDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.vw_PlanAggregated`: Exposes CRUD operations for the **vw_PlanAggregated** model.
+   * Example usage:
+   * ```ts
+   * // Fetch zero or more Vw_PlanAggregateds
+   * const vw_PlanAggregateds = await prisma.vw_PlanAggregated.findMany()
+   * ```
+   */
+  get vw_PlanAggregated(): Prisma.vw_PlanAggregatedDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.vw_FactWeighting`: Exposes CRUD operations for the **vw_FactWeighting** model.
+   * Example usage:
+   * ```ts
+   * // Fetch zero or more Vw_FactWeightings
+   * const vw_FactWeightings = await prisma.vw_FactWeighting.findMany()
+   * ```
+   */
+  get vw_FactWeighting(): Prisma.vw_FactWeightingDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.vw_FactLoading`: Exposes CRUD operations for the **vw_FactLoading** model.
+   * Example usage:
+   * ```ts
+   * // Fetch zero or more Vw_FactLoadings
+   * const vw_FactLoadings = await prisma.vw_FactLoading.findMany()
+   * ```
+   */
+  get vw_FactLoading(): Prisma.vw_FactLoadingDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.vw_FinalBatchStatus`: Exposes CRUD operations for the **vw_FinalBatchStatus** model.
+   * Example usage:
+   * ```ts
+   * // Fetch zero or more Vw_FinalBatchStatuses
+   * const vw_FinalBatchStatuses = await prisma.vw_FinalBatchStatus.findMany()
+   * ```
+   */
+  get vw_FinalBatchStatus(): Prisma.vw_FinalBatchStatusDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -1201,6 +1396,19 @@ export namespace Prisma {
     UserRoles: 'UserRoles';
     Users: 'Users';
     Weightings: 'Weightings';
+    test: 'test';
+    lotsview: 'lotsview';
+    batchstep: 'batchstep';
+    loadstep: 'loadstep';
+    batchview: 'batchview';
+    loadview: 'loadview';
+    lotdetailview: 'lotdetailview';
+    Docview: 'Docview';
+    boilview: 'boilview';
+    vw_PlanAggregated: 'vw_PlanAggregated';
+    vw_FactWeighting: 'vw_FactWeighting';
+    vw_FactLoading: 'vw_FactLoading';
+    vw_FinalBatchStatus: 'vw_FinalBatchStatus';
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName];
@@ -1265,7 +1473,20 @@ export namespace Prisma {
         | 'transfer'
         | 'userRoles'
         | 'users'
-        | 'weightings';
+        | 'weightings'
+        | 'test'
+        | 'lotsview'
+        | 'batchstep'
+        | 'loadstep'
+        | 'batchview'
+        | 'loadview'
+        | 'lotdetailview'
+        | 'docview'
+        | 'boilview'
+        | 'vw_PlanAggregated'
+        | 'vw_FactWeighting'
+        | 'vw_FactLoading'
+        | 'vw_FinalBatchStatus';
       txIsolationLevel: Prisma.TransactionIsolationLevel;
     };
     model: {
@@ -3777,6 +3998,404 @@ export namespace Prisma {
           };
         };
       };
+      test: {
+        payload: Prisma.$testPayload<ExtArgs>;
+        fields: Prisma.testFieldRefs;
+        operations: {
+          findFirst: {
+            args: Prisma.testFindFirstArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$testPayload> | null;
+          };
+          findFirstOrThrow: {
+            args: Prisma.testFindFirstOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$testPayload>;
+          };
+          findMany: {
+            args: Prisma.testFindManyArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$testPayload>[];
+          };
+          aggregate: {
+            args: Prisma.TestAggregateArgs<ExtArgs>;
+            result: $Utils.Optional<AggregateTest>;
+          };
+          groupBy: {
+            args: Prisma.testGroupByArgs<ExtArgs>;
+            result: $Utils.Optional<TestGroupByOutputType>[];
+          };
+          count: {
+            args: Prisma.testCountArgs<ExtArgs>;
+            result: $Utils.Optional<TestCountAggregateOutputType> | number;
+          };
+        };
+      };
+      lotsview: {
+        payload: Prisma.$lotsviewPayload<ExtArgs>;
+        fields: Prisma.lotsviewFieldRefs;
+        operations: {
+          findFirst: {
+            args: Prisma.lotsviewFindFirstArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$lotsviewPayload> | null;
+          };
+          findFirstOrThrow: {
+            args: Prisma.lotsviewFindFirstOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$lotsviewPayload>;
+          };
+          findMany: {
+            args: Prisma.lotsviewFindManyArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$lotsviewPayload>[];
+          };
+          aggregate: {
+            args: Prisma.LotsviewAggregateArgs<ExtArgs>;
+            result: $Utils.Optional<AggregateLotsview>;
+          };
+          groupBy: {
+            args: Prisma.lotsviewGroupByArgs<ExtArgs>;
+            result: $Utils.Optional<LotsviewGroupByOutputType>[];
+          };
+          count: {
+            args: Prisma.lotsviewCountArgs<ExtArgs>;
+            result: $Utils.Optional<LotsviewCountAggregateOutputType> | number;
+          };
+        };
+      };
+      batchstep: {
+        payload: Prisma.$batchstepPayload<ExtArgs>;
+        fields: Prisma.batchstepFieldRefs;
+        operations: {
+          findFirst: {
+            args: Prisma.batchstepFindFirstArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$batchstepPayload> | null;
+          };
+          findFirstOrThrow: {
+            args: Prisma.batchstepFindFirstOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$batchstepPayload>;
+          };
+          findMany: {
+            args: Prisma.batchstepFindManyArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$batchstepPayload>[];
+          };
+          aggregate: {
+            args: Prisma.BatchstepAggregateArgs<ExtArgs>;
+            result: $Utils.Optional<AggregateBatchstep>;
+          };
+          groupBy: {
+            args: Prisma.batchstepGroupByArgs<ExtArgs>;
+            result: $Utils.Optional<BatchstepGroupByOutputType>[];
+          };
+          count: {
+            args: Prisma.batchstepCountArgs<ExtArgs>;
+            result: $Utils.Optional<BatchstepCountAggregateOutputType> | number;
+          };
+        };
+      };
+      loadstep: {
+        payload: Prisma.$loadstepPayload<ExtArgs>;
+        fields: Prisma.loadstepFieldRefs;
+        operations: {
+          findFirst: {
+            args: Prisma.loadstepFindFirstArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$loadstepPayload> | null;
+          };
+          findFirstOrThrow: {
+            args: Prisma.loadstepFindFirstOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$loadstepPayload>;
+          };
+          findMany: {
+            args: Prisma.loadstepFindManyArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$loadstepPayload>[];
+          };
+          aggregate: {
+            args: Prisma.LoadstepAggregateArgs<ExtArgs>;
+            result: $Utils.Optional<AggregateLoadstep>;
+          };
+          groupBy: {
+            args: Prisma.loadstepGroupByArgs<ExtArgs>;
+            result: $Utils.Optional<LoadstepGroupByOutputType>[];
+          };
+          count: {
+            args: Prisma.loadstepCountArgs<ExtArgs>;
+            result: $Utils.Optional<LoadstepCountAggregateOutputType> | number;
+          };
+        };
+      };
+      batchview: {
+        payload: Prisma.$batchviewPayload<ExtArgs>;
+        fields: Prisma.batchviewFieldRefs;
+        operations: {
+          findFirst: {
+            args: Prisma.batchviewFindFirstArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$batchviewPayload> | null;
+          };
+          findFirstOrThrow: {
+            args: Prisma.batchviewFindFirstOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$batchviewPayload>;
+          };
+          findMany: {
+            args: Prisma.batchviewFindManyArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$batchviewPayload>[];
+          };
+          aggregate: {
+            args: Prisma.BatchviewAggregateArgs<ExtArgs>;
+            result: $Utils.Optional<AggregateBatchview>;
+          };
+          groupBy: {
+            args: Prisma.batchviewGroupByArgs<ExtArgs>;
+            result: $Utils.Optional<BatchviewGroupByOutputType>[];
+          };
+          count: {
+            args: Prisma.batchviewCountArgs<ExtArgs>;
+            result: $Utils.Optional<BatchviewCountAggregateOutputType> | number;
+          };
+        };
+      };
+      loadview: {
+        payload: Prisma.$loadviewPayload<ExtArgs>;
+        fields: Prisma.loadviewFieldRefs;
+        operations: {
+          findFirst: {
+            args: Prisma.loadviewFindFirstArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$loadviewPayload> | null;
+          };
+          findFirstOrThrow: {
+            args: Prisma.loadviewFindFirstOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$loadviewPayload>;
+          };
+          findMany: {
+            args: Prisma.loadviewFindManyArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$loadviewPayload>[];
+          };
+          aggregate: {
+            args: Prisma.LoadviewAggregateArgs<ExtArgs>;
+            result: $Utils.Optional<AggregateLoadview>;
+          };
+          groupBy: {
+            args: Prisma.loadviewGroupByArgs<ExtArgs>;
+            result: $Utils.Optional<LoadviewGroupByOutputType>[];
+          };
+          count: {
+            args: Prisma.loadviewCountArgs<ExtArgs>;
+            result: $Utils.Optional<LoadviewCountAggregateOutputType> | number;
+          };
+        };
+      };
+      lotdetailview: {
+        payload: Prisma.$lotdetailviewPayload<ExtArgs>;
+        fields: Prisma.lotdetailviewFieldRefs;
+        operations: {
+          findFirst: {
+            args: Prisma.lotdetailviewFindFirstArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$lotdetailviewPayload> | null;
+          };
+          findFirstOrThrow: {
+            args: Prisma.lotdetailviewFindFirstOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$lotdetailviewPayload>;
+          };
+          findMany: {
+            args: Prisma.lotdetailviewFindManyArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$lotdetailviewPayload>[];
+          };
+          aggregate: {
+            args: Prisma.LotdetailviewAggregateArgs<ExtArgs>;
+            result: $Utils.Optional<AggregateLotdetailview>;
+          };
+          groupBy: {
+            args: Prisma.lotdetailviewGroupByArgs<ExtArgs>;
+            result: $Utils.Optional<LotdetailviewGroupByOutputType>[];
+          };
+          count: {
+            args: Prisma.lotdetailviewCountArgs<ExtArgs>;
+            result: $Utils.Optional<LotdetailviewCountAggregateOutputType> | number;
+          };
+        };
+      };
+      Docview: {
+        payload: Prisma.$DocviewPayload<ExtArgs>;
+        fields: Prisma.DocviewFieldRefs;
+        operations: {
+          findFirst: {
+            args: Prisma.DocviewFindFirstArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$DocviewPayload> | null;
+          };
+          findFirstOrThrow: {
+            args: Prisma.DocviewFindFirstOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$DocviewPayload>;
+          };
+          findMany: {
+            args: Prisma.DocviewFindManyArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$DocviewPayload>[];
+          };
+          aggregate: {
+            args: Prisma.DocviewAggregateArgs<ExtArgs>;
+            result: $Utils.Optional<AggregateDocview>;
+          };
+          groupBy: {
+            args: Prisma.DocviewGroupByArgs<ExtArgs>;
+            result: $Utils.Optional<DocviewGroupByOutputType>[];
+          };
+          count: {
+            args: Prisma.DocviewCountArgs<ExtArgs>;
+            result: $Utils.Optional<DocviewCountAggregateOutputType> | number;
+          };
+        };
+      };
+      boilview: {
+        payload: Prisma.$boilviewPayload<ExtArgs>;
+        fields: Prisma.boilviewFieldRefs;
+        operations: {
+          findFirst: {
+            args: Prisma.boilviewFindFirstArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$boilviewPayload> | null;
+          };
+          findFirstOrThrow: {
+            args: Prisma.boilviewFindFirstOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$boilviewPayload>;
+          };
+          findMany: {
+            args: Prisma.boilviewFindManyArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$boilviewPayload>[];
+          };
+          aggregate: {
+            args: Prisma.BoilviewAggregateArgs<ExtArgs>;
+            result: $Utils.Optional<AggregateBoilview>;
+          };
+          groupBy: {
+            args: Prisma.boilviewGroupByArgs<ExtArgs>;
+            result: $Utils.Optional<BoilviewGroupByOutputType>[];
+          };
+          count: {
+            args: Prisma.boilviewCountArgs<ExtArgs>;
+            result: $Utils.Optional<BoilviewCountAggregateOutputType> | number;
+          };
+        };
+      };
+      vw_PlanAggregated: {
+        payload: Prisma.$vw_PlanAggregatedPayload<ExtArgs>;
+        fields: Prisma.vw_PlanAggregatedFieldRefs;
+        operations: {
+          findFirst: {
+            args: Prisma.vw_PlanAggregatedFindFirstArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$vw_PlanAggregatedPayload> | null;
+          };
+          findFirstOrThrow: {
+            args: Prisma.vw_PlanAggregatedFindFirstOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$vw_PlanAggregatedPayload>;
+          };
+          findMany: {
+            args: Prisma.vw_PlanAggregatedFindManyArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$vw_PlanAggregatedPayload>[];
+          };
+          aggregate: {
+            args: Prisma.Vw_PlanAggregatedAggregateArgs<ExtArgs>;
+            result: $Utils.Optional<AggregateVw_PlanAggregated>;
+          };
+          groupBy: {
+            args: Prisma.vw_PlanAggregatedGroupByArgs<ExtArgs>;
+            result: $Utils.Optional<Vw_PlanAggregatedGroupByOutputType>[];
+          };
+          count: {
+            args: Prisma.vw_PlanAggregatedCountArgs<ExtArgs>;
+            result: $Utils.Optional<Vw_PlanAggregatedCountAggregateOutputType> | number;
+          };
+        };
+      };
+      vw_FactWeighting: {
+        payload: Prisma.$vw_FactWeightingPayload<ExtArgs>;
+        fields: Prisma.vw_FactWeightingFieldRefs;
+        operations: {
+          findFirst: {
+            args: Prisma.vw_FactWeightingFindFirstArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$vw_FactWeightingPayload> | null;
+          };
+          findFirstOrThrow: {
+            args: Prisma.vw_FactWeightingFindFirstOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$vw_FactWeightingPayload>;
+          };
+          findMany: {
+            args: Prisma.vw_FactWeightingFindManyArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$vw_FactWeightingPayload>[];
+          };
+          aggregate: {
+            args: Prisma.Vw_FactWeightingAggregateArgs<ExtArgs>;
+            result: $Utils.Optional<AggregateVw_FactWeighting>;
+          };
+          groupBy: {
+            args: Prisma.vw_FactWeightingGroupByArgs<ExtArgs>;
+            result: $Utils.Optional<Vw_FactWeightingGroupByOutputType>[];
+          };
+          count: {
+            args: Prisma.vw_FactWeightingCountArgs<ExtArgs>;
+            result: $Utils.Optional<Vw_FactWeightingCountAggregateOutputType> | number;
+          };
+        };
+      };
+      vw_FactLoading: {
+        payload: Prisma.$vw_FactLoadingPayload<ExtArgs>;
+        fields: Prisma.vw_FactLoadingFieldRefs;
+        operations: {
+          findFirst: {
+            args: Prisma.vw_FactLoadingFindFirstArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$vw_FactLoadingPayload> | null;
+          };
+          findFirstOrThrow: {
+            args: Prisma.vw_FactLoadingFindFirstOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$vw_FactLoadingPayload>;
+          };
+          findMany: {
+            args: Prisma.vw_FactLoadingFindManyArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$vw_FactLoadingPayload>[];
+          };
+          aggregate: {
+            args: Prisma.Vw_FactLoadingAggregateArgs<ExtArgs>;
+            result: $Utils.Optional<AggregateVw_FactLoading>;
+          };
+          groupBy: {
+            args: Prisma.vw_FactLoadingGroupByArgs<ExtArgs>;
+            result: $Utils.Optional<Vw_FactLoadingGroupByOutputType>[];
+          };
+          count: {
+            args: Prisma.vw_FactLoadingCountArgs<ExtArgs>;
+            result: $Utils.Optional<Vw_FactLoadingCountAggregateOutputType> | number;
+          };
+        };
+      };
+      vw_FinalBatchStatus: {
+        payload: Prisma.$vw_FinalBatchStatusPayload<ExtArgs>;
+        fields: Prisma.vw_FinalBatchStatusFieldRefs;
+        operations: {
+          findUnique: {
+            args: Prisma.vw_FinalBatchStatusFindUniqueArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$vw_FinalBatchStatusPayload> | null;
+          };
+          findUniqueOrThrow: {
+            args: Prisma.vw_FinalBatchStatusFindUniqueOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$vw_FinalBatchStatusPayload>;
+          };
+          findFirst: {
+            args: Prisma.vw_FinalBatchStatusFindFirstArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$vw_FinalBatchStatusPayload> | null;
+          };
+          findFirstOrThrow: {
+            args: Prisma.vw_FinalBatchStatusFindFirstOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$vw_FinalBatchStatusPayload>;
+          };
+          findMany: {
+            args: Prisma.vw_FinalBatchStatusFindManyArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$vw_FinalBatchStatusPayload>[];
+          };
+          aggregate: {
+            args: Prisma.Vw_FinalBatchStatusAggregateArgs<ExtArgs>;
+            result: $Utils.Optional<AggregateVw_FinalBatchStatus>;
+          };
+          groupBy: {
+            args: Prisma.vw_FinalBatchStatusGroupByArgs<ExtArgs>;
+            result: $Utils.Optional<Vw_FinalBatchStatusGroupByOutputType>[];
+          };
+          count: {
+            args: Prisma.vw_FinalBatchStatusCountArgs<ExtArgs>;
+            result: $Utils.Optional<Vw_FinalBatchStatusCountAggregateOutputType> | number;
+          };
+        };
+      };
     };
   } & {
     other: {
@@ -3915,6 +4534,19 @@ export namespace Prisma {
     userRoles?: UserRolesOmit;
     users?: UsersOmit;
     weightings?: WeightingsOmit;
+    test?: testOmit;
+    lotsview?: lotsviewOmit;
+    batchstep?: batchstepOmit;
+    loadstep?: loadstepOmit;
+    batchview?: batchviewOmit;
+    loadview?: loadviewOmit;
+    lotdetailview?: lotdetailviewOmit;
+    docview?: DocviewOmit;
+    boilview?: boilviewOmit;
+    vw_PlanAggregated?: vw_PlanAggregatedOmit;
+    vw_FactWeighting?: vw_FactWeightingOmit;
+    vw_FactLoading?: vw_FactLoadingOmit;
+    vw_FinalBatchStatus?: vw_FinalBatchStatusOmit;
   };
 
   /* Types for Logging */
@@ -4123,6 +4755,7 @@ export namespace Prisma {
     CanRecords: number;
     Loads: number;
     Weightings: number;
+    details: number;
   };
 
   export type BatchsCountOutputTypeSelect<
@@ -4134,6 +4767,7 @@ export namespace Prisma {
     CanRecords?: boolean | BatchsCountOutputTypeCountCanRecordsArgs;
     Loads?: boolean | BatchsCountOutputTypeCountLoadsArgs;
     Weightings?: boolean | BatchsCountOutputTypeCountWeightingsArgs;
+    details?: boolean | BatchsCountOutputTypeCountDetailsArgs;
   };
 
   // Custom InputTypes
@@ -4201,6 +4835,15 @@ export namespace Prisma {
     ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
   > = {
     where?: WeightingsWhereInput;
+  };
+
+  /**
+   * BatchsCountOutputType without action
+   */
+  export type BatchsCountOutputTypeCountDetailsArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: vw_FinalBatchStatusWhereInput;
   };
 
   /**
@@ -9932,6 +10575,7 @@ export namespace Prisma {
         CanRecords?: boolean | Batchs$CanRecordsArgs<ExtArgs>;
         Loads?: boolean | Batchs$LoadsArgs<ExtArgs>;
         Weightings?: boolean | Batchs$WeightingsArgs<ExtArgs>;
+        details?: boolean | Batchs$detailsArgs<ExtArgs>;
         _count?: boolean | BatchsCountOutputTypeDefaultArgs<ExtArgs>;
       },
       ExtArgs['result']['batchs']
@@ -9959,6 +10603,7 @@ export namespace Prisma {
     CanRecords?: boolean | Batchs$CanRecordsArgs<ExtArgs>;
     Loads?: boolean | Batchs$LoadsArgs<ExtArgs>;
     Weightings?: boolean | Batchs$WeightingsArgs<ExtArgs>;
+    details?: boolean | Batchs$detailsArgs<ExtArgs>;
     _count?: boolean | BatchsCountOutputTypeDefaultArgs<ExtArgs>;
   };
 
@@ -9971,6 +10616,7 @@ export namespace Prisma {
       CanRecords: Prisma.$CanRecordsPayload<ExtArgs>[];
       Loads: Prisma.$LoadsPayload<ExtArgs>[];
       Weightings: Prisma.$WeightingsPayload<ExtArgs>[];
+      details: Prisma.$vw_FinalBatchStatusPayload<ExtArgs>[];
     };
     scalars: $Extensions.GetPayloadResult<
       {
@@ -10425,6 +11071,17 @@ export namespace Prisma {
       args?: Subset<T, Batchs$WeightingsArgs<ExtArgs>>,
     ): Prisma.PrismaPromise<
       $Result.GetResult<Prisma.$WeightingsPayload<ExtArgs>, T, 'findMany', GlobalOmitOptions> | Null
+    >;
+    details<T extends Batchs$detailsArgs<ExtArgs> = {}>(
+      args?: Subset<T, Batchs$detailsArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<
+      | $Result.GetResult<
+          Prisma.$vw_FinalBatchStatusPayload<ExtArgs>,
+          T,
+          'findMany',
+          GlobalOmitOptions
+        >
+      | Null
     >;
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -10976,6 +11633,34 @@ export namespace Prisma {
     take?: number;
     skip?: number;
     distinct?: WeightingsScalarFieldEnum | WeightingsScalarFieldEnum[];
+  };
+
+  /**
+   * Batchs.details
+   */
+  export type Batchs$detailsArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_FinalBatchStatus
+     */
+    select?: vw_FinalBatchStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_FinalBatchStatus
+     */
+    omit?: vw_FinalBatchStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: vw_FinalBatchStatusInclude<ExtArgs> | null;
+    where?: vw_FinalBatchStatusWhereInput;
+    orderBy?:
+      | vw_FinalBatchStatusOrderByWithRelationInput
+      | vw_FinalBatchStatusOrderByWithRelationInput[];
+    cursor?: vw_FinalBatchStatusWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: Vw_FinalBatchStatusScalarFieldEnum | Vw_FinalBatchStatusScalarFieldEnum[];
   };
 
   /**
@@ -48319,6 +49004,9447 @@ export namespace Prisma {
   };
 
   /**
+   * Model test
+   */
+
+  export type AggregateTest = {
+    _count: TestCountAggregateOutputType | null;
+    _avg: TestAvgAggregateOutputType | null;
+    _sum: TestSumAggregateOutputType | null;
+    _min: TestMinAggregateOutputType | null;
+    _max: TestMaxAggregateOutputType | null;
+  };
+
+  export type TestAvgAggregateOutputType = {
+    Quantity: Decimal | null;
+    BatchPK: number | null;
+  };
+
+  export type TestSumAggregateOutputType = {
+    Quantity: Decimal | null;
+    BatchPK: number | null;
+  };
+
+  export type TestMinAggregateOutputType = {
+    BatchName: string | null;
+    BatchDate: Date | null;
+    Plant: string | null;
+    ProductName: string | null;
+    Quantity: Decimal | null;
+    ProductId: string | null;
+    BatchPK: number | null;
+  };
+
+  export type TestMaxAggregateOutputType = {
+    BatchName: string | null;
+    BatchDate: Date | null;
+    Plant: string | null;
+    ProductName: string | null;
+    Quantity: Decimal | null;
+    ProductId: string | null;
+    BatchPK: number | null;
+  };
+
+  export type TestCountAggregateOutputType = {
+    BatchName: number;
+    BatchDate: number;
+    Plant: number;
+    ProductName: number;
+    Quantity: number;
+    ProductId: number;
+    BatchPK: number;
+    _all: number;
+  };
+
+  export type TestAvgAggregateInputType = {
+    Quantity?: true;
+    BatchPK?: true;
+  };
+
+  export type TestSumAggregateInputType = {
+    Quantity?: true;
+    BatchPK?: true;
+  };
+
+  export type TestMinAggregateInputType = {
+    BatchName?: true;
+    BatchDate?: true;
+    Plant?: true;
+    ProductName?: true;
+    Quantity?: true;
+    ProductId?: true;
+    BatchPK?: true;
+  };
+
+  export type TestMaxAggregateInputType = {
+    BatchName?: true;
+    BatchDate?: true;
+    Plant?: true;
+    ProductName?: true;
+    Quantity?: true;
+    ProductId?: true;
+    BatchPK?: true;
+  };
+
+  export type TestCountAggregateInputType = {
+    BatchName?: true;
+    BatchDate?: true;
+    Plant?: true;
+    ProductName?: true;
+    Quantity?: true;
+    ProductId?: true;
+    BatchPK?: true;
+    _all?: true;
+  };
+
+  export type TestAggregateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which test to aggregate.
+     */
+    where?: testWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of tests to fetch.
+     */
+    orderBy?: testOrderByWithRelationInput | testOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` tests from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` tests.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned tests
+     **/
+    _count?: true | TestCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to average
+     **/
+    _avg?: TestAvgAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to sum
+     **/
+    _sum?: TestSumAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+     **/
+    _min?: TestMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+     **/
+    _max?: TestMaxAggregateInputType;
+  };
+
+  export type GetTestAggregateType<T extends TestAggregateArgs> = {
+    [P in keyof T & keyof AggregateTest]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTest[P]>
+      : GetScalarType<T[P], AggregateTest[P]>;
+  };
+
+  export type testGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    {
+      where?: testWhereInput;
+      orderBy?: testOrderByWithAggregationInput | testOrderByWithAggregationInput[];
+      by: TestScalarFieldEnum[] | TestScalarFieldEnum;
+      having?: testScalarWhereWithAggregatesInput;
+      take?: number;
+      skip?: number;
+      _count?: TestCountAggregateInputType | true;
+      _avg?: TestAvgAggregateInputType;
+      _sum?: TestSumAggregateInputType;
+      _min?: TestMinAggregateInputType;
+      _max?: TestMaxAggregateInputType;
+    };
+
+  export type TestGroupByOutputType = {
+    BatchName: string | null;
+    BatchDate: Date | null;
+    Plant: string | null;
+    ProductName: string | null;
+    Quantity: Decimal;
+    ProductId: string;
+    BatchPK: number;
+    _count: TestCountAggregateOutputType | null;
+    _avg: TestAvgAggregateOutputType | null;
+    _sum: TestSumAggregateOutputType | null;
+    _min: TestMinAggregateOutputType | null;
+    _max: TestMaxAggregateOutputType | null;
+  };
+
+  type GetTestGroupByPayload<T extends testGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<TestGroupByOutputType, T['by']> & {
+        [P in keyof T & keyof TestGroupByOutputType]: P extends '_count'
+          ? T[P] extends boolean
+            ? number
+            : GetScalarType<T[P], TestGroupByOutputType[P]>
+          : GetScalarType<T[P], TestGroupByOutputType[P]>;
+      }
+    >
+  >;
+
+  export type testSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    $Extensions.GetSelect<
+      {
+        BatchName?: boolean;
+        BatchDate?: boolean;
+        Plant?: boolean;
+        ProductName?: boolean;
+        Quantity?: boolean;
+        ProductId?: boolean;
+        BatchPK?: boolean;
+      },
+      ExtArgs['result']['test']
+    >;
+
+  export type testSelectScalar = {
+    BatchName?: boolean;
+    BatchDate?: boolean;
+    Plant?: boolean;
+    ProductName?: boolean;
+    Quantity?: boolean;
+    ProductId?: boolean;
+    BatchPK?: boolean;
+  };
+
+  export type testOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    $Extensions.GetOmit<
+      'BatchName' | 'BatchDate' | 'Plant' | 'ProductName' | 'Quantity' | 'ProductId' | 'BatchPK',
+      ExtArgs['result']['test']
+    >;
+
+  export type $testPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: 'test';
+    objects: {};
+    scalars: $Extensions.GetPayloadResult<
+      {
+        BatchName: string | null;
+        BatchDate: Date | null;
+        Plant: string | null;
+        ProductName: string | null;
+        Quantity: Prisma.Decimal;
+        ProductId: string;
+        BatchPK: number;
+      },
+      ExtArgs['result']['test']
+    >;
+    composites: {};
+  };
+
+  type testGetPayload<S extends boolean | null | undefined | testDefaultArgs> = $Result.GetResult<
+    Prisma.$testPayload,
+    S
+  >;
+
+  type testCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Omit<
+    testFindManyArgs,
+    'select' | 'include' | 'distinct' | 'omit'
+  > & {
+    select?: TestCountAggregateInputType | true;
+  };
+
+  export interface testDelegate<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['test']; meta: { name: 'test' } };
+    /**
+     * Find the first Test that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {testFindFirstArgs} args - Arguments to find a Test
+     * @example
+     * // Get one Test
+     * const test = await prisma.test.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<
+      T extends testFindFirstArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, testFindFirstArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__testClient<
+      $Result.GetResult<Prisma.$testPayload<ExtArgs>, T, 'findFirst', GlobalOmitOptions> | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first Test that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {testFindFirstOrThrowArgs} args - Arguments to find a Test
+     * @example
+     * // Get one Test
+     * const test = await prisma.test.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<
+      T extends testFindFirstOrThrowArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, testFindFirstOrThrowArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__testClient<
+      $Result.GetResult<Prisma.$testPayload<ExtArgs>, T, 'findFirstOrThrow', GlobalOmitOptions>,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find zero or more Tests that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {testFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tests
+     * const tests = await prisma.test.findMany()
+     *
+     * // Get first 10 Tests
+     * const tests = await prisma.test.findMany({ take: 10 })
+     *
+     * // Only select the `BatchName`
+     * const testWithBatchNameOnly = await prisma.test.findMany({ select: { BatchName: true } })
+     *
+     */
+    findMany<
+      T extends testFindManyArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, testFindManyArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<Prisma.$testPayload<ExtArgs>, T, 'findMany', GlobalOmitOptions>
+    >;
+
+    /**
+     * Count the number of Tests.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {testCountArgs} args - Arguments to filter Tests to count.
+     * @example
+     * // Count the number of Tests
+     * const count = await prisma.test.count({
+     *   where: {
+     *     // ... the filter for the Tests we want to count
+     *   }
+     * })
+     **/
+    count<T extends testCountArgs>(
+      args?: Subset<T, testCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], TestCountAggregateOutputType>
+        : number
+    >;
+
+    /**
+     * Allows you to perform aggregations operations on a Test.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TestAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+     **/
+    aggregate<T extends TestAggregateArgs>(
+      args: Subset<T, TestAggregateArgs>,
+    ): Prisma.PrismaPromise<GetTestAggregateType<T>>;
+
+    /**
+     * Group by Test.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {testGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+     **/
+    groupBy<
+      T extends testGroupByArgs,
+      HasSelectOrTake extends Or<Extends<'skip', Keys<T>>, Extends<'take', Keys<T>>>,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: testGroupByArgs['orderBy'] }
+        : { orderBy?: testGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+        ? `Error: "by" must not be empty.`
+        : HavingValid extends False
+          ? {
+              [P in HavingFields]: P extends ByFields
+                ? never
+                : P extends string
+                  ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+                  : [Error, 'Field ', P, ` in "having" needs to be provided in "by"`];
+            }[HavingFields]
+          : 'take' extends Keys<T>
+            ? 'orderBy' extends Keys<T>
+              ? ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields]
+              : 'Error: If you provide "take", you also need to provide "orderBy"'
+            : 'skip' extends Keys<T>
+              ? 'orderBy' extends Keys<T>
+                ? ByValid extends True
+                  ? {}
+                  : {
+                      [P in OrderFields]: P extends ByFields
+                        ? never
+                        : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                    }[OrderFields]
+                : 'Error: If you provide "skip", you also need to provide "orderBy"'
+              : ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields],
+    >(
+      args: SubsetIntersection<T, testGroupByArgs, OrderByArg> & InputErrors,
+    ): {} extends InputErrors ? GetTestGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the test model
+     */
+    readonly fields: testFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for test.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__testClient<
+    T,
+    Null = never,
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(
+      onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+      onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
+    ): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(
+      onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null,
+    ): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+  /**
+   * Fields of the test model
+   */
+  interface testFieldRefs {
+    readonly BatchName: FieldRef<'test', 'String'>;
+    readonly BatchDate: FieldRef<'test', 'DateTime'>;
+    readonly Plant: FieldRef<'test', 'String'>;
+    readonly ProductName: FieldRef<'test', 'String'>;
+    readonly Quantity: FieldRef<'test', 'Decimal'>;
+    readonly ProductId: FieldRef<'test', 'String'>;
+    readonly BatchPK: FieldRef<'test', 'Int'>;
+  }
+
+  // Custom InputTypes
+  /**
+   * test findFirst
+   */
+  export type testFindFirstArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the test
+     */
+    select?: testSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the test
+     */
+    omit?: testOmit<ExtArgs> | null;
+    /**
+     * Filter, which test to fetch.
+     */
+    where?: testWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of tests to fetch.
+     */
+    orderBy?: testOrderByWithRelationInput | testOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` tests from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` tests.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of tests.
+     */
+    distinct?: TestScalarFieldEnum | TestScalarFieldEnum[];
+  };
+
+  /**
+   * test findFirstOrThrow
+   */
+  export type testFindFirstOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the test
+     */
+    select?: testSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the test
+     */
+    omit?: testOmit<ExtArgs> | null;
+    /**
+     * Filter, which test to fetch.
+     */
+    where?: testWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of tests to fetch.
+     */
+    orderBy?: testOrderByWithRelationInput | testOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` tests from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` tests.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of tests.
+     */
+    distinct?: TestScalarFieldEnum | TestScalarFieldEnum[];
+  };
+
+  /**
+   * test findMany
+   */
+  export type testFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    {
+      /**
+       * Select specific fields to fetch from the test
+       */
+      select?: testSelect<ExtArgs> | null;
+      /**
+       * Omit specific fields from the test
+       */
+      omit?: testOmit<ExtArgs> | null;
+      /**
+       * Filter, which tests to fetch.
+       */
+      where?: testWhereInput;
+      /**
+       * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+       *
+       * Determine the order of tests to fetch.
+       */
+      orderBy?: testOrderByWithRelationInput | testOrderByWithRelationInput[];
+      /**
+       * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+       *
+       * Take `±n` tests from the position of the cursor.
+       */
+      take?: number;
+      /**
+       * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+       *
+       * Skip the first `n` tests.
+       */
+      skip?: number;
+      distinct?: TestScalarFieldEnum | TestScalarFieldEnum[];
+    };
+
+  /**
+   * test without action
+   */
+  export type testDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    {
+      /**
+       * Select specific fields to fetch from the test
+       */
+      select?: testSelect<ExtArgs> | null;
+      /**
+       * Omit specific fields from the test
+       */
+      omit?: testOmit<ExtArgs> | null;
+    };
+
+  /**
+   * Model lotsview
+   */
+
+  export type AggregateLotsview = {
+    _count: LotsviewCountAggregateOutputType | null;
+    _avg: LotsviewAvgAggregateOutputType | null;
+    _sum: LotsviewSumAggregateOutputType | null;
+    _min: LotsviewMinAggregateOutputType | null;
+    _max: LotsviewMaxAggregateOutputType | null;
+  };
+
+  export type LotsviewAvgAggregateOutputType = {
+    SellerPK: number | null;
+    ManufacturerPK: number | null;
+    ManufacturerLotPK: number | null;
+    TrademarkPK: number | null;
+    BatchPK: number | null;
+  };
+
+  export type LotsviewSumAggregateOutputType = {
+    SellerPK: number | null;
+    ManufacturerPK: number | null;
+    ManufacturerLotPK: number | null;
+    TrademarkPK: number | null;
+    BatchPK: number | null;
+  };
+
+  export type LotsviewMinAggregateOutputType = {
+    LotName: string | null;
+    BatchName: string | null;
+    CreateDate: Date | null;
+    ProductId: string | null;
+    ProductName: string | null;
+    SellerPK: number | null;
+    SellerName: string | null;
+    ManufacturerPK: number | null;
+    ManufacturerName: string | null;
+    ManufacturerLotPK: number | null;
+    ManufacturerLotName: string | null;
+    TrademarkPK: number | null;
+    TrademarkName: string | null;
+    BatchPK: number | null;
+  };
+
+  export type LotsviewMaxAggregateOutputType = {
+    LotName: string | null;
+    BatchName: string | null;
+    CreateDate: Date | null;
+    ProductId: string | null;
+    ProductName: string | null;
+    SellerPK: number | null;
+    SellerName: string | null;
+    ManufacturerPK: number | null;
+    ManufacturerName: string | null;
+    ManufacturerLotPK: number | null;
+    ManufacturerLotName: string | null;
+    TrademarkPK: number | null;
+    TrademarkName: string | null;
+    BatchPK: number | null;
+  };
+
+  export type LotsviewCountAggregateOutputType = {
+    LotName: number;
+    BatchName: number;
+    CreateDate: number;
+    ProductId: number;
+    ProductName: number;
+    SellerPK: number;
+    SellerName: number;
+    ManufacturerPK: number;
+    ManufacturerName: number;
+    ManufacturerLotPK: number;
+    ManufacturerLotName: number;
+    TrademarkPK: number;
+    TrademarkName: number;
+    BatchPK: number;
+    _all: number;
+  };
+
+  export type LotsviewAvgAggregateInputType = {
+    SellerPK?: true;
+    ManufacturerPK?: true;
+    ManufacturerLotPK?: true;
+    TrademarkPK?: true;
+    BatchPK?: true;
+  };
+
+  export type LotsviewSumAggregateInputType = {
+    SellerPK?: true;
+    ManufacturerPK?: true;
+    ManufacturerLotPK?: true;
+    TrademarkPK?: true;
+    BatchPK?: true;
+  };
+
+  export type LotsviewMinAggregateInputType = {
+    LotName?: true;
+    BatchName?: true;
+    CreateDate?: true;
+    ProductId?: true;
+    ProductName?: true;
+    SellerPK?: true;
+    SellerName?: true;
+    ManufacturerPK?: true;
+    ManufacturerName?: true;
+    ManufacturerLotPK?: true;
+    ManufacturerLotName?: true;
+    TrademarkPK?: true;
+    TrademarkName?: true;
+    BatchPK?: true;
+  };
+
+  export type LotsviewMaxAggregateInputType = {
+    LotName?: true;
+    BatchName?: true;
+    CreateDate?: true;
+    ProductId?: true;
+    ProductName?: true;
+    SellerPK?: true;
+    SellerName?: true;
+    ManufacturerPK?: true;
+    ManufacturerName?: true;
+    ManufacturerLotPK?: true;
+    ManufacturerLotName?: true;
+    TrademarkPK?: true;
+    TrademarkName?: true;
+    BatchPK?: true;
+  };
+
+  export type LotsviewCountAggregateInputType = {
+    LotName?: true;
+    BatchName?: true;
+    CreateDate?: true;
+    ProductId?: true;
+    ProductName?: true;
+    SellerPK?: true;
+    SellerName?: true;
+    ManufacturerPK?: true;
+    ManufacturerName?: true;
+    ManufacturerLotPK?: true;
+    ManufacturerLotName?: true;
+    TrademarkPK?: true;
+    TrademarkName?: true;
+    BatchPK?: true;
+    _all?: true;
+  };
+
+  export type LotsviewAggregateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which lotsview to aggregate.
+     */
+    where?: lotsviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of lotsviews to fetch.
+     */
+    orderBy?: lotsviewOrderByWithRelationInput | lotsviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` lotsviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` lotsviews.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned lotsviews
+     **/
+    _count?: true | LotsviewCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to average
+     **/
+    _avg?: LotsviewAvgAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to sum
+     **/
+    _sum?: LotsviewSumAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+     **/
+    _min?: LotsviewMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+     **/
+    _max?: LotsviewMaxAggregateInputType;
+  };
+
+  export type GetLotsviewAggregateType<T extends LotsviewAggregateArgs> = {
+    [P in keyof T & keyof AggregateLotsview]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateLotsview[P]>
+      : GetScalarType<T[P], AggregateLotsview[P]>;
+  };
+
+  export type lotsviewGroupByArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: lotsviewWhereInput;
+    orderBy?: lotsviewOrderByWithAggregationInput | lotsviewOrderByWithAggregationInput[];
+    by: LotsviewScalarFieldEnum[] | LotsviewScalarFieldEnum;
+    having?: lotsviewScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: LotsviewCountAggregateInputType | true;
+    _avg?: LotsviewAvgAggregateInputType;
+    _sum?: LotsviewSumAggregateInputType;
+    _min?: LotsviewMinAggregateInputType;
+    _max?: LotsviewMaxAggregateInputType;
+  };
+
+  export type LotsviewGroupByOutputType = {
+    LotName: string;
+    BatchName: string;
+    CreateDate: Date;
+    ProductId: string | null;
+    ProductName: string | null;
+    SellerPK: number | null;
+    SellerName: string | null;
+    ManufacturerPK: number | null;
+    ManufacturerName: string | null;
+    ManufacturerLotPK: number | null;
+    ManufacturerLotName: string | null;
+    TrademarkPK: number | null;
+    TrademarkName: string | null;
+    BatchPK: number;
+    _count: LotsviewCountAggregateOutputType | null;
+    _avg: LotsviewAvgAggregateOutputType | null;
+    _sum: LotsviewSumAggregateOutputType | null;
+    _min: LotsviewMinAggregateOutputType | null;
+    _max: LotsviewMaxAggregateOutputType | null;
+  };
+
+  type GetLotsviewGroupByPayload<T extends lotsviewGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<LotsviewGroupByOutputType, T['by']> & {
+        [P in keyof T & keyof LotsviewGroupByOutputType]: P extends '_count'
+          ? T[P] extends boolean
+            ? number
+            : GetScalarType<T[P], LotsviewGroupByOutputType[P]>
+          : GetScalarType<T[P], LotsviewGroupByOutputType[P]>;
+      }
+    >
+  >;
+
+  export type lotsviewSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    $Extensions.GetSelect<
+      {
+        LotName?: boolean;
+        BatchName?: boolean;
+        CreateDate?: boolean;
+        ProductId?: boolean;
+        ProductName?: boolean;
+        SellerPK?: boolean;
+        SellerName?: boolean;
+        ManufacturerPK?: boolean;
+        ManufacturerName?: boolean;
+        ManufacturerLotPK?: boolean;
+        ManufacturerLotName?: boolean;
+        TrademarkPK?: boolean;
+        TrademarkName?: boolean;
+        BatchPK?: boolean;
+      },
+      ExtArgs['result']['lotsview']
+    >;
+
+  export type lotsviewSelectScalar = {
+    LotName?: boolean;
+    BatchName?: boolean;
+    CreateDate?: boolean;
+    ProductId?: boolean;
+    ProductName?: boolean;
+    SellerPK?: boolean;
+    SellerName?: boolean;
+    ManufacturerPK?: boolean;
+    ManufacturerName?: boolean;
+    ManufacturerLotPK?: boolean;
+    ManufacturerLotName?: boolean;
+    TrademarkPK?: boolean;
+    TrademarkName?: boolean;
+    BatchPK?: boolean;
+  };
+
+  export type lotsviewOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    $Extensions.GetOmit<
+      | 'LotName'
+      | 'BatchName'
+      | 'CreateDate'
+      | 'ProductId'
+      | 'ProductName'
+      | 'SellerPK'
+      | 'SellerName'
+      | 'ManufacturerPK'
+      | 'ManufacturerName'
+      | 'ManufacturerLotPK'
+      | 'ManufacturerLotName'
+      | 'TrademarkPK'
+      | 'TrademarkName'
+      | 'BatchPK',
+      ExtArgs['result']['lotsview']
+    >;
+
+  export type $lotsviewPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    {
+      name: 'lotsview';
+      objects: {};
+      scalars: $Extensions.GetPayloadResult<
+        {
+          LotName: string;
+          BatchName: string;
+          CreateDate: Date;
+          ProductId: string | null;
+          ProductName: string | null;
+          SellerPK: number | null;
+          SellerName: string | null;
+          ManufacturerPK: number | null;
+          ManufacturerName: string | null;
+          ManufacturerLotPK: number | null;
+          ManufacturerLotName: string | null;
+          TrademarkPK: number | null;
+          TrademarkName: string | null;
+          BatchPK: number;
+        },
+        ExtArgs['result']['lotsview']
+      >;
+      composites: {};
+    };
+
+  type lotsviewGetPayload<S extends boolean | null | undefined | lotsviewDefaultArgs> =
+    $Result.GetResult<Prisma.$lotsviewPayload, S>;
+
+  type lotsviewCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Omit<
+    lotsviewFindManyArgs,
+    'select' | 'include' | 'distinct' | 'omit'
+  > & {
+    select?: LotsviewCountAggregateInputType | true;
+  };
+
+  export interface lotsviewDelegate<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > {
+    [K: symbol]: {
+      types: Prisma.TypeMap<ExtArgs>['model']['lotsview'];
+      meta: { name: 'lotsview' };
+    };
+    /**
+     * Find the first Lotsview that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {lotsviewFindFirstArgs} args - Arguments to find a Lotsview
+     * @example
+     * // Get one Lotsview
+     * const lotsview = await prisma.lotsview.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<
+      T extends lotsviewFindFirstArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, lotsviewFindFirstArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__lotsviewClient<
+      $Result.GetResult<Prisma.$lotsviewPayload<ExtArgs>, T, 'findFirst', GlobalOmitOptions> | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first Lotsview that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {lotsviewFindFirstOrThrowArgs} args - Arguments to find a Lotsview
+     * @example
+     * // Get one Lotsview
+     * const lotsview = await prisma.lotsview.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<
+      T extends lotsviewFindFirstOrThrowArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, lotsviewFindFirstOrThrowArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__lotsviewClient<
+      $Result.GetResult<Prisma.$lotsviewPayload<ExtArgs>, T, 'findFirstOrThrow', GlobalOmitOptions>,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find zero or more Lotsviews that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {lotsviewFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Lotsviews
+     * const lotsviews = await prisma.lotsview.findMany()
+     *
+     * // Get first 10 Lotsviews
+     * const lotsviews = await prisma.lotsview.findMany({ take: 10 })
+     *
+     * // Only select the `LotName`
+     * const lotsviewWithLotNameOnly = await prisma.lotsview.findMany({ select: { LotName: true } })
+     *
+     */
+    findMany<
+      T extends lotsviewFindManyArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, lotsviewFindManyArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<Prisma.$lotsviewPayload<ExtArgs>, T, 'findMany', GlobalOmitOptions>
+    >;
+
+    /**
+     * Count the number of Lotsviews.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {lotsviewCountArgs} args - Arguments to filter Lotsviews to count.
+     * @example
+     * // Count the number of Lotsviews
+     * const count = await prisma.lotsview.count({
+     *   where: {
+     *     // ... the filter for the Lotsviews we want to count
+     *   }
+     * })
+     **/
+    count<T extends lotsviewCountArgs>(
+      args?: Subset<T, lotsviewCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], LotsviewCountAggregateOutputType>
+        : number
+    >;
+
+    /**
+     * Allows you to perform aggregations operations on a Lotsview.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LotsviewAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+     **/
+    aggregate<T extends LotsviewAggregateArgs>(
+      args: Subset<T, LotsviewAggregateArgs>,
+    ): Prisma.PrismaPromise<GetLotsviewAggregateType<T>>;
+
+    /**
+     * Group by Lotsview.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {lotsviewGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+     **/
+    groupBy<
+      T extends lotsviewGroupByArgs,
+      HasSelectOrTake extends Or<Extends<'skip', Keys<T>>, Extends<'take', Keys<T>>>,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: lotsviewGroupByArgs['orderBy'] }
+        : { orderBy?: lotsviewGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+        ? `Error: "by" must not be empty.`
+        : HavingValid extends False
+          ? {
+              [P in HavingFields]: P extends ByFields
+                ? never
+                : P extends string
+                  ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+                  : [Error, 'Field ', P, ` in "having" needs to be provided in "by"`];
+            }[HavingFields]
+          : 'take' extends Keys<T>
+            ? 'orderBy' extends Keys<T>
+              ? ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields]
+              : 'Error: If you provide "take", you also need to provide "orderBy"'
+            : 'skip' extends Keys<T>
+              ? 'orderBy' extends Keys<T>
+                ? ByValid extends True
+                  ? {}
+                  : {
+                      [P in OrderFields]: P extends ByFields
+                        ? never
+                        : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                    }[OrderFields]
+                : 'Error: If you provide "skip", you also need to provide "orderBy"'
+              : ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields],
+    >(
+      args: SubsetIntersection<T, lotsviewGroupByArgs, OrderByArg> & InputErrors,
+    ): {} extends InputErrors ? GetLotsviewGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the lotsview model
+     */
+    readonly fields: lotsviewFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for lotsview.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__lotsviewClient<
+    T,
+    Null = never,
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(
+      onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+      onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
+    ): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(
+      onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null,
+    ): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+  /**
+   * Fields of the lotsview model
+   */
+  interface lotsviewFieldRefs {
+    readonly LotName: FieldRef<'lotsview', 'String'>;
+    readonly BatchName: FieldRef<'lotsview', 'String'>;
+    readonly CreateDate: FieldRef<'lotsview', 'DateTime'>;
+    readonly ProductId: FieldRef<'lotsview', 'String'>;
+    readonly ProductName: FieldRef<'lotsview', 'String'>;
+    readonly SellerPK: FieldRef<'lotsview', 'Int'>;
+    readonly SellerName: FieldRef<'lotsview', 'String'>;
+    readonly ManufacturerPK: FieldRef<'lotsview', 'Int'>;
+    readonly ManufacturerName: FieldRef<'lotsview', 'String'>;
+    readonly ManufacturerLotPK: FieldRef<'lotsview', 'Int'>;
+    readonly ManufacturerLotName: FieldRef<'lotsview', 'String'>;
+    readonly TrademarkPK: FieldRef<'lotsview', 'Int'>;
+    readonly TrademarkName: FieldRef<'lotsview', 'String'>;
+    readonly BatchPK: FieldRef<'lotsview', 'Int'>;
+  }
+
+  // Custom InputTypes
+  /**
+   * lotsview findFirst
+   */
+  export type lotsviewFindFirstArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the lotsview
+     */
+    select?: lotsviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the lotsview
+     */
+    omit?: lotsviewOmit<ExtArgs> | null;
+    /**
+     * Filter, which lotsview to fetch.
+     */
+    where?: lotsviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of lotsviews to fetch.
+     */
+    orderBy?: lotsviewOrderByWithRelationInput | lotsviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` lotsviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` lotsviews.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of lotsviews.
+     */
+    distinct?: LotsviewScalarFieldEnum | LotsviewScalarFieldEnum[];
+  };
+
+  /**
+   * lotsview findFirstOrThrow
+   */
+  export type lotsviewFindFirstOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the lotsview
+     */
+    select?: lotsviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the lotsview
+     */
+    omit?: lotsviewOmit<ExtArgs> | null;
+    /**
+     * Filter, which lotsview to fetch.
+     */
+    where?: lotsviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of lotsviews to fetch.
+     */
+    orderBy?: lotsviewOrderByWithRelationInput | lotsviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` lotsviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` lotsviews.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of lotsviews.
+     */
+    distinct?: LotsviewScalarFieldEnum | LotsviewScalarFieldEnum[];
+  };
+
+  /**
+   * lotsview findMany
+   */
+  export type lotsviewFindManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the lotsview
+     */
+    select?: lotsviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the lotsview
+     */
+    omit?: lotsviewOmit<ExtArgs> | null;
+    /**
+     * Filter, which lotsviews to fetch.
+     */
+    where?: lotsviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of lotsviews to fetch.
+     */
+    orderBy?: lotsviewOrderByWithRelationInput | lotsviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` lotsviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` lotsviews.
+     */
+    skip?: number;
+    distinct?: LotsviewScalarFieldEnum | LotsviewScalarFieldEnum[];
+  };
+
+  /**
+   * lotsview without action
+   */
+  export type lotsviewDefaultArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the lotsview
+     */
+    select?: lotsviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the lotsview
+     */
+    omit?: lotsviewOmit<ExtArgs> | null;
+  };
+
+  /**
+   * Model batchstep
+   */
+
+  export type AggregateBatchstep = {
+    _count: BatchstepCountAggregateOutputType | null;
+    _avg: BatchstepAvgAggregateOutputType | null;
+    _sum: BatchstepSumAggregateOutputType | null;
+    _min: BatchstepMinAggregateOutputType | null;
+    _max: BatchstepMaxAggregateOutputType | null;
+  };
+
+  export type BatchstepAvgAggregateOutputType = {
+    ContainerPK: number | null;
+  };
+
+  export type BatchstepSumAggregateOutputType = {
+    ContainerPK: number | null;
+  };
+
+  export type BatchstepMinAggregateOutputType = {
+    BatchName: string | null;
+    ProductId: string | null;
+    ProductName: string | null;
+    LotName: string | null;
+    ContainerPK: number | null;
+  };
+
+  export type BatchstepMaxAggregateOutputType = {
+    BatchName: string | null;
+    ProductId: string | null;
+    ProductName: string | null;
+    LotName: string | null;
+    ContainerPK: number | null;
+  };
+
+  export type BatchstepCountAggregateOutputType = {
+    BatchName: number;
+    ProductId: number;
+    ProductName: number;
+    LotName: number;
+    ContainerPK: number;
+    _all: number;
+  };
+
+  export type BatchstepAvgAggregateInputType = {
+    ContainerPK?: true;
+  };
+
+  export type BatchstepSumAggregateInputType = {
+    ContainerPK?: true;
+  };
+
+  export type BatchstepMinAggregateInputType = {
+    BatchName?: true;
+    ProductId?: true;
+    ProductName?: true;
+    LotName?: true;
+    ContainerPK?: true;
+  };
+
+  export type BatchstepMaxAggregateInputType = {
+    BatchName?: true;
+    ProductId?: true;
+    ProductName?: true;
+    LotName?: true;
+    ContainerPK?: true;
+  };
+
+  export type BatchstepCountAggregateInputType = {
+    BatchName?: true;
+    ProductId?: true;
+    ProductName?: true;
+    LotName?: true;
+    ContainerPK?: true;
+    _all?: true;
+  };
+
+  export type BatchstepAggregateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which batchstep to aggregate.
+     */
+    where?: batchstepWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of batchsteps to fetch.
+     */
+    orderBy?: batchstepOrderByWithRelationInput | batchstepOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` batchsteps from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` batchsteps.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned batchsteps
+     **/
+    _count?: true | BatchstepCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to average
+     **/
+    _avg?: BatchstepAvgAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to sum
+     **/
+    _sum?: BatchstepSumAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+     **/
+    _min?: BatchstepMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+     **/
+    _max?: BatchstepMaxAggregateInputType;
+  };
+
+  export type GetBatchstepAggregateType<T extends BatchstepAggregateArgs> = {
+    [P in keyof T & keyof AggregateBatchstep]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBatchstep[P]>
+      : GetScalarType<T[P], AggregateBatchstep[P]>;
+  };
+
+  export type batchstepGroupByArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: batchstepWhereInput;
+    orderBy?: batchstepOrderByWithAggregationInput | batchstepOrderByWithAggregationInput[];
+    by: BatchstepScalarFieldEnum[] | BatchstepScalarFieldEnum;
+    having?: batchstepScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: BatchstepCountAggregateInputType | true;
+    _avg?: BatchstepAvgAggregateInputType;
+    _sum?: BatchstepSumAggregateInputType;
+    _min?: BatchstepMinAggregateInputType;
+    _max?: BatchstepMaxAggregateInputType;
+  };
+
+  export type BatchstepGroupByOutputType = {
+    BatchName: string;
+    ProductId: string;
+    ProductName: string | null;
+    LotName: string;
+    ContainerPK: number;
+    _count: BatchstepCountAggregateOutputType | null;
+    _avg: BatchstepAvgAggregateOutputType | null;
+    _sum: BatchstepSumAggregateOutputType | null;
+    _min: BatchstepMinAggregateOutputType | null;
+    _max: BatchstepMaxAggregateOutputType | null;
+  };
+
+  type GetBatchstepGroupByPayload<T extends batchstepGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<BatchstepGroupByOutputType, T['by']> & {
+        [P in keyof T & keyof BatchstepGroupByOutputType]: P extends '_count'
+          ? T[P] extends boolean
+            ? number
+            : GetScalarType<T[P], BatchstepGroupByOutputType[P]>
+          : GetScalarType<T[P], BatchstepGroupByOutputType[P]>;
+      }
+    >
+  >;
+
+  export type batchstepSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    $Extensions.GetSelect<
+      {
+        BatchName?: boolean;
+        ProductId?: boolean;
+        ProductName?: boolean;
+        LotName?: boolean;
+        ContainerPK?: boolean;
+      },
+      ExtArgs['result']['batchstep']
+    >;
+
+  export type batchstepSelectScalar = {
+    BatchName?: boolean;
+    ProductId?: boolean;
+    ProductName?: boolean;
+    LotName?: boolean;
+    ContainerPK?: boolean;
+  };
+
+  export type batchstepOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    $Extensions.GetOmit<
+      'BatchName' | 'ProductId' | 'ProductName' | 'LotName' | 'ContainerPK',
+      ExtArgs['result']['batchstep']
+    >;
+
+  export type $batchstepPayload<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    name: 'batchstep';
+    objects: {};
+    scalars: $Extensions.GetPayloadResult<
+      {
+        BatchName: string;
+        ProductId: string;
+        ProductName: string | null;
+        LotName: string;
+        ContainerPK: number;
+      },
+      ExtArgs['result']['batchstep']
+    >;
+    composites: {};
+  };
+
+  type batchstepGetPayload<S extends boolean | null | undefined | batchstepDefaultArgs> =
+    $Result.GetResult<Prisma.$batchstepPayload, S>;
+
+  type batchstepCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<batchstepFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: BatchstepCountAggregateInputType | true;
+    };
+
+  export interface batchstepDelegate<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > {
+    [K: symbol]: {
+      types: Prisma.TypeMap<ExtArgs>['model']['batchstep'];
+      meta: { name: 'batchstep' };
+    };
+    /**
+     * Find the first Batchstep that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {batchstepFindFirstArgs} args - Arguments to find a Batchstep
+     * @example
+     * // Get one Batchstep
+     * const batchstep = await prisma.batchstep.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<
+      T extends batchstepFindFirstArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, batchstepFindFirstArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__batchstepClient<
+      $Result.GetResult<
+        Prisma.$batchstepPayload<ExtArgs>,
+        T,
+        'findFirst',
+        GlobalOmitOptions
+      > | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first Batchstep that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {batchstepFindFirstOrThrowArgs} args - Arguments to find a Batchstep
+     * @example
+     * // Get one Batchstep
+     * const batchstep = await prisma.batchstep.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<
+      T extends batchstepFindFirstOrThrowArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, batchstepFindFirstOrThrowArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__batchstepClient<
+      $Result.GetResult<
+        Prisma.$batchstepPayload<ExtArgs>,
+        T,
+        'findFirstOrThrow',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find zero or more Batchsteps that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {batchstepFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Batchsteps
+     * const batchsteps = await prisma.batchstep.findMany()
+     *
+     * // Get first 10 Batchsteps
+     * const batchsteps = await prisma.batchstep.findMany({ take: 10 })
+     *
+     * // Only select the `BatchName`
+     * const batchstepWithBatchNameOnly = await prisma.batchstep.findMany({ select: { BatchName: true } })
+     *
+     */
+    findMany<
+      T extends batchstepFindManyArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, batchstepFindManyArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<Prisma.$batchstepPayload<ExtArgs>, T, 'findMany', GlobalOmitOptions>
+    >;
+
+    /**
+     * Count the number of Batchsteps.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {batchstepCountArgs} args - Arguments to filter Batchsteps to count.
+     * @example
+     * // Count the number of Batchsteps
+     * const count = await prisma.batchstep.count({
+     *   where: {
+     *     // ... the filter for the Batchsteps we want to count
+     *   }
+     * })
+     **/
+    count<T extends batchstepCountArgs>(
+      args?: Subset<T, batchstepCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], BatchstepCountAggregateOutputType>
+        : number
+    >;
+
+    /**
+     * Allows you to perform aggregations operations on a Batchstep.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BatchstepAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+     **/
+    aggregate<T extends BatchstepAggregateArgs>(
+      args: Subset<T, BatchstepAggregateArgs>,
+    ): Prisma.PrismaPromise<GetBatchstepAggregateType<T>>;
+
+    /**
+     * Group by Batchstep.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {batchstepGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+     **/
+    groupBy<
+      T extends batchstepGroupByArgs,
+      HasSelectOrTake extends Or<Extends<'skip', Keys<T>>, Extends<'take', Keys<T>>>,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: batchstepGroupByArgs['orderBy'] }
+        : { orderBy?: batchstepGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+        ? `Error: "by" must not be empty.`
+        : HavingValid extends False
+          ? {
+              [P in HavingFields]: P extends ByFields
+                ? never
+                : P extends string
+                  ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+                  : [Error, 'Field ', P, ` in "having" needs to be provided in "by"`];
+            }[HavingFields]
+          : 'take' extends Keys<T>
+            ? 'orderBy' extends Keys<T>
+              ? ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields]
+              : 'Error: If you provide "take", you also need to provide "orderBy"'
+            : 'skip' extends Keys<T>
+              ? 'orderBy' extends Keys<T>
+                ? ByValid extends True
+                  ? {}
+                  : {
+                      [P in OrderFields]: P extends ByFields
+                        ? never
+                        : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                    }[OrderFields]
+                : 'Error: If you provide "skip", you also need to provide "orderBy"'
+              : ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields],
+    >(
+      args: SubsetIntersection<T, batchstepGroupByArgs, OrderByArg> & InputErrors,
+    ): {} extends InputErrors ? GetBatchstepGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the batchstep model
+     */
+    readonly fields: batchstepFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for batchstep.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__batchstepClient<
+    T,
+    Null = never,
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(
+      onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+      onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
+    ): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(
+      onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null,
+    ): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+  /**
+   * Fields of the batchstep model
+   */
+  interface batchstepFieldRefs {
+    readonly BatchName: FieldRef<'batchstep', 'String'>;
+    readonly ProductId: FieldRef<'batchstep', 'String'>;
+    readonly ProductName: FieldRef<'batchstep', 'String'>;
+    readonly LotName: FieldRef<'batchstep', 'String'>;
+    readonly ContainerPK: FieldRef<'batchstep', 'Int'>;
+  }
+
+  // Custom InputTypes
+  /**
+   * batchstep findFirst
+   */
+  export type batchstepFindFirstArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the batchstep
+     */
+    select?: batchstepSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the batchstep
+     */
+    omit?: batchstepOmit<ExtArgs> | null;
+    /**
+     * Filter, which batchstep to fetch.
+     */
+    where?: batchstepWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of batchsteps to fetch.
+     */
+    orderBy?: batchstepOrderByWithRelationInput | batchstepOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` batchsteps from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` batchsteps.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of batchsteps.
+     */
+    distinct?: BatchstepScalarFieldEnum | BatchstepScalarFieldEnum[];
+  };
+
+  /**
+   * batchstep findFirstOrThrow
+   */
+  export type batchstepFindFirstOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the batchstep
+     */
+    select?: batchstepSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the batchstep
+     */
+    omit?: batchstepOmit<ExtArgs> | null;
+    /**
+     * Filter, which batchstep to fetch.
+     */
+    where?: batchstepWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of batchsteps to fetch.
+     */
+    orderBy?: batchstepOrderByWithRelationInput | batchstepOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` batchsteps from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` batchsteps.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of batchsteps.
+     */
+    distinct?: BatchstepScalarFieldEnum | BatchstepScalarFieldEnum[];
+  };
+
+  /**
+   * batchstep findMany
+   */
+  export type batchstepFindManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the batchstep
+     */
+    select?: batchstepSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the batchstep
+     */
+    omit?: batchstepOmit<ExtArgs> | null;
+    /**
+     * Filter, which batchsteps to fetch.
+     */
+    where?: batchstepWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of batchsteps to fetch.
+     */
+    orderBy?: batchstepOrderByWithRelationInput | batchstepOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` batchsteps from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` batchsteps.
+     */
+    skip?: number;
+    distinct?: BatchstepScalarFieldEnum | BatchstepScalarFieldEnum[];
+  };
+
+  /**
+   * batchstep without action
+   */
+  export type batchstepDefaultArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the batchstep
+     */
+    select?: batchstepSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the batchstep
+     */
+    omit?: batchstepOmit<ExtArgs> | null;
+  };
+
+  /**
+   * Model loadstep
+   */
+
+  export type AggregateLoadstep = {
+    _count: LoadstepCountAggregateOutputType | null;
+    _avg: LoadstepAvgAggregateOutputType | null;
+    _sum: LoadstepSumAggregateOutputType | null;
+    _min: LoadstepMinAggregateOutputType | null;
+    _max: LoadstepMaxAggregateOutputType | null;
+  };
+
+  export type LoadstepAvgAggregateOutputType = {
+    ContainerPK: number | null;
+  };
+
+  export type LoadstepSumAggregateOutputType = {
+    ContainerPK: number | null;
+  };
+
+  export type LoadstepMinAggregateOutputType = {
+    CreateDate: Date | null;
+    ContainerPK: number | null;
+    AuthorName: string | null;
+  };
+
+  export type LoadstepMaxAggregateOutputType = {
+    CreateDate: Date | null;
+    ContainerPK: number | null;
+    AuthorName: string | null;
+  };
+
+  export type LoadstepCountAggregateOutputType = {
+    CreateDate: number;
+    ContainerPK: number;
+    AuthorName: number;
+    _all: number;
+  };
+
+  export type LoadstepAvgAggregateInputType = {
+    ContainerPK?: true;
+  };
+
+  export type LoadstepSumAggregateInputType = {
+    ContainerPK?: true;
+  };
+
+  export type LoadstepMinAggregateInputType = {
+    CreateDate?: true;
+    ContainerPK?: true;
+    AuthorName?: true;
+  };
+
+  export type LoadstepMaxAggregateInputType = {
+    CreateDate?: true;
+    ContainerPK?: true;
+    AuthorName?: true;
+  };
+
+  export type LoadstepCountAggregateInputType = {
+    CreateDate?: true;
+    ContainerPK?: true;
+    AuthorName?: true;
+    _all?: true;
+  };
+
+  export type LoadstepAggregateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which loadstep to aggregate.
+     */
+    where?: loadstepWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of loadsteps to fetch.
+     */
+    orderBy?: loadstepOrderByWithRelationInput | loadstepOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` loadsteps from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` loadsteps.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned loadsteps
+     **/
+    _count?: true | LoadstepCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to average
+     **/
+    _avg?: LoadstepAvgAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to sum
+     **/
+    _sum?: LoadstepSumAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+     **/
+    _min?: LoadstepMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+     **/
+    _max?: LoadstepMaxAggregateInputType;
+  };
+
+  export type GetLoadstepAggregateType<T extends LoadstepAggregateArgs> = {
+    [P in keyof T & keyof AggregateLoadstep]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateLoadstep[P]>
+      : GetScalarType<T[P], AggregateLoadstep[P]>;
+  };
+
+  export type loadstepGroupByArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: loadstepWhereInput;
+    orderBy?: loadstepOrderByWithAggregationInput | loadstepOrderByWithAggregationInput[];
+    by: LoadstepScalarFieldEnum[] | LoadstepScalarFieldEnum;
+    having?: loadstepScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: LoadstepCountAggregateInputType | true;
+    _avg?: LoadstepAvgAggregateInputType;
+    _sum?: LoadstepSumAggregateInputType;
+    _min?: LoadstepMinAggregateInputType;
+    _max?: LoadstepMaxAggregateInputType;
+  };
+
+  export type LoadstepGroupByOutputType = {
+    CreateDate: Date;
+    ContainerPK: number;
+    AuthorName: string;
+    _count: LoadstepCountAggregateOutputType | null;
+    _avg: LoadstepAvgAggregateOutputType | null;
+    _sum: LoadstepSumAggregateOutputType | null;
+    _min: LoadstepMinAggregateOutputType | null;
+    _max: LoadstepMaxAggregateOutputType | null;
+  };
+
+  type GetLoadstepGroupByPayload<T extends loadstepGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<LoadstepGroupByOutputType, T['by']> & {
+        [P in keyof T & keyof LoadstepGroupByOutputType]: P extends '_count'
+          ? T[P] extends boolean
+            ? number
+            : GetScalarType<T[P], LoadstepGroupByOutputType[P]>
+          : GetScalarType<T[P], LoadstepGroupByOutputType[P]>;
+      }
+    >
+  >;
+
+  export type loadstepSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    $Extensions.GetSelect<
+      {
+        CreateDate?: boolean;
+        ContainerPK?: boolean;
+        AuthorName?: boolean;
+      },
+      ExtArgs['result']['loadstep']
+    >;
+
+  export type loadstepSelectScalar = {
+    CreateDate?: boolean;
+    ContainerPK?: boolean;
+    AuthorName?: boolean;
+  };
+
+  export type loadstepOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    $Extensions.GetOmit<'CreateDate' | 'ContainerPK' | 'AuthorName', ExtArgs['result']['loadstep']>;
+
+  export type $loadstepPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    {
+      name: 'loadstep';
+      objects: {};
+      scalars: $Extensions.GetPayloadResult<
+        {
+          CreateDate: Date;
+          ContainerPK: number;
+          AuthorName: string;
+        },
+        ExtArgs['result']['loadstep']
+      >;
+      composites: {};
+    };
+
+  type loadstepGetPayload<S extends boolean | null | undefined | loadstepDefaultArgs> =
+    $Result.GetResult<Prisma.$loadstepPayload, S>;
+
+  type loadstepCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Omit<
+    loadstepFindManyArgs,
+    'select' | 'include' | 'distinct' | 'omit'
+  > & {
+    select?: LoadstepCountAggregateInputType | true;
+  };
+
+  export interface loadstepDelegate<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > {
+    [K: symbol]: {
+      types: Prisma.TypeMap<ExtArgs>['model']['loadstep'];
+      meta: { name: 'loadstep' };
+    };
+    /**
+     * Find the first Loadstep that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {loadstepFindFirstArgs} args - Arguments to find a Loadstep
+     * @example
+     * // Get one Loadstep
+     * const loadstep = await prisma.loadstep.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<
+      T extends loadstepFindFirstArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, loadstepFindFirstArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__loadstepClient<
+      $Result.GetResult<Prisma.$loadstepPayload<ExtArgs>, T, 'findFirst', GlobalOmitOptions> | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first Loadstep that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {loadstepFindFirstOrThrowArgs} args - Arguments to find a Loadstep
+     * @example
+     * // Get one Loadstep
+     * const loadstep = await prisma.loadstep.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<
+      T extends loadstepFindFirstOrThrowArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, loadstepFindFirstOrThrowArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__loadstepClient<
+      $Result.GetResult<Prisma.$loadstepPayload<ExtArgs>, T, 'findFirstOrThrow', GlobalOmitOptions>,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find zero or more Loadsteps that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {loadstepFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Loadsteps
+     * const loadsteps = await prisma.loadstep.findMany()
+     *
+     * // Get first 10 Loadsteps
+     * const loadsteps = await prisma.loadstep.findMany({ take: 10 })
+     *
+     * // Only select the `CreateDate`
+     * const loadstepWithCreateDateOnly = await prisma.loadstep.findMany({ select: { CreateDate: true } })
+     *
+     */
+    findMany<
+      T extends loadstepFindManyArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, loadstepFindManyArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<Prisma.$loadstepPayload<ExtArgs>, T, 'findMany', GlobalOmitOptions>
+    >;
+
+    /**
+     * Count the number of Loadsteps.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {loadstepCountArgs} args - Arguments to filter Loadsteps to count.
+     * @example
+     * // Count the number of Loadsteps
+     * const count = await prisma.loadstep.count({
+     *   where: {
+     *     // ... the filter for the Loadsteps we want to count
+     *   }
+     * })
+     **/
+    count<T extends loadstepCountArgs>(
+      args?: Subset<T, loadstepCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], LoadstepCountAggregateOutputType>
+        : number
+    >;
+
+    /**
+     * Allows you to perform aggregations operations on a Loadstep.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LoadstepAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+     **/
+    aggregate<T extends LoadstepAggregateArgs>(
+      args: Subset<T, LoadstepAggregateArgs>,
+    ): Prisma.PrismaPromise<GetLoadstepAggregateType<T>>;
+
+    /**
+     * Group by Loadstep.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {loadstepGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+     **/
+    groupBy<
+      T extends loadstepGroupByArgs,
+      HasSelectOrTake extends Or<Extends<'skip', Keys<T>>, Extends<'take', Keys<T>>>,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: loadstepGroupByArgs['orderBy'] }
+        : { orderBy?: loadstepGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+        ? `Error: "by" must not be empty.`
+        : HavingValid extends False
+          ? {
+              [P in HavingFields]: P extends ByFields
+                ? never
+                : P extends string
+                  ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+                  : [Error, 'Field ', P, ` in "having" needs to be provided in "by"`];
+            }[HavingFields]
+          : 'take' extends Keys<T>
+            ? 'orderBy' extends Keys<T>
+              ? ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields]
+              : 'Error: If you provide "take", you also need to provide "orderBy"'
+            : 'skip' extends Keys<T>
+              ? 'orderBy' extends Keys<T>
+                ? ByValid extends True
+                  ? {}
+                  : {
+                      [P in OrderFields]: P extends ByFields
+                        ? never
+                        : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                    }[OrderFields]
+                : 'Error: If you provide "skip", you also need to provide "orderBy"'
+              : ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields],
+    >(
+      args: SubsetIntersection<T, loadstepGroupByArgs, OrderByArg> & InputErrors,
+    ): {} extends InputErrors ? GetLoadstepGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the loadstep model
+     */
+    readonly fields: loadstepFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for loadstep.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__loadstepClient<
+    T,
+    Null = never,
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(
+      onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+      onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
+    ): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(
+      onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null,
+    ): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+  /**
+   * Fields of the loadstep model
+   */
+  interface loadstepFieldRefs {
+    readonly CreateDate: FieldRef<'loadstep', 'DateTime'>;
+    readonly ContainerPK: FieldRef<'loadstep', 'Int'>;
+    readonly AuthorName: FieldRef<'loadstep', 'String'>;
+  }
+
+  // Custom InputTypes
+  /**
+   * loadstep findFirst
+   */
+  export type loadstepFindFirstArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the loadstep
+     */
+    select?: loadstepSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the loadstep
+     */
+    omit?: loadstepOmit<ExtArgs> | null;
+    /**
+     * Filter, which loadstep to fetch.
+     */
+    where?: loadstepWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of loadsteps to fetch.
+     */
+    orderBy?: loadstepOrderByWithRelationInput | loadstepOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` loadsteps from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` loadsteps.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of loadsteps.
+     */
+    distinct?: LoadstepScalarFieldEnum | LoadstepScalarFieldEnum[];
+  };
+
+  /**
+   * loadstep findFirstOrThrow
+   */
+  export type loadstepFindFirstOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the loadstep
+     */
+    select?: loadstepSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the loadstep
+     */
+    omit?: loadstepOmit<ExtArgs> | null;
+    /**
+     * Filter, which loadstep to fetch.
+     */
+    where?: loadstepWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of loadsteps to fetch.
+     */
+    orderBy?: loadstepOrderByWithRelationInput | loadstepOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` loadsteps from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` loadsteps.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of loadsteps.
+     */
+    distinct?: LoadstepScalarFieldEnum | LoadstepScalarFieldEnum[];
+  };
+
+  /**
+   * loadstep findMany
+   */
+  export type loadstepFindManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the loadstep
+     */
+    select?: loadstepSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the loadstep
+     */
+    omit?: loadstepOmit<ExtArgs> | null;
+    /**
+     * Filter, which loadsteps to fetch.
+     */
+    where?: loadstepWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of loadsteps to fetch.
+     */
+    orderBy?: loadstepOrderByWithRelationInput | loadstepOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` loadsteps from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` loadsteps.
+     */
+    skip?: number;
+    distinct?: LoadstepScalarFieldEnum | LoadstepScalarFieldEnum[];
+  };
+
+  /**
+   * loadstep without action
+   */
+  export type loadstepDefaultArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the loadstep
+     */
+    select?: loadstepSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the loadstep
+     */
+    omit?: loadstepOmit<ExtArgs> | null;
+  };
+
+  /**
+   * Model batchview
+   */
+
+  export type AggregateBatchview = {
+    _count: BatchviewCountAggregateOutputType | null;
+    _avg: BatchviewAvgAggregateOutputType | null;
+    _sum: BatchviewSumAggregateOutputType | null;
+    _min: BatchviewMinAggregateOutputType | null;
+    _max: BatchviewMaxAggregateOutputType | null;
+  };
+
+  export type BatchviewAvgAggregateOutputType = {
+    Quantity: Decimal | null;
+  };
+
+  export type BatchviewSumAggregateOutputType = {
+    Quantity: Decimal | null;
+  };
+
+  export type BatchviewMinAggregateOutputType = {
+    BatchName: string | null;
+    ProductId: string | null;
+    ProductName: string | null;
+    LotName: string | null;
+    AuthorName: string | null;
+    Quantity: Decimal | null;
+    CreateDate: Date | null;
+  };
+
+  export type BatchviewMaxAggregateOutputType = {
+    BatchName: string | null;
+    ProductId: string | null;
+    ProductName: string | null;
+    LotName: string | null;
+    AuthorName: string | null;
+    Quantity: Decimal | null;
+    CreateDate: Date | null;
+  };
+
+  export type BatchviewCountAggregateOutputType = {
+    BatchName: number;
+    ProductId: number;
+    ProductName: number;
+    LotName: number;
+    AuthorName: number;
+    Quantity: number;
+    CreateDate: number;
+    _all: number;
+  };
+
+  export type BatchviewAvgAggregateInputType = {
+    Quantity?: true;
+  };
+
+  export type BatchviewSumAggregateInputType = {
+    Quantity?: true;
+  };
+
+  export type BatchviewMinAggregateInputType = {
+    BatchName?: true;
+    ProductId?: true;
+    ProductName?: true;
+    LotName?: true;
+    AuthorName?: true;
+    Quantity?: true;
+    CreateDate?: true;
+  };
+
+  export type BatchviewMaxAggregateInputType = {
+    BatchName?: true;
+    ProductId?: true;
+    ProductName?: true;
+    LotName?: true;
+    AuthorName?: true;
+    Quantity?: true;
+    CreateDate?: true;
+  };
+
+  export type BatchviewCountAggregateInputType = {
+    BatchName?: true;
+    ProductId?: true;
+    ProductName?: true;
+    LotName?: true;
+    AuthorName?: true;
+    Quantity?: true;
+    CreateDate?: true;
+    _all?: true;
+  };
+
+  export type BatchviewAggregateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which batchview to aggregate.
+     */
+    where?: batchviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of batchviews to fetch.
+     */
+    orderBy?: batchviewOrderByWithRelationInput | batchviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` batchviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` batchviews.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned batchviews
+     **/
+    _count?: true | BatchviewCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to average
+     **/
+    _avg?: BatchviewAvgAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to sum
+     **/
+    _sum?: BatchviewSumAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+     **/
+    _min?: BatchviewMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+     **/
+    _max?: BatchviewMaxAggregateInputType;
+  };
+
+  export type GetBatchviewAggregateType<T extends BatchviewAggregateArgs> = {
+    [P in keyof T & keyof AggregateBatchview]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBatchview[P]>
+      : GetScalarType<T[P], AggregateBatchview[P]>;
+  };
+
+  export type batchviewGroupByArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: batchviewWhereInput;
+    orderBy?: batchviewOrderByWithAggregationInput | batchviewOrderByWithAggregationInput[];
+    by: BatchviewScalarFieldEnum[] | BatchviewScalarFieldEnum;
+    having?: batchviewScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: BatchviewCountAggregateInputType | true;
+    _avg?: BatchviewAvgAggregateInputType;
+    _sum?: BatchviewSumAggregateInputType;
+    _min?: BatchviewMinAggregateInputType;
+    _max?: BatchviewMaxAggregateInputType;
+  };
+
+  export type BatchviewGroupByOutputType = {
+    BatchName: string;
+    ProductId: string;
+    ProductName: string | null;
+    LotName: string;
+    AuthorName: string;
+    Quantity: Decimal;
+    CreateDate: Date;
+    _count: BatchviewCountAggregateOutputType | null;
+    _avg: BatchviewAvgAggregateOutputType | null;
+    _sum: BatchviewSumAggregateOutputType | null;
+    _min: BatchviewMinAggregateOutputType | null;
+    _max: BatchviewMaxAggregateOutputType | null;
+  };
+
+  type GetBatchviewGroupByPayload<T extends batchviewGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<BatchviewGroupByOutputType, T['by']> & {
+        [P in keyof T & keyof BatchviewGroupByOutputType]: P extends '_count'
+          ? T[P] extends boolean
+            ? number
+            : GetScalarType<T[P], BatchviewGroupByOutputType[P]>
+          : GetScalarType<T[P], BatchviewGroupByOutputType[P]>;
+      }
+    >
+  >;
+
+  export type batchviewSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    $Extensions.GetSelect<
+      {
+        BatchName?: boolean;
+        ProductId?: boolean;
+        ProductName?: boolean;
+        LotName?: boolean;
+        AuthorName?: boolean;
+        Quantity?: boolean;
+        CreateDate?: boolean;
+      },
+      ExtArgs['result']['batchview']
+    >;
+
+  export type batchviewSelectScalar = {
+    BatchName?: boolean;
+    ProductId?: boolean;
+    ProductName?: boolean;
+    LotName?: boolean;
+    AuthorName?: boolean;
+    Quantity?: boolean;
+    CreateDate?: boolean;
+  };
+
+  export type batchviewOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    $Extensions.GetOmit<
+      | 'BatchName'
+      | 'ProductId'
+      | 'ProductName'
+      | 'LotName'
+      | 'AuthorName'
+      | 'Quantity'
+      | 'CreateDate',
+      ExtArgs['result']['batchview']
+    >;
+
+  export type $batchviewPayload<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    name: 'batchview';
+    objects: {};
+    scalars: $Extensions.GetPayloadResult<
+      {
+        BatchName: string;
+        ProductId: string;
+        ProductName: string | null;
+        LotName: string;
+        AuthorName: string;
+        Quantity: Prisma.Decimal;
+        CreateDate: Date;
+      },
+      ExtArgs['result']['batchview']
+    >;
+    composites: {};
+  };
+
+  type batchviewGetPayload<S extends boolean | null | undefined | batchviewDefaultArgs> =
+    $Result.GetResult<Prisma.$batchviewPayload, S>;
+
+  type batchviewCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<batchviewFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: BatchviewCountAggregateInputType | true;
+    };
+
+  export interface batchviewDelegate<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > {
+    [K: symbol]: {
+      types: Prisma.TypeMap<ExtArgs>['model']['batchview'];
+      meta: { name: 'batchview' };
+    };
+    /**
+     * Find the first Batchview that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {batchviewFindFirstArgs} args - Arguments to find a Batchview
+     * @example
+     * // Get one Batchview
+     * const batchview = await prisma.batchview.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<
+      T extends batchviewFindFirstArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, batchviewFindFirstArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__batchviewClient<
+      $Result.GetResult<
+        Prisma.$batchviewPayload<ExtArgs>,
+        T,
+        'findFirst',
+        GlobalOmitOptions
+      > | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first Batchview that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {batchviewFindFirstOrThrowArgs} args - Arguments to find a Batchview
+     * @example
+     * // Get one Batchview
+     * const batchview = await prisma.batchview.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<
+      T extends batchviewFindFirstOrThrowArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, batchviewFindFirstOrThrowArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__batchviewClient<
+      $Result.GetResult<
+        Prisma.$batchviewPayload<ExtArgs>,
+        T,
+        'findFirstOrThrow',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find zero or more Batchviews that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {batchviewFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Batchviews
+     * const batchviews = await prisma.batchview.findMany()
+     *
+     * // Get first 10 Batchviews
+     * const batchviews = await prisma.batchview.findMany({ take: 10 })
+     *
+     * // Only select the `BatchName`
+     * const batchviewWithBatchNameOnly = await prisma.batchview.findMany({ select: { BatchName: true } })
+     *
+     */
+    findMany<
+      T extends batchviewFindManyArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, batchviewFindManyArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<Prisma.$batchviewPayload<ExtArgs>, T, 'findMany', GlobalOmitOptions>
+    >;
+
+    /**
+     * Count the number of Batchviews.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {batchviewCountArgs} args - Arguments to filter Batchviews to count.
+     * @example
+     * // Count the number of Batchviews
+     * const count = await prisma.batchview.count({
+     *   where: {
+     *     // ... the filter for the Batchviews we want to count
+     *   }
+     * })
+     **/
+    count<T extends batchviewCountArgs>(
+      args?: Subset<T, batchviewCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], BatchviewCountAggregateOutputType>
+        : number
+    >;
+
+    /**
+     * Allows you to perform aggregations operations on a Batchview.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BatchviewAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+     **/
+    aggregate<T extends BatchviewAggregateArgs>(
+      args: Subset<T, BatchviewAggregateArgs>,
+    ): Prisma.PrismaPromise<GetBatchviewAggregateType<T>>;
+
+    /**
+     * Group by Batchview.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {batchviewGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+     **/
+    groupBy<
+      T extends batchviewGroupByArgs,
+      HasSelectOrTake extends Or<Extends<'skip', Keys<T>>, Extends<'take', Keys<T>>>,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: batchviewGroupByArgs['orderBy'] }
+        : { orderBy?: batchviewGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+        ? `Error: "by" must not be empty.`
+        : HavingValid extends False
+          ? {
+              [P in HavingFields]: P extends ByFields
+                ? never
+                : P extends string
+                  ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+                  : [Error, 'Field ', P, ` in "having" needs to be provided in "by"`];
+            }[HavingFields]
+          : 'take' extends Keys<T>
+            ? 'orderBy' extends Keys<T>
+              ? ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields]
+              : 'Error: If you provide "take", you also need to provide "orderBy"'
+            : 'skip' extends Keys<T>
+              ? 'orderBy' extends Keys<T>
+                ? ByValid extends True
+                  ? {}
+                  : {
+                      [P in OrderFields]: P extends ByFields
+                        ? never
+                        : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                    }[OrderFields]
+                : 'Error: If you provide "skip", you also need to provide "orderBy"'
+              : ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields],
+    >(
+      args: SubsetIntersection<T, batchviewGroupByArgs, OrderByArg> & InputErrors,
+    ): {} extends InputErrors ? GetBatchviewGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the batchview model
+     */
+    readonly fields: batchviewFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for batchview.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__batchviewClient<
+    T,
+    Null = never,
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(
+      onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+      onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
+    ): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(
+      onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null,
+    ): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+  /**
+   * Fields of the batchview model
+   */
+  interface batchviewFieldRefs {
+    readonly BatchName: FieldRef<'batchview', 'String'>;
+    readonly ProductId: FieldRef<'batchview', 'String'>;
+    readonly ProductName: FieldRef<'batchview', 'String'>;
+    readonly LotName: FieldRef<'batchview', 'String'>;
+    readonly AuthorName: FieldRef<'batchview', 'String'>;
+    readonly Quantity: FieldRef<'batchview', 'Decimal'>;
+    readonly CreateDate: FieldRef<'batchview', 'DateTime'>;
+  }
+
+  // Custom InputTypes
+  /**
+   * batchview findFirst
+   */
+  export type batchviewFindFirstArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the batchview
+     */
+    select?: batchviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the batchview
+     */
+    omit?: batchviewOmit<ExtArgs> | null;
+    /**
+     * Filter, which batchview to fetch.
+     */
+    where?: batchviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of batchviews to fetch.
+     */
+    orderBy?: batchviewOrderByWithRelationInput | batchviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` batchviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` batchviews.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of batchviews.
+     */
+    distinct?: BatchviewScalarFieldEnum | BatchviewScalarFieldEnum[];
+  };
+
+  /**
+   * batchview findFirstOrThrow
+   */
+  export type batchviewFindFirstOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the batchview
+     */
+    select?: batchviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the batchview
+     */
+    omit?: batchviewOmit<ExtArgs> | null;
+    /**
+     * Filter, which batchview to fetch.
+     */
+    where?: batchviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of batchviews to fetch.
+     */
+    orderBy?: batchviewOrderByWithRelationInput | batchviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` batchviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` batchviews.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of batchviews.
+     */
+    distinct?: BatchviewScalarFieldEnum | BatchviewScalarFieldEnum[];
+  };
+
+  /**
+   * batchview findMany
+   */
+  export type batchviewFindManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the batchview
+     */
+    select?: batchviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the batchview
+     */
+    omit?: batchviewOmit<ExtArgs> | null;
+    /**
+     * Filter, which batchviews to fetch.
+     */
+    where?: batchviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of batchviews to fetch.
+     */
+    orderBy?: batchviewOrderByWithRelationInput | batchviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` batchviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` batchviews.
+     */
+    skip?: number;
+    distinct?: BatchviewScalarFieldEnum | BatchviewScalarFieldEnum[];
+  };
+
+  /**
+   * batchview without action
+   */
+  export type batchviewDefaultArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the batchview
+     */
+    select?: batchviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the batchview
+     */
+    omit?: batchviewOmit<ExtArgs> | null;
+  };
+
+  /**
+   * Model loadview
+   */
+
+  export type AggregateLoadview = {
+    _count: LoadviewCountAggregateOutputType | null;
+    _min: LoadviewMinAggregateOutputType | null;
+    _max: LoadviewMaxAggregateOutputType | null;
+  };
+
+  export type LoadviewMinAggregateOutputType = {
+    BatchName: string | null;
+    ProductId: string | null;
+    ProductName: string | null;
+    LotName: string | null;
+    AuthorName: string | null;
+    CreateDate: Date | null;
+  };
+
+  export type LoadviewMaxAggregateOutputType = {
+    BatchName: string | null;
+    ProductId: string | null;
+    ProductName: string | null;
+    LotName: string | null;
+    AuthorName: string | null;
+    CreateDate: Date | null;
+  };
+
+  export type LoadviewCountAggregateOutputType = {
+    BatchName: number;
+    ProductId: number;
+    ProductName: number;
+    LotName: number;
+    AuthorName: number;
+    CreateDate: number;
+    _all: number;
+  };
+
+  export type LoadviewMinAggregateInputType = {
+    BatchName?: true;
+    ProductId?: true;
+    ProductName?: true;
+    LotName?: true;
+    AuthorName?: true;
+    CreateDate?: true;
+  };
+
+  export type LoadviewMaxAggregateInputType = {
+    BatchName?: true;
+    ProductId?: true;
+    ProductName?: true;
+    LotName?: true;
+    AuthorName?: true;
+    CreateDate?: true;
+  };
+
+  export type LoadviewCountAggregateInputType = {
+    BatchName?: true;
+    ProductId?: true;
+    ProductName?: true;
+    LotName?: true;
+    AuthorName?: true;
+    CreateDate?: true;
+    _all?: true;
+  };
+
+  export type LoadviewAggregateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which loadview to aggregate.
+     */
+    where?: loadviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of loadviews to fetch.
+     */
+    orderBy?: loadviewOrderByWithRelationInput | loadviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` loadviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` loadviews.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned loadviews
+     **/
+    _count?: true | LoadviewCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+     **/
+    _min?: LoadviewMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+     **/
+    _max?: LoadviewMaxAggregateInputType;
+  };
+
+  export type GetLoadviewAggregateType<T extends LoadviewAggregateArgs> = {
+    [P in keyof T & keyof AggregateLoadview]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateLoadview[P]>
+      : GetScalarType<T[P], AggregateLoadview[P]>;
+  };
+
+  export type loadviewGroupByArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: loadviewWhereInput;
+    orderBy?: loadviewOrderByWithAggregationInput | loadviewOrderByWithAggregationInput[];
+    by: LoadviewScalarFieldEnum[] | LoadviewScalarFieldEnum;
+    having?: loadviewScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: LoadviewCountAggregateInputType | true;
+    _min?: LoadviewMinAggregateInputType;
+    _max?: LoadviewMaxAggregateInputType;
+  };
+
+  export type LoadviewGroupByOutputType = {
+    BatchName: string;
+    ProductId: string;
+    ProductName: string | null;
+    LotName: string;
+    AuthorName: string;
+    CreateDate: Date;
+    _count: LoadviewCountAggregateOutputType | null;
+    _min: LoadviewMinAggregateOutputType | null;
+    _max: LoadviewMaxAggregateOutputType | null;
+  };
+
+  type GetLoadviewGroupByPayload<T extends loadviewGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<LoadviewGroupByOutputType, T['by']> & {
+        [P in keyof T & keyof LoadviewGroupByOutputType]: P extends '_count'
+          ? T[P] extends boolean
+            ? number
+            : GetScalarType<T[P], LoadviewGroupByOutputType[P]>
+          : GetScalarType<T[P], LoadviewGroupByOutputType[P]>;
+      }
+    >
+  >;
+
+  export type loadviewSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    $Extensions.GetSelect<
+      {
+        BatchName?: boolean;
+        ProductId?: boolean;
+        ProductName?: boolean;
+        LotName?: boolean;
+        AuthorName?: boolean;
+        CreateDate?: boolean;
+      },
+      ExtArgs['result']['loadview']
+    >;
+
+  export type loadviewSelectScalar = {
+    BatchName?: boolean;
+    ProductId?: boolean;
+    ProductName?: boolean;
+    LotName?: boolean;
+    AuthorName?: boolean;
+    CreateDate?: boolean;
+  };
+
+  export type loadviewOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    $Extensions.GetOmit<
+      'BatchName' | 'ProductId' | 'ProductName' | 'LotName' | 'AuthorName' | 'CreateDate',
+      ExtArgs['result']['loadview']
+    >;
+
+  export type $loadviewPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    {
+      name: 'loadview';
+      objects: {};
+      scalars: $Extensions.GetPayloadResult<
+        {
+          BatchName: string;
+          ProductId: string;
+          ProductName: string | null;
+          LotName: string;
+          AuthorName: string;
+          CreateDate: Date;
+        },
+        ExtArgs['result']['loadview']
+      >;
+      composites: {};
+    };
+
+  type loadviewGetPayload<S extends boolean | null | undefined | loadviewDefaultArgs> =
+    $Result.GetResult<Prisma.$loadviewPayload, S>;
+
+  type loadviewCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Omit<
+    loadviewFindManyArgs,
+    'select' | 'include' | 'distinct' | 'omit'
+  > & {
+    select?: LoadviewCountAggregateInputType | true;
+  };
+
+  export interface loadviewDelegate<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > {
+    [K: symbol]: {
+      types: Prisma.TypeMap<ExtArgs>['model']['loadview'];
+      meta: { name: 'loadview' };
+    };
+    /**
+     * Find the first Loadview that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {loadviewFindFirstArgs} args - Arguments to find a Loadview
+     * @example
+     * // Get one Loadview
+     * const loadview = await prisma.loadview.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<
+      T extends loadviewFindFirstArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, loadviewFindFirstArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__loadviewClient<
+      $Result.GetResult<Prisma.$loadviewPayload<ExtArgs>, T, 'findFirst', GlobalOmitOptions> | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first Loadview that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {loadviewFindFirstOrThrowArgs} args - Arguments to find a Loadview
+     * @example
+     * // Get one Loadview
+     * const loadview = await prisma.loadview.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<
+      T extends loadviewFindFirstOrThrowArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, loadviewFindFirstOrThrowArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__loadviewClient<
+      $Result.GetResult<Prisma.$loadviewPayload<ExtArgs>, T, 'findFirstOrThrow', GlobalOmitOptions>,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find zero or more Loadviews that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {loadviewFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Loadviews
+     * const loadviews = await prisma.loadview.findMany()
+     *
+     * // Get first 10 Loadviews
+     * const loadviews = await prisma.loadview.findMany({ take: 10 })
+     *
+     * // Only select the `BatchName`
+     * const loadviewWithBatchNameOnly = await prisma.loadview.findMany({ select: { BatchName: true } })
+     *
+     */
+    findMany<
+      T extends loadviewFindManyArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, loadviewFindManyArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<Prisma.$loadviewPayload<ExtArgs>, T, 'findMany', GlobalOmitOptions>
+    >;
+
+    /**
+     * Count the number of Loadviews.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {loadviewCountArgs} args - Arguments to filter Loadviews to count.
+     * @example
+     * // Count the number of Loadviews
+     * const count = await prisma.loadview.count({
+     *   where: {
+     *     // ... the filter for the Loadviews we want to count
+     *   }
+     * })
+     **/
+    count<T extends loadviewCountArgs>(
+      args?: Subset<T, loadviewCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], LoadviewCountAggregateOutputType>
+        : number
+    >;
+
+    /**
+     * Allows you to perform aggregations operations on a Loadview.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LoadviewAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+     **/
+    aggregate<T extends LoadviewAggregateArgs>(
+      args: Subset<T, LoadviewAggregateArgs>,
+    ): Prisma.PrismaPromise<GetLoadviewAggregateType<T>>;
+
+    /**
+     * Group by Loadview.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {loadviewGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+     **/
+    groupBy<
+      T extends loadviewGroupByArgs,
+      HasSelectOrTake extends Or<Extends<'skip', Keys<T>>, Extends<'take', Keys<T>>>,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: loadviewGroupByArgs['orderBy'] }
+        : { orderBy?: loadviewGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+        ? `Error: "by" must not be empty.`
+        : HavingValid extends False
+          ? {
+              [P in HavingFields]: P extends ByFields
+                ? never
+                : P extends string
+                  ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+                  : [Error, 'Field ', P, ` in "having" needs to be provided in "by"`];
+            }[HavingFields]
+          : 'take' extends Keys<T>
+            ? 'orderBy' extends Keys<T>
+              ? ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields]
+              : 'Error: If you provide "take", you also need to provide "orderBy"'
+            : 'skip' extends Keys<T>
+              ? 'orderBy' extends Keys<T>
+                ? ByValid extends True
+                  ? {}
+                  : {
+                      [P in OrderFields]: P extends ByFields
+                        ? never
+                        : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                    }[OrderFields]
+                : 'Error: If you provide "skip", you also need to provide "orderBy"'
+              : ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields],
+    >(
+      args: SubsetIntersection<T, loadviewGroupByArgs, OrderByArg> & InputErrors,
+    ): {} extends InputErrors ? GetLoadviewGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the loadview model
+     */
+    readonly fields: loadviewFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for loadview.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__loadviewClient<
+    T,
+    Null = never,
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(
+      onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+      onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
+    ): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(
+      onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null,
+    ): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+  /**
+   * Fields of the loadview model
+   */
+  interface loadviewFieldRefs {
+    readonly BatchName: FieldRef<'loadview', 'String'>;
+    readonly ProductId: FieldRef<'loadview', 'String'>;
+    readonly ProductName: FieldRef<'loadview', 'String'>;
+    readonly LotName: FieldRef<'loadview', 'String'>;
+    readonly AuthorName: FieldRef<'loadview', 'String'>;
+    readonly CreateDate: FieldRef<'loadview', 'DateTime'>;
+  }
+
+  // Custom InputTypes
+  /**
+   * loadview findFirst
+   */
+  export type loadviewFindFirstArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the loadview
+     */
+    select?: loadviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the loadview
+     */
+    omit?: loadviewOmit<ExtArgs> | null;
+    /**
+     * Filter, which loadview to fetch.
+     */
+    where?: loadviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of loadviews to fetch.
+     */
+    orderBy?: loadviewOrderByWithRelationInput | loadviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` loadviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` loadviews.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of loadviews.
+     */
+    distinct?: LoadviewScalarFieldEnum | LoadviewScalarFieldEnum[];
+  };
+
+  /**
+   * loadview findFirstOrThrow
+   */
+  export type loadviewFindFirstOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the loadview
+     */
+    select?: loadviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the loadview
+     */
+    omit?: loadviewOmit<ExtArgs> | null;
+    /**
+     * Filter, which loadview to fetch.
+     */
+    where?: loadviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of loadviews to fetch.
+     */
+    orderBy?: loadviewOrderByWithRelationInput | loadviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` loadviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` loadviews.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of loadviews.
+     */
+    distinct?: LoadviewScalarFieldEnum | LoadviewScalarFieldEnum[];
+  };
+
+  /**
+   * loadview findMany
+   */
+  export type loadviewFindManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the loadview
+     */
+    select?: loadviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the loadview
+     */
+    omit?: loadviewOmit<ExtArgs> | null;
+    /**
+     * Filter, which loadviews to fetch.
+     */
+    where?: loadviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of loadviews to fetch.
+     */
+    orderBy?: loadviewOrderByWithRelationInput | loadviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` loadviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` loadviews.
+     */
+    skip?: number;
+    distinct?: LoadviewScalarFieldEnum | LoadviewScalarFieldEnum[];
+  };
+
+  /**
+   * loadview without action
+   */
+  export type loadviewDefaultArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the loadview
+     */
+    select?: loadviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the loadview
+     */
+    omit?: loadviewOmit<ExtArgs> | null;
+  };
+
+  /**
+   * Model lotdetailview
+   */
+
+  export type AggregateLotdetailview = {
+    _count: LotdetailviewCountAggregateOutputType | null;
+    _avg: LotdetailviewAvgAggregateOutputType | null;
+    _sum: LotdetailviewSumAggregateOutputType | null;
+    _min: LotdetailviewMinAggregateOutputType | null;
+    _max: LotdetailviewMaxAggregateOutputType | null;
+  };
+
+  export type LotdetailviewAvgAggregateOutputType = {
+    ManufacturerLotPK: number | null;
+    ManufacturerPK: number | null;
+    SellerPK: number | null;
+    TrademarkPK: number | null;
+  };
+
+  export type LotdetailviewSumAggregateOutputType = {
+    ManufacturerLotPK: number | null;
+    ManufacturerPK: number | null;
+    SellerPK: number | null;
+    TrademarkPK: number | null;
+  };
+
+  export type LotdetailviewMinAggregateOutputType = {
+    ProductName: string | null;
+    ManufacturerLotName: string | null;
+    ManufacturerName: string | null;
+    ProductId: string | null;
+    ManufacturerLotPK: number | null;
+    ManufacturerPK: number | null;
+    SellerPK: number | null;
+    SellerName: string | null;
+    LotName: string | null;
+    LotDate: Date | null;
+    TrademarkPK: number | null;
+    TrademarkName: string | null;
+  };
+
+  export type LotdetailviewMaxAggregateOutputType = {
+    ProductName: string | null;
+    ManufacturerLotName: string | null;
+    ManufacturerName: string | null;
+    ProductId: string | null;
+    ManufacturerLotPK: number | null;
+    ManufacturerPK: number | null;
+    SellerPK: number | null;
+    SellerName: string | null;
+    LotName: string | null;
+    LotDate: Date | null;
+    TrademarkPK: number | null;
+    TrademarkName: string | null;
+  };
+
+  export type LotdetailviewCountAggregateOutputType = {
+    ProductName: number;
+    ManufacturerLotName: number;
+    ManufacturerName: number;
+    ProductId: number;
+    ManufacturerLotPK: number;
+    ManufacturerPK: number;
+    SellerPK: number;
+    SellerName: number;
+    LotName: number;
+    LotDate: number;
+    TrademarkPK: number;
+    TrademarkName: number;
+    _all: number;
+  };
+
+  export type LotdetailviewAvgAggregateInputType = {
+    ManufacturerLotPK?: true;
+    ManufacturerPK?: true;
+    SellerPK?: true;
+    TrademarkPK?: true;
+  };
+
+  export type LotdetailviewSumAggregateInputType = {
+    ManufacturerLotPK?: true;
+    ManufacturerPK?: true;
+    SellerPK?: true;
+    TrademarkPK?: true;
+  };
+
+  export type LotdetailviewMinAggregateInputType = {
+    ProductName?: true;
+    ManufacturerLotName?: true;
+    ManufacturerName?: true;
+    ProductId?: true;
+    ManufacturerLotPK?: true;
+    ManufacturerPK?: true;
+    SellerPK?: true;
+    SellerName?: true;
+    LotName?: true;
+    LotDate?: true;
+    TrademarkPK?: true;
+    TrademarkName?: true;
+  };
+
+  export type LotdetailviewMaxAggregateInputType = {
+    ProductName?: true;
+    ManufacturerLotName?: true;
+    ManufacturerName?: true;
+    ProductId?: true;
+    ManufacturerLotPK?: true;
+    ManufacturerPK?: true;
+    SellerPK?: true;
+    SellerName?: true;
+    LotName?: true;
+    LotDate?: true;
+    TrademarkPK?: true;
+    TrademarkName?: true;
+  };
+
+  export type LotdetailviewCountAggregateInputType = {
+    ProductName?: true;
+    ManufacturerLotName?: true;
+    ManufacturerName?: true;
+    ProductId?: true;
+    ManufacturerLotPK?: true;
+    ManufacturerPK?: true;
+    SellerPK?: true;
+    SellerName?: true;
+    LotName?: true;
+    LotDate?: true;
+    TrademarkPK?: true;
+    TrademarkName?: true;
+    _all?: true;
+  };
+
+  export type LotdetailviewAggregateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which lotdetailview to aggregate.
+     */
+    where?: lotdetailviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of lotdetailviews to fetch.
+     */
+    orderBy?: lotdetailviewOrderByWithRelationInput | lotdetailviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` lotdetailviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` lotdetailviews.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned lotdetailviews
+     **/
+    _count?: true | LotdetailviewCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to average
+     **/
+    _avg?: LotdetailviewAvgAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to sum
+     **/
+    _sum?: LotdetailviewSumAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+     **/
+    _min?: LotdetailviewMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+     **/
+    _max?: LotdetailviewMaxAggregateInputType;
+  };
+
+  export type GetLotdetailviewAggregateType<T extends LotdetailviewAggregateArgs> = {
+    [P in keyof T & keyof AggregateLotdetailview]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateLotdetailview[P]>
+      : GetScalarType<T[P], AggregateLotdetailview[P]>;
+  };
+
+  export type lotdetailviewGroupByArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: lotdetailviewWhereInput;
+    orderBy?: lotdetailviewOrderByWithAggregationInput | lotdetailviewOrderByWithAggregationInput[];
+    by: LotdetailviewScalarFieldEnum[] | LotdetailviewScalarFieldEnum;
+    having?: lotdetailviewScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: LotdetailviewCountAggregateInputType | true;
+    _avg?: LotdetailviewAvgAggregateInputType;
+    _sum?: LotdetailviewSumAggregateInputType;
+    _min?: LotdetailviewMinAggregateInputType;
+    _max?: LotdetailviewMaxAggregateInputType;
+  };
+
+  export type LotdetailviewGroupByOutputType = {
+    ProductName: string | null;
+    ManufacturerLotName: string;
+    ManufacturerName: string;
+    ProductId: string;
+    ManufacturerLotPK: number;
+    ManufacturerPK: number;
+    SellerPK: number;
+    SellerName: string;
+    LotName: string;
+    LotDate: Date | null;
+    TrademarkPK: number;
+    TrademarkName: string;
+    _count: LotdetailviewCountAggregateOutputType | null;
+    _avg: LotdetailviewAvgAggregateOutputType | null;
+    _sum: LotdetailviewSumAggregateOutputType | null;
+    _min: LotdetailviewMinAggregateOutputType | null;
+    _max: LotdetailviewMaxAggregateOutputType | null;
+  };
+
+  type GetLotdetailviewGroupByPayload<T extends lotdetailviewGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<LotdetailviewGroupByOutputType, T['by']> & {
+        [P in keyof T & keyof LotdetailviewGroupByOutputType]: P extends '_count'
+          ? T[P] extends boolean
+            ? number
+            : GetScalarType<T[P], LotdetailviewGroupByOutputType[P]>
+          : GetScalarType<T[P], LotdetailviewGroupByOutputType[P]>;
+      }
+    >
+  >;
+
+  export type lotdetailviewSelect<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetSelect<
+    {
+      ProductName?: boolean;
+      ManufacturerLotName?: boolean;
+      ManufacturerName?: boolean;
+      ProductId?: boolean;
+      ManufacturerLotPK?: boolean;
+      ManufacturerPK?: boolean;
+      SellerPK?: boolean;
+      SellerName?: boolean;
+      LotName?: boolean;
+      LotDate?: boolean;
+      TrademarkPK?: boolean;
+      TrademarkName?: boolean;
+    },
+    ExtArgs['result']['lotdetailview']
+  >;
+
+  export type lotdetailviewSelectScalar = {
+    ProductName?: boolean;
+    ManufacturerLotName?: boolean;
+    ManufacturerName?: boolean;
+    ProductId?: boolean;
+    ManufacturerLotPK?: boolean;
+    ManufacturerPK?: boolean;
+    SellerPK?: boolean;
+    SellerName?: boolean;
+    LotName?: boolean;
+    LotDate?: boolean;
+    TrademarkPK?: boolean;
+    TrademarkName?: boolean;
+  };
+
+  export type lotdetailviewOmit<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetOmit<
+    | 'ProductName'
+    | 'ManufacturerLotName'
+    | 'ManufacturerName'
+    | 'ProductId'
+    | 'ManufacturerLotPK'
+    | 'ManufacturerPK'
+    | 'SellerPK'
+    | 'SellerName'
+    | 'LotName'
+    | 'LotDate'
+    | 'TrademarkPK'
+    | 'TrademarkName',
+    ExtArgs['result']['lotdetailview']
+  >;
+
+  export type $lotdetailviewPayload<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    name: 'lotdetailview';
+    objects: {};
+    scalars: $Extensions.GetPayloadResult<
+      {
+        ProductName: string | null;
+        ManufacturerLotName: string;
+        ManufacturerName: string;
+        ProductId: string;
+        ManufacturerLotPK: number;
+        ManufacturerPK: number;
+        SellerPK: number;
+        SellerName: string;
+        LotName: string;
+        LotDate: Date | null;
+        TrademarkPK: number;
+        TrademarkName: string;
+      },
+      ExtArgs['result']['lotdetailview']
+    >;
+    composites: {};
+  };
+
+  type lotdetailviewGetPayload<S extends boolean | null | undefined | lotdetailviewDefaultArgs> =
+    $Result.GetResult<Prisma.$lotdetailviewPayload, S>;
+
+  type lotdetailviewCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<lotdetailviewFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: LotdetailviewCountAggregateInputType | true;
+    };
+
+  export interface lotdetailviewDelegate<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > {
+    [K: symbol]: {
+      types: Prisma.TypeMap<ExtArgs>['model']['lotdetailview'];
+      meta: { name: 'lotdetailview' };
+    };
+    /**
+     * Find the first Lotdetailview that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {lotdetailviewFindFirstArgs} args - Arguments to find a Lotdetailview
+     * @example
+     * // Get one Lotdetailview
+     * const lotdetailview = await prisma.lotdetailview.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<
+      T extends lotdetailviewFindFirstArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, lotdetailviewFindFirstArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__lotdetailviewClient<
+      $Result.GetResult<
+        Prisma.$lotdetailviewPayload<ExtArgs>,
+        T,
+        'findFirst',
+        GlobalOmitOptions
+      > | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first Lotdetailview that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {lotdetailviewFindFirstOrThrowArgs} args - Arguments to find a Lotdetailview
+     * @example
+     * // Get one Lotdetailview
+     * const lotdetailview = await prisma.lotdetailview.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<
+      T extends lotdetailviewFindFirstOrThrowArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, lotdetailviewFindFirstOrThrowArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__lotdetailviewClient<
+      $Result.GetResult<
+        Prisma.$lotdetailviewPayload<ExtArgs>,
+        T,
+        'findFirstOrThrow',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find zero or more Lotdetailviews that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {lotdetailviewFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Lotdetailviews
+     * const lotdetailviews = await prisma.lotdetailview.findMany()
+     *
+     * // Get first 10 Lotdetailviews
+     * const lotdetailviews = await prisma.lotdetailview.findMany({ take: 10 })
+     *
+     * // Only select the `ProductName`
+     * const lotdetailviewWithProductNameOnly = await prisma.lotdetailview.findMany({ select: { ProductName: true } })
+     *
+     */
+    findMany<
+      T extends lotdetailviewFindManyArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, lotdetailviewFindManyArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<Prisma.$lotdetailviewPayload<ExtArgs>, T, 'findMany', GlobalOmitOptions>
+    >;
+
+    /**
+     * Count the number of Lotdetailviews.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {lotdetailviewCountArgs} args - Arguments to filter Lotdetailviews to count.
+     * @example
+     * // Count the number of Lotdetailviews
+     * const count = await prisma.lotdetailview.count({
+     *   where: {
+     *     // ... the filter for the Lotdetailviews we want to count
+     *   }
+     * })
+     **/
+    count<T extends lotdetailviewCountArgs>(
+      args?: Subset<T, lotdetailviewCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], LotdetailviewCountAggregateOutputType>
+        : number
+    >;
+
+    /**
+     * Allows you to perform aggregations operations on a Lotdetailview.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LotdetailviewAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+     **/
+    aggregate<T extends LotdetailviewAggregateArgs>(
+      args: Subset<T, LotdetailviewAggregateArgs>,
+    ): Prisma.PrismaPromise<GetLotdetailviewAggregateType<T>>;
+
+    /**
+     * Group by Lotdetailview.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {lotdetailviewGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+     **/
+    groupBy<
+      T extends lotdetailviewGroupByArgs,
+      HasSelectOrTake extends Or<Extends<'skip', Keys<T>>, Extends<'take', Keys<T>>>,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: lotdetailviewGroupByArgs['orderBy'] }
+        : { orderBy?: lotdetailviewGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+        ? `Error: "by" must not be empty.`
+        : HavingValid extends False
+          ? {
+              [P in HavingFields]: P extends ByFields
+                ? never
+                : P extends string
+                  ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+                  : [Error, 'Field ', P, ` in "having" needs to be provided in "by"`];
+            }[HavingFields]
+          : 'take' extends Keys<T>
+            ? 'orderBy' extends Keys<T>
+              ? ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields]
+              : 'Error: If you provide "take", you also need to provide "orderBy"'
+            : 'skip' extends Keys<T>
+              ? 'orderBy' extends Keys<T>
+                ? ByValid extends True
+                  ? {}
+                  : {
+                      [P in OrderFields]: P extends ByFields
+                        ? never
+                        : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                    }[OrderFields]
+                : 'Error: If you provide "skip", you also need to provide "orderBy"'
+              : ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields],
+    >(
+      args: SubsetIntersection<T, lotdetailviewGroupByArgs, OrderByArg> & InputErrors,
+    ): {} extends InputErrors
+      ? GetLotdetailviewGroupByPayload<T>
+      : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the lotdetailview model
+     */
+    readonly fields: lotdetailviewFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for lotdetailview.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__lotdetailviewClient<
+    T,
+    Null = never,
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(
+      onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+      onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
+    ): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(
+      onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null,
+    ): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+  /**
+   * Fields of the lotdetailview model
+   */
+  interface lotdetailviewFieldRefs {
+    readonly ProductName: FieldRef<'lotdetailview', 'String'>;
+    readonly ManufacturerLotName: FieldRef<'lotdetailview', 'String'>;
+    readonly ManufacturerName: FieldRef<'lotdetailview', 'String'>;
+    readonly ProductId: FieldRef<'lotdetailview', 'String'>;
+    readonly ManufacturerLotPK: FieldRef<'lotdetailview', 'Int'>;
+    readonly ManufacturerPK: FieldRef<'lotdetailview', 'Int'>;
+    readonly SellerPK: FieldRef<'lotdetailview', 'Int'>;
+    readonly SellerName: FieldRef<'lotdetailview', 'String'>;
+    readonly LotName: FieldRef<'lotdetailview', 'String'>;
+    readonly LotDate: FieldRef<'lotdetailview', 'DateTime'>;
+    readonly TrademarkPK: FieldRef<'lotdetailview', 'Int'>;
+    readonly TrademarkName: FieldRef<'lotdetailview', 'String'>;
+  }
+
+  // Custom InputTypes
+  /**
+   * lotdetailview findFirst
+   */
+  export type lotdetailviewFindFirstArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the lotdetailview
+     */
+    select?: lotdetailviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the lotdetailview
+     */
+    omit?: lotdetailviewOmit<ExtArgs> | null;
+    /**
+     * Filter, which lotdetailview to fetch.
+     */
+    where?: lotdetailviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of lotdetailviews to fetch.
+     */
+    orderBy?: lotdetailviewOrderByWithRelationInput | lotdetailviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` lotdetailviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` lotdetailviews.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of lotdetailviews.
+     */
+    distinct?: LotdetailviewScalarFieldEnum | LotdetailviewScalarFieldEnum[];
+  };
+
+  /**
+   * lotdetailview findFirstOrThrow
+   */
+  export type lotdetailviewFindFirstOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the lotdetailview
+     */
+    select?: lotdetailviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the lotdetailview
+     */
+    omit?: lotdetailviewOmit<ExtArgs> | null;
+    /**
+     * Filter, which lotdetailview to fetch.
+     */
+    where?: lotdetailviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of lotdetailviews to fetch.
+     */
+    orderBy?: lotdetailviewOrderByWithRelationInput | lotdetailviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` lotdetailviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` lotdetailviews.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of lotdetailviews.
+     */
+    distinct?: LotdetailviewScalarFieldEnum | LotdetailviewScalarFieldEnum[];
+  };
+
+  /**
+   * lotdetailview findMany
+   */
+  export type lotdetailviewFindManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the lotdetailview
+     */
+    select?: lotdetailviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the lotdetailview
+     */
+    omit?: lotdetailviewOmit<ExtArgs> | null;
+    /**
+     * Filter, which lotdetailviews to fetch.
+     */
+    where?: lotdetailviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of lotdetailviews to fetch.
+     */
+    orderBy?: lotdetailviewOrderByWithRelationInput | lotdetailviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` lotdetailviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` lotdetailviews.
+     */
+    skip?: number;
+    distinct?: LotdetailviewScalarFieldEnum | LotdetailviewScalarFieldEnum[];
+  };
+
+  /**
+   * lotdetailview without action
+   */
+  export type lotdetailviewDefaultArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the lotdetailview
+     */
+    select?: lotdetailviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the lotdetailview
+     */
+    omit?: lotdetailviewOmit<ExtArgs> | null;
+  };
+
+  /**
+   * Model Docview
+   */
+
+  export type AggregateDocview = {
+    _count: DocviewCountAggregateOutputType | null;
+    _avg: DocviewAvgAggregateOutputType | null;
+    _sum: DocviewSumAggregateOutputType | null;
+    _min: DocviewMinAggregateOutputType | null;
+    _max: DocviewMaxAggregateOutputType | null;
+  };
+
+  export type DocviewAvgAggregateOutputType = {
+    DocumentPK: number | null;
+    DoctypePK: number | null;
+    AuthorPK: number | null;
+  };
+
+  export type DocviewSumAggregateOutputType = {
+    DocumentPK: number | null;
+    DoctypePK: number | null;
+    AuthorPK: number | null;
+  };
+
+  export type DocviewMinAggregateOutputType = {
+    DocumentPK: number | null;
+    DoctypePK: number | null;
+    AuthorPK: number | null;
+    CreateDate: Date | null;
+    Plant: string | null;
+    AuthorName: string | null;
+  };
+
+  export type DocviewMaxAggregateOutputType = {
+    DocumentPK: number | null;
+    DoctypePK: number | null;
+    AuthorPK: number | null;
+    CreateDate: Date | null;
+    Plant: string | null;
+    AuthorName: string | null;
+  };
+
+  export type DocviewCountAggregateOutputType = {
+    DocumentPK: number;
+    DoctypePK: number;
+    AuthorPK: number;
+    CreateDate: number;
+    Plant: number;
+    AuthorName: number;
+    _all: number;
+  };
+
+  export type DocviewAvgAggregateInputType = {
+    DocumentPK?: true;
+    DoctypePK?: true;
+    AuthorPK?: true;
+  };
+
+  export type DocviewSumAggregateInputType = {
+    DocumentPK?: true;
+    DoctypePK?: true;
+    AuthorPK?: true;
+  };
+
+  export type DocviewMinAggregateInputType = {
+    DocumentPK?: true;
+    DoctypePK?: true;
+    AuthorPK?: true;
+    CreateDate?: true;
+    Plant?: true;
+    AuthorName?: true;
+  };
+
+  export type DocviewMaxAggregateInputType = {
+    DocumentPK?: true;
+    DoctypePK?: true;
+    AuthorPK?: true;
+    CreateDate?: true;
+    Plant?: true;
+    AuthorName?: true;
+  };
+
+  export type DocviewCountAggregateInputType = {
+    DocumentPK?: true;
+    DoctypePK?: true;
+    AuthorPK?: true;
+    CreateDate?: true;
+    Plant?: true;
+    AuthorName?: true;
+    _all?: true;
+  };
+
+  export type DocviewAggregateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which Docview to aggregate.
+     */
+    where?: DocviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of Docviews to fetch.
+     */
+    orderBy?: DocviewOrderByWithRelationInput | DocviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` Docviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` Docviews.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned Docviews
+     **/
+    _count?: true | DocviewCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to average
+     **/
+    _avg?: DocviewAvgAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to sum
+     **/
+    _sum?: DocviewSumAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+     **/
+    _min?: DocviewMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+     **/
+    _max?: DocviewMaxAggregateInputType;
+  };
+
+  export type GetDocviewAggregateType<T extends DocviewAggregateArgs> = {
+    [P in keyof T & keyof AggregateDocview]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateDocview[P]>
+      : GetScalarType<T[P], AggregateDocview[P]>;
+  };
+
+  export type DocviewGroupByArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: DocviewWhereInput;
+    orderBy?: DocviewOrderByWithAggregationInput | DocviewOrderByWithAggregationInput[];
+    by: DocviewScalarFieldEnum[] | DocviewScalarFieldEnum;
+    having?: DocviewScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: DocviewCountAggregateInputType | true;
+    _avg?: DocviewAvgAggregateInputType;
+    _sum?: DocviewSumAggregateInputType;
+    _min?: DocviewMinAggregateInputType;
+    _max?: DocviewMaxAggregateInputType;
+  };
+
+  export type DocviewGroupByOutputType = {
+    DocumentPK: number;
+    DoctypePK: number;
+    AuthorPK: number;
+    CreateDate: Date;
+    Plant: string | null;
+    AuthorName: string;
+    _count: DocviewCountAggregateOutputType | null;
+    _avg: DocviewAvgAggregateOutputType | null;
+    _sum: DocviewSumAggregateOutputType | null;
+    _min: DocviewMinAggregateOutputType | null;
+    _max: DocviewMaxAggregateOutputType | null;
+  };
+
+  type GetDocviewGroupByPayload<T extends DocviewGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<DocviewGroupByOutputType, T['by']> & {
+        [P in keyof T & keyof DocviewGroupByOutputType]: P extends '_count'
+          ? T[P] extends boolean
+            ? number
+            : GetScalarType<T[P], DocviewGroupByOutputType[P]>
+          : GetScalarType<T[P], DocviewGroupByOutputType[P]>;
+      }
+    >
+  >;
+
+  export type DocviewSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    $Extensions.GetSelect<
+      {
+        DocumentPK?: boolean;
+        DoctypePK?: boolean;
+        AuthorPK?: boolean;
+        CreateDate?: boolean;
+        Plant?: boolean;
+        AuthorName?: boolean;
+      },
+      ExtArgs['result']['docview']
+    >;
+
+  export type DocviewSelectScalar = {
+    DocumentPK?: boolean;
+    DoctypePK?: boolean;
+    AuthorPK?: boolean;
+    CreateDate?: boolean;
+    Plant?: boolean;
+    AuthorName?: boolean;
+  };
+
+  export type DocviewOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    $Extensions.GetOmit<
+      'DocumentPK' | 'DoctypePK' | 'AuthorPK' | 'CreateDate' | 'Plant' | 'AuthorName',
+      ExtArgs['result']['docview']
+    >;
+
+  export type $DocviewPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    {
+      name: 'Docview';
+      objects: {};
+      scalars: $Extensions.GetPayloadResult<
+        {
+          DocumentPK: number;
+          DoctypePK: number;
+          AuthorPK: number;
+          CreateDate: Date;
+          Plant: string | null;
+          AuthorName: string;
+        },
+        ExtArgs['result']['docview']
+      >;
+      composites: {};
+    };
+
+  type DocviewGetPayload<S extends boolean | null | undefined | DocviewDefaultArgs> =
+    $Result.GetResult<Prisma.$DocviewPayload, S>;
+
+  type DocviewCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Omit<
+    DocviewFindManyArgs,
+    'select' | 'include' | 'distinct' | 'omit'
+  > & {
+    select?: DocviewCountAggregateInputType | true;
+  };
+
+  export interface DocviewDelegate<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Docview']; meta: { name: 'Docview' } };
+    /**
+     * Find the first Docview that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DocviewFindFirstArgs} args - Arguments to find a Docview
+     * @example
+     * // Get one Docview
+     * const docview = await prisma.docview.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<
+      T extends DocviewFindFirstArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, DocviewFindFirstArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__DocviewClient<
+      $Result.GetResult<Prisma.$DocviewPayload<ExtArgs>, T, 'findFirst', GlobalOmitOptions> | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first Docview that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DocviewFindFirstOrThrowArgs} args - Arguments to find a Docview
+     * @example
+     * // Get one Docview
+     * const docview = await prisma.docview.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<
+      T extends DocviewFindFirstOrThrowArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, DocviewFindFirstOrThrowArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__DocviewClient<
+      $Result.GetResult<Prisma.$DocviewPayload<ExtArgs>, T, 'findFirstOrThrow', GlobalOmitOptions>,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find zero or more Docviews that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DocviewFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Docviews
+     * const docviews = await prisma.docview.findMany()
+     *
+     * // Get first 10 Docviews
+     * const docviews = await prisma.docview.findMany({ take: 10 })
+     *
+     * // Only select the `DocumentPK`
+     * const docviewWithDocumentPKOnly = await prisma.docview.findMany({ select: { DocumentPK: true } })
+     *
+     */
+    findMany<
+      T extends DocviewFindManyArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, DocviewFindManyArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<Prisma.$DocviewPayload<ExtArgs>, T, 'findMany', GlobalOmitOptions>
+    >;
+
+    /**
+     * Count the number of Docviews.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DocviewCountArgs} args - Arguments to filter Docviews to count.
+     * @example
+     * // Count the number of Docviews
+     * const count = await prisma.docview.count({
+     *   where: {
+     *     // ... the filter for the Docviews we want to count
+     *   }
+     * })
+     **/
+    count<T extends DocviewCountArgs>(
+      args?: Subset<T, DocviewCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], DocviewCountAggregateOutputType>
+        : number
+    >;
+
+    /**
+     * Allows you to perform aggregations operations on a Docview.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DocviewAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+     **/
+    aggregate<T extends DocviewAggregateArgs>(
+      args: Subset<T, DocviewAggregateArgs>,
+    ): Prisma.PrismaPromise<GetDocviewAggregateType<T>>;
+
+    /**
+     * Group by Docview.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DocviewGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+     **/
+    groupBy<
+      T extends DocviewGroupByArgs,
+      HasSelectOrTake extends Or<Extends<'skip', Keys<T>>, Extends<'take', Keys<T>>>,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: DocviewGroupByArgs['orderBy'] }
+        : { orderBy?: DocviewGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+        ? `Error: "by" must not be empty.`
+        : HavingValid extends False
+          ? {
+              [P in HavingFields]: P extends ByFields
+                ? never
+                : P extends string
+                  ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+                  : [Error, 'Field ', P, ` in "having" needs to be provided in "by"`];
+            }[HavingFields]
+          : 'take' extends Keys<T>
+            ? 'orderBy' extends Keys<T>
+              ? ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields]
+              : 'Error: If you provide "take", you also need to provide "orderBy"'
+            : 'skip' extends Keys<T>
+              ? 'orderBy' extends Keys<T>
+                ? ByValid extends True
+                  ? {}
+                  : {
+                      [P in OrderFields]: P extends ByFields
+                        ? never
+                        : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                    }[OrderFields]
+                : 'Error: If you provide "skip", you also need to provide "orderBy"'
+              : ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields],
+    >(
+      args: SubsetIntersection<T, DocviewGroupByArgs, OrderByArg> & InputErrors,
+    ): {} extends InputErrors ? GetDocviewGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the Docview model
+     */
+    readonly fields: DocviewFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Docview.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__DocviewClient<
+    T,
+    Null = never,
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(
+      onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+      onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
+    ): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(
+      onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null,
+    ): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+  /**
+   * Fields of the Docview model
+   */
+  interface DocviewFieldRefs {
+    readonly DocumentPK: FieldRef<'Docview', 'Int'>;
+    readonly DoctypePK: FieldRef<'Docview', 'Int'>;
+    readonly AuthorPK: FieldRef<'Docview', 'Int'>;
+    readonly CreateDate: FieldRef<'Docview', 'DateTime'>;
+    readonly Plant: FieldRef<'Docview', 'String'>;
+    readonly AuthorName: FieldRef<'Docview', 'String'>;
+  }
+
+  // Custom InputTypes
+  /**
+   * Docview findFirst
+   */
+  export type DocviewFindFirstArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the Docview
+     */
+    select?: DocviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Docview
+     */
+    omit?: DocviewOmit<ExtArgs> | null;
+    /**
+     * Filter, which Docview to fetch.
+     */
+    where?: DocviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of Docviews to fetch.
+     */
+    orderBy?: DocviewOrderByWithRelationInput | DocviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` Docviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` Docviews.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of Docviews.
+     */
+    distinct?: DocviewScalarFieldEnum | DocviewScalarFieldEnum[];
+  };
+
+  /**
+   * Docview findFirstOrThrow
+   */
+  export type DocviewFindFirstOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the Docview
+     */
+    select?: DocviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Docview
+     */
+    omit?: DocviewOmit<ExtArgs> | null;
+    /**
+     * Filter, which Docview to fetch.
+     */
+    where?: DocviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of Docviews to fetch.
+     */
+    orderBy?: DocviewOrderByWithRelationInput | DocviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` Docviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` Docviews.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of Docviews.
+     */
+    distinct?: DocviewScalarFieldEnum | DocviewScalarFieldEnum[];
+  };
+
+  /**
+   * Docview findMany
+   */
+  export type DocviewFindManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the Docview
+     */
+    select?: DocviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Docview
+     */
+    omit?: DocviewOmit<ExtArgs> | null;
+    /**
+     * Filter, which Docviews to fetch.
+     */
+    where?: DocviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of Docviews to fetch.
+     */
+    orderBy?: DocviewOrderByWithRelationInput | DocviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` Docviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` Docviews.
+     */
+    skip?: number;
+    distinct?: DocviewScalarFieldEnum | DocviewScalarFieldEnum[];
+  };
+
+  /**
+   * Docview without action
+   */
+  export type DocviewDefaultArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the Docview
+     */
+    select?: DocviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Docview
+     */
+    omit?: DocviewOmit<ExtArgs> | null;
+  };
+
+  /**
+   * Model boilview
+   */
+
+  export type AggregateBoilview = {
+    _count: BoilviewCountAggregateOutputType | null;
+    _avg: BoilviewAvgAggregateOutputType | null;
+    _sum: BoilviewSumAggregateOutputType | null;
+    _min: BoilviewMinAggregateOutputType | null;
+    _max: BoilviewMaxAggregateOutputType | null;
+  };
+
+  export type BoilviewAvgAggregateOutputType = {
+    Quantity: Decimal | null;
+    Total: Decimal | null;
+  };
+
+  export type BoilviewSumAggregateOutputType = {
+    Quantity: Decimal | null;
+    Total: Decimal | null;
+  };
+
+  export type BoilviewMinAggregateOutputType = {
+    BatchName: string | null;
+    ProductId: string | null;
+    ProductName: string | null;
+    Quantity: Decimal | null;
+    Total: Decimal | null;
+    BatchDate: Date | null;
+    Plant: string | null;
+  };
+
+  export type BoilviewMaxAggregateOutputType = {
+    BatchName: string | null;
+    ProductId: string | null;
+    ProductName: string | null;
+    Quantity: Decimal | null;
+    Total: Decimal | null;
+    BatchDate: Date | null;
+    Plant: string | null;
+  };
+
+  export type BoilviewCountAggregateOutputType = {
+    BatchName: number;
+    ProductId: number;
+    ProductName: number;
+    Quantity: number;
+    Total: number;
+    BatchDate: number;
+    Plant: number;
+    _all: number;
+  };
+
+  export type BoilviewAvgAggregateInputType = {
+    Quantity?: true;
+    Total?: true;
+  };
+
+  export type BoilviewSumAggregateInputType = {
+    Quantity?: true;
+    Total?: true;
+  };
+
+  export type BoilviewMinAggregateInputType = {
+    BatchName?: true;
+    ProductId?: true;
+    ProductName?: true;
+    Quantity?: true;
+    Total?: true;
+    BatchDate?: true;
+    Plant?: true;
+  };
+
+  export type BoilviewMaxAggregateInputType = {
+    BatchName?: true;
+    ProductId?: true;
+    ProductName?: true;
+    Quantity?: true;
+    Total?: true;
+    BatchDate?: true;
+    Plant?: true;
+  };
+
+  export type BoilviewCountAggregateInputType = {
+    BatchName?: true;
+    ProductId?: true;
+    ProductName?: true;
+    Quantity?: true;
+    Total?: true;
+    BatchDate?: true;
+    Plant?: true;
+    _all?: true;
+  };
+
+  export type BoilviewAggregateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which boilview to aggregate.
+     */
+    where?: boilviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of boilviews to fetch.
+     */
+    orderBy?: boilviewOrderByWithRelationInput | boilviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` boilviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` boilviews.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned boilviews
+     **/
+    _count?: true | BoilviewCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to average
+     **/
+    _avg?: BoilviewAvgAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to sum
+     **/
+    _sum?: BoilviewSumAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+     **/
+    _min?: BoilviewMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+     **/
+    _max?: BoilviewMaxAggregateInputType;
+  };
+
+  export type GetBoilviewAggregateType<T extends BoilviewAggregateArgs> = {
+    [P in keyof T & keyof AggregateBoilview]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBoilview[P]>
+      : GetScalarType<T[P], AggregateBoilview[P]>;
+  };
+
+  export type boilviewGroupByArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: boilviewWhereInput;
+    orderBy?: boilviewOrderByWithAggregationInput | boilviewOrderByWithAggregationInput[];
+    by: BoilviewScalarFieldEnum[] | BoilviewScalarFieldEnum;
+    having?: boilviewScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: BoilviewCountAggregateInputType | true;
+    _avg?: BoilviewAvgAggregateInputType;
+    _sum?: BoilviewSumAggregateInputType;
+    _min?: BoilviewMinAggregateInputType;
+    _max?: BoilviewMaxAggregateInputType;
+  };
+
+  export type BoilviewGroupByOutputType = {
+    BatchName: string;
+    ProductId: string;
+    ProductName: string | null;
+    Quantity: Decimal;
+    Total: Decimal | null;
+    BatchDate: Date | null;
+    Plant: string | null;
+    _count: BoilviewCountAggregateOutputType | null;
+    _avg: BoilviewAvgAggregateOutputType | null;
+    _sum: BoilviewSumAggregateOutputType | null;
+    _min: BoilviewMinAggregateOutputType | null;
+    _max: BoilviewMaxAggregateOutputType | null;
+  };
+
+  type GetBoilviewGroupByPayload<T extends boilviewGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<BoilviewGroupByOutputType, T['by']> & {
+        [P in keyof T & keyof BoilviewGroupByOutputType]: P extends '_count'
+          ? T[P] extends boolean
+            ? number
+            : GetScalarType<T[P], BoilviewGroupByOutputType[P]>
+          : GetScalarType<T[P], BoilviewGroupByOutputType[P]>;
+      }
+    >
+  >;
+
+  export type boilviewSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    $Extensions.GetSelect<
+      {
+        BatchName?: boolean;
+        ProductId?: boolean;
+        ProductName?: boolean;
+        Quantity?: boolean;
+        Total?: boolean;
+        BatchDate?: boolean;
+        Plant?: boolean;
+      },
+      ExtArgs['result']['boilview']
+    >;
+
+  export type boilviewSelectScalar = {
+    BatchName?: boolean;
+    ProductId?: boolean;
+    ProductName?: boolean;
+    Quantity?: boolean;
+    Total?: boolean;
+    BatchDate?: boolean;
+    Plant?: boolean;
+  };
+
+  export type boilviewOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    $Extensions.GetOmit<
+      'BatchName' | 'ProductId' | 'ProductName' | 'Quantity' | 'Total' | 'BatchDate' | 'Plant',
+      ExtArgs['result']['boilview']
+    >;
+
+  export type $boilviewPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    {
+      name: 'boilview';
+      objects: {};
+      scalars: $Extensions.GetPayloadResult<
+        {
+          BatchName: string;
+          ProductId: string;
+          ProductName: string | null;
+          Quantity: Prisma.Decimal;
+          Total: Prisma.Decimal | null;
+          BatchDate: Date | null;
+          Plant: string | null;
+        },
+        ExtArgs['result']['boilview']
+      >;
+      composites: {};
+    };
+
+  type boilviewGetPayload<S extends boolean | null | undefined | boilviewDefaultArgs> =
+    $Result.GetResult<Prisma.$boilviewPayload, S>;
+
+  type boilviewCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Omit<
+    boilviewFindManyArgs,
+    'select' | 'include' | 'distinct' | 'omit'
+  > & {
+    select?: BoilviewCountAggregateInputType | true;
+  };
+
+  export interface boilviewDelegate<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > {
+    [K: symbol]: {
+      types: Prisma.TypeMap<ExtArgs>['model']['boilview'];
+      meta: { name: 'boilview' };
+    };
+    /**
+     * Find the first Boilview that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {boilviewFindFirstArgs} args - Arguments to find a Boilview
+     * @example
+     * // Get one Boilview
+     * const boilview = await prisma.boilview.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<
+      T extends boilviewFindFirstArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, boilviewFindFirstArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__boilviewClient<
+      $Result.GetResult<Prisma.$boilviewPayload<ExtArgs>, T, 'findFirst', GlobalOmitOptions> | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first Boilview that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {boilviewFindFirstOrThrowArgs} args - Arguments to find a Boilview
+     * @example
+     * // Get one Boilview
+     * const boilview = await prisma.boilview.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<
+      T extends boilviewFindFirstOrThrowArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, boilviewFindFirstOrThrowArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__boilviewClient<
+      $Result.GetResult<Prisma.$boilviewPayload<ExtArgs>, T, 'findFirstOrThrow', GlobalOmitOptions>,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find zero or more Boilviews that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {boilviewFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Boilviews
+     * const boilviews = await prisma.boilview.findMany()
+     *
+     * // Get first 10 Boilviews
+     * const boilviews = await prisma.boilview.findMany({ take: 10 })
+     *
+     * // Only select the `BatchName`
+     * const boilviewWithBatchNameOnly = await prisma.boilview.findMany({ select: { BatchName: true } })
+     *
+     */
+    findMany<
+      T extends boilviewFindManyArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, boilviewFindManyArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<Prisma.$boilviewPayload<ExtArgs>, T, 'findMany', GlobalOmitOptions>
+    >;
+
+    /**
+     * Count the number of Boilviews.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {boilviewCountArgs} args - Arguments to filter Boilviews to count.
+     * @example
+     * // Count the number of Boilviews
+     * const count = await prisma.boilview.count({
+     *   where: {
+     *     // ... the filter for the Boilviews we want to count
+     *   }
+     * })
+     **/
+    count<T extends boilviewCountArgs>(
+      args?: Subset<T, boilviewCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], BoilviewCountAggregateOutputType>
+        : number
+    >;
+
+    /**
+     * Allows you to perform aggregations operations on a Boilview.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BoilviewAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+     **/
+    aggregate<T extends BoilviewAggregateArgs>(
+      args: Subset<T, BoilviewAggregateArgs>,
+    ): Prisma.PrismaPromise<GetBoilviewAggregateType<T>>;
+
+    /**
+     * Group by Boilview.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {boilviewGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+     **/
+    groupBy<
+      T extends boilviewGroupByArgs,
+      HasSelectOrTake extends Or<Extends<'skip', Keys<T>>, Extends<'take', Keys<T>>>,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: boilviewGroupByArgs['orderBy'] }
+        : { orderBy?: boilviewGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+        ? `Error: "by" must not be empty.`
+        : HavingValid extends False
+          ? {
+              [P in HavingFields]: P extends ByFields
+                ? never
+                : P extends string
+                  ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+                  : [Error, 'Field ', P, ` in "having" needs to be provided in "by"`];
+            }[HavingFields]
+          : 'take' extends Keys<T>
+            ? 'orderBy' extends Keys<T>
+              ? ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields]
+              : 'Error: If you provide "take", you also need to provide "orderBy"'
+            : 'skip' extends Keys<T>
+              ? 'orderBy' extends Keys<T>
+                ? ByValid extends True
+                  ? {}
+                  : {
+                      [P in OrderFields]: P extends ByFields
+                        ? never
+                        : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                    }[OrderFields]
+                : 'Error: If you provide "skip", you also need to provide "orderBy"'
+              : ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields],
+    >(
+      args: SubsetIntersection<T, boilviewGroupByArgs, OrderByArg> & InputErrors,
+    ): {} extends InputErrors ? GetBoilviewGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the boilview model
+     */
+    readonly fields: boilviewFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for boilview.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__boilviewClient<
+    T,
+    Null = never,
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(
+      onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+      onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
+    ): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(
+      onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null,
+    ): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+  /**
+   * Fields of the boilview model
+   */
+  interface boilviewFieldRefs {
+    readonly BatchName: FieldRef<'boilview', 'String'>;
+    readonly ProductId: FieldRef<'boilview', 'String'>;
+    readonly ProductName: FieldRef<'boilview', 'String'>;
+    readonly Quantity: FieldRef<'boilview', 'Decimal'>;
+    readonly Total: FieldRef<'boilview', 'Decimal'>;
+    readonly BatchDate: FieldRef<'boilview', 'DateTime'>;
+    readonly Plant: FieldRef<'boilview', 'String'>;
+  }
+
+  // Custom InputTypes
+  /**
+   * boilview findFirst
+   */
+  export type boilviewFindFirstArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the boilview
+     */
+    select?: boilviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the boilview
+     */
+    omit?: boilviewOmit<ExtArgs> | null;
+    /**
+     * Filter, which boilview to fetch.
+     */
+    where?: boilviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of boilviews to fetch.
+     */
+    orderBy?: boilviewOrderByWithRelationInput | boilviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` boilviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` boilviews.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of boilviews.
+     */
+    distinct?: BoilviewScalarFieldEnum | BoilviewScalarFieldEnum[];
+  };
+
+  /**
+   * boilview findFirstOrThrow
+   */
+  export type boilviewFindFirstOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the boilview
+     */
+    select?: boilviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the boilview
+     */
+    omit?: boilviewOmit<ExtArgs> | null;
+    /**
+     * Filter, which boilview to fetch.
+     */
+    where?: boilviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of boilviews to fetch.
+     */
+    orderBy?: boilviewOrderByWithRelationInput | boilviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` boilviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` boilviews.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of boilviews.
+     */
+    distinct?: BoilviewScalarFieldEnum | BoilviewScalarFieldEnum[];
+  };
+
+  /**
+   * boilview findMany
+   */
+  export type boilviewFindManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the boilview
+     */
+    select?: boilviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the boilview
+     */
+    omit?: boilviewOmit<ExtArgs> | null;
+    /**
+     * Filter, which boilviews to fetch.
+     */
+    where?: boilviewWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of boilviews to fetch.
+     */
+    orderBy?: boilviewOrderByWithRelationInput | boilviewOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` boilviews from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` boilviews.
+     */
+    skip?: number;
+    distinct?: BoilviewScalarFieldEnum | BoilviewScalarFieldEnum[];
+  };
+
+  /**
+   * boilview without action
+   */
+  export type boilviewDefaultArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the boilview
+     */
+    select?: boilviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the boilview
+     */
+    omit?: boilviewOmit<ExtArgs> | null;
+  };
+
+  /**
+   * Model vw_PlanAggregated
+   */
+
+  export type AggregateVw_PlanAggregated = {
+    _count: Vw_PlanAggregatedCountAggregateOutputType | null;
+    _avg: Vw_PlanAggregatedAvgAggregateOutputType | null;
+    _sum: Vw_PlanAggregatedSumAggregateOutputType | null;
+    _min: Vw_PlanAggregatedMinAggregateOutputType | null;
+    _max: Vw_PlanAggregatedMaxAggregateOutputType | null;
+  };
+
+  export type Vw_PlanAggregatedAvgAggregateOutputType = {
+    BatchPK: number | null;
+    TotalPlanned: Decimal | null;
+    TotalRows: number | null;
+  };
+
+  export type Vw_PlanAggregatedSumAggregateOutputType = {
+    BatchPK: number | null;
+    TotalPlanned: Decimal | null;
+    TotalRows: bigint | null;
+  };
+
+  export type Vw_PlanAggregatedMinAggregateOutputType = {
+    BatchPK: number | null;
+    ProductId: string | null;
+    TotalPlanned: Decimal | null;
+    TotalRows: bigint | null;
+  };
+
+  export type Vw_PlanAggregatedMaxAggregateOutputType = {
+    BatchPK: number | null;
+    ProductId: string | null;
+    TotalPlanned: Decimal | null;
+    TotalRows: bigint | null;
+  };
+
+  export type Vw_PlanAggregatedCountAggregateOutputType = {
+    BatchPK: number;
+    ProductId: number;
+    TotalPlanned: number;
+    TotalRows: number;
+    _all: number;
+  };
+
+  export type Vw_PlanAggregatedAvgAggregateInputType = {
+    BatchPK?: true;
+    TotalPlanned?: true;
+    TotalRows?: true;
+  };
+
+  export type Vw_PlanAggregatedSumAggregateInputType = {
+    BatchPK?: true;
+    TotalPlanned?: true;
+    TotalRows?: true;
+  };
+
+  export type Vw_PlanAggregatedMinAggregateInputType = {
+    BatchPK?: true;
+    ProductId?: true;
+    TotalPlanned?: true;
+    TotalRows?: true;
+  };
+
+  export type Vw_PlanAggregatedMaxAggregateInputType = {
+    BatchPK?: true;
+    ProductId?: true;
+    TotalPlanned?: true;
+    TotalRows?: true;
+  };
+
+  export type Vw_PlanAggregatedCountAggregateInputType = {
+    BatchPK?: true;
+    ProductId?: true;
+    TotalPlanned?: true;
+    TotalRows?: true;
+    _all?: true;
+  };
+
+  export type Vw_PlanAggregatedAggregateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which vw_PlanAggregated to aggregate.
+     */
+    where?: vw_PlanAggregatedWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of vw_PlanAggregateds to fetch.
+     */
+    orderBy?:
+      | vw_PlanAggregatedOrderByWithRelationInput
+      | vw_PlanAggregatedOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` vw_PlanAggregateds from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` vw_PlanAggregateds.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned vw_PlanAggregateds
+     **/
+    _count?: true | Vw_PlanAggregatedCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to average
+     **/
+    _avg?: Vw_PlanAggregatedAvgAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to sum
+     **/
+    _sum?: Vw_PlanAggregatedSumAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+     **/
+    _min?: Vw_PlanAggregatedMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+     **/
+    _max?: Vw_PlanAggregatedMaxAggregateInputType;
+  };
+
+  export type GetVw_PlanAggregatedAggregateType<T extends Vw_PlanAggregatedAggregateArgs> = {
+    [P in keyof T & keyof AggregateVw_PlanAggregated]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateVw_PlanAggregated[P]>
+      : GetScalarType<T[P], AggregateVw_PlanAggregated[P]>;
+  };
+
+  export type vw_PlanAggregatedGroupByArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: vw_PlanAggregatedWhereInput;
+    orderBy?:
+      | vw_PlanAggregatedOrderByWithAggregationInput
+      | vw_PlanAggregatedOrderByWithAggregationInput[];
+    by: Vw_PlanAggregatedScalarFieldEnum[] | Vw_PlanAggregatedScalarFieldEnum;
+    having?: vw_PlanAggregatedScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: Vw_PlanAggregatedCountAggregateInputType | true;
+    _avg?: Vw_PlanAggregatedAvgAggregateInputType;
+    _sum?: Vw_PlanAggregatedSumAggregateInputType;
+    _min?: Vw_PlanAggregatedMinAggregateInputType;
+    _max?: Vw_PlanAggregatedMaxAggregateInputType;
+  };
+
+  export type Vw_PlanAggregatedGroupByOutputType = {
+    BatchPK: number;
+    ProductId: string;
+    TotalPlanned: Decimal | null;
+    TotalRows: bigint | null;
+    _count: Vw_PlanAggregatedCountAggregateOutputType | null;
+    _avg: Vw_PlanAggregatedAvgAggregateOutputType | null;
+    _sum: Vw_PlanAggregatedSumAggregateOutputType | null;
+    _min: Vw_PlanAggregatedMinAggregateOutputType | null;
+    _max: Vw_PlanAggregatedMaxAggregateOutputType | null;
+  };
+
+  type GetVw_PlanAggregatedGroupByPayload<T extends vw_PlanAggregatedGroupByArgs> =
+    Prisma.PrismaPromise<
+      Array<
+        PickEnumerable<Vw_PlanAggregatedGroupByOutputType, T['by']> & {
+          [P in keyof T & keyof Vw_PlanAggregatedGroupByOutputType]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Vw_PlanAggregatedGroupByOutputType[P]>
+            : GetScalarType<T[P], Vw_PlanAggregatedGroupByOutputType[P]>;
+        }
+      >
+    >;
+
+  export type vw_PlanAggregatedSelect<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetSelect<
+    {
+      BatchPK?: boolean;
+      ProductId?: boolean;
+      TotalPlanned?: boolean;
+      TotalRows?: boolean;
+    },
+    ExtArgs['result']['vw_PlanAggregated']
+  >;
+
+  export type vw_PlanAggregatedSelectScalar = {
+    BatchPK?: boolean;
+    ProductId?: boolean;
+    TotalPlanned?: boolean;
+    TotalRows?: boolean;
+  };
+
+  export type vw_PlanAggregatedOmit<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetOmit<
+    'BatchPK' | 'ProductId' | 'TotalPlanned' | 'TotalRows',
+    ExtArgs['result']['vw_PlanAggregated']
+  >;
+
+  export type $vw_PlanAggregatedPayload<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    name: 'vw_PlanAggregated';
+    objects: {};
+    scalars: $Extensions.GetPayloadResult<
+      {
+        BatchPK: number;
+        ProductId: string;
+        TotalPlanned: Prisma.Decimal | null;
+        TotalRows: bigint | null;
+      },
+      ExtArgs['result']['vw_PlanAggregated']
+    >;
+    composites: {};
+  };
+
+  type vw_PlanAggregatedGetPayload<
+    S extends boolean | null | undefined | vw_PlanAggregatedDefaultArgs,
+  > = $Result.GetResult<Prisma.$vw_PlanAggregatedPayload, S>;
+
+  type vw_PlanAggregatedCountArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = Omit<vw_PlanAggregatedFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: Vw_PlanAggregatedCountAggregateInputType | true;
+  };
+
+  export interface vw_PlanAggregatedDelegate<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > {
+    [K: symbol]: {
+      types: Prisma.TypeMap<ExtArgs>['model']['vw_PlanAggregated'];
+      meta: { name: 'vw_PlanAggregated' };
+    };
+    /**
+     * Find the first Vw_PlanAggregated that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_PlanAggregatedFindFirstArgs} args - Arguments to find a Vw_PlanAggregated
+     * @example
+     * // Get one Vw_PlanAggregated
+     * const vw_PlanAggregated = await prisma.vw_PlanAggregated.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<
+      T extends vw_PlanAggregatedFindFirstArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, vw_PlanAggregatedFindFirstArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__vw_PlanAggregatedClient<
+      $Result.GetResult<
+        Prisma.$vw_PlanAggregatedPayload<ExtArgs>,
+        T,
+        'findFirst',
+        GlobalOmitOptions
+      > | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first Vw_PlanAggregated that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_PlanAggregatedFindFirstOrThrowArgs} args - Arguments to find a Vw_PlanAggregated
+     * @example
+     * // Get one Vw_PlanAggregated
+     * const vw_PlanAggregated = await prisma.vw_PlanAggregated.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<
+      T extends vw_PlanAggregatedFindFirstOrThrowArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, vw_PlanAggregatedFindFirstOrThrowArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__vw_PlanAggregatedClient<
+      $Result.GetResult<
+        Prisma.$vw_PlanAggregatedPayload<ExtArgs>,
+        T,
+        'findFirstOrThrow',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find zero or more Vw_PlanAggregateds that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_PlanAggregatedFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Vw_PlanAggregateds
+     * const vw_PlanAggregateds = await prisma.vw_PlanAggregated.findMany()
+     *
+     * // Get first 10 Vw_PlanAggregateds
+     * const vw_PlanAggregateds = await prisma.vw_PlanAggregated.findMany({ take: 10 })
+     *
+     * // Only select the `BatchPK`
+     * const vw_PlanAggregatedWithBatchPKOnly = await prisma.vw_PlanAggregated.findMany({ select: { BatchPK: true } })
+     *
+     */
+    findMany<
+      T extends vw_PlanAggregatedFindManyArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, vw_PlanAggregatedFindManyArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<Prisma.$vw_PlanAggregatedPayload<ExtArgs>, T, 'findMany', GlobalOmitOptions>
+    >;
+
+    /**
+     * Count the number of Vw_PlanAggregateds.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_PlanAggregatedCountArgs} args - Arguments to filter Vw_PlanAggregateds to count.
+     * @example
+     * // Count the number of Vw_PlanAggregateds
+     * const count = await prisma.vw_PlanAggregated.count({
+     *   where: {
+     *     // ... the filter for the Vw_PlanAggregateds we want to count
+     *   }
+     * })
+     **/
+    count<T extends vw_PlanAggregatedCountArgs>(
+      args?: Subset<T, vw_PlanAggregatedCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Vw_PlanAggregatedCountAggregateOutputType>
+        : number
+    >;
+
+    /**
+     * Allows you to perform aggregations operations on a Vw_PlanAggregated.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Vw_PlanAggregatedAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+     **/
+    aggregate<T extends Vw_PlanAggregatedAggregateArgs>(
+      args: Subset<T, Vw_PlanAggregatedAggregateArgs>,
+    ): Prisma.PrismaPromise<GetVw_PlanAggregatedAggregateType<T>>;
+
+    /**
+     * Group by Vw_PlanAggregated.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_PlanAggregatedGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+     **/
+    groupBy<
+      T extends vw_PlanAggregatedGroupByArgs,
+      HasSelectOrTake extends Or<Extends<'skip', Keys<T>>, Extends<'take', Keys<T>>>,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: vw_PlanAggregatedGroupByArgs['orderBy'] }
+        : { orderBy?: vw_PlanAggregatedGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+        ? `Error: "by" must not be empty.`
+        : HavingValid extends False
+          ? {
+              [P in HavingFields]: P extends ByFields
+                ? never
+                : P extends string
+                  ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+                  : [Error, 'Field ', P, ` in "having" needs to be provided in "by"`];
+            }[HavingFields]
+          : 'take' extends Keys<T>
+            ? 'orderBy' extends Keys<T>
+              ? ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields]
+              : 'Error: If you provide "take", you also need to provide "orderBy"'
+            : 'skip' extends Keys<T>
+              ? 'orderBy' extends Keys<T>
+                ? ByValid extends True
+                  ? {}
+                  : {
+                      [P in OrderFields]: P extends ByFields
+                        ? never
+                        : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                    }[OrderFields]
+                : 'Error: If you provide "skip", you also need to provide "orderBy"'
+              : ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields],
+    >(
+      args: SubsetIntersection<T, vw_PlanAggregatedGroupByArgs, OrderByArg> & InputErrors,
+    ): {} extends InputErrors
+      ? GetVw_PlanAggregatedGroupByPayload<T>
+      : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the vw_PlanAggregated model
+     */
+    readonly fields: vw_PlanAggregatedFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for vw_PlanAggregated.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__vw_PlanAggregatedClient<
+    T,
+    Null = never,
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(
+      onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+      onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
+    ): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(
+      onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null,
+    ): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+  /**
+   * Fields of the vw_PlanAggregated model
+   */
+  interface vw_PlanAggregatedFieldRefs {
+    readonly BatchPK: FieldRef<'vw_PlanAggregated', 'Int'>;
+    readonly ProductId: FieldRef<'vw_PlanAggregated', 'String'>;
+    readonly TotalPlanned: FieldRef<'vw_PlanAggregated', 'Decimal'>;
+    readonly TotalRows: FieldRef<'vw_PlanAggregated', 'BigInt'>;
+  }
+
+  // Custom InputTypes
+  /**
+   * vw_PlanAggregated findFirst
+   */
+  export type vw_PlanAggregatedFindFirstArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_PlanAggregated
+     */
+    select?: vw_PlanAggregatedSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_PlanAggregated
+     */
+    omit?: vw_PlanAggregatedOmit<ExtArgs> | null;
+    /**
+     * Filter, which vw_PlanAggregated to fetch.
+     */
+    where?: vw_PlanAggregatedWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of vw_PlanAggregateds to fetch.
+     */
+    orderBy?:
+      | vw_PlanAggregatedOrderByWithRelationInput
+      | vw_PlanAggregatedOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` vw_PlanAggregateds from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` vw_PlanAggregateds.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of vw_PlanAggregateds.
+     */
+    distinct?: Vw_PlanAggregatedScalarFieldEnum | Vw_PlanAggregatedScalarFieldEnum[];
+  };
+
+  /**
+   * vw_PlanAggregated findFirstOrThrow
+   */
+  export type vw_PlanAggregatedFindFirstOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_PlanAggregated
+     */
+    select?: vw_PlanAggregatedSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_PlanAggregated
+     */
+    omit?: vw_PlanAggregatedOmit<ExtArgs> | null;
+    /**
+     * Filter, which vw_PlanAggregated to fetch.
+     */
+    where?: vw_PlanAggregatedWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of vw_PlanAggregateds to fetch.
+     */
+    orderBy?:
+      | vw_PlanAggregatedOrderByWithRelationInput
+      | vw_PlanAggregatedOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` vw_PlanAggregateds from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` vw_PlanAggregateds.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of vw_PlanAggregateds.
+     */
+    distinct?: Vw_PlanAggregatedScalarFieldEnum | Vw_PlanAggregatedScalarFieldEnum[];
+  };
+
+  /**
+   * vw_PlanAggregated findMany
+   */
+  export type vw_PlanAggregatedFindManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_PlanAggregated
+     */
+    select?: vw_PlanAggregatedSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_PlanAggregated
+     */
+    omit?: vw_PlanAggregatedOmit<ExtArgs> | null;
+    /**
+     * Filter, which vw_PlanAggregateds to fetch.
+     */
+    where?: vw_PlanAggregatedWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of vw_PlanAggregateds to fetch.
+     */
+    orderBy?:
+      | vw_PlanAggregatedOrderByWithRelationInput
+      | vw_PlanAggregatedOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` vw_PlanAggregateds from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` vw_PlanAggregateds.
+     */
+    skip?: number;
+    distinct?: Vw_PlanAggregatedScalarFieldEnum | Vw_PlanAggregatedScalarFieldEnum[];
+  };
+
+  /**
+   * vw_PlanAggregated without action
+   */
+  export type vw_PlanAggregatedDefaultArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_PlanAggregated
+     */
+    select?: vw_PlanAggregatedSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_PlanAggregated
+     */
+    omit?: vw_PlanAggregatedOmit<ExtArgs> | null;
+  };
+
+  /**
+   * Model vw_FactWeighting
+   */
+
+  export type AggregateVw_FactWeighting = {
+    _count: Vw_FactWeightingCountAggregateOutputType | null;
+    _avg: Vw_FactWeightingAvgAggregateOutputType | null;
+    _sum: Vw_FactWeightingSumAggregateOutputType | null;
+    _min: Vw_FactWeightingMinAggregateOutputType | null;
+    _max: Vw_FactWeightingMaxAggregateOutputType | null;
+  };
+
+  export type Vw_FactWeightingAvgAggregateOutputType = {
+    BatchPK: number | null;
+    TotalWeighting: Decimal | null;
+    TotalRows: number | null;
+  };
+
+  export type Vw_FactWeightingSumAggregateOutputType = {
+    BatchPK: number | null;
+    TotalWeighting: Decimal | null;
+    TotalRows: bigint | null;
+  };
+
+  export type Vw_FactWeightingMinAggregateOutputType = {
+    BatchPK: number | null;
+    ProductId: string | null;
+    TotalWeighting: Decimal | null;
+    TotalRows: bigint | null;
+  };
+
+  export type Vw_FactWeightingMaxAggregateOutputType = {
+    BatchPK: number | null;
+    ProductId: string | null;
+    TotalWeighting: Decimal | null;
+    TotalRows: bigint | null;
+  };
+
+  export type Vw_FactWeightingCountAggregateOutputType = {
+    BatchPK: number;
+    ProductId: number;
+    TotalWeighting: number;
+    TotalRows: number;
+    _all: number;
+  };
+
+  export type Vw_FactWeightingAvgAggregateInputType = {
+    BatchPK?: true;
+    TotalWeighting?: true;
+    TotalRows?: true;
+  };
+
+  export type Vw_FactWeightingSumAggregateInputType = {
+    BatchPK?: true;
+    TotalWeighting?: true;
+    TotalRows?: true;
+  };
+
+  export type Vw_FactWeightingMinAggregateInputType = {
+    BatchPK?: true;
+    ProductId?: true;
+    TotalWeighting?: true;
+    TotalRows?: true;
+  };
+
+  export type Vw_FactWeightingMaxAggregateInputType = {
+    BatchPK?: true;
+    ProductId?: true;
+    TotalWeighting?: true;
+    TotalRows?: true;
+  };
+
+  export type Vw_FactWeightingCountAggregateInputType = {
+    BatchPK?: true;
+    ProductId?: true;
+    TotalWeighting?: true;
+    TotalRows?: true;
+    _all?: true;
+  };
+
+  export type Vw_FactWeightingAggregateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which vw_FactWeighting to aggregate.
+     */
+    where?: vw_FactWeightingWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of vw_FactWeightings to fetch.
+     */
+    orderBy?: vw_FactWeightingOrderByWithRelationInput | vw_FactWeightingOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` vw_FactWeightings from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` vw_FactWeightings.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned vw_FactWeightings
+     **/
+    _count?: true | Vw_FactWeightingCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to average
+     **/
+    _avg?: Vw_FactWeightingAvgAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to sum
+     **/
+    _sum?: Vw_FactWeightingSumAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+     **/
+    _min?: Vw_FactWeightingMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+     **/
+    _max?: Vw_FactWeightingMaxAggregateInputType;
+  };
+
+  export type GetVw_FactWeightingAggregateType<T extends Vw_FactWeightingAggregateArgs> = {
+    [P in keyof T & keyof AggregateVw_FactWeighting]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateVw_FactWeighting[P]>
+      : GetScalarType<T[P], AggregateVw_FactWeighting[P]>;
+  };
+
+  export type vw_FactWeightingGroupByArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: vw_FactWeightingWhereInput;
+    orderBy?:
+      | vw_FactWeightingOrderByWithAggregationInput
+      | vw_FactWeightingOrderByWithAggregationInput[];
+    by: Vw_FactWeightingScalarFieldEnum[] | Vw_FactWeightingScalarFieldEnum;
+    having?: vw_FactWeightingScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: Vw_FactWeightingCountAggregateInputType | true;
+    _avg?: Vw_FactWeightingAvgAggregateInputType;
+    _sum?: Vw_FactWeightingSumAggregateInputType;
+    _min?: Vw_FactWeightingMinAggregateInputType;
+    _max?: Vw_FactWeightingMaxAggregateInputType;
+  };
+
+  export type Vw_FactWeightingGroupByOutputType = {
+    BatchPK: number;
+    ProductId: string;
+    TotalWeighting: Decimal | null;
+    TotalRows: bigint | null;
+    _count: Vw_FactWeightingCountAggregateOutputType | null;
+    _avg: Vw_FactWeightingAvgAggregateOutputType | null;
+    _sum: Vw_FactWeightingSumAggregateOutputType | null;
+    _min: Vw_FactWeightingMinAggregateOutputType | null;
+    _max: Vw_FactWeightingMaxAggregateOutputType | null;
+  };
+
+  type GetVw_FactWeightingGroupByPayload<T extends vw_FactWeightingGroupByArgs> =
+    Prisma.PrismaPromise<
+      Array<
+        PickEnumerable<Vw_FactWeightingGroupByOutputType, T['by']> & {
+          [P in keyof T & keyof Vw_FactWeightingGroupByOutputType]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Vw_FactWeightingGroupByOutputType[P]>
+            : GetScalarType<T[P], Vw_FactWeightingGroupByOutputType[P]>;
+        }
+      >
+    >;
+
+  export type vw_FactWeightingSelect<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetSelect<
+    {
+      BatchPK?: boolean;
+      ProductId?: boolean;
+      TotalWeighting?: boolean;
+      TotalRows?: boolean;
+    },
+    ExtArgs['result']['vw_FactWeighting']
+  >;
+
+  export type vw_FactWeightingSelectScalar = {
+    BatchPK?: boolean;
+    ProductId?: boolean;
+    TotalWeighting?: boolean;
+    TotalRows?: boolean;
+  };
+
+  export type vw_FactWeightingOmit<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetOmit<
+    'BatchPK' | 'ProductId' | 'TotalWeighting' | 'TotalRows',
+    ExtArgs['result']['vw_FactWeighting']
+  >;
+
+  export type $vw_FactWeightingPayload<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    name: 'vw_FactWeighting';
+    objects: {};
+    scalars: $Extensions.GetPayloadResult<
+      {
+        BatchPK: number;
+        ProductId: string;
+        TotalWeighting: Prisma.Decimal | null;
+        TotalRows: bigint | null;
+      },
+      ExtArgs['result']['vw_FactWeighting']
+    >;
+    composites: {};
+  };
+
+  type vw_FactWeightingGetPayload<
+    S extends boolean | null | undefined | vw_FactWeightingDefaultArgs,
+  > = $Result.GetResult<Prisma.$vw_FactWeightingPayload, S>;
+
+  type vw_FactWeightingCountArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = Omit<vw_FactWeightingFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: Vw_FactWeightingCountAggregateInputType | true;
+  };
+
+  export interface vw_FactWeightingDelegate<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > {
+    [K: symbol]: {
+      types: Prisma.TypeMap<ExtArgs>['model']['vw_FactWeighting'];
+      meta: { name: 'vw_FactWeighting' };
+    };
+    /**
+     * Find the first Vw_FactWeighting that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_FactWeightingFindFirstArgs} args - Arguments to find a Vw_FactWeighting
+     * @example
+     * // Get one Vw_FactWeighting
+     * const vw_FactWeighting = await prisma.vw_FactWeighting.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<
+      T extends vw_FactWeightingFindFirstArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, vw_FactWeightingFindFirstArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__vw_FactWeightingClient<
+      $Result.GetResult<
+        Prisma.$vw_FactWeightingPayload<ExtArgs>,
+        T,
+        'findFirst',
+        GlobalOmitOptions
+      > | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first Vw_FactWeighting that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_FactWeightingFindFirstOrThrowArgs} args - Arguments to find a Vw_FactWeighting
+     * @example
+     * // Get one Vw_FactWeighting
+     * const vw_FactWeighting = await prisma.vw_FactWeighting.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<
+      T extends vw_FactWeightingFindFirstOrThrowArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, vw_FactWeightingFindFirstOrThrowArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__vw_FactWeightingClient<
+      $Result.GetResult<
+        Prisma.$vw_FactWeightingPayload<ExtArgs>,
+        T,
+        'findFirstOrThrow',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find zero or more Vw_FactWeightings that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_FactWeightingFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Vw_FactWeightings
+     * const vw_FactWeightings = await prisma.vw_FactWeighting.findMany()
+     *
+     * // Get first 10 Vw_FactWeightings
+     * const vw_FactWeightings = await prisma.vw_FactWeighting.findMany({ take: 10 })
+     *
+     * // Only select the `BatchPK`
+     * const vw_FactWeightingWithBatchPKOnly = await prisma.vw_FactWeighting.findMany({ select: { BatchPK: true } })
+     *
+     */
+    findMany<
+      T extends vw_FactWeightingFindManyArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, vw_FactWeightingFindManyArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<Prisma.$vw_FactWeightingPayload<ExtArgs>, T, 'findMany', GlobalOmitOptions>
+    >;
+
+    /**
+     * Count the number of Vw_FactWeightings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_FactWeightingCountArgs} args - Arguments to filter Vw_FactWeightings to count.
+     * @example
+     * // Count the number of Vw_FactWeightings
+     * const count = await prisma.vw_FactWeighting.count({
+     *   where: {
+     *     // ... the filter for the Vw_FactWeightings we want to count
+     *   }
+     * })
+     **/
+    count<T extends vw_FactWeightingCountArgs>(
+      args?: Subset<T, vw_FactWeightingCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Vw_FactWeightingCountAggregateOutputType>
+        : number
+    >;
+
+    /**
+     * Allows you to perform aggregations operations on a Vw_FactWeighting.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Vw_FactWeightingAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+     **/
+    aggregate<T extends Vw_FactWeightingAggregateArgs>(
+      args: Subset<T, Vw_FactWeightingAggregateArgs>,
+    ): Prisma.PrismaPromise<GetVw_FactWeightingAggregateType<T>>;
+
+    /**
+     * Group by Vw_FactWeighting.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_FactWeightingGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+     **/
+    groupBy<
+      T extends vw_FactWeightingGroupByArgs,
+      HasSelectOrTake extends Or<Extends<'skip', Keys<T>>, Extends<'take', Keys<T>>>,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: vw_FactWeightingGroupByArgs['orderBy'] }
+        : { orderBy?: vw_FactWeightingGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+        ? `Error: "by" must not be empty.`
+        : HavingValid extends False
+          ? {
+              [P in HavingFields]: P extends ByFields
+                ? never
+                : P extends string
+                  ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+                  : [Error, 'Field ', P, ` in "having" needs to be provided in "by"`];
+            }[HavingFields]
+          : 'take' extends Keys<T>
+            ? 'orderBy' extends Keys<T>
+              ? ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields]
+              : 'Error: If you provide "take", you also need to provide "orderBy"'
+            : 'skip' extends Keys<T>
+              ? 'orderBy' extends Keys<T>
+                ? ByValid extends True
+                  ? {}
+                  : {
+                      [P in OrderFields]: P extends ByFields
+                        ? never
+                        : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                    }[OrderFields]
+                : 'Error: If you provide "skip", you also need to provide "orderBy"'
+              : ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields],
+    >(
+      args: SubsetIntersection<T, vw_FactWeightingGroupByArgs, OrderByArg> & InputErrors,
+    ): {} extends InputErrors
+      ? GetVw_FactWeightingGroupByPayload<T>
+      : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the vw_FactWeighting model
+     */
+    readonly fields: vw_FactWeightingFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for vw_FactWeighting.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__vw_FactWeightingClient<
+    T,
+    Null = never,
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(
+      onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+      onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
+    ): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(
+      onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null,
+    ): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+  /**
+   * Fields of the vw_FactWeighting model
+   */
+  interface vw_FactWeightingFieldRefs {
+    readonly BatchPK: FieldRef<'vw_FactWeighting', 'Int'>;
+    readonly ProductId: FieldRef<'vw_FactWeighting', 'String'>;
+    readonly TotalWeighting: FieldRef<'vw_FactWeighting', 'Decimal'>;
+    readonly TotalRows: FieldRef<'vw_FactWeighting', 'BigInt'>;
+  }
+
+  // Custom InputTypes
+  /**
+   * vw_FactWeighting findFirst
+   */
+  export type vw_FactWeightingFindFirstArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_FactWeighting
+     */
+    select?: vw_FactWeightingSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_FactWeighting
+     */
+    omit?: vw_FactWeightingOmit<ExtArgs> | null;
+    /**
+     * Filter, which vw_FactWeighting to fetch.
+     */
+    where?: vw_FactWeightingWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of vw_FactWeightings to fetch.
+     */
+    orderBy?: vw_FactWeightingOrderByWithRelationInput | vw_FactWeightingOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` vw_FactWeightings from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` vw_FactWeightings.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of vw_FactWeightings.
+     */
+    distinct?: Vw_FactWeightingScalarFieldEnum | Vw_FactWeightingScalarFieldEnum[];
+  };
+
+  /**
+   * vw_FactWeighting findFirstOrThrow
+   */
+  export type vw_FactWeightingFindFirstOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_FactWeighting
+     */
+    select?: vw_FactWeightingSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_FactWeighting
+     */
+    omit?: vw_FactWeightingOmit<ExtArgs> | null;
+    /**
+     * Filter, which vw_FactWeighting to fetch.
+     */
+    where?: vw_FactWeightingWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of vw_FactWeightings to fetch.
+     */
+    orderBy?: vw_FactWeightingOrderByWithRelationInput | vw_FactWeightingOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` vw_FactWeightings from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` vw_FactWeightings.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of vw_FactWeightings.
+     */
+    distinct?: Vw_FactWeightingScalarFieldEnum | Vw_FactWeightingScalarFieldEnum[];
+  };
+
+  /**
+   * vw_FactWeighting findMany
+   */
+  export type vw_FactWeightingFindManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_FactWeighting
+     */
+    select?: vw_FactWeightingSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_FactWeighting
+     */
+    omit?: vw_FactWeightingOmit<ExtArgs> | null;
+    /**
+     * Filter, which vw_FactWeightings to fetch.
+     */
+    where?: vw_FactWeightingWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of vw_FactWeightings to fetch.
+     */
+    orderBy?: vw_FactWeightingOrderByWithRelationInput | vw_FactWeightingOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` vw_FactWeightings from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` vw_FactWeightings.
+     */
+    skip?: number;
+    distinct?: Vw_FactWeightingScalarFieldEnum | Vw_FactWeightingScalarFieldEnum[];
+  };
+
+  /**
+   * vw_FactWeighting without action
+   */
+  export type vw_FactWeightingDefaultArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_FactWeighting
+     */
+    select?: vw_FactWeightingSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_FactWeighting
+     */
+    omit?: vw_FactWeightingOmit<ExtArgs> | null;
+  };
+
+  /**
+   * Model vw_FactLoading
+   */
+
+  export type AggregateVw_FactLoading = {
+    _count: Vw_FactLoadingCountAggregateOutputType | null;
+    _avg: Vw_FactLoadingAvgAggregateOutputType | null;
+    _sum: Vw_FactLoadingSumAggregateOutputType | null;
+    _min: Vw_FactLoadingMinAggregateOutputType | null;
+    _max: Vw_FactLoadingMaxAggregateOutputType | null;
+  };
+
+  export type Vw_FactLoadingAvgAggregateOutputType = {
+    BatchPK: number | null;
+    TotalLoading: Decimal | null;
+    TotalRows: number | null;
+  };
+
+  export type Vw_FactLoadingSumAggregateOutputType = {
+    BatchPK: number | null;
+    TotalLoading: Decimal | null;
+    TotalRows: bigint | null;
+  };
+
+  export type Vw_FactLoadingMinAggregateOutputType = {
+    BatchPK: number | null;
+    ProductId: string | null;
+    TotalLoading: Decimal | null;
+    TotalRows: bigint | null;
+  };
+
+  export type Vw_FactLoadingMaxAggregateOutputType = {
+    BatchPK: number | null;
+    ProductId: string | null;
+    TotalLoading: Decimal | null;
+    TotalRows: bigint | null;
+  };
+
+  export type Vw_FactLoadingCountAggregateOutputType = {
+    BatchPK: number;
+    ProductId: number;
+    TotalLoading: number;
+    TotalRows: number;
+    _all: number;
+  };
+
+  export type Vw_FactLoadingAvgAggregateInputType = {
+    BatchPK?: true;
+    TotalLoading?: true;
+    TotalRows?: true;
+  };
+
+  export type Vw_FactLoadingSumAggregateInputType = {
+    BatchPK?: true;
+    TotalLoading?: true;
+    TotalRows?: true;
+  };
+
+  export type Vw_FactLoadingMinAggregateInputType = {
+    BatchPK?: true;
+    ProductId?: true;
+    TotalLoading?: true;
+    TotalRows?: true;
+  };
+
+  export type Vw_FactLoadingMaxAggregateInputType = {
+    BatchPK?: true;
+    ProductId?: true;
+    TotalLoading?: true;
+    TotalRows?: true;
+  };
+
+  export type Vw_FactLoadingCountAggregateInputType = {
+    BatchPK?: true;
+    ProductId?: true;
+    TotalLoading?: true;
+    TotalRows?: true;
+    _all?: true;
+  };
+
+  export type Vw_FactLoadingAggregateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which vw_FactLoading to aggregate.
+     */
+    where?: vw_FactLoadingWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of vw_FactLoadings to fetch.
+     */
+    orderBy?: vw_FactLoadingOrderByWithRelationInput | vw_FactLoadingOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` vw_FactLoadings from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` vw_FactLoadings.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned vw_FactLoadings
+     **/
+    _count?: true | Vw_FactLoadingCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to average
+     **/
+    _avg?: Vw_FactLoadingAvgAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to sum
+     **/
+    _sum?: Vw_FactLoadingSumAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+     **/
+    _min?: Vw_FactLoadingMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+     **/
+    _max?: Vw_FactLoadingMaxAggregateInputType;
+  };
+
+  export type GetVw_FactLoadingAggregateType<T extends Vw_FactLoadingAggregateArgs> = {
+    [P in keyof T & keyof AggregateVw_FactLoading]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateVw_FactLoading[P]>
+      : GetScalarType<T[P], AggregateVw_FactLoading[P]>;
+  };
+
+  export type vw_FactLoadingGroupByArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: vw_FactLoadingWhereInput;
+    orderBy?:
+      | vw_FactLoadingOrderByWithAggregationInput
+      | vw_FactLoadingOrderByWithAggregationInput[];
+    by: Vw_FactLoadingScalarFieldEnum[] | Vw_FactLoadingScalarFieldEnum;
+    having?: vw_FactLoadingScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: Vw_FactLoadingCountAggregateInputType | true;
+    _avg?: Vw_FactLoadingAvgAggregateInputType;
+    _sum?: Vw_FactLoadingSumAggregateInputType;
+    _min?: Vw_FactLoadingMinAggregateInputType;
+    _max?: Vw_FactLoadingMaxAggregateInputType;
+  };
+
+  export type Vw_FactLoadingGroupByOutputType = {
+    BatchPK: number;
+    ProductId: string;
+    TotalLoading: Decimal | null;
+    TotalRows: bigint | null;
+    _count: Vw_FactLoadingCountAggregateOutputType | null;
+    _avg: Vw_FactLoadingAvgAggregateOutputType | null;
+    _sum: Vw_FactLoadingSumAggregateOutputType | null;
+    _min: Vw_FactLoadingMinAggregateOutputType | null;
+    _max: Vw_FactLoadingMaxAggregateOutputType | null;
+  };
+
+  type GetVw_FactLoadingGroupByPayload<T extends vw_FactLoadingGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Vw_FactLoadingGroupByOutputType, T['by']> & {
+        [P in keyof T & keyof Vw_FactLoadingGroupByOutputType]: P extends '_count'
+          ? T[P] extends boolean
+            ? number
+            : GetScalarType<T[P], Vw_FactLoadingGroupByOutputType[P]>
+          : GetScalarType<T[P], Vw_FactLoadingGroupByOutputType[P]>;
+      }
+    >
+  >;
+
+  export type vw_FactLoadingSelect<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetSelect<
+    {
+      BatchPK?: boolean;
+      ProductId?: boolean;
+      TotalLoading?: boolean;
+      TotalRows?: boolean;
+    },
+    ExtArgs['result']['vw_FactLoading']
+  >;
+
+  export type vw_FactLoadingSelectScalar = {
+    BatchPK?: boolean;
+    ProductId?: boolean;
+    TotalLoading?: boolean;
+    TotalRows?: boolean;
+  };
+
+  export type vw_FactLoadingOmit<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetOmit<
+    'BatchPK' | 'ProductId' | 'TotalLoading' | 'TotalRows',
+    ExtArgs['result']['vw_FactLoading']
+  >;
+
+  export type $vw_FactLoadingPayload<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    name: 'vw_FactLoading';
+    objects: {};
+    scalars: $Extensions.GetPayloadResult<
+      {
+        BatchPK: number;
+        ProductId: string;
+        TotalLoading: Prisma.Decimal | null;
+        TotalRows: bigint | null;
+      },
+      ExtArgs['result']['vw_FactLoading']
+    >;
+    composites: {};
+  };
+
+  type vw_FactLoadingGetPayload<S extends boolean | null | undefined | vw_FactLoadingDefaultArgs> =
+    $Result.GetResult<Prisma.$vw_FactLoadingPayload, S>;
+
+  type vw_FactLoadingCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<vw_FactLoadingFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Vw_FactLoadingCountAggregateInputType | true;
+    };
+
+  export interface vw_FactLoadingDelegate<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > {
+    [K: symbol]: {
+      types: Prisma.TypeMap<ExtArgs>['model']['vw_FactLoading'];
+      meta: { name: 'vw_FactLoading' };
+    };
+    /**
+     * Find the first Vw_FactLoading that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_FactLoadingFindFirstArgs} args - Arguments to find a Vw_FactLoading
+     * @example
+     * // Get one Vw_FactLoading
+     * const vw_FactLoading = await prisma.vw_FactLoading.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<
+      T extends vw_FactLoadingFindFirstArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, vw_FactLoadingFindFirstArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__vw_FactLoadingClient<
+      $Result.GetResult<
+        Prisma.$vw_FactLoadingPayload<ExtArgs>,
+        T,
+        'findFirst',
+        GlobalOmitOptions
+      > | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first Vw_FactLoading that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_FactLoadingFindFirstOrThrowArgs} args - Arguments to find a Vw_FactLoading
+     * @example
+     * // Get one Vw_FactLoading
+     * const vw_FactLoading = await prisma.vw_FactLoading.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<
+      T extends vw_FactLoadingFindFirstOrThrowArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, vw_FactLoadingFindFirstOrThrowArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma__vw_FactLoadingClient<
+      $Result.GetResult<
+        Prisma.$vw_FactLoadingPayload<ExtArgs>,
+        T,
+        'findFirstOrThrow',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find zero or more Vw_FactLoadings that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_FactLoadingFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Vw_FactLoadings
+     * const vw_FactLoadings = await prisma.vw_FactLoading.findMany()
+     *
+     * // Get first 10 Vw_FactLoadings
+     * const vw_FactLoadings = await prisma.vw_FactLoading.findMany({ take: 10 })
+     *
+     * // Only select the `BatchPK`
+     * const vw_FactLoadingWithBatchPKOnly = await prisma.vw_FactLoading.findMany({ select: { BatchPK: true } })
+     *
+     */
+    findMany<
+      T extends vw_FactLoadingFindManyArgs,
+      TakeDependenciesValidator extends 'take' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+      SkipDependenciesValidator extends 'skip' extends Prisma.Keys<T>
+        ? {
+            orderBy: {};
+          }
+        : {},
+    >(
+      args?: SelectSubset<T, vw_FactLoadingFindManyArgs<ExtArgs>> &
+        TakeDependenciesValidator &
+        SkipDependenciesValidator,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<Prisma.$vw_FactLoadingPayload<ExtArgs>, T, 'findMany', GlobalOmitOptions>
+    >;
+
+    /**
+     * Count the number of Vw_FactLoadings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_FactLoadingCountArgs} args - Arguments to filter Vw_FactLoadings to count.
+     * @example
+     * // Count the number of Vw_FactLoadings
+     * const count = await prisma.vw_FactLoading.count({
+     *   where: {
+     *     // ... the filter for the Vw_FactLoadings we want to count
+     *   }
+     * })
+     **/
+    count<T extends vw_FactLoadingCountArgs>(
+      args?: Subset<T, vw_FactLoadingCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Vw_FactLoadingCountAggregateOutputType>
+        : number
+    >;
+
+    /**
+     * Allows you to perform aggregations operations on a Vw_FactLoading.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Vw_FactLoadingAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+     **/
+    aggregate<T extends Vw_FactLoadingAggregateArgs>(
+      args: Subset<T, Vw_FactLoadingAggregateArgs>,
+    ): Prisma.PrismaPromise<GetVw_FactLoadingAggregateType<T>>;
+
+    /**
+     * Group by Vw_FactLoading.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_FactLoadingGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+     **/
+    groupBy<
+      T extends vw_FactLoadingGroupByArgs,
+      HasSelectOrTake extends Or<Extends<'skip', Keys<T>>, Extends<'take', Keys<T>>>,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: vw_FactLoadingGroupByArgs['orderBy'] }
+        : { orderBy?: vw_FactLoadingGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+        ? `Error: "by" must not be empty.`
+        : HavingValid extends False
+          ? {
+              [P in HavingFields]: P extends ByFields
+                ? never
+                : P extends string
+                  ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+                  : [Error, 'Field ', P, ` in "having" needs to be provided in "by"`];
+            }[HavingFields]
+          : 'take' extends Keys<T>
+            ? 'orderBy' extends Keys<T>
+              ? ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields]
+              : 'Error: If you provide "take", you also need to provide "orderBy"'
+            : 'skip' extends Keys<T>
+              ? 'orderBy' extends Keys<T>
+                ? ByValid extends True
+                  ? {}
+                  : {
+                      [P in OrderFields]: P extends ByFields
+                        ? never
+                        : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                    }[OrderFields]
+                : 'Error: If you provide "skip", you also need to provide "orderBy"'
+              : ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields],
+    >(
+      args: SubsetIntersection<T, vw_FactLoadingGroupByArgs, OrderByArg> & InputErrors,
+    ): {} extends InputErrors
+      ? GetVw_FactLoadingGroupByPayload<T>
+      : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the vw_FactLoading model
+     */
+    readonly fields: vw_FactLoadingFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for vw_FactLoading.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__vw_FactLoadingClient<
+    T,
+    Null = never,
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(
+      onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+      onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
+    ): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(
+      onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null,
+    ): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+  /**
+   * Fields of the vw_FactLoading model
+   */
+  interface vw_FactLoadingFieldRefs {
+    readonly BatchPK: FieldRef<'vw_FactLoading', 'Int'>;
+    readonly ProductId: FieldRef<'vw_FactLoading', 'String'>;
+    readonly TotalLoading: FieldRef<'vw_FactLoading', 'Decimal'>;
+    readonly TotalRows: FieldRef<'vw_FactLoading', 'BigInt'>;
+  }
+
+  // Custom InputTypes
+  /**
+   * vw_FactLoading findFirst
+   */
+  export type vw_FactLoadingFindFirstArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_FactLoading
+     */
+    select?: vw_FactLoadingSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_FactLoading
+     */
+    omit?: vw_FactLoadingOmit<ExtArgs> | null;
+    /**
+     * Filter, which vw_FactLoading to fetch.
+     */
+    where?: vw_FactLoadingWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of vw_FactLoadings to fetch.
+     */
+    orderBy?: vw_FactLoadingOrderByWithRelationInput | vw_FactLoadingOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` vw_FactLoadings from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` vw_FactLoadings.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of vw_FactLoadings.
+     */
+    distinct?: Vw_FactLoadingScalarFieldEnum | Vw_FactLoadingScalarFieldEnum[];
+  };
+
+  /**
+   * vw_FactLoading findFirstOrThrow
+   */
+  export type vw_FactLoadingFindFirstOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_FactLoading
+     */
+    select?: vw_FactLoadingSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_FactLoading
+     */
+    omit?: vw_FactLoadingOmit<ExtArgs> | null;
+    /**
+     * Filter, which vw_FactLoading to fetch.
+     */
+    where?: vw_FactLoadingWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of vw_FactLoadings to fetch.
+     */
+    orderBy?: vw_FactLoadingOrderByWithRelationInput | vw_FactLoadingOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` vw_FactLoadings from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` vw_FactLoadings.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of vw_FactLoadings.
+     */
+    distinct?: Vw_FactLoadingScalarFieldEnum | Vw_FactLoadingScalarFieldEnum[];
+  };
+
+  /**
+   * vw_FactLoading findMany
+   */
+  export type vw_FactLoadingFindManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_FactLoading
+     */
+    select?: vw_FactLoadingSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_FactLoading
+     */
+    omit?: vw_FactLoadingOmit<ExtArgs> | null;
+    /**
+     * Filter, which vw_FactLoadings to fetch.
+     */
+    where?: vw_FactLoadingWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of vw_FactLoadings to fetch.
+     */
+    orderBy?: vw_FactLoadingOrderByWithRelationInput | vw_FactLoadingOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` vw_FactLoadings from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` vw_FactLoadings.
+     */
+    skip?: number;
+    distinct?: Vw_FactLoadingScalarFieldEnum | Vw_FactLoadingScalarFieldEnum[];
+  };
+
+  /**
+   * vw_FactLoading without action
+   */
+  export type vw_FactLoadingDefaultArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_FactLoading
+     */
+    select?: vw_FactLoadingSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_FactLoading
+     */
+    omit?: vw_FactLoadingOmit<ExtArgs> | null;
+  };
+
+  /**
+   * Model vw_FinalBatchStatus
+   */
+
+  export type AggregateVw_FinalBatchStatus = {
+    _count: Vw_FinalBatchStatusCountAggregateOutputType | null;
+    _avg: Vw_FinalBatchStatusAvgAggregateOutputType | null;
+    _sum: Vw_FinalBatchStatusSumAggregateOutputType | null;
+    _min: Vw_FinalBatchStatusMinAggregateOutputType | null;
+    _max: Vw_FinalBatchStatusMaxAggregateOutputType | null;
+  };
+
+  export type Vw_FinalBatchStatusAvgAggregateOutputType = {
+    BatchPK: number | null;
+    BatchYear: number | null;
+    BatchNumber: number | null;
+    TotalPlanned: Decimal | null;
+    TotalWeighting: Decimal | null;
+    TotalLoading: Decimal | null;
+  };
+
+  export type Vw_FinalBatchStatusSumAggregateOutputType = {
+    BatchPK: number | null;
+    BatchYear: number | null;
+    BatchNumber: number | null;
+    TotalPlanned: Decimal | null;
+    TotalWeighting: Decimal | null;
+    TotalLoading: Decimal | null;
+  };
+
+  export type Vw_FinalBatchStatusMinAggregateOutputType = {
+    BatchPK: number | null;
+    BatchName: string | null;
+    BatchDate: Date | null;
+    BatchYear: number | null;
+    BatchMonth: string | null;
+    BatchNumber: number | null;
+    Plant: string | null;
+    BatchProductId: string | null;
+    BatchProductMarking: string | null;
+    ProductId: string | null;
+    ProductName: string | null;
+    ProductMarking: string | null;
+    TotalPlanned: Decimal | null;
+    TotalWeighting: Decimal | null;
+    TotalLoading: Decimal | null;
+    ProblemStatus: string | null;
+  };
+
+  export type Vw_FinalBatchStatusMaxAggregateOutputType = {
+    BatchPK: number | null;
+    BatchName: string | null;
+    BatchDate: Date | null;
+    BatchYear: number | null;
+    BatchMonth: string | null;
+    BatchNumber: number | null;
+    Plant: string | null;
+    BatchProductId: string | null;
+    BatchProductMarking: string | null;
+    ProductId: string | null;
+    ProductName: string | null;
+    ProductMarking: string | null;
+    TotalPlanned: Decimal | null;
+    TotalWeighting: Decimal | null;
+    TotalLoading: Decimal | null;
+    ProblemStatus: string | null;
+  };
+
+  export type Vw_FinalBatchStatusCountAggregateOutputType = {
+    BatchPK: number;
+    BatchName: number;
+    BatchDate: number;
+    BatchYear: number;
+    BatchMonth: number;
+    BatchNumber: number;
+    Plant: number;
+    BatchProductId: number;
+    BatchProductMarking: number;
+    ProductId: number;
+    ProductName: number;
+    ProductMarking: number;
+    TotalPlanned: number;
+    TotalWeighting: number;
+    TotalLoading: number;
+    ProblemStatus: number;
+    _all: number;
+  };
+
+  export type Vw_FinalBatchStatusAvgAggregateInputType = {
+    BatchPK?: true;
+    BatchYear?: true;
+    BatchNumber?: true;
+    TotalPlanned?: true;
+    TotalWeighting?: true;
+    TotalLoading?: true;
+  };
+
+  export type Vw_FinalBatchStatusSumAggregateInputType = {
+    BatchPK?: true;
+    BatchYear?: true;
+    BatchNumber?: true;
+    TotalPlanned?: true;
+    TotalWeighting?: true;
+    TotalLoading?: true;
+  };
+
+  export type Vw_FinalBatchStatusMinAggregateInputType = {
+    BatchPK?: true;
+    BatchName?: true;
+    BatchDate?: true;
+    BatchYear?: true;
+    BatchMonth?: true;
+    BatchNumber?: true;
+    Plant?: true;
+    BatchProductId?: true;
+    BatchProductMarking?: true;
+    ProductId?: true;
+    ProductName?: true;
+    ProductMarking?: true;
+    TotalPlanned?: true;
+    TotalWeighting?: true;
+    TotalLoading?: true;
+    ProblemStatus?: true;
+  };
+
+  export type Vw_FinalBatchStatusMaxAggregateInputType = {
+    BatchPK?: true;
+    BatchName?: true;
+    BatchDate?: true;
+    BatchYear?: true;
+    BatchMonth?: true;
+    BatchNumber?: true;
+    Plant?: true;
+    BatchProductId?: true;
+    BatchProductMarking?: true;
+    ProductId?: true;
+    ProductName?: true;
+    ProductMarking?: true;
+    TotalPlanned?: true;
+    TotalWeighting?: true;
+    TotalLoading?: true;
+    ProblemStatus?: true;
+  };
+
+  export type Vw_FinalBatchStatusCountAggregateInputType = {
+    BatchPK?: true;
+    BatchName?: true;
+    BatchDate?: true;
+    BatchYear?: true;
+    BatchMonth?: true;
+    BatchNumber?: true;
+    Plant?: true;
+    BatchProductId?: true;
+    BatchProductMarking?: true;
+    ProductId?: true;
+    ProductName?: true;
+    ProductMarking?: true;
+    TotalPlanned?: true;
+    TotalWeighting?: true;
+    TotalLoading?: true;
+    ProblemStatus?: true;
+    _all?: true;
+  };
+
+  export type Vw_FinalBatchStatusAggregateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which vw_FinalBatchStatus to aggregate.
+     */
+    where?: vw_FinalBatchStatusWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of vw_FinalBatchStatuses to fetch.
+     */
+    orderBy?:
+      | vw_FinalBatchStatusOrderByWithRelationInput
+      | vw_FinalBatchStatusOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the start position
+     */
+    cursor?: vw_FinalBatchStatusWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` vw_FinalBatchStatuses from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` vw_FinalBatchStatuses.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned vw_FinalBatchStatuses
+     **/
+    _count?: true | Vw_FinalBatchStatusCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to average
+     **/
+    _avg?: Vw_FinalBatchStatusAvgAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to sum
+     **/
+    _sum?: Vw_FinalBatchStatusSumAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+     **/
+    _min?: Vw_FinalBatchStatusMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+     **/
+    _max?: Vw_FinalBatchStatusMaxAggregateInputType;
+  };
+
+  export type GetVw_FinalBatchStatusAggregateType<T extends Vw_FinalBatchStatusAggregateArgs> = {
+    [P in keyof T & keyof AggregateVw_FinalBatchStatus]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateVw_FinalBatchStatus[P]>
+      : GetScalarType<T[P], AggregateVw_FinalBatchStatus[P]>;
+  };
+
+  export type vw_FinalBatchStatusGroupByArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: vw_FinalBatchStatusWhereInput;
+    orderBy?:
+      | vw_FinalBatchStatusOrderByWithAggregationInput
+      | vw_FinalBatchStatusOrderByWithAggregationInput[];
+    by: Vw_FinalBatchStatusScalarFieldEnum[] | Vw_FinalBatchStatusScalarFieldEnum;
+    having?: vw_FinalBatchStatusScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: Vw_FinalBatchStatusCountAggregateInputType | true;
+    _avg?: Vw_FinalBatchStatusAvgAggregateInputType;
+    _sum?: Vw_FinalBatchStatusSumAggregateInputType;
+    _min?: Vw_FinalBatchStatusMinAggregateInputType;
+    _max?: Vw_FinalBatchStatusMaxAggregateInputType;
+  };
+
+  export type Vw_FinalBatchStatusGroupByOutputType = {
+    BatchPK: number;
+    BatchName: string;
+    BatchDate: Date | null;
+    BatchYear: number | null;
+    BatchMonth: string | null;
+    BatchNumber: number | null;
+    Plant: string | null;
+    BatchProductId: string | null;
+    BatchProductMarking: string | null;
+    ProductId: string;
+    ProductName: string | null;
+    ProductMarking: string | null;
+    TotalPlanned: Decimal | null;
+    TotalWeighting: Decimal | null;
+    TotalLoading: Decimal | null;
+    ProblemStatus: string;
+    _count: Vw_FinalBatchStatusCountAggregateOutputType | null;
+    _avg: Vw_FinalBatchStatusAvgAggregateOutputType | null;
+    _sum: Vw_FinalBatchStatusSumAggregateOutputType | null;
+    _min: Vw_FinalBatchStatusMinAggregateOutputType | null;
+    _max: Vw_FinalBatchStatusMaxAggregateOutputType | null;
+  };
+
+  type GetVw_FinalBatchStatusGroupByPayload<T extends vw_FinalBatchStatusGroupByArgs> =
+    Prisma.PrismaPromise<
+      Array<
+        PickEnumerable<Vw_FinalBatchStatusGroupByOutputType, T['by']> & {
+          [P in keyof T & keyof Vw_FinalBatchStatusGroupByOutputType]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Vw_FinalBatchStatusGroupByOutputType[P]>
+            : GetScalarType<T[P], Vw_FinalBatchStatusGroupByOutputType[P]>;
+        }
+      >
+    >;
+
+  export type vw_FinalBatchStatusSelect<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetSelect<
+    {
+      BatchPK?: boolean;
+      BatchName?: boolean;
+      BatchDate?: boolean;
+      BatchYear?: boolean;
+      BatchMonth?: boolean;
+      BatchNumber?: boolean;
+      Plant?: boolean;
+      BatchProductId?: boolean;
+      BatchProductMarking?: boolean;
+      ProductId?: boolean;
+      ProductName?: boolean;
+      ProductMarking?: boolean;
+      TotalPlanned?: boolean;
+      TotalWeighting?: boolean;
+      TotalLoading?: boolean;
+      ProblemStatus?: boolean;
+      batchs?: boolean | BatchsDefaultArgs<ExtArgs>;
+    },
+    ExtArgs['result']['vw_FinalBatchStatus']
+  >;
+
+  export type vw_FinalBatchStatusSelectScalar = {
+    BatchPK?: boolean;
+    BatchName?: boolean;
+    BatchDate?: boolean;
+    BatchYear?: boolean;
+    BatchMonth?: boolean;
+    BatchNumber?: boolean;
+    Plant?: boolean;
+    BatchProductId?: boolean;
+    BatchProductMarking?: boolean;
+    ProductId?: boolean;
+    ProductName?: boolean;
+    ProductMarking?: boolean;
+    TotalPlanned?: boolean;
+    TotalWeighting?: boolean;
+    TotalLoading?: boolean;
+    ProblemStatus?: boolean;
+  };
+
+  export type vw_FinalBatchStatusOmit<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetOmit<
+    | 'BatchPK'
+    | 'BatchName'
+    | 'BatchDate'
+    | 'BatchYear'
+    | 'BatchMonth'
+    | 'BatchNumber'
+    | 'Plant'
+    | 'BatchProductId'
+    | 'BatchProductMarking'
+    | 'ProductId'
+    | 'ProductName'
+    | 'ProductMarking'
+    | 'TotalPlanned'
+    | 'TotalWeighting'
+    | 'TotalLoading'
+    | 'ProblemStatus',
+    ExtArgs['result']['vw_FinalBatchStatus']
+  >;
+  export type vw_FinalBatchStatusInclude<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    batchs?: boolean | BatchsDefaultArgs<ExtArgs>;
+  };
+
+  export type $vw_FinalBatchStatusPayload<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    name: 'vw_FinalBatchStatus';
+    objects: {
+      batchs: Prisma.$BatchsPayload<ExtArgs>;
+    };
+    scalars: $Extensions.GetPayloadResult<
+      {
+        BatchPK: number;
+        BatchName: string;
+        BatchDate: Date | null;
+        BatchYear: number | null;
+        BatchMonth: string | null;
+        BatchNumber: number | null;
+        Plant: string | null;
+        BatchProductId: string | null;
+        BatchProductMarking: string | null;
+        ProductId: string;
+        ProductName: string | null;
+        ProductMarking: string | null;
+        TotalPlanned: Prisma.Decimal | null;
+        TotalWeighting: Prisma.Decimal | null;
+        TotalLoading: Prisma.Decimal | null;
+        ProblemStatus: string;
+      },
+      ExtArgs['result']['vw_FinalBatchStatus']
+    >;
+    composites: {};
+  };
+
+  type vw_FinalBatchStatusGetPayload<
+    S extends boolean | null | undefined | vw_FinalBatchStatusDefaultArgs,
+  > = $Result.GetResult<Prisma.$vw_FinalBatchStatusPayload, S>;
+
+  type vw_FinalBatchStatusCountArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = Omit<vw_FinalBatchStatusFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: Vw_FinalBatchStatusCountAggregateInputType | true;
+  };
+
+  export interface vw_FinalBatchStatusDelegate<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > {
+    [K: symbol]: {
+      types: Prisma.TypeMap<ExtArgs>['model']['vw_FinalBatchStatus'];
+      meta: { name: 'vw_FinalBatchStatus' };
+    };
+    /**
+     * Find zero or one Vw_FinalBatchStatus that matches the filter.
+     * @param {vw_FinalBatchStatusFindUniqueArgs} args - Arguments to find a Vw_FinalBatchStatus
+     * @example
+     * // Get one Vw_FinalBatchStatus
+     * const vw_FinalBatchStatus = await prisma.vw_FinalBatchStatus.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends vw_FinalBatchStatusFindUniqueArgs>(
+      args: SelectSubset<T, vw_FinalBatchStatusFindUniqueArgs<ExtArgs>>,
+    ): Prisma__vw_FinalBatchStatusClient<
+      $Result.GetResult<
+        Prisma.$vw_FinalBatchStatusPayload<ExtArgs>,
+        T,
+        'findUnique',
+        GlobalOmitOptions
+      > | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find one Vw_FinalBatchStatus that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {vw_FinalBatchStatusFindUniqueOrThrowArgs} args - Arguments to find a Vw_FinalBatchStatus
+     * @example
+     * // Get one Vw_FinalBatchStatus
+     * const vw_FinalBatchStatus = await prisma.vw_FinalBatchStatus.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends vw_FinalBatchStatusFindUniqueOrThrowArgs>(
+      args: SelectSubset<T, vw_FinalBatchStatusFindUniqueOrThrowArgs<ExtArgs>>,
+    ): Prisma__vw_FinalBatchStatusClient<
+      $Result.GetResult<
+        Prisma.$vw_FinalBatchStatusPayload<ExtArgs>,
+        T,
+        'findUniqueOrThrow',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first Vw_FinalBatchStatus that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_FinalBatchStatusFindFirstArgs} args - Arguments to find a Vw_FinalBatchStatus
+     * @example
+     * // Get one Vw_FinalBatchStatus
+     * const vw_FinalBatchStatus = await prisma.vw_FinalBatchStatus.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends vw_FinalBatchStatusFindFirstArgs>(
+      args?: SelectSubset<T, vw_FinalBatchStatusFindFirstArgs<ExtArgs>>,
+    ): Prisma__vw_FinalBatchStatusClient<
+      $Result.GetResult<
+        Prisma.$vw_FinalBatchStatusPayload<ExtArgs>,
+        T,
+        'findFirst',
+        GlobalOmitOptions
+      > | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first Vw_FinalBatchStatus that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_FinalBatchStatusFindFirstOrThrowArgs} args - Arguments to find a Vw_FinalBatchStatus
+     * @example
+     * // Get one Vw_FinalBatchStatus
+     * const vw_FinalBatchStatus = await prisma.vw_FinalBatchStatus.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends vw_FinalBatchStatusFindFirstOrThrowArgs>(
+      args?: SelectSubset<T, vw_FinalBatchStatusFindFirstOrThrowArgs<ExtArgs>>,
+    ): Prisma__vw_FinalBatchStatusClient<
+      $Result.GetResult<
+        Prisma.$vw_FinalBatchStatusPayload<ExtArgs>,
+        T,
+        'findFirstOrThrow',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find zero or more Vw_FinalBatchStatuses that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_FinalBatchStatusFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Vw_FinalBatchStatuses
+     * const vw_FinalBatchStatuses = await prisma.vw_FinalBatchStatus.findMany()
+     *
+     * // Get first 10 Vw_FinalBatchStatuses
+     * const vw_FinalBatchStatuses = await prisma.vw_FinalBatchStatus.findMany({ take: 10 })
+     *
+     * // Only select the `BatchPK`
+     * const vw_FinalBatchStatusWithBatchPKOnly = await prisma.vw_FinalBatchStatus.findMany({ select: { BatchPK: true } })
+     *
+     */
+    findMany<T extends vw_FinalBatchStatusFindManyArgs>(
+      args?: SelectSubset<T, vw_FinalBatchStatusFindManyArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<
+        Prisma.$vw_FinalBatchStatusPayload<ExtArgs>,
+        T,
+        'findMany',
+        GlobalOmitOptions
+      >
+    >;
+
+    /**
+     * Count the number of Vw_FinalBatchStatuses.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_FinalBatchStatusCountArgs} args - Arguments to filter Vw_FinalBatchStatuses to count.
+     * @example
+     * // Count the number of Vw_FinalBatchStatuses
+     * const count = await prisma.vw_FinalBatchStatus.count({
+     *   where: {
+     *     // ... the filter for the Vw_FinalBatchStatuses we want to count
+     *   }
+     * })
+     **/
+    count<T extends vw_FinalBatchStatusCountArgs>(
+      args?: Subset<T, vw_FinalBatchStatusCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Vw_FinalBatchStatusCountAggregateOutputType>
+        : number
+    >;
+
+    /**
+     * Allows you to perform aggregations operations on a Vw_FinalBatchStatus.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Vw_FinalBatchStatusAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+     **/
+    aggregate<T extends Vw_FinalBatchStatusAggregateArgs>(
+      args: Subset<T, Vw_FinalBatchStatusAggregateArgs>,
+    ): Prisma.PrismaPromise<GetVw_FinalBatchStatusAggregateType<T>>;
+
+    /**
+     * Group by Vw_FinalBatchStatus.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {vw_FinalBatchStatusGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+     **/
+    groupBy<
+      T extends vw_FinalBatchStatusGroupByArgs,
+      HasSelectOrTake extends Or<Extends<'skip', Keys<T>>, Extends<'take', Keys<T>>>,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: vw_FinalBatchStatusGroupByArgs['orderBy'] }
+        : { orderBy?: vw_FinalBatchStatusGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+        ? `Error: "by" must not be empty.`
+        : HavingValid extends False
+          ? {
+              [P in HavingFields]: P extends ByFields
+                ? never
+                : P extends string
+                  ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+                  : [Error, 'Field ', P, ` in "having" needs to be provided in "by"`];
+            }[HavingFields]
+          : 'take' extends Keys<T>
+            ? 'orderBy' extends Keys<T>
+              ? ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields]
+              : 'Error: If you provide "take", you also need to provide "orderBy"'
+            : 'skip' extends Keys<T>
+              ? 'orderBy' extends Keys<T>
+                ? ByValid extends True
+                  ? {}
+                  : {
+                      [P in OrderFields]: P extends ByFields
+                        ? never
+                        : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                    }[OrderFields]
+                : 'Error: If you provide "skip", you also need to provide "orderBy"'
+              : ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields],
+    >(
+      args: SubsetIntersection<T, vw_FinalBatchStatusGroupByArgs, OrderByArg> & InputErrors,
+    ): {} extends InputErrors
+      ? GetVw_FinalBatchStatusGroupByPayload<T>
+      : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the vw_FinalBatchStatus model
+     */
+    readonly fields: vw_FinalBatchStatusFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for vw_FinalBatchStatus.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__vw_FinalBatchStatusClient<
+    T,
+    Null = never,
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+    batchs<T extends BatchsDefaultArgs<ExtArgs> = {}>(
+      args?: Subset<T, BatchsDefaultArgs<ExtArgs>>,
+    ): Prisma__BatchsClient<
+      | $Result.GetResult<Prisma.$BatchsPayload<ExtArgs>, T, 'findUniqueOrThrow', GlobalOmitOptions>
+      | Null,
+      Null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(
+      onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+      onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
+    ): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(
+      onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null,
+    ): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+  /**
+   * Fields of the vw_FinalBatchStatus model
+   */
+  interface vw_FinalBatchStatusFieldRefs {
+    readonly BatchPK: FieldRef<'vw_FinalBatchStatus', 'Int'>;
+    readonly BatchName: FieldRef<'vw_FinalBatchStatus', 'String'>;
+    readonly BatchDate: FieldRef<'vw_FinalBatchStatus', 'DateTime'>;
+    readonly BatchYear: FieldRef<'vw_FinalBatchStatus', 'Int'>;
+    readonly BatchMonth: FieldRef<'vw_FinalBatchStatus', 'String'>;
+    readonly BatchNumber: FieldRef<'vw_FinalBatchStatus', 'Int'>;
+    readonly Plant: FieldRef<'vw_FinalBatchStatus', 'String'>;
+    readonly BatchProductId: FieldRef<'vw_FinalBatchStatus', 'String'>;
+    readonly BatchProductMarking: FieldRef<'vw_FinalBatchStatus', 'String'>;
+    readonly ProductId: FieldRef<'vw_FinalBatchStatus', 'String'>;
+    readonly ProductName: FieldRef<'vw_FinalBatchStatus', 'String'>;
+    readonly ProductMarking: FieldRef<'vw_FinalBatchStatus', 'String'>;
+    readonly TotalPlanned: FieldRef<'vw_FinalBatchStatus', 'Decimal'>;
+    readonly TotalWeighting: FieldRef<'vw_FinalBatchStatus', 'Decimal'>;
+    readonly TotalLoading: FieldRef<'vw_FinalBatchStatus', 'Decimal'>;
+    readonly ProblemStatus: FieldRef<'vw_FinalBatchStatus', 'String'>;
+  }
+
+  // Custom InputTypes
+  /**
+   * vw_FinalBatchStatus findUnique
+   */
+  export type vw_FinalBatchStatusFindUniqueArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_FinalBatchStatus
+     */
+    select?: vw_FinalBatchStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_FinalBatchStatus
+     */
+    omit?: vw_FinalBatchStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: vw_FinalBatchStatusInclude<ExtArgs> | null;
+    /**
+     * Filter, which vw_FinalBatchStatus to fetch.
+     */
+    where: vw_FinalBatchStatusWhereUniqueInput;
+  };
+
+  /**
+   * vw_FinalBatchStatus findUniqueOrThrow
+   */
+  export type vw_FinalBatchStatusFindUniqueOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_FinalBatchStatus
+     */
+    select?: vw_FinalBatchStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_FinalBatchStatus
+     */
+    omit?: vw_FinalBatchStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: vw_FinalBatchStatusInclude<ExtArgs> | null;
+    /**
+     * Filter, which vw_FinalBatchStatus to fetch.
+     */
+    where: vw_FinalBatchStatusWhereUniqueInput;
+  };
+
+  /**
+   * vw_FinalBatchStatus findFirst
+   */
+  export type vw_FinalBatchStatusFindFirstArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_FinalBatchStatus
+     */
+    select?: vw_FinalBatchStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_FinalBatchStatus
+     */
+    omit?: vw_FinalBatchStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: vw_FinalBatchStatusInclude<ExtArgs> | null;
+    /**
+     * Filter, which vw_FinalBatchStatus to fetch.
+     */
+    where?: vw_FinalBatchStatusWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of vw_FinalBatchStatuses to fetch.
+     */
+    orderBy?:
+      | vw_FinalBatchStatusOrderByWithRelationInput
+      | vw_FinalBatchStatusOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for vw_FinalBatchStatuses.
+     */
+    cursor?: vw_FinalBatchStatusWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` vw_FinalBatchStatuses from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` vw_FinalBatchStatuses.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of vw_FinalBatchStatuses.
+     */
+    distinct?: Vw_FinalBatchStatusScalarFieldEnum | Vw_FinalBatchStatusScalarFieldEnum[];
+  };
+
+  /**
+   * vw_FinalBatchStatus findFirstOrThrow
+   */
+  export type vw_FinalBatchStatusFindFirstOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_FinalBatchStatus
+     */
+    select?: vw_FinalBatchStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_FinalBatchStatus
+     */
+    omit?: vw_FinalBatchStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: vw_FinalBatchStatusInclude<ExtArgs> | null;
+    /**
+     * Filter, which vw_FinalBatchStatus to fetch.
+     */
+    where?: vw_FinalBatchStatusWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of vw_FinalBatchStatuses to fetch.
+     */
+    orderBy?:
+      | vw_FinalBatchStatusOrderByWithRelationInput
+      | vw_FinalBatchStatusOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for vw_FinalBatchStatuses.
+     */
+    cursor?: vw_FinalBatchStatusWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` vw_FinalBatchStatuses from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` vw_FinalBatchStatuses.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of vw_FinalBatchStatuses.
+     */
+    distinct?: Vw_FinalBatchStatusScalarFieldEnum | Vw_FinalBatchStatusScalarFieldEnum[];
+  };
+
+  /**
+   * vw_FinalBatchStatus findMany
+   */
+  export type vw_FinalBatchStatusFindManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_FinalBatchStatus
+     */
+    select?: vw_FinalBatchStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_FinalBatchStatus
+     */
+    omit?: vw_FinalBatchStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: vw_FinalBatchStatusInclude<ExtArgs> | null;
+    /**
+     * Filter, which vw_FinalBatchStatuses to fetch.
+     */
+    where?: vw_FinalBatchStatusWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of vw_FinalBatchStatuses to fetch.
+     */
+    orderBy?:
+      | vw_FinalBatchStatusOrderByWithRelationInput
+      | vw_FinalBatchStatusOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for listing vw_FinalBatchStatuses.
+     */
+    cursor?: vw_FinalBatchStatusWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` vw_FinalBatchStatuses from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` vw_FinalBatchStatuses.
+     */
+    skip?: number;
+    distinct?: Vw_FinalBatchStatusScalarFieldEnum | Vw_FinalBatchStatusScalarFieldEnum[];
+  };
+
+  /**
+   * vw_FinalBatchStatus without action
+   */
+  export type vw_FinalBatchStatusDefaultArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the vw_FinalBatchStatus
+     */
+    select?: vw_FinalBatchStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the vw_FinalBatchStatus
+     */
+    omit?: vw_FinalBatchStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: vw_FinalBatchStatusInclude<ExtArgs> | null;
+  };
+
+  /**
    * Enums
    */
 
@@ -48717,6 +58843,178 @@ export namespace Prisma {
   export type WeightingsScalarFieldEnum =
     (typeof WeightingsScalarFieldEnum)[keyof typeof WeightingsScalarFieldEnum];
 
+  export const TestScalarFieldEnum: {
+    BatchName: 'BatchName';
+    BatchDate: 'BatchDate';
+    Plant: 'Plant';
+    ProductName: 'ProductName';
+    Quantity: 'Quantity';
+    ProductId: 'ProductId';
+    BatchPK: 'BatchPK';
+  };
+
+  export type TestScalarFieldEnum = (typeof TestScalarFieldEnum)[keyof typeof TestScalarFieldEnum];
+
+  export const LotsviewScalarFieldEnum: {
+    LotName: 'LotName';
+    BatchName: 'BatchName';
+    CreateDate: 'CreateDate';
+    ProductId: 'ProductId';
+    ProductName: 'ProductName';
+    SellerPK: 'SellerPK';
+    SellerName: 'SellerName';
+    ManufacturerPK: 'ManufacturerPK';
+    ManufacturerName: 'ManufacturerName';
+    ManufacturerLotPK: 'ManufacturerLotPK';
+    ManufacturerLotName: 'ManufacturerLotName';
+    TrademarkPK: 'TrademarkPK';
+    TrademarkName: 'TrademarkName';
+    BatchPK: 'BatchPK';
+  };
+
+  export type LotsviewScalarFieldEnum =
+    (typeof LotsviewScalarFieldEnum)[keyof typeof LotsviewScalarFieldEnum];
+
+  export const BatchstepScalarFieldEnum: {
+    BatchName: 'BatchName';
+    ProductId: 'ProductId';
+    ProductName: 'ProductName';
+    LotName: 'LotName';
+    ContainerPK: 'ContainerPK';
+  };
+
+  export type BatchstepScalarFieldEnum =
+    (typeof BatchstepScalarFieldEnum)[keyof typeof BatchstepScalarFieldEnum];
+
+  export const LoadstepScalarFieldEnum: {
+    CreateDate: 'CreateDate';
+    ContainerPK: 'ContainerPK';
+    AuthorName: 'AuthorName';
+  };
+
+  export type LoadstepScalarFieldEnum =
+    (typeof LoadstepScalarFieldEnum)[keyof typeof LoadstepScalarFieldEnum];
+
+  export const BatchviewScalarFieldEnum: {
+    BatchName: 'BatchName';
+    ProductId: 'ProductId';
+    ProductName: 'ProductName';
+    LotName: 'LotName';
+    AuthorName: 'AuthorName';
+    Quantity: 'Quantity';
+    CreateDate: 'CreateDate';
+  };
+
+  export type BatchviewScalarFieldEnum =
+    (typeof BatchviewScalarFieldEnum)[keyof typeof BatchviewScalarFieldEnum];
+
+  export const LoadviewScalarFieldEnum: {
+    BatchName: 'BatchName';
+    ProductId: 'ProductId';
+    ProductName: 'ProductName';
+    LotName: 'LotName';
+    AuthorName: 'AuthorName';
+    CreateDate: 'CreateDate';
+  };
+
+  export type LoadviewScalarFieldEnum =
+    (typeof LoadviewScalarFieldEnum)[keyof typeof LoadviewScalarFieldEnum];
+
+  export const LotdetailviewScalarFieldEnum: {
+    ProductName: 'ProductName';
+    ManufacturerLotName: 'ManufacturerLotName';
+    ManufacturerName: 'ManufacturerName';
+    ProductId: 'ProductId';
+    ManufacturerLotPK: 'ManufacturerLotPK';
+    ManufacturerPK: 'ManufacturerPK';
+    SellerPK: 'SellerPK';
+    SellerName: 'SellerName';
+    LotName: 'LotName';
+    LotDate: 'LotDate';
+    TrademarkPK: 'TrademarkPK';
+    TrademarkName: 'TrademarkName';
+  };
+
+  export type LotdetailviewScalarFieldEnum =
+    (typeof LotdetailviewScalarFieldEnum)[keyof typeof LotdetailviewScalarFieldEnum];
+
+  export const DocviewScalarFieldEnum: {
+    DocumentPK: 'DocumentPK';
+    DoctypePK: 'DoctypePK';
+    AuthorPK: 'AuthorPK';
+    CreateDate: 'CreateDate';
+    Plant: 'Plant';
+    AuthorName: 'AuthorName';
+  };
+
+  export type DocviewScalarFieldEnum =
+    (typeof DocviewScalarFieldEnum)[keyof typeof DocviewScalarFieldEnum];
+
+  export const BoilviewScalarFieldEnum: {
+    BatchName: 'BatchName';
+    ProductId: 'ProductId';
+    ProductName: 'ProductName';
+    Quantity: 'Quantity';
+    Total: 'Total';
+    BatchDate: 'BatchDate';
+    Plant: 'Plant';
+  };
+
+  export type BoilviewScalarFieldEnum =
+    (typeof BoilviewScalarFieldEnum)[keyof typeof BoilviewScalarFieldEnum];
+
+  export const Vw_PlanAggregatedScalarFieldEnum: {
+    BatchPK: 'BatchPK';
+    ProductId: 'ProductId';
+    TotalPlanned: 'TotalPlanned';
+    TotalRows: 'TotalRows';
+  };
+
+  export type Vw_PlanAggregatedScalarFieldEnum =
+    (typeof Vw_PlanAggregatedScalarFieldEnum)[keyof typeof Vw_PlanAggregatedScalarFieldEnum];
+
+  export const Vw_FactWeightingScalarFieldEnum: {
+    BatchPK: 'BatchPK';
+    ProductId: 'ProductId';
+    TotalWeighting: 'TotalWeighting';
+    TotalRows: 'TotalRows';
+  };
+
+  export type Vw_FactWeightingScalarFieldEnum =
+    (typeof Vw_FactWeightingScalarFieldEnum)[keyof typeof Vw_FactWeightingScalarFieldEnum];
+
+  export const Vw_FactLoadingScalarFieldEnum: {
+    BatchPK: 'BatchPK';
+    ProductId: 'ProductId';
+    TotalLoading: 'TotalLoading';
+    TotalRows: 'TotalRows';
+  };
+
+  export type Vw_FactLoadingScalarFieldEnum =
+    (typeof Vw_FactLoadingScalarFieldEnum)[keyof typeof Vw_FactLoadingScalarFieldEnum];
+
+  export const Vw_FinalBatchStatusScalarFieldEnum: {
+    BatchPK: 'BatchPK';
+    BatchName: 'BatchName';
+    BatchDate: 'BatchDate';
+    BatchYear: 'BatchYear';
+    BatchMonth: 'BatchMonth';
+    BatchNumber: 'BatchNumber';
+    Plant: 'Plant';
+    BatchProductId: 'BatchProductId';
+    BatchProductMarking: 'BatchProductMarking';
+    ProductId: 'ProductId';
+    ProductName: 'ProductName';
+    ProductMarking: 'ProductMarking';
+    TotalPlanned: 'TotalPlanned';
+    TotalWeighting: 'TotalWeighting';
+    TotalLoading: 'TotalLoading';
+    ProblemStatus: 'ProblemStatus';
+  };
+
+  export type Vw_FinalBatchStatusScalarFieldEnum =
+    (typeof Vw_FinalBatchStatusScalarFieldEnum)[keyof typeof Vw_FinalBatchStatusScalarFieldEnum];
+
   export const SortOrder: {
     asc: 'asc';
     desc: 'desc';
@@ -48764,6 +59062,11 @@ export namespace Prisma {
    * Reference to a field of type 'Bytes'
    */
   export type BytesFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Bytes'>;
+
+  /**
+   * Reference to a field of type 'BigInt'
+   */
+  export type BigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt'>;
 
   /**
    * Reference to a field of type 'Float'
@@ -49047,6 +59350,7 @@ export namespace Prisma {
     CanRecords?: CanRecordsListRelationFilter;
     Loads?: LoadsListRelationFilter;
     Weightings?: WeightingsListRelationFilter;
+    details?: Vw_FinalBatchStatusListRelationFilter;
   };
 
   export type BatchsOrderByWithRelationInput = {
@@ -49063,6 +59367,7 @@ export namespace Prisma {
     CanRecords?: CanRecordsOrderByRelationAggregateInput;
     Loads?: LoadsOrderByRelationAggregateInput;
     Weightings?: WeightingsOrderByRelationAggregateInput;
+    details?: vw_FinalBatchStatusOrderByRelationAggregateInput;
   };
 
   export type BatchsWhereUniqueInput = Prisma.AtLeast<
@@ -49083,6 +59388,7 @@ export namespace Prisma {
       CanRecords?: CanRecordsListRelationFilter;
       Loads?: LoadsListRelationFilter;
       Weightings?: WeightingsListRelationFilter;
+      details?: Vw_FinalBatchStatusListRelationFilter;
     },
     'BatchPK' | 'BatchName'
   >;
@@ -50586,14 +60892,14 @@ export namespace Prisma {
   export type RolesWhereUniqueInput = Prisma.AtLeast<
     {
       RolePK?: number;
+      RoleName?: string;
       AND?: RolesWhereInput | RolesWhereInput[];
       OR?: RolesWhereInput[];
       NOT?: RolesWhereInput | RolesWhereInput[];
-      RoleName?: StringFilter<'Roles'> | string;
       RoleAlias?: StringFilter<'Roles'> | string;
       UserRoles?: UserRolesListRelationFilter;
     },
-    'RolePK'
+    'RolePK' | 'RoleName'
   >;
 
   export type RolesOrderByWithAggregationInput = {
@@ -51127,6 +61433,828 @@ export namespace Prisma {
       | string;
   };
 
+  export type testWhereInput = {
+    AND?: testWhereInput | testWhereInput[];
+    OR?: testWhereInput[];
+    NOT?: testWhereInput | testWhereInput[];
+    BatchName?: StringNullableFilter<'test'> | string | null;
+    BatchDate?: DateTimeNullableFilter<'test'> | Date | string | null;
+    Plant?: StringNullableFilter<'test'> | string | null;
+    ProductName?: StringNullableFilter<'test'> | string | null;
+    Quantity?: DecimalFilter<'test'> | Decimal | DecimalJsLike | number | string;
+    ProductId?: StringFilter<'test'> | string;
+    BatchPK?: IntFilter<'test'> | number;
+  };
+
+  export type testOrderByWithRelationInput = {
+    BatchName?: SortOrderInput | SortOrder;
+    BatchDate?: SortOrderInput | SortOrder;
+    Plant?: SortOrderInput | SortOrder;
+    ProductName?: SortOrderInput | SortOrder;
+    Quantity?: SortOrder;
+    ProductId?: SortOrder;
+    BatchPK?: SortOrder;
+  };
+
+  export type testOrderByWithAggregationInput = {
+    BatchName?: SortOrderInput | SortOrder;
+    BatchDate?: SortOrderInput | SortOrder;
+    Plant?: SortOrderInput | SortOrder;
+    ProductName?: SortOrderInput | SortOrder;
+    Quantity?: SortOrder;
+    ProductId?: SortOrder;
+    BatchPK?: SortOrder;
+    _count?: testCountOrderByAggregateInput;
+    _avg?: testAvgOrderByAggregateInput;
+    _max?: testMaxOrderByAggregateInput;
+    _min?: testMinOrderByAggregateInput;
+    _sum?: testSumOrderByAggregateInput;
+  };
+
+  export type testScalarWhereWithAggregatesInput = {
+    AND?: testScalarWhereWithAggregatesInput | testScalarWhereWithAggregatesInput[];
+    OR?: testScalarWhereWithAggregatesInput[];
+    NOT?: testScalarWhereWithAggregatesInput | testScalarWhereWithAggregatesInput[];
+    BatchName?: StringNullableWithAggregatesFilter<'test'> | string | null;
+    BatchDate?: DateTimeNullableWithAggregatesFilter<'test'> | Date | string | null;
+    Plant?: StringNullableWithAggregatesFilter<'test'> | string | null;
+    ProductName?: StringNullableWithAggregatesFilter<'test'> | string | null;
+    Quantity?: DecimalWithAggregatesFilter<'test'> | Decimal | DecimalJsLike | number | string;
+    ProductId?: StringWithAggregatesFilter<'test'> | string;
+    BatchPK?: IntWithAggregatesFilter<'test'> | number;
+  };
+
+  export type lotsviewWhereInput = {
+    AND?: lotsviewWhereInput | lotsviewWhereInput[];
+    OR?: lotsviewWhereInput[];
+    NOT?: lotsviewWhereInput | lotsviewWhereInput[];
+    LotName?: StringFilter<'lotsview'> | string;
+    BatchName?: StringFilter<'lotsview'> | string;
+    CreateDate?: DateTimeFilter<'lotsview'> | Date | string;
+    ProductId?: StringNullableFilter<'lotsview'> | string | null;
+    ProductName?: StringNullableFilter<'lotsview'> | string | null;
+    SellerPK?: IntNullableFilter<'lotsview'> | number | null;
+    SellerName?: StringNullableFilter<'lotsview'> | string | null;
+    ManufacturerPK?: IntNullableFilter<'lotsview'> | number | null;
+    ManufacturerName?: StringNullableFilter<'lotsview'> | string | null;
+    ManufacturerLotPK?: IntNullableFilter<'lotsview'> | number | null;
+    ManufacturerLotName?: StringNullableFilter<'lotsview'> | string | null;
+    TrademarkPK?: IntNullableFilter<'lotsview'> | number | null;
+    TrademarkName?: StringNullableFilter<'lotsview'> | string | null;
+    BatchPK?: IntFilter<'lotsview'> | number;
+  };
+
+  export type lotsviewOrderByWithRelationInput = {
+    LotName?: SortOrder;
+    BatchName?: SortOrder;
+    CreateDate?: SortOrder;
+    ProductId?: SortOrderInput | SortOrder;
+    ProductName?: SortOrderInput | SortOrder;
+    SellerPK?: SortOrderInput | SortOrder;
+    SellerName?: SortOrderInput | SortOrder;
+    ManufacturerPK?: SortOrderInput | SortOrder;
+    ManufacturerName?: SortOrderInput | SortOrder;
+    ManufacturerLotPK?: SortOrderInput | SortOrder;
+    ManufacturerLotName?: SortOrderInput | SortOrder;
+    TrademarkPK?: SortOrderInput | SortOrder;
+    TrademarkName?: SortOrderInput | SortOrder;
+    BatchPK?: SortOrder;
+  };
+
+  export type lotsviewOrderByWithAggregationInput = {
+    LotName?: SortOrder;
+    BatchName?: SortOrder;
+    CreateDate?: SortOrder;
+    ProductId?: SortOrderInput | SortOrder;
+    ProductName?: SortOrderInput | SortOrder;
+    SellerPK?: SortOrderInput | SortOrder;
+    SellerName?: SortOrderInput | SortOrder;
+    ManufacturerPK?: SortOrderInput | SortOrder;
+    ManufacturerName?: SortOrderInput | SortOrder;
+    ManufacturerLotPK?: SortOrderInput | SortOrder;
+    ManufacturerLotName?: SortOrderInput | SortOrder;
+    TrademarkPK?: SortOrderInput | SortOrder;
+    TrademarkName?: SortOrderInput | SortOrder;
+    BatchPK?: SortOrder;
+    _count?: lotsviewCountOrderByAggregateInput;
+    _avg?: lotsviewAvgOrderByAggregateInput;
+    _max?: lotsviewMaxOrderByAggregateInput;
+    _min?: lotsviewMinOrderByAggregateInput;
+    _sum?: lotsviewSumOrderByAggregateInput;
+  };
+
+  export type lotsviewScalarWhereWithAggregatesInput = {
+    AND?: lotsviewScalarWhereWithAggregatesInput | lotsviewScalarWhereWithAggregatesInput[];
+    OR?: lotsviewScalarWhereWithAggregatesInput[];
+    NOT?: lotsviewScalarWhereWithAggregatesInput | lotsviewScalarWhereWithAggregatesInput[];
+    LotName?: StringWithAggregatesFilter<'lotsview'> | string;
+    BatchName?: StringWithAggregatesFilter<'lotsview'> | string;
+    CreateDate?: DateTimeWithAggregatesFilter<'lotsview'> | Date | string;
+    ProductId?: StringNullableWithAggregatesFilter<'lotsview'> | string | null;
+    ProductName?: StringNullableWithAggregatesFilter<'lotsview'> | string | null;
+    SellerPK?: IntNullableWithAggregatesFilter<'lotsview'> | number | null;
+    SellerName?: StringNullableWithAggregatesFilter<'lotsview'> | string | null;
+    ManufacturerPK?: IntNullableWithAggregatesFilter<'lotsview'> | number | null;
+    ManufacturerName?: StringNullableWithAggregatesFilter<'lotsview'> | string | null;
+    ManufacturerLotPK?: IntNullableWithAggregatesFilter<'lotsview'> | number | null;
+    ManufacturerLotName?: StringNullableWithAggregatesFilter<'lotsview'> | string | null;
+    TrademarkPK?: IntNullableWithAggregatesFilter<'lotsview'> | number | null;
+    TrademarkName?: StringNullableWithAggregatesFilter<'lotsview'> | string | null;
+    BatchPK?: IntWithAggregatesFilter<'lotsview'> | number;
+  };
+
+  export type batchstepWhereInput = {
+    AND?: batchstepWhereInput | batchstepWhereInput[];
+    OR?: batchstepWhereInput[];
+    NOT?: batchstepWhereInput | batchstepWhereInput[];
+    BatchName?: StringFilter<'batchstep'> | string;
+    ProductId?: StringFilter<'batchstep'> | string;
+    ProductName?: StringNullableFilter<'batchstep'> | string | null;
+    LotName?: StringFilter<'batchstep'> | string;
+    ContainerPK?: IntFilter<'batchstep'> | number;
+  };
+
+  export type batchstepOrderByWithRelationInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrderInput | SortOrder;
+    LotName?: SortOrder;
+    ContainerPK?: SortOrder;
+  };
+
+  export type batchstepOrderByWithAggregationInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrderInput | SortOrder;
+    LotName?: SortOrder;
+    ContainerPK?: SortOrder;
+    _count?: batchstepCountOrderByAggregateInput;
+    _avg?: batchstepAvgOrderByAggregateInput;
+    _max?: batchstepMaxOrderByAggregateInput;
+    _min?: batchstepMinOrderByAggregateInput;
+    _sum?: batchstepSumOrderByAggregateInput;
+  };
+
+  export type batchstepScalarWhereWithAggregatesInput = {
+    AND?: batchstepScalarWhereWithAggregatesInput | batchstepScalarWhereWithAggregatesInput[];
+    OR?: batchstepScalarWhereWithAggregatesInput[];
+    NOT?: batchstepScalarWhereWithAggregatesInput | batchstepScalarWhereWithAggregatesInput[];
+    BatchName?: StringWithAggregatesFilter<'batchstep'> | string;
+    ProductId?: StringWithAggregatesFilter<'batchstep'> | string;
+    ProductName?: StringNullableWithAggregatesFilter<'batchstep'> | string | null;
+    LotName?: StringWithAggregatesFilter<'batchstep'> | string;
+    ContainerPK?: IntWithAggregatesFilter<'batchstep'> | number;
+  };
+
+  export type loadstepWhereInput = {
+    AND?: loadstepWhereInput | loadstepWhereInput[];
+    OR?: loadstepWhereInput[];
+    NOT?: loadstepWhereInput | loadstepWhereInput[];
+    CreateDate?: DateTimeFilter<'loadstep'> | Date | string;
+    ContainerPK?: IntFilter<'loadstep'> | number;
+    AuthorName?: StringFilter<'loadstep'> | string;
+  };
+
+  export type loadstepOrderByWithRelationInput = {
+    CreateDate?: SortOrder;
+    ContainerPK?: SortOrder;
+    AuthorName?: SortOrder;
+  };
+
+  export type loadstepOrderByWithAggregationInput = {
+    CreateDate?: SortOrder;
+    ContainerPK?: SortOrder;
+    AuthorName?: SortOrder;
+    _count?: loadstepCountOrderByAggregateInput;
+    _avg?: loadstepAvgOrderByAggregateInput;
+    _max?: loadstepMaxOrderByAggregateInput;
+    _min?: loadstepMinOrderByAggregateInput;
+    _sum?: loadstepSumOrderByAggregateInput;
+  };
+
+  export type loadstepScalarWhereWithAggregatesInput = {
+    AND?: loadstepScalarWhereWithAggregatesInput | loadstepScalarWhereWithAggregatesInput[];
+    OR?: loadstepScalarWhereWithAggregatesInput[];
+    NOT?: loadstepScalarWhereWithAggregatesInput | loadstepScalarWhereWithAggregatesInput[];
+    CreateDate?: DateTimeWithAggregatesFilter<'loadstep'> | Date | string;
+    ContainerPK?: IntWithAggregatesFilter<'loadstep'> | number;
+    AuthorName?: StringWithAggregatesFilter<'loadstep'> | string;
+  };
+
+  export type batchviewWhereInput = {
+    AND?: batchviewWhereInput | batchviewWhereInput[];
+    OR?: batchviewWhereInput[];
+    NOT?: batchviewWhereInput | batchviewWhereInput[];
+    BatchName?: StringFilter<'batchview'> | string;
+    ProductId?: StringFilter<'batchview'> | string;
+    ProductName?: StringNullableFilter<'batchview'> | string | null;
+    LotName?: StringFilter<'batchview'> | string;
+    AuthorName?: StringFilter<'batchview'> | string;
+    Quantity?: DecimalFilter<'batchview'> | Decimal | DecimalJsLike | number | string;
+    CreateDate?: DateTimeFilter<'batchview'> | Date | string;
+  };
+
+  export type batchviewOrderByWithRelationInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrderInput | SortOrder;
+    LotName?: SortOrder;
+    AuthorName?: SortOrder;
+    Quantity?: SortOrder;
+    CreateDate?: SortOrder;
+  };
+
+  export type batchviewOrderByWithAggregationInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrderInput | SortOrder;
+    LotName?: SortOrder;
+    AuthorName?: SortOrder;
+    Quantity?: SortOrder;
+    CreateDate?: SortOrder;
+    _count?: batchviewCountOrderByAggregateInput;
+    _avg?: batchviewAvgOrderByAggregateInput;
+    _max?: batchviewMaxOrderByAggregateInput;
+    _min?: batchviewMinOrderByAggregateInput;
+    _sum?: batchviewSumOrderByAggregateInput;
+  };
+
+  export type batchviewScalarWhereWithAggregatesInput = {
+    AND?: batchviewScalarWhereWithAggregatesInput | batchviewScalarWhereWithAggregatesInput[];
+    OR?: batchviewScalarWhereWithAggregatesInput[];
+    NOT?: batchviewScalarWhereWithAggregatesInput | batchviewScalarWhereWithAggregatesInput[];
+    BatchName?: StringWithAggregatesFilter<'batchview'> | string;
+    ProductId?: StringWithAggregatesFilter<'batchview'> | string;
+    ProductName?: StringNullableWithAggregatesFilter<'batchview'> | string | null;
+    LotName?: StringWithAggregatesFilter<'batchview'> | string;
+    AuthorName?: StringWithAggregatesFilter<'batchview'> | string;
+    Quantity?: DecimalWithAggregatesFilter<'batchview'> | Decimal | DecimalJsLike | number | string;
+    CreateDate?: DateTimeWithAggregatesFilter<'batchview'> | Date | string;
+  };
+
+  export type loadviewWhereInput = {
+    AND?: loadviewWhereInput | loadviewWhereInput[];
+    OR?: loadviewWhereInput[];
+    NOT?: loadviewWhereInput | loadviewWhereInput[];
+    BatchName?: StringFilter<'loadview'> | string;
+    ProductId?: StringFilter<'loadview'> | string;
+    ProductName?: StringNullableFilter<'loadview'> | string | null;
+    LotName?: StringFilter<'loadview'> | string;
+    AuthorName?: StringFilter<'loadview'> | string;
+    CreateDate?: DateTimeFilter<'loadview'> | Date | string;
+  };
+
+  export type loadviewOrderByWithRelationInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrderInput | SortOrder;
+    LotName?: SortOrder;
+    AuthorName?: SortOrder;
+    CreateDate?: SortOrder;
+  };
+
+  export type loadviewOrderByWithAggregationInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrderInput | SortOrder;
+    LotName?: SortOrder;
+    AuthorName?: SortOrder;
+    CreateDate?: SortOrder;
+    _count?: loadviewCountOrderByAggregateInput;
+    _max?: loadviewMaxOrderByAggregateInput;
+    _min?: loadviewMinOrderByAggregateInput;
+  };
+
+  export type loadviewScalarWhereWithAggregatesInput = {
+    AND?: loadviewScalarWhereWithAggregatesInput | loadviewScalarWhereWithAggregatesInput[];
+    OR?: loadviewScalarWhereWithAggregatesInput[];
+    NOT?: loadviewScalarWhereWithAggregatesInput | loadviewScalarWhereWithAggregatesInput[];
+    BatchName?: StringWithAggregatesFilter<'loadview'> | string;
+    ProductId?: StringWithAggregatesFilter<'loadview'> | string;
+    ProductName?: StringNullableWithAggregatesFilter<'loadview'> | string | null;
+    LotName?: StringWithAggregatesFilter<'loadview'> | string;
+    AuthorName?: StringWithAggregatesFilter<'loadview'> | string;
+    CreateDate?: DateTimeWithAggregatesFilter<'loadview'> | Date | string;
+  };
+
+  export type lotdetailviewWhereInput = {
+    AND?: lotdetailviewWhereInput | lotdetailviewWhereInput[];
+    OR?: lotdetailviewWhereInput[];
+    NOT?: lotdetailviewWhereInput | lotdetailviewWhereInput[];
+    ProductName?: StringNullableFilter<'lotdetailview'> | string | null;
+    ManufacturerLotName?: StringFilter<'lotdetailview'> | string;
+    ManufacturerName?: StringFilter<'lotdetailview'> | string;
+    ProductId?: StringFilter<'lotdetailview'> | string;
+    ManufacturerLotPK?: IntFilter<'lotdetailview'> | number;
+    ManufacturerPK?: IntFilter<'lotdetailview'> | number;
+    SellerPK?: IntFilter<'lotdetailview'> | number;
+    SellerName?: StringFilter<'lotdetailview'> | string;
+    LotName?: StringFilter<'lotdetailview'> | string;
+    LotDate?: DateTimeNullableFilter<'lotdetailview'> | Date | string | null;
+    TrademarkPK?: IntFilter<'lotdetailview'> | number;
+    TrademarkName?: StringFilter<'lotdetailview'> | string;
+  };
+
+  export type lotdetailviewOrderByWithRelationInput = {
+    ProductName?: SortOrderInput | SortOrder;
+    ManufacturerLotName?: SortOrder;
+    ManufacturerName?: SortOrder;
+    ProductId?: SortOrder;
+    ManufacturerLotPK?: SortOrder;
+    ManufacturerPK?: SortOrder;
+    SellerPK?: SortOrder;
+    SellerName?: SortOrder;
+    LotName?: SortOrder;
+    LotDate?: SortOrderInput | SortOrder;
+    TrademarkPK?: SortOrder;
+    TrademarkName?: SortOrder;
+  };
+
+  export type lotdetailviewOrderByWithAggregationInput = {
+    ProductName?: SortOrderInput | SortOrder;
+    ManufacturerLotName?: SortOrder;
+    ManufacturerName?: SortOrder;
+    ProductId?: SortOrder;
+    ManufacturerLotPK?: SortOrder;
+    ManufacturerPK?: SortOrder;
+    SellerPK?: SortOrder;
+    SellerName?: SortOrder;
+    LotName?: SortOrder;
+    LotDate?: SortOrderInput | SortOrder;
+    TrademarkPK?: SortOrder;
+    TrademarkName?: SortOrder;
+    _count?: lotdetailviewCountOrderByAggregateInput;
+    _avg?: lotdetailviewAvgOrderByAggregateInput;
+    _max?: lotdetailviewMaxOrderByAggregateInput;
+    _min?: lotdetailviewMinOrderByAggregateInput;
+    _sum?: lotdetailviewSumOrderByAggregateInput;
+  };
+
+  export type lotdetailviewScalarWhereWithAggregatesInput = {
+    AND?:
+      | lotdetailviewScalarWhereWithAggregatesInput
+      | lotdetailviewScalarWhereWithAggregatesInput[];
+    OR?: lotdetailviewScalarWhereWithAggregatesInput[];
+    NOT?:
+      | lotdetailviewScalarWhereWithAggregatesInput
+      | lotdetailviewScalarWhereWithAggregatesInput[];
+    ProductName?: StringNullableWithAggregatesFilter<'lotdetailview'> | string | null;
+    ManufacturerLotName?: StringWithAggregatesFilter<'lotdetailview'> | string;
+    ManufacturerName?: StringWithAggregatesFilter<'lotdetailview'> | string;
+    ProductId?: StringWithAggregatesFilter<'lotdetailview'> | string;
+    ManufacturerLotPK?: IntWithAggregatesFilter<'lotdetailview'> | number;
+    ManufacturerPK?: IntWithAggregatesFilter<'lotdetailview'> | number;
+    SellerPK?: IntWithAggregatesFilter<'lotdetailview'> | number;
+    SellerName?: StringWithAggregatesFilter<'lotdetailview'> | string;
+    LotName?: StringWithAggregatesFilter<'lotdetailview'> | string;
+    LotDate?: DateTimeNullableWithAggregatesFilter<'lotdetailview'> | Date | string | null;
+    TrademarkPK?: IntWithAggregatesFilter<'lotdetailview'> | number;
+    TrademarkName?: StringWithAggregatesFilter<'lotdetailview'> | string;
+  };
+
+  export type DocviewWhereInput = {
+    AND?: DocviewWhereInput | DocviewWhereInput[];
+    OR?: DocviewWhereInput[];
+    NOT?: DocviewWhereInput | DocviewWhereInput[];
+    DocumentPK?: IntFilter<'Docview'> | number;
+    DoctypePK?: IntFilter<'Docview'> | number;
+    AuthorPK?: IntFilter<'Docview'> | number;
+    CreateDate?: DateTimeFilter<'Docview'> | Date | string;
+    Plant?: StringNullableFilter<'Docview'> | string | null;
+    AuthorName?: StringFilter<'Docview'> | string;
+  };
+
+  export type DocviewOrderByWithRelationInput = {
+    DocumentPK?: SortOrder;
+    DoctypePK?: SortOrder;
+    AuthorPK?: SortOrder;
+    CreateDate?: SortOrder;
+    Plant?: SortOrderInput | SortOrder;
+    AuthorName?: SortOrder;
+  };
+
+  export type DocviewOrderByWithAggregationInput = {
+    DocumentPK?: SortOrder;
+    DoctypePK?: SortOrder;
+    AuthorPK?: SortOrder;
+    CreateDate?: SortOrder;
+    Plant?: SortOrderInput | SortOrder;
+    AuthorName?: SortOrder;
+    _count?: DocviewCountOrderByAggregateInput;
+    _avg?: DocviewAvgOrderByAggregateInput;
+    _max?: DocviewMaxOrderByAggregateInput;
+    _min?: DocviewMinOrderByAggregateInput;
+    _sum?: DocviewSumOrderByAggregateInput;
+  };
+
+  export type DocviewScalarWhereWithAggregatesInput = {
+    AND?: DocviewScalarWhereWithAggregatesInput | DocviewScalarWhereWithAggregatesInput[];
+    OR?: DocviewScalarWhereWithAggregatesInput[];
+    NOT?: DocviewScalarWhereWithAggregatesInput | DocviewScalarWhereWithAggregatesInput[];
+    DocumentPK?: IntWithAggregatesFilter<'Docview'> | number;
+    DoctypePK?: IntWithAggregatesFilter<'Docview'> | number;
+    AuthorPK?: IntWithAggregatesFilter<'Docview'> | number;
+    CreateDate?: DateTimeWithAggregatesFilter<'Docview'> | Date | string;
+    Plant?: StringNullableWithAggregatesFilter<'Docview'> | string | null;
+    AuthorName?: StringWithAggregatesFilter<'Docview'> | string;
+  };
+
+  export type boilviewWhereInput = {
+    AND?: boilviewWhereInput | boilviewWhereInput[];
+    OR?: boilviewWhereInput[];
+    NOT?: boilviewWhereInput | boilviewWhereInput[];
+    BatchName?: StringFilter<'boilview'> | string;
+    ProductId?: StringFilter<'boilview'> | string;
+    ProductName?: StringNullableFilter<'boilview'> | string | null;
+    Quantity?: DecimalFilter<'boilview'> | Decimal | DecimalJsLike | number | string;
+    Total?: DecimalNullableFilter<'boilview'> | Decimal | DecimalJsLike | number | string | null;
+    BatchDate?: DateTimeNullableFilter<'boilview'> | Date | string | null;
+    Plant?: StringNullableFilter<'boilview'> | string | null;
+  };
+
+  export type boilviewOrderByWithRelationInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrderInput | SortOrder;
+    Quantity?: SortOrder;
+    Total?: SortOrderInput | SortOrder;
+    BatchDate?: SortOrderInput | SortOrder;
+    Plant?: SortOrderInput | SortOrder;
+  };
+
+  export type boilviewOrderByWithAggregationInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrderInput | SortOrder;
+    Quantity?: SortOrder;
+    Total?: SortOrderInput | SortOrder;
+    BatchDate?: SortOrderInput | SortOrder;
+    Plant?: SortOrderInput | SortOrder;
+    _count?: boilviewCountOrderByAggregateInput;
+    _avg?: boilviewAvgOrderByAggregateInput;
+    _max?: boilviewMaxOrderByAggregateInput;
+    _min?: boilviewMinOrderByAggregateInput;
+    _sum?: boilviewSumOrderByAggregateInput;
+  };
+
+  export type boilviewScalarWhereWithAggregatesInput = {
+    AND?: boilviewScalarWhereWithAggregatesInput | boilviewScalarWhereWithAggregatesInput[];
+    OR?: boilviewScalarWhereWithAggregatesInput[];
+    NOT?: boilviewScalarWhereWithAggregatesInput | boilviewScalarWhereWithAggregatesInput[];
+    BatchName?: StringWithAggregatesFilter<'boilview'> | string;
+    ProductId?: StringWithAggregatesFilter<'boilview'> | string;
+    ProductName?: StringNullableWithAggregatesFilter<'boilview'> | string | null;
+    Quantity?: DecimalWithAggregatesFilter<'boilview'> | Decimal | DecimalJsLike | number | string;
+    Total?:
+      | DecimalNullableWithAggregatesFilter<'boilview'>
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    BatchDate?: DateTimeNullableWithAggregatesFilter<'boilview'> | Date | string | null;
+    Plant?: StringNullableWithAggregatesFilter<'boilview'> | string | null;
+  };
+
+  export type vw_PlanAggregatedWhereInput = {
+    AND?: vw_PlanAggregatedWhereInput | vw_PlanAggregatedWhereInput[];
+    OR?: vw_PlanAggregatedWhereInput[];
+    NOT?: vw_PlanAggregatedWhereInput | vw_PlanAggregatedWhereInput[];
+    BatchPK?: IntFilter<'vw_PlanAggregated'> | number;
+    ProductId?: StringFilter<'vw_PlanAggregated'> | string;
+    TotalPlanned?:
+      | DecimalNullableFilter<'vw_PlanAggregated'>
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalRows?: BigIntNullableFilter<'vw_PlanAggregated'> | bigint | number | null;
+  };
+
+  export type vw_PlanAggregatedOrderByWithRelationInput = {
+    BatchPK?: SortOrder;
+    ProductId?: SortOrder;
+    TotalPlanned?: SortOrderInput | SortOrder;
+    TotalRows?: SortOrderInput | SortOrder;
+  };
+
+  export type vw_PlanAggregatedOrderByWithAggregationInput = {
+    BatchPK?: SortOrder;
+    ProductId?: SortOrder;
+    TotalPlanned?: SortOrderInput | SortOrder;
+    TotalRows?: SortOrderInput | SortOrder;
+    _count?: vw_PlanAggregatedCountOrderByAggregateInput;
+    _avg?: vw_PlanAggregatedAvgOrderByAggregateInput;
+    _max?: vw_PlanAggregatedMaxOrderByAggregateInput;
+    _min?: vw_PlanAggregatedMinOrderByAggregateInput;
+    _sum?: vw_PlanAggregatedSumOrderByAggregateInput;
+  };
+
+  export type vw_PlanAggregatedScalarWhereWithAggregatesInput = {
+    AND?:
+      | vw_PlanAggregatedScalarWhereWithAggregatesInput
+      | vw_PlanAggregatedScalarWhereWithAggregatesInput[];
+    OR?: vw_PlanAggregatedScalarWhereWithAggregatesInput[];
+    NOT?:
+      | vw_PlanAggregatedScalarWhereWithAggregatesInput
+      | vw_PlanAggregatedScalarWhereWithAggregatesInput[];
+    BatchPK?: IntWithAggregatesFilter<'vw_PlanAggregated'> | number;
+    ProductId?: StringWithAggregatesFilter<'vw_PlanAggregated'> | string;
+    TotalPlanned?:
+      | DecimalNullableWithAggregatesFilter<'vw_PlanAggregated'>
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalRows?: BigIntNullableWithAggregatesFilter<'vw_PlanAggregated'> | bigint | number | null;
+  };
+
+  export type vw_FactWeightingWhereInput = {
+    AND?: vw_FactWeightingWhereInput | vw_FactWeightingWhereInput[];
+    OR?: vw_FactWeightingWhereInput[];
+    NOT?: vw_FactWeightingWhereInput | vw_FactWeightingWhereInput[];
+    BatchPK?: IntFilter<'vw_FactWeighting'> | number;
+    ProductId?: StringFilter<'vw_FactWeighting'> | string;
+    TotalWeighting?:
+      | DecimalNullableFilter<'vw_FactWeighting'>
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalRows?: BigIntNullableFilter<'vw_FactWeighting'> | bigint | number | null;
+  };
+
+  export type vw_FactWeightingOrderByWithRelationInput = {
+    BatchPK?: SortOrder;
+    ProductId?: SortOrder;
+    TotalWeighting?: SortOrderInput | SortOrder;
+    TotalRows?: SortOrderInput | SortOrder;
+  };
+
+  export type vw_FactWeightingOrderByWithAggregationInput = {
+    BatchPK?: SortOrder;
+    ProductId?: SortOrder;
+    TotalWeighting?: SortOrderInput | SortOrder;
+    TotalRows?: SortOrderInput | SortOrder;
+    _count?: vw_FactWeightingCountOrderByAggregateInput;
+    _avg?: vw_FactWeightingAvgOrderByAggregateInput;
+    _max?: vw_FactWeightingMaxOrderByAggregateInput;
+    _min?: vw_FactWeightingMinOrderByAggregateInput;
+    _sum?: vw_FactWeightingSumOrderByAggregateInput;
+  };
+
+  export type vw_FactWeightingScalarWhereWithAggregatesInput = {
+    AND?:
+      | vw_FactWeightingScalarWhereWithAggregatesInput
+      | vw_FactWeightingScalarWhereWithAggregatesInput[];
+    OR?: vw_FactWeightingScalarWhereWithAggregatesInput[];
+    NOT?:
+      | vw_FactWeightingScalarWhereWithAggregatesInput
+      | vw_FactWeightingScalarWhereWithAggregatesInput[];
+    BatchPK?: IntWithAggregatesFilter<'vw_FactWeighting'> | number;
+    ProductId?: StringWithAggregatesFilter<'vw_FactWeighting'> | string;
+    TotalWeighting?:
+      | DecimalNullableWithAggregatesFilter<'vw_FactWeighting'>
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalRows?: BigIntNullableWithAggregatesFilter<'vw_FactWeighting'> | bigint | number | null;
+  };
+
+  export type vw_FactLoadingWhereInput = {
+    AND?: vw_FactLoadingWhereInput | vw_FactLoadingWhereInput[];
+    OR?: vw_FactLoadingWhereInput[];
+    NOT?: vw_FactLoadingWhereInput | vw_FactLoadingWhereInput[];
+    BatchPK?: IntFilter<'vw_FactLoading'> | number;
+    ProductId?: StringFilter<'vw_FactLoading'> | string;
+    TotalLoading?:
+      | DecimalNullableFilter<'vw_FactLoading'>
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalRows?: BigIntNullableFilter<'vw_FactLoading'> | bigint | number | null;
+  };
+
+  export type vw_FactLoadingOrderByWithRelationInput = {
+    BatchPK?: SortOrder;
+    ProductId?: SortOrder;
+    TotalLoading?: SortOrderInput | SortOrder;
+    TotalRows?: SortOrderInput | SortOrder;
+  };
+
+  export type vw_FactLoadingOrderByWithAggregationInput = {
+    BatchPK?: SortOrder;
+    ProductId?: SortOrder;
+    TotalLoading?: SortOrderInput | SortOrder;
+    TotalRows?: SortOrderInput | SortOrder;
+    _count?: vw_FactLoadingCountOrderByAggregateInput;
+    _avg?: vw_FactLoadingAvgOrderByAggregateInput;
+    _max?: vw_FactLoadingMaxOrderByAggregateInput;
+    _min?: vw_FactLoadingMinOrderByAggregateInput;
+    _sum?: vw_FactLoadingSumOrderByAggregateInput;
+  };
+
+  export type vw_FactLoadingScalarWhereWithAggregatesInput = {
+    AND?:
+      | vw_FactLoadingScalarWhereWithAggregatesInput
+      | vw_FactLoadingScalarWhereWithAggregatesInput[];
+    OR?: vw_FactLoadingScalarWhereWithAggregatesInput[];
+    NOT?:
+      | vw_FactLoadingScalarWhereWithAggregatesInput
+      | vw_FactLoadingScalarWhereWithAggregatesInput[];
+    BatchPK?: IntWithAggregatesFilter<'vw_FactLoading'> | number;
+    ProductId?: StringWithAggregatesFilter<'vw_FactLoading'> | string;
+    TotalLoading?:
+      | DecimalNullableWithAggregatesFilter<'vw_FactLoading'>
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalRows?: BigIntNullableWithAggregatesFilter<'vw_FactLoading'> | bigint | number | null;
+  };
+
+  export type vw_FinalBatchStatusWhereInput = {
+    AND?: vw_FinalBatchStatusWhereInput | vw_FinalBatchStatusWhereInput[];
+    OR?: vw_FinalBatchStatusWhereInput[];
+    NOT?: vw_FinalBatchStatusWhereInput | vw_FinalBatchStatusWhereInput[];
+    BatchPK?: IntFilter<'vw_FinalBatchStatus'> | number;
+    BatchName?: StringFilter<'vw_FinalBatchStatus'> | string;
+    BatchDate?: DateTimeNullableFilter<'vw_FinalBatchStatus'> | Date | string | null;
+    BatchYear?: IntNullableFilter<'vw_FinalBatchStatus'> | number | null;
+    BatchMonth?: StringNullableFilter<'vw_FinalBatchStatus'> | string | null;
+    BatchNumber?: IntNullableFilter<'vw_FinalBatchStatus'> | number | null;
+    Plant?: StringNullableFilter<'vw_FinalBatchStatus'> | string | null;
+    BatchProductId?: StringNullableFilter<'vw_FinalBatchStatus'> | string | null;
+    BatchProductMarking?: StringNullableFilter<'vw_FinalBatchStatus'> | string | null;
+    ProductId?: StringFilter<'vw_FinalBatchStatus'> | string;
+    ProductName?: StringNullableFilter<'vw_FinalBatchStatus'> | string | null;
+    ProductMarking?: StringNullableFilter<'vw_FinalBatchStatus'> | string | null;
+    TotalPlanned?:
+      | DecimalNullableFilter<'vw_FinalBatchStatus'>
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalWeighting?:
+      | DecimalNullableFilter<'vw_FinalBatchStatus'>
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalLoading?:
+      | DecimalNullableFilter<'vw_FinalBatchStatus'>
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    ProblemStatus?: StringFilter<'vw_FinalBatchStatus'> | string;
+    batchs?: XOR<BatchsScalarRelationFilter, BatchsWhereInput>;
+  };
+
+  export type vw_FinalBatchStatusOrderByWithRelationInput = {
+    BatchPK?: SortOrder;
+    BatchName?: SortOrder;
+    BatchDate?: SortOrderInput | SortOrder;
+    BatchYear?: SortOrderInput | SortOrder;
+    BatchMonth?: SortOrderInput | SortOrder;
+    BatchNumber?: SortOrderInput | SortOrder;
+    Plant?: SortOrderInput | SortOrder;
+    BatchProductId?: SortOrderInput | SortOrder;
+    BatchProductMarking?: SortOrderInput | SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrderInput | SortOrder;
+    ProductMarking?: SortOrderInput | SortOrder;
+    TotalPlanned?: SortOrderInput | SortOrder;
+    TotalWeighting?: SortOrderInput | SortOrder;
+    TotalLoading?: SortOrderInput | SortOrder;
+    ProblemStatus?: SortOrder;
+    batchs?: BatchsOrderByWithRelationInput;
+  };
+
+  export type vw_FinalBatchStatusWhereUniqueInput = Prisma.AtLeast<
+    {
+      BatchPK_ProductId?: vw_FinalBatchStatusBatchPKProductIdCompoundUniqueInput;
+      AND?: vw_FinalBatchStatusWhereInput | vw_FinalBatchStatusWhereInput[];
+      OR?: vw_FinalBatchStatusWhereInput[];
+      NOT?: vw_FinalBatchStatusWhereInput | vw_FinalBatchStatusWhereInput[];
+      BatchPK?: IntFilter<'vw_FinalBatchStatus'> | number;
+      BatchName?: StringFilter<'vw_FinalBatchStatus'> | string;
+      BatchDate?: DateTimeNullableFilter<'vw_FinalBatchStatus'> | Date | string | null;
+      BatchYear?: IntNullableFilter<'vw_FinalBatchStatus'> | number | null;
+      BatchMonth?: StringNullableFilter<'vw_FinalBatchStatus'> | string | null;
+      BatchNumber?: IntNullableFilter<'vw_FinalBatchStatus'> | number | null;
+      Plant?: StringNullableFilter<'vw_FinalBatchStatus'> | string | null;
+      BatchProductId?: StringNullableFilter<'vw_FinalBatchStatus'> | string | null;
+      BatchProductMarking?: StringNullableFilter<'vw_FinalBatchStatus'> | string | null;
+      ProductId?: StringFilter<'vw_FinalBatchStatus'> | string;
+      ProductName?: StringNullableFilter<'vw_FinalBatchStatus'> | string | null;
+      ProductMarking?: StringNullableFilter<'vw_FinalBatchStatus'> | string | null;
+      TotalPlanned?:
+        | DecimalNullableFilter<'vw_FinalBatchStatus'>
+        | Decimal
+        | DecimalJsLike
+        | number
+        | string
+        | null;
+      TotalWeighting?:
+        | DecimalNullableFilter<'vw_FinalBatchStatus'>
+        | Decimal
+        | DecimalJsLike
+        | number
+        | string
+        | null;
+      TotalLoading?:
+        | DecimalNullableFilter<'vw_FinalBatchStatus'>
+        | Decimal
+        | DecimalJsLike
+        | number
+        | string
+        | null;
+      ProblemStatus?: StringFilter<'vw_FinalBatchStatus'> | string;
+      batchs?: XOR<BatchsScalarRelationFilter, BatchsWhereInput>;
+    },
+    'BatchPK_ProductId'
+  >;
+
+  export type vw_FinalBatchStatusOrderByWithAggregationInput = {
+    BatchPK?: SortOrder;
+    BatchName?: SortOrder;
+    BatchDate?: SortOrderInput | SortOrder;
+    BatchYear?: SortOrderInput | SortOrder;
+    BatchMonth?: SortOrderInput | SortOrder;
+    BatchNumber?: SortOrderInput | SortOrder;
+    Plant?: SortOrderInput | SortOrder;
+    BatchProductId?: SortOrderInput | SortOrder;
+    BatchProductMarking?: SortOrderInput | SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrderInput | SortOrder;
+    ProductMarking?: SortOrderInput | SortOrder;
+    TotalPlanned?: SortOrderInput | SortOrder;
+    TotalWeighting?: SortOrderInput | SortOrder;
+    TotalLoading?: SortOrderInput | SortOrder;
+    ProblemStatus?: SortOrder;
+    _count?: vw_FinalBatchStatusCountOrderByAggregateInput;
+    _avg?: vw_FinalBatchStatusAvgOrderByAggregateInput;
+    _max?: vw_FinalBatchStatusMaxOrderByAggregateInput;
+    _min?: vw_FinalBatchStatusMinOrderByAggregateInput;
+    _sum?: vw_FinalBatchStatusSumOrderByAggregateInput;
+  };
+
+  export type vw_FinalBatchStatusScalarWhereWithAggregatesInput = {
+    AND?:
+      | vw_FinalBatchStatusScalarWhereWithAggregatesInput
+      | vw_FinalBatchStatusScalarWhereWithAggregatesInput[];
+    OR?: vw_FinalBatchStatusScalarWhereWithAggregatesInput[];
+    NOT?:
+      | vw_FinalBatchStatusScalarWhereWithAggregatesInput
+      | vw_FinalBatchStatusScalarWhereWithAggregatesInput[];
+    BatchPK?: IntWithAggregatesFilter<'vw_FinalBatchStatus'> | number;
+    BatchName?: StringWithAggregatesFilter<'vw_FinalBatchStatus'> | string;
+    BatchDate?: DateTimeNullableWithAggregatesFilter<'vw_FinalBatchStatus'> | Date | string | null;
+    BatchYear?: IntNullableWithAggregatesFilter<'vw_FinalBatchStatus'> | number | null;
+    BatchMonth?: StringNullableWithAggregatesFilter<'vw_FinalBatchStatus'> | string | null;
+    BatchNumber?: IntNullableWithAggregatesFilter<'vw_FinalBatchStatus'> | number | null;
+    Plant?: StringNullableWithAggregatesFilter<'vw_FinalBatchStatus'> | string | null;
+    BatchProductId?: StringNullableWithAggregatesFilter<'vw_FinalBatchStatus'> | string | null;
+    BatchProductMarking?: StringNullableWithAggregatesFilter<'vw_FinalBatchStatus'> | string | null;
+    ProductId?: StringWithAggregatesFilter<'vw_FinalBatchStatus'> | string;
+    ProductName?: StringNullableWithAggregatesFilter<'vw_FinalBatchStatus'> | string | null;
+    ProductMarking?: StringNullableWithAggregatesFilter<'vw_FinalBatchStatus'> | string | null;
+    TotalPlanned?:
+      | DecimalNullableWithAggregatesFilter<'vw_FinalBatchStatus'>
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalWeighting?:
+      | DecimalNullableWithAggregatesFilter<'vw_FinalBatchStatus'>
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalLoading?:
+      | DecimalNullableWithAggregatesFilter<'vw_FinalBatchStatus'>
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    ProblemStatus?: StringWithAggregatesFilter<'vw_FinalBatchStatus'> | string;
+  };
+
   export type AcceptanceCreateInput = {
     ExpiredDate: Date | string;
     BarrelsCapacity: Decimal | DecimalJsLike | number | string;
@@ -51345,6 +62473,7 @@ export namespace Prisma {
     CanRecords?: CanRecordsCreateNestedManyWithoutBatchsInput;
     Loads?: LoadsCreateNestedManyWithoutBatchsInput;
     Weightings?: WeightingsCreateNestedManyWithoutBatchsInput;
+    details?: vw_FinalBatchStatusCreateNestedManyWithoutBatchsInput;
   };
 
   export type BatchsUncheckedCreateInput = {
@@ -51361,6 +62490,7 @@ export namespace Prisma {
     CanRecords?: CanRecordsUncheckedCreateNestedManyWithoutBatchsInput;
     Loads?: LoadsUncheckedCreateNestedManyWithoutBatchsInput;
     Weightings?: WeightingsUncheckedCreateNestedManyWithoutBatchsInput;
+    details?: vw_FinalBatchStatusUncheckedCreateNestedManyWithoutBatchsInput;
   };
 
   export type BatchsUpdateInput = {
@@ -51376,6 +62506,7 @@ export namespace Prisma {
     CanRecords?: CanRecordsUpdateManyWithoutBatchsNestedInput;
     Loads?: LoadsUpdateManyWithoutBatchsNestedInput;
     Weightings?: WeightingsUpdateManyWithoutBatchsNestedInput;
+    details?: vw_FinalBatchStatusUpdateManyWithoutBatchsNestedInput;
   };
 
   export type BatchsUncheckedUpdateInput = {
@@ -51392,6 +62523,7 @@ export namespace Prisma {
     CanRecords?: CanRecordsUncheckedUpdateManyWithoutBatchsNestedInput;
     Loads?: LoadsUncheckedUpdateManyWithoutBatchsNestedInput;
     Weightings?: WeightingsUncheckedUpdateManyWithoutBatchsNestedInput;
+    details?: vw_FinalBatchStatusUncheckedUpdateManyWithoutBatchsNestedInput;
   };
 
   export type BatchsCreateManyInput = {
@@ -53485,6 +64617,12 @@ export namespace Prisma {
     none?: WeightingsWhereInput;
   };
 
+  export type Vw_FinalBatchStatusListRelationFilter = {
+    every?: vw_FinalBatchStatusWhereInput;
+    some?: vw_FinalBatchStatusWhereInput;
+    none?: vw_FinalBatchStatusWhereInput;
+  };
+
   export type BoilsOrderByRelationAggregateInput = {
     _count?: SortOrder;
   };
@@ -53498,6 +64636,10 @@ export namespace Prisma {
   };
 
   export type WeightingsOrderByRelationAggregateInput = {
+    _count?: SortOrder;
+  };
+
+  export type vw_FinalBatchStatusOrderByRelationAggregateInput = {
     _count?: SortOrder;
   };
 
@@ -54867,6 +66009,580 @@ export namespace Prisma {
     Quantity?: SortOrder;
   };
 
+  export type testCountOrderByAggregateInput = {
+    BatchName?: SortOrder;
+    BatchDate?: SortOrder;
+    Plant?: SortOrder;
+    ProductName?: SortOrder;
+    Quantity?: SortOrder;
+    ProductId?: SortOrder;
+    BatchPK?: SortOrder;
+  };
+
+  export type testAvgOrderByAggregateInput = {
+    Quantity?: SortOrder;
+    BatchPK?: SortOrder;
+  };
+
+  export type testMaxOrderByAggregateInput = {
+    BatchName?: SortOrder;
+    BatchDate?: SortOrder;
+    Plant?: SortOrder;
+    ProductName?: SortOrder;
+    Quantity?: SortOrder;
+    ProductId?: SortOrder;
+    BatchPK?: SortOrder;
+  };
+
+  export type testMinOrderByAggregateInput = {
+    BatchName?: SortOrder;
+    BatchDate?: SortOrder;
+    Plant?: SortOrder;
+    ProductName?: SortOrder;
+    Quantity?: SortOrder;
+    ProductId?: SortOrder;
+    BatchPK?: SortOrder;
+  };
+
+  export type testSumOrderByAggregateInput = {
+    Quantity?: SortOrder;
+    BatchPK?: SortOrder;
+  };
+
+  export type lotsviewCountOrderByAggregateInput = {
+    LotName?: SortOrder;
+    BatchName?: SortOrder;
+    CreateDate?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrder;
+    SellerPK?: SortOrder;
+    SellerName?: SortOrder;
+    ManufacturerPK?: SortOrder;
+    ManufacturerName?: SortOrder;
+    ManufacturerLotPK?: SortOrder;
+    ManufacturerLotName?: SortOrder;
+    TrademarkPK?: SortOrder;
+    TrademarkName?: SortOrder;
+    BatchPK?: SortOrder;
+  };
+
+  export type lotsviewAvgOrderByAggregateInput = {
+    SellerPK?: SortOrder;
+    ManufacturerPK?: SortOrder;
+    ManufacturerLotPK?: SortOrder;
+    TrademarkPK?: SortOrder;
+    BatchPK?: SortOrder;
+  };
+
+  export type lotsviewMaxOrderByAggregateInput = {
+    LotName?: SortOrder;
+    BatchName?: SortOrder;
+    CreateDate?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrder;
+    SellerPK?: SortOrder;
+    SellerName?: SortOrder;
+    ManufacturerPK?: SortOrder;
+    ManufacturerName?: SortOrder;
+    ManufacturerLotPK?: SortOrder;
+    ManufacturerLotName?: SortOrder;
+    TrademarkPK?: SortOrder;
+    TrademarkName?: SortOrder;
+    BatchPK?: SortOrder;
+  };
+
+  export type lotsviewMinOrderByAggregateInput = {
+    LotName?: SortOrder;
+    BatchName?: SortOrder;
+    CreateDate?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrder;
+    SellerPK?: SortOrder;
+    SellerName?: SortOrder;
+    ManufacturerPK?: SortOrder;
+    ManufacturerName?: SortOrder;
+    ManufacturerLotPK?: SortOrder;
+    ManufacturerLotName?: SortOrder;
+    TrademarkPK?: SortOrder;
+    TrademarkName?: SortOrder;
+    BatchPK?: SortOrder;
+  };
+
+  export type lotsviewSumOrderByAggregateInput = {
+    SellerPK?: SortOrder;
+    ManufacturerPK?: SortOrder;
+    ManufacturerLotPK?: SortOrder;
+    TrademarkPK?: SortOrder;
+    BatchPK?: SortOrder;
+  };
+
+  export type batchstepCountOrderByAggregateInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrder;
+    LotName?: SortOrder;
+    ContainerPK?: SortOrder;
+  };
+
+  export type batchstepAvgOrderByAggregateInput = {
+    ContainerPK?: SortOrder;
+  };
+
+  export type batchstepMaxOrderByAggregateInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrder;
+    LotName?: SortOrder;
+    ContainerPK?: SortOrder;
+  };
+
+  export type batchstepMinOrderByAggregateInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrder;
+    LotName?: SortOrder;
+    ContainerPK?: SortOrder;
+  };
+
+  export type batchstepSumOrderByAggregateInput = {
+    ContainerPK?: SortOrder;
+  };
+
+  export type loadstepCountOrderByAggregateInput = {
+    CreateDate?: SortOrder;
+    ContainerPK?: SortOrder;
+    AuthorName?: SortOrder;
+  };
+
+  export type loadstepAvgOrderByAggregateInput = {
+    ContainerPK?: SortOrder;
+  };
+
+  export type loadstepMaxOrderByAggregateInput = {
+    CreateDate?: SortOrder;
+    ContainerPK?: SortOrder;
+    AuthorName?: SortOrder;
+  };
+
+  export type loadstepMinOrderByAggregateInput = {
+    CreateDate?: SortOrder;
+    ContainerPK?: SortOrder;
+    AuthorName?: SortOrder;
+  };
+
+  export type loadstepSumOrderByAggregateInput = {
+    ContainerPK?: SortOrder;
+  };
+
+  export type batchviewCountOrderByAggregateInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrder;
+    LotName?: SortOrder;
+    AuthorName?: SortOrder;
+    Quantity?: SortOrder;
+    CreateDate?: SortOrder;
+  };
+
+  export type batchviewAvgOrderByAggregateInput = {
+    Quantity?: SortOrder;
+  };
+
+  export type batchviewMaxOrderByAggregateInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrder;
+    LotName?: SortOrder;
+    AuthorName?: SortOrder;
+    Quantity?: SortOrder;
+    CreateDate?: SortOrder;
+  };
+
+  export type batchviewMinOrderByAggregateInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrder;
+    LotName?: SortOrder;
+    AuthorName?: SortOrder;
+    Quantity?: SortOrder;
+    CreateDate?: SortOrder;
+  };
+
+  export type batchviewSumOrderByAggregateInput = {
+    Quantity?: SortOrder;
+  };
+
+  export type loadviewCountOrderByAggregateInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrder;
+    LotName?: SortOrder;
+    AuthorName?: SortOrder;
+    CreateDate?: SortOrder;
+  };
+
+  export type loadviewMaxOrderByAggregateInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrder;
+    LotName?: SortOrder;
+    AuthorName?: SortOrder;
+    CreateDate?: SortOrder;
+  };
+
+  export type loadviewMinOrderByAggregateInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrder;
+    LotName?: SortOrder;
+    AuthorName?: SortOrder;
+    CreateDate?: SortOrder;
+  };
+
+  export type lotdetailviewCountOrderByAggregateInput = {
+    ProductName?: SortOrder;
+    ManufacturerLotName?: SortOrder;
+    ManufacturerName?: SortOrder;
+    ProductId?: SortOrder;
+    ManufacturerLotPK?: SortOrder;
+    ManufacturerPK?: SortOrder;
+    SellerPK?: SortOrder;
+    SellerName?: SortOrder;
+    LotName?: SortOrder;
+    LotDate?: SortOrder;
+    TrademarkPK?: SortOrder;
+    TrademarkName?: SortOrder;
+  };
+
+  export type lotdetailviewAvgOrderByAggregateInput = {
+    ManufacturerLotPK?: SortOrder;
+    ManufacturerPK?: SortOrder;
+    SellerPK?: SortOrder;
+    TrademarkPK?: SortOrder;
+  };
+
+  export type lotdetailviewMaxOrderByAggregateInput = {
+    ProductName?: SortOrder;
+    ManufacturerLotName?: SortOrder;
+    ManufacturerName?: SortOrder;
+    ProductId?: SortOrder;
+    ManufacturerLotPK?: SortOrder;
+    ManufacturerPK?: SortOrder;
+    SellerPK?: SortOrder;
+    SellerName?: SortOrder;
+    LotName?: SortOrder;
+    LotDate?: SortOrder;
+    TrademarkPK?: SortOrder;
+    TrademarkName?: SortOrder;
+  };
+
+  export type lotdetailviewMinOrderByAggregateInput = {
+    ProductName?: SortOrder;
+    ManufacturerLotName?: SortOrder;
+    ManufacturerName?: SortOrder;
+    ProductId?: SortOrder;
+    ManufacturerLotPK?: SortOrder;
+    ManufacturerPK?: SortOrder;
+    SellerPK?: SortOrder;
+    SellerName?: SortOrder;
+    LotName?: SortOrder;
+    LotDate?: SortOrder;
+    TrademarkPK?: SortOrder;
+    TrademarkName?: SortOrder;
+  };
+
+  export type lotdetailviewSumOrderByAggregateInput = {
+    ManufacturerLotPK?: SortOrder;
+    ManufacturerPK?: SortOrder;
+    SellerPK?: SortOrder;
+    TrademarkPK?: SortOrder;
+  };
+
+  export type DocviewCountOrderByAggregateInput = {
+    DocumentPK?: SortOrder;
+    DoctypePK?: SortOrder;
+    AuthorPK?: SortOrder;
+    CreateDate?: SortOrder;
+    Plant?: SortOrder;
+    AuthorName?: SortOrder;
+  };
+
+  export type DocviewAvgOrderByAggregateInput = {
+    DocumentPK?: SortOrder;
+    DoctypePK?: SortOrder;
+    AuthorPK?: SortOrder;
+  };
+
+  export type DocviewMaxOrderByAggregateInput = {
+    DocumentPK?: SortOrder;
+    DoctypePK?: SortOrder;
+    AuthorPK?: SortOrder;
+    CreateDate?: SortOrder;
+    Plant?: SortOrder;
+    AuthorName?: SortOrder;
+  };
+
+  export type DocviewMinOrderByAggregateInput = {
+    DocumentPK?: SortOrder;
+    DoctypePK?: SortOrder;
+    AuthorPK?: SortOrder;
+    CreateDate?: SortOrder;
+    Plant?: SortOrder;
+    AuthorName?: SortOrder;
+  };
+
+  export type DocviewSumOrderByAggregateInput = {
+    DocumentPK?: SortOrder;
+    DoctypePK?: SortOrder;
+    AuthorPK?: SortOrder;
+  };
+
+  export type boilviewCountOrderByAggregateInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrder;
+    Quantity?: SortOrder;
+    Total?: SortOrder;
+    BatchDate?: SortOrder;
+    Plant?: SortOrder;
+  };
+
+  export type boilviewAvgOrderByAggregateInput = {
+    Quantity?: SortOrder;
+    Total?: SortOrder;
+  };
+
+  export type boilviewMaxOrderByAggregateInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrder;
+    Quantity?: SortOrder;
+    Total?: SortOrder;
+    BatchDate?: SortOrder;
+    Plant?: SortOrder;
+  };
+
+  export type boilviewMinOrderByAggregateInput = {
+    BatchName?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrder;
+    Quantity?: SortOrder;
+    Total?: SortOrder;
+    BatchDate?: SortOrder;
+    Plant?: SortOrder;
+  };
+
+  export type boilviewSumOrderByAggregateInput = {
+    Quantity?: SortOrder;
+    Total?: SortOrder;
+  };
+
+  export type BigIntNullableFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null;
+    in?: bigint[] | number[] | null;
+    notIn?: bigint[] | number[] | null;
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>;
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>;
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>;
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>;
+    not?: NestedBigIntNullableFilter<$PrismaModel> | bigint | number | null;
+  };
+
+  export type vw_PlanAggregatedCountOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    ProductId?: SortOrder;
+    TotalPlanned?: SortOrder;
+    TotalRows?: SortOrder;
+  };
+
+  export type vw_PlanAggregatedAvgOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    TotalPlanned?: SortOrder;
+    TotalRows?: SortOrder;
+  };
+
+  export type vw_PlanAggregatedMaxOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    ProductId?: SortOrder;
+    TotalPlanned?: SortOrder;
+    TotalRows?: SortOrder;
+  };
+
+  export type vw_PlanAggregatedMinOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    ProductId?: SortOrder;
+    TotalPlanned?: SortOrder;
+    TotalRows?: SortOrder;
+  };
+
+  export type vw_PlanAggregatedSumOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    TotalPlanned?: SortOrder;
+    TotalRows?: SortOrder;
+  };
+
+  export type BigIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null;
+    in?: bigint[] | number[] | null;
+    notIn?: bigint[] | number[] | null;
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>;
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>;
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>;
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>;
+    not?: NestedBigIntNullableWithAggregatesFilter<$PrismaModel> | bigint | number | null;
+    _count?: NestedIntNullableFilter<$PrismaModel>;
+    _avg?: NestedFloatNullableFilter<$PrismaModel>;
+    _sum?: NestedBigIntNullableFilter<$PrismaModel>;
+    _min?: NestedBigIntNullableFilter<$PrismaModel>;
+    _max?: NestedBigIntNullableFilter<$PrismaModel>;
+  };
+
+  export type vw_FactWeightingCountOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    ProductId?: SortOrder;
+    TotalWeighting?: SortOrder;
+    TotalRows?: SortOrder;
+  };
+
+  export type vw_FactWeightingAvgOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    TotalWeighting?: SortOrder;
+    TotalRows?: SortOrder;
+  };
+
+  export type vw_FactWeightingMaxOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    ProductId?: SortOrder;
+    TotalWeighting?: SortOrder;
+    TotalRows?: SortOrder;
+  };
+
+  export type vw_FactWeightingMinOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    ProductId?: SortOrder;
+    TotalWeighting?: SortOrder;
+    TotalRows?: SortOrder;
+  };
+
+  export type vw_FactWeightingSumOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    TotalWeighting?: SortOrder;
+    TotalRows?: SortOrder;
+  };
+
+  export type vw_FactLoadingCountOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    ProductId?: SortOrder;
+    TotalLoading?: SortOrder;
+    TotalRows?: SortOrder;
+  };
+
+  export type vw_FactLoadingAvgOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    TotalLoading?: SortOrder;
+    TotalRows?: SortOrder;
+  };
+
+  export type vw_FactLoadingMaxOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    ProductId?: SortOrder;
+    TotalLoading?: SortOrder;
+    TotalRows?: SortOrder;
+  };
+
+  export type vw_FactLoadingMinOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    ProductId?: SortOrder;
+    TotalLoading?: SortOrder;
+    TotalRows?: SortOrder;
+  };
+
+  export type vw_FactLoadingSumOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    TotalLoading?: SortOrder;
+    TotalRows?: SortOrder;
+  };
+
+  export type vw_FinalBatchStatusBatchPKProductIdCompoundUniqueInput = {
+    BatchPK: number;
+    ProductId: string;
+  };
+
+  export type vw_FinalBatchStatusCountOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    BatchName?: SortOrder;
+    BatchDate?: SortOrder;
+    BatchYear?: SortOrder;
+    BatchMonth?: SortOrder;
+    BatchNumber?: SortOrder;
+    Plant?: SortOrder;
+    BatchProductId?: SortOrder;
+    BatchProductMarking?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrder;
+    ProductMarking?: SortOrder;
+    TotalPlanned?: SortOrder;
+    TotalWeighting?: SortOrder;
+    TotalLoading?: SortOrder;
+    ProblemStatus?: SortOrder;
+  };
+
+  export type vw_FinalBatchStatusAvgOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    BatchYear?: SortOrder;
+    BatchNumber?: SortOrder;
+    TotalPlanned?: SortOrder;
+    TotalWeighting?: SortOrder;
+    TotalLoading?: SortOrder;
+  };
+
+  export type vw_FinalBatchStatusMaxOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    BatchName?: SortOrder;
+    BatchDate?: SortOrder;
+    BatchYear?: SortOrder;
+    BatchMonth?: SortOrder;
+    BatchNumber?: SortOrder;
+    Plant?: SortOrder;
+    BatchProductId?: SortOrder;
+    BatchProductMarking?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrder;
+    ProductMarking?: SortOrder;
+    TotalPlanned?: SortOrder;
+    TotalWeighting?: SortOrder;
+    TotalLoading?: SortOrder;
+    ProblemStatus?: SortOrder;
+  };
+
+  export type vw_FinalBatchStatusMinOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    BatchName?: SortOrder;
+    BatchDate?: SortOrder;
+    BatchYear?: SortOrder;
+    BatchMonth?: SortOrder;
+    BatchNumber?: SortOrder;
+    Plant?: SortOrder;
+    BatchProductId?: SortOrder;
+    BatchProductMarking?: SortOrder;
+    ProductId?: SortOrder;
+    ProductName?: SortOrder;
+    ProductMarking?: SortOrder;
+    TotalPlanned?: SortOrder;
+    TotalWeighting?: SortOrder;
+    TotalLoading?: SortOrder;
+    ProblemStatus?: SortOrder;
+  };
+
+  export type vw_FinalBatchStatusSumOrderByAggregateInput = {
+    BatchPK?: SortOrder;
+    BatchYear?: SortOrder;
+    BatchNumber?: SortOrder;
+    TotalPlanned?: SortOrder;
+    TotalWeighting?: SortOrder;
+    TotalLoading?: SortOrder;
+  };
+
   export type BarrelsCreateNestedOneWithoutAcceptanceInput = {
     create?: XOR<BarrelsCreateWithoutAcceptanceInput, BarrelsUncheckedCreateWithoutAcceptanceInput>;
     connectOrCreate?: BarrelsCreateOrConnectWithoutAcceptanceInput;
@@ -55632,6 +67348,10 @@ export namespace Prisma {
     connect?: WeightingsWhereUniqueInput | WeightingsWhereUniqueInput[];
   };
 
+  export type vw_FinalBatchStatusCreateNestedManyWithoutBatchsInput = {
+    connect?: vw_FinalBatchStatusWhereUniqueInput | vw_FinalBatchStatusWhereUniqueInput[];
+  };
+
   export type BoilRecordsUncheckedCreateNestedManyWithoutBatchsInput = {
     create?:
       | XOR<BoilRecordsCreateWithoutBatchsInput, BoilRecordsUncheckedCreateWithoutBatchsInput>
@@ -55702,6 +67422,10 @@ export namespace Prisma {
       | WeightingsCreateOrConnectWithoutBatchsInput[];
     createMany?: WeightingsCreateManyBatchsInputEnvelope;
     connect?: WeightingsWhereUniqueInput | WeightingsWhereUniqueInput[];
+  };
+
+  export type vw_FinalBatchStatusUncheckedCreateNestedManyWithoutBatchsInput = {
+    connect?: vw_FinalBatchStatusWhereUniqueInput | vw_FinalBatchStatusWhereUniqueInput[];
   };
 
   export type NullableDateTimeFieldUpdateOperationsInput = {
@@ -55866,6 +67590,20 @@ export namespace Prisma {
     deleteMany?: WeightingsScalarWhereInput | WeightingsScalarWhereInput[];
   };
 
+  export type vw_FinalBatchStatusUpdateManyWithoutBatchsNestedInput = {
+    set?: vw_FinalBatchStatusWhereUniqueInput | vw_FinalBatchStatusWhereUniqueInput[];
+    disconnect?: vw_FinalBatchStatusWhereUniqueInput | vw_FinalBatchStatusWhereUniqueInput[];
+    delete?: vw_FinalBatchStatusWhereUniqueInput | vw_FinalBatchStatusWhereUniqueInput[];
+    connect?: vw_FinalBatchStatusWhereUniqueInput | vw_FinalBatchStatusWhereUniqueInput[];
+    update?:
+      | vw_FinalBatchStatusUpdateWithWhereUniqueWithoutBatchsInput
+      | vw_FinalBatchStatusUpdateWithWhereUniqueWithoutBatchsInput[];
+    updateMany?:
+      | vw_FinalBatchStatusUpdateManyWithWhereWithoutBatchsInput
+      | vw_FinalBatchStatusUpdateManyWithWhereWithoutBatchsInput[];
+    deleteMany?: vw_FinalBatchStatusScalarWhereInput | vw_FinalBatchStatusScalarWhereInput[];
+  };
+
   export type BoilRecordsUncheckedUpdateManyWithoutBatchsNestedInput = {
     create?:
       | XOR<BoilRecordsCreateWithoutBatchsInput, BoilRecordsUncheckedCreateWithoutBatchsInput>
@@ -56014,6 +67752,20 @@ export namespace Prisma {
       | WeightingsUpdateManyWithWhereWithoutBatchsInput
       | WeightingsUpdateManyWithWhereWithoutBatchsInput[];
     deleteMany?: WeightingsScalarWhereInput | WeightingsScalarWhereInput[];
+  };
+
+  export type vw_FinalBatchStatusUncheckedUpdateManyWithoutBatchsNestedInput = {
+    set?: vw_FinalBatchStatusWhereUniqueInput | vw_FinalBatchStatusWhereUniqueInput[];
+    disconnect?: vw_FinalBatchStatusWhereUniqueInput | vw_FinalBatchStatusWhereUniqueInput[];
+    delete?: vw_FinalBatchStatusWhereUniqueInput | vw_FinalBatchStatusWhereUniqueInput[];
+    connect?: vw_FinalBatchStatusWhereUniqueInput | vw_FinalBatchStatusWhereUniqueInput[];
+    update?:
+      | vw_FinalBatchStatusUpdateWithWhereUniqueWithoutBatchsInput
+      | vw_FinalBatchStatusUpdateWithWhereUniqueWithoutBatchsInput[];
+    updateMany?:
+      | vw_FinalBatchStatusUpdateManyWithWhereWithoutBatchsInput
+      | vw_FinalBatchStatusUpdateManyWithWhereWithoutBatchsInput[];
+    deleteMany?: vw_FinalBatchStatusScalarWhereInput | vw_FinalBatchStatusScalarWhereInput[];
   };
 
   export type AuthorsCreateNestedOneWithoutBoilRecordsInput = {
@@ -59957,6 +71709,33 @@ export namespace Prisma {
     _max?: NestedBytesNullableFilter<$PrismaModel>;
   };
 
+  export type NestedBigIntNullableFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null;
+    in?: bigint[] | number[] | null;
+    notIn?: bigint[] | number[] | null;
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>;
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>;
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>;
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>;
+    not?: NestedBigIntNullableFilter<$PrismaModel> | bigint | number | null;
+  };
+
+  export type NestedBigIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null;
+    in?: bigint[] | number[] | null;
+    notIn?: bigint[] | number[] | null;
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>;
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>;
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>;
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>;
+    not?: NestedBigIntNullableWithAggregatesFilter<$PrismaModel> | bigint | number | null;
+    _count?: NestedIntNullableFilter<$PrismaModel>;
+    _avg?: NestedFloatNullableFilter<$PrismaModel>;
+    _sum?: NestedBigIntNullableFilter<$PrismaModel>;
+    _min?: NestedBigIntNullableFilter<$PrismaModel>;
+    _max?: NestedBigIntNullableFilter<$PrismaModel>;
+  };
+
   export type BarrelsCreateWithoutAcceptanceInput = {
     BarrelsId: number;
     BarrelsName?: string | null;
@@ -61043,6 +72822,62 @@ export namespace Prisma {
     Quantity?: DecimalFilter<'Weightings'> | Decimal | DecimalJsLike | number | string;
   };
 
+  export type vw_FinalBatchStatusUpdateWithWhereUniqueWithoutBatchsInput = {
+    where: vw_FinalBatchStatusWhereUniqueInput;
+    data: XOR<
+      vw_FinalBatchStatusUpdateWithoutBatchsInput,
+      vw_FinalBatchStatusUncheckedUpdateWithoutBatchsInput
+    >;
+  };
+
+  export type vw_FinalBatchStatusUpdateManyWithWhereWithoutBatchsInput = {
+    where: vw_FinalBatchStatusScalarWhereInput;
+    data: XOR<
+      vw_FinalBatchStatusUpdateManyMutationInput,
+      vw_FinalBatchStatusUncheckedUpdateManyWithoutBatchsInput
+    >;
+  };
+
+  export type vw_FinalBatchStatusScalarWhereInput = {
+    AND?: vw_FinalBatchStatusScalarWhereInput | vw_FinalBatchStatusScalarWhereInput[];
+    OR?: vw_FinalBatchStatusScalarWhereInput[];
+    NOT?: vw_FinalBatchStatusScalarWhereInput | vw_FinalBatchStatusScalarWhereInput[];
+    BatchPK?: IntFilter<'vw_FinalBatchStatus'> | number;
+    BatchName?: StringFilter<'vw_FinalBatchStatus'> | string;
+    BatchDate?: DateTimeNullableFilter<'vw_FinalBatchStatus'> | Date | string | null;
+    BatchYear?: IntNullableFilter<'vw_FinalBatchStatus'> | number | null;
+    BatchMonth?: StringNullableFilter<'vw_FinalBatchStatus'> | string | null;
+    BatchNumber?: IntNullableFilter<'vw_FinalBatchStatus'> | number | null;
+    Plant?: StringNullableFilter<'vw_FinalBatchStatus'> | string | null;
+    BatchProductId?: StringNullableFilter<'vw_FinalBatchStatus'> | string | null;
+    BatchProductMarking?: StringNullableFilter<'vw_FinalBatchStatus'> | string | null;
+    ProductId?: StringFilter<'vw_FinalBatchStatus'> | string;
+    ProductName?: StringNullableFilter<'vw_FinalBatchStatus'> | string | null;
+    ProductMarking?: StringNullableFilter<'vw_FinalBatchStatus'> | string | null;
+    TotalPlanned?:
+      | DecimalNullableFilter<'vw_FinalBatchStatus'>
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalWeighting?:
+      | DecimalNullableFilter<'vw_FinalBatchStatus'>
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalLoading?:
+      | DecimalNullableFilter<'vw_FinalBatchStatus'>
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    ProblemStatus?: StringFilter<'vw_FinalBatchStatus'> | string;
+  };
+
   export type AuthorsCreateWithoutBoilRecordsInput = {
     AuthorName: string;
     AuthorBarcode?: string | null;
@@ -61084,6 +72919,7 @@ export namespace Prisma {
     CanRecords?: CanRecordsCreateNestedManyWithoutBatchsInput;
     Loads?: LoadsCreateNestedManyWithoutBatchsInput;
     Weightings?: WeightingsCreateNestedManyWithoutBatchsInput;
+    details?: vw_FinalBatchStatusCreateNestedManyWithoutBatchsInput;
   };
 
   export type BatchsUncheckedCreateWithoutBoilRecordsInput = {
@@ -61099,6 +72935,7 @@ export namespace Prisma {
     CanRecords?: CanRecordsUncheckedCreateNestedManyWithoutBatchsInput;
     Loads?: LoadsUncheckedCreateNestedManyWithoutBatchsInput;
     Weightings?: WeightingsUncheckedCreateNestedManyWithoutBatchsInput;
+    details?: vw_FinalBatchStatusUncheckedCreateNestedManyWithoutBatchsInput;
   };
 
   export type BatchsCreateOrConnectWithoutBoilRecordsInput = {
@@ -61186,6 +73023,7 @@ export namespace Prisma {
     CanRecords?: CanRecordsUpdateManyWithoutBatchsNestedInput;
     Loads?: LoadsUpdateManyWithoutBatchsNestedInput;
     Weightings?: WeightingsUpdateManyWithoutBatchsNestedInput;
+    details?: vw_FinalBatchStatusUpdateManyWithoutBatchsNestedInput;
   };
 
   export type BatchsUncheckedUpdateWithoutBoilRecordsInput = {
@@ -61201,6 +73039,7 @@ export namespace Prisma {
     CanRecords?: CanRecordsUncheckedUpdateManyWithoutBatchsNestedInput;
     Loads?: LoadsUncheckedUpdateManyWithoutBatchsNestedInput;
     Weightings?: WeightingsUncheckedUpdateManyWithoutBatchsNestedInput;
+    details?: vw_FinalBatchStatusUncheckedUpdateManyWithoutBatchsNestedInput;
   };
 
   export type OperationsUpsertWithoutBoilRecordsInput = {
@@ -61246,6 +73085,7 @@ export namespace Prisma {
     CanRecords?: CanRecordsCreateNestedManyWithoutBatchsInput;
     Loads?: LoadsCreateNestedManyWithoutBatchsInput;
     Weightings?: WeightingsCreateNestedManyWithoutBatchsInput;
+    details?: vw_FinalBatchStatusCreateNestedManyWithoutBatchsInput;
   };
 
   export type BatchsUncheckedCreateWithoutBoilsInput = {
@@ -61261,6 +73101,7 @@ export namespace Prisma {
     CanRecords?: CanRecordsUncheckedCreateNestedManyWithoutBatchsInput;
     Loads?: LoadsUncheckedCreateNestedManyWithoutBatchsInput;
     Weightings?: WeightingsUncheckedCreateNestedManyWithoutBatchsInput;
+    details?: vw_FinalBatchStatusUncheckedCreateNestedManyWithoutBatchsInput;
   };
 
   export type BatchsCreateOrConnectWithoutBoilsInput = {
@@ -61322,6 +73163,7 @@ export namespace Prisma {
     CanRecords?: CanRecordsUpdateManyWithoutBatchsNestedInput;
     Loads?: LoadsUpdateManyWithoutBatchsNestedInput;
     Weightings?: WeightingsUpdateManyWithoutBatchsNestedInput;
+    details?: vw_FinalBatchStatusUpdateManyWithoutBatchsNestedInput;
   };
 
   export type BatchsUncheckedUpdateWithoutBoilsInput = {
@@ -61337,6 +73179,7 @@ export namespace Prisma {
     CanRecords?: CanRecordsUncheckedUpdateManyWithoutBatchsNestedInput;
     Loads?: LoadsUncheckedUpdateManyWithoutBatchsNestedInput;
     Weightings?: WeightingsUncheckedUpdateManyWithoutBatchsNestedInput;
+    details?: vw_FinalBatchStatusUncheckedUpdateManyWithoutBatchsNestedInput;
   };
 
   export type ProductsUpsertWithoutBoilsInput = {
@@ -61388,6 +73231,7 @@ export namespace Prisma {
     CanRecords?: CanRecordsCreateNestedManyWithoutBatchsInput;
     Loads?: LoadsCreateNestedManyWithoutBatchsInput;
     Weightings?: WeightingsCreateNestedManyWithoutBatchsInput;
+    details?: vw_FinalBatchStatusCreateNestedManyWithoutBatchsInput;
   };
 
   export type BatchsUncheckedCreateWithoutBtProductsInput = {
@@ -61403,6 +73247,7 @@ export namespace Prisma {
     CanRecords?: CanRecordsUncheckedCreateNestedManyWithoutBatchsInput;
     Loads?: LoadsUncheckedCreateNestedManyWithoutBatchsInput;
     Weightings?: WeightingsUncheckedCreateNestedManyWithoutBatchsInput;
+    details?: vw_FinalBatchStatusUncheckedCreateNestedManyWithoutBatchsInput;
   };
 
   export type BatchsCreateOrConnectWithoutBtProductsInput = {
@@ -61467,6 +73312,7 @@ export namespace Prisma {
     CanRecords?: CanRecordsUpdateManyWithoutBatchsNestedInput;
     Loads?: LoadsUpdateManyWithoutBatchsNestedInput;
     Weightings?: WeightingsUpdateManyWithoutBatchsNestedInput;
+    details?: vw_FinalBatchStatusUpdateManyWithoutBatchsNestedInput;
   };
 
   export type BatchsUncheckedUpdateWithoutBtProductsInput = {
@@ -61482,6 +73328,7 @@ export namespace Prisma {
     CanRecords?: CanRecordsUncheckedUpdateManyWithoutBatchsNestedInput;
     Loads?: LoadsUncheckedUpdateManyWithoutBatchsNestedInput;
     Weightings?: WeightingsUncheckedUpdateManyWithoutBatchsNestedInput;
+    details?: vw_FinalBatchStatusUncheckedUpdateManyWithoutBatchsNestedInput;
   };
 
   export type ProductsUpsertWithoutBtProductsInput = {
@@ -61813,6 +73660,7 @@ export namespace Prisma {
     BtProducts?: BtProductsCreateNestedManyWithoutBatchsInput;
     Loads?: LoadsCreateNestedManyWithoutBatchsInput;
     Weightings?: WeightingsCreateNestedManyWithoutBatchsInput;
+    details?: vw_FinalBatchStatusCreateNestedManyWithoutBatchsInput;
   };
 
   export type BatchsUncheckedCreateWithoutCanRecordsInput = {
@@ -61828,6 +73676,7 @@ export namespace Prisma {
     BtProducts?: BtProductsUncheckedCreateNestedManyWithoutBatchsInput;
     Loads?: LoadsUncheckedCreateNestedManyWithoutBatchsInput;
     Weightings?: WeightingsUncheckedCreateNestedManyWithoutBatchsInput;
+    details?: vw_FinalBatchStatusUncheckedCreateNestedManyWithoutBatchsInput;
   };
 
   export type BatchsCreateOrConnectWithoutCanRecordsInput = {
@@ -61952,6 +73801,7 @@ export namespace Prisma {
     BtProducts?: BtProductsUpdateManyWithoutBatchsNestedInput;
     Loads?: LoadsUpdateManyWithoutBatchsNestedInput;
     Weightings?: WeightingsUpdateManyWithoutBatchsNestedInput;
+    details?: vw_FinalBatchStatusUpdateManyWithoutBatchsNestedInput;
   };
 
   export type BatchsUncheckedUpdateWithoutCanRecordsInput = {
@@ -61967,6 +73817,7 @@ export namespace Prisma {
     BtProducts?: BtProductsUncheckedUpdateManyWithoutBatchsNestedInput;
     Loads?: LoadsUncheckedUpdateManyWithoutBatchsNestedInput;
     Weightings?: WeightingsUncheckedUpdateManyWithoutBatchsNestedInput;
+    details?: vw_FinalBatchStatusUncheckedUpdateManyWithoutBatchsNestedInput;
   };
 
   export type CanCommentsUpsertWithoutCanRecordsInput = {
@@ -63310,6 +75161,7 @@ export namespace Prisma {
     BtProducts?: BtProductsCreateNestedManyWithoutBatchsInput;
     CanRecords?: CanRecordsCreateNestedManyWithoutBatchsInput;
     Weightings?: WeightingsCreateNestedManyWithoutBatchsInput;
+    details?: vw_FinalBatchStatusCreateNestedManyWithoutBatchsInput;
   };
 
   export type BatchsUncheckedCreateWithoutLoadsInput = {
@@ -63325,6 +75177,7 @@ export namespace Prisma {
     BtProducts?: BtProductsUncheckedCreateNestedManyWithoutBatchsInput;
     CanRecords?: CanRecordsUncheckedCreateNestedManyWithoutBatchsInput;
     Weightings?: WeightingsUncheckedCreateNestedManyWithoutBatchsInput;
+    details?: vw_FinalBatchStatusUncheckedCreateNestedManyWithoutBatchsInput;
   };
 
   export type BatchsCreateOrConnectWithoutLoadsInput = {
@@ -63397,6 +75250,7 @@ export namespace Prisma {
     BtProducts?: BtProductsUpdateManyWithoutBatchsNestedInput;
     CanRecords?: CanRecordsUpdateManyWithoutBatchsNestedInput;
     Weightings?: WeightingsUpdateManyWithoutBatchsNestedInput;
+    details?: vw_FinalBatchStatusUpdateManyWithoutBatchsNestedInput;
   };
 
   export type BatchsUncheckedUpdateWithoutLoadsInput = {
@@ -63412,6 +75266,7 @@ export namespace Prisma {
     BtProducts?: BtProductsUncheckedUpdateManyWithoutBatchsNestedInput;
     CanRecords?: CanRecordsUncheckedUpdateManyWithoutBatchsNestedInput;
     Weightings?: WeightingsUncheckedUpdateManyWithoutBatchsNestedInput;
+    details?: vw_FinalBatchStatusUncheckedUpdateManyWithoutBatchsNestedInput;
   };
 
   export type ContainersUpsertWithoutLoadsInput = {
@@ -65062,6 +76917,7 @@ export namespace Prisma {
     BtProducts?: BtProductsCreateNestedManyWithoutBatchsInput;
     CanRecords?: CanRecordsCreateNestedManyWithoutBatchsInput;
     Loads?: LoadsCreateNestedManyWithoutBatchsInput;
+    details?: vw_FinalBatchStatusCreateNestedManyWithoutBatchsInput;
   };
 
   export type BatchsUncheckedCreateWithoutWeightingsInput = {
@@ -65077,6 +76933,7 @@ export namespace Prisma {
     BtProducts?: BtProductsUncheckedCreateNestedManyWithoutBatchsInput;
     CanRecords?: CanRecordsUncheckedCreateNestedManyWithoutBatchsInput;
     Loads?: LoadsUncheckedCreateNestedManyWithoutBatchsInput;
+    details?: vw_FinalBatchStatusUncheckedCreateNestedManyWithoutBatchsInput;
   };
 
   export type BatchsCreateOrConnectWithoutWeightingsInput = {
@@ -65219,6 +77076,7 @@ export namespace Prisma {
     BtProducts?: BtProductsUpdateManyWithoutBatchsNestedInput;
     CanRecords?: CanRecordsUpdateManyWithoutBatchsNestedInput;
     Loads?: LoadsUpdateManyWithoutBatchsNestedInput;
+    details?: vw_FinalBatchStatusUpdateManyWithoutBatchsNestedInput;
   };
 
   export type BatchsUncheckedUpdateWithoutWeightingsInput = {
@@ -65234,6 +77092,7 @@ export namespace Prisma {
     BtProducts?: BtProductsUncheckedUpdateManyWithoutBatchsNestedInput;
     CanRecords?: CanRecordsUncheckedUpdateManyWithoutBatchsNestedInput;
     Loads?: LoadsUncheckedUpdateManyWithoutBatchsNestedInput;
+    details?: vw_FinalBatchStatusUncheckedUpdateManyWithoutBatchsNestedInput;
   };
 
   export type ContainersUpsertWithoutWeightingsInput = {
@@ -65769,6 +77628,150 @@ export namespace Prisma {
     ProductId?: StringFieldUpdateOperationsInput | string;
     LotPK?: IntFieldUpdateOperationsInput | number;
     Quantity?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string;
+  };
+
+  export type vw_FinalBatchStatusUpdateWithoutBatchsInput = {
+    BatchName?: StringFieldUpdateOperationsInput | string;
+    BatchDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
+    BatchYear?: NullableIntFieldUpdateOperationsInput | number | null;
+    BatchMonth?: NullableStringFieldUpdateOperationsInput | string | null;
+    BatchNumber?: NullableIntFieldUpdateOperationsInput | number | null;
+    Plant?: NullableStringFieldUpdateOperationsInput | string | null;
+    BatchProductId?: NullableStringFieldUpdateOperationsInput | string | null;
+    BatchProductMarking?: NullableStringFieldUpdateOperationsInput | string | null;
+    ProductId?: StringFieldUpdateOperationsInput | string;
+    ProductName?: NullableStringFieldUpdateOperationsInput | string | null;
+    ProductMarking?: NullableStringFieldUpdateOperationsInput | string | null;
+    TotalPlanned?:
+      | NullableDecimalFieldUpdateOperationsInput
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalWeighting?:
+      | NullableDecimalFieldUpdateOperationsInput
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalLoading?:
+      | NullableDecimalFieldUpdateOperationsInput
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    ProblemStatus?: StringFieldUpdateOperationsInput | string;
+  };
+
+  export type vw_FinalBatchStatusUncheckedUpdateWithoutBatchsInput = {
+    BatchName?: StringFieldUpdateOperationsInput | string;
+    BatchDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
+    BatchYear?: NullableIntFieldUpdateOperationsInput | number | null;
+    BatchMonth?: NullableStringFieldUpdateOperationsInput | string | null;
+    BatchNumber?: NullableIntFieldUpdateOperationsInput | number | null;
+    Plant?: NullableStringFieldUpdateOperationsInput | string | null;
+    BatchProductId?: NullableStringFieldUpdateOperationsInput | string | null;
+    BatchProductMarking?: NullableStringFieldUpdateOperationsInput | string | null;
+    ProductId?: StringFieldUpdateOperationsInput | string;
+    ProductName?: NullableStringFieldUpdateOperationsInput | string | null;
+    ProductMarking?: NullableStringFieldUpdateOperationsInput | string | null;
+    TotalPlanned?:
+      | NullableDecimalFieldUpdateOperationsInput
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalWeighting?:
+      | NullableDecimalFieldUpdateOperationsInput
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalLoading?:
+      | NullableDecimalFieldUpdateOperationsInput
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    ProblemStatus?: StringFieldUpdateOperationsInput | string;
+  };
+
+  export type vw_FinalBatchStatusUpdateManyMutationInput = {
+    BatchName?: StringFieldUpdateOperationsInput | string;
+    BatchDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
+    BatchYear?: NullableIntFieldUpdateOperationsInput | number | null;
+    BatchMonth?: NullableStringFieldUpdateOperationsInput | string | null;
+    BatchNumber?: NullableIntFieldUpdateOperationsInput | number | null;
+    Plant?: NullableStringFieldUpdateOperationsInput | string | null;
+    BatchProductId?: NullableStringFieldUpdateOperationsInput | string | null;
+    BatchProductMarking?: NullableStringFieldUpdateOperationsInput | string | null;
+    ProductId?: StringFieldUpdateOperationsInput | string;
+    ProductName?: NullableStringFieldUpdateOperationsInput | string | null;
+    ProductMarking?: NullableStringFieldUpdateOperationsInput | string | null;
+    TotalPlanned?:
+      | NullableDecimalFieldUpdateOperationsInput
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalWeighting?:
+      | NullableDecimalFieldUpdateOperationsInput
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalLoading?:
+      | NullableDecimalFieldUpdateOperationsInput
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    ProblemStatus?: StringFieldUpdateOperationsInput | string;
+  };
+
+  export type vw_FinalBatchStatusUncheckedUpdateManyWithoutBatchsInput = {
+    BatchName?: StringFieldUpdateOperationsInput | string;
+    BatchDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
+    BatchYear?: NullableIntFieldUpdateOperationsInput | number | null;
+    BatchMonth?: NullableStringFieldUpdateOperationsInput | string | null;
+    BatchNumber?: NullableIntFieldUpdateOperationsInput | number | null;
+    Plant?: NullableStringFieldUpdateOperationsInput | string | null;
+    BatchProductId?: NullableStringFieldUpdateOperationsInput | string | null;
+    BatchProductMarking?: NullableStringFieldUpdateOperationsInput | string | null;
+    ProductId?: StringFieldUpdateOperationsInput | string;
+    ProductName?: NullableStringFieldUpdateOperationsInput | string | null;
+    ProductMarking?: NullableStringFieldUpdateOperationsInput | string | null;
+    TotalPlanned?:
+      | NullableDecimalFieldUpdateOperationsInput
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalWeighting?:
+      | NullableDecimalFieldUpdateOperationsInput
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    TotalLoading?:
+      | NullableDecimalFieldUpdateOperationsInput
+      | Decimal
+      | DecimalJsLike
+      | number
+      | string
+      | null;
+    ProblemStatus?: StringFieldUpdateOperationsInput | string;
   };
 
   export type CanRecordsCreateManyCanCommentsInput = {

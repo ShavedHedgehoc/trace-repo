@@ -5,4 +5,4 @@ import { TrademarkService } from './trademark.service';
   providers: [TrademarkService],
   exports: [TrademarkService],
 })
-export class TrademarkModule { }
+export class TrademarkModule {}

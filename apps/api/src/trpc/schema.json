@@ -95,11 +95,7 @@
           "type": "number"
         }
       },
-      "required": [
-        "rows",
-        "total",
-        "totalPages"
-      ]
+      "required": ["rows", "total", "totalPages"]
     },
     "trademark.list": {
       "type": "object",
@@ -122,12 +118,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "trademarkId",
-              "productId",
-              "trademarkName",
-              "productName"
-            ]
+            "required": ["trademarkId", "productId", "trademarkName", "productName"]
           }
         },
         "total": {
@@ -137,11 +128,7 @@
           "type": "number"
         }
       },
-      "required": [
-        "rows",
-        "total",
-        "totalPages"
-      ]
+      "required": ["rows", "total", "totalPages"]
     }
   }
 }

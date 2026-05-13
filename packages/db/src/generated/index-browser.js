@@ -390,6 +390,140 @@ exports.Prisma.WeightingsScalarFieldEnum = {
   Quantity: 'Quantity',
 };
 
+exports.Prisma.TestScalarFieldEnum = {
+  BatchName: 'BatchName',
+  BatchDate: 'BatchDate',
+  Plant: 'Plant',
+  ProductName: 'ProductName',
+  Quantity: 'Quantity',
+  ProductId: 'ProductId',
+  BatchPK: 'BatchPK',
+};
+
+exports.Prisma.LotsviewScalarFieldEnum = {
+  LotName: 'LotName',
+  BatchName: 'BatchName',
+  CreateDate: 'CreateDate',
+  ProductId: 'ProductId',
+  ProductName: 'ProductName',
+  SellerPK: 'SellerPK',
+  SellerName: 'SellerName',
+  ManufacturerPK: 'ManufacturerPK',
+  ManufacturerName: 'ManufacturerName',
+  ManufacturerLotPK: 'ManufacturerLotPK',
+  ManufacturerLotName: 'ManufacturerLotName',
+  TrademarkPK: 'TrademarkPK',
+  TrademarkName: 'TrademarkName',
+  BatchPK: 'BatchPK',
+};
+
+exports.Prisma.BatchstepScalarFieldEnum = {
+  BatchName: 'BatchName',
+  ProductId: 'ProductId',
+  ProductName: 'ProductName',
+  LotName: 'LotName',
+  ContainerPK: 'ContainerPK',
+};
+
+exports.Prisma.LoadstepScalarFieldEnum = {
+  CreateDate: 'CreateDate',
+  ContainerPK: 'ContainerPK',
+  AuthorName: 'AuthorName',
+};
+
+exports.Prisma.BatchviewScalarFieldEnum = {
+  BatchName: 'BatchName',
+  ProductId: 'ProductId',
+  ProductName: 'ProductName',
+  LotName: 'LotName',
+  AuthorName: 'AuthorName',
+  Quantity: 'Quantity',
+  CreateDate: 'CreateDate',
+};
+
+exports.Prisma.LoadviewScalarFieldEnum = {
+  BatchName: 'BatchName',
+  ProductId: 'ProductId',
+  ProductName: 'ProductName',
+  LotName: 'LotName',
+  AuthorName: 'AuthorName',
+  CreateDate: 'CreateDate',
+};
+
+exports.Prisma.LotdetailviewScalarFieldEnum = {
+  ProductName: 'ProductName',
+  ManufacturerLotName: 'ManufacturerLotName',
+  ManufacturerName: 'ManufacturerName',
+  ProductId: 'ProductId',
+  ManufacturerLotPK: 'ManufacturerLotPK',
+  ManufacturerPK: 'ManufacturerPK',
+  SellerPK: 'SellerPK',
+  SellerName: 'SellerName',
+  LotName: 'LotName',
+  LotDate: 'LotDate',
+  TrademarkPK: 'TrademarkPK',
+  TrademarkName: 'TrademarkName',
+};
+
+exports.Prisma.DocviewScalarFieldEnum = {
+  DocumentPK: 'DocumentPK',
+  DoctypePK: 'DoctypePK',
+  AuthorPK: 'AuthorPK',
+  CreateDate: 'CreateDate',
+  Plant: 'Plant',
+  AuthorName: 'AuthorName',
+};
+
+exports.Prisma.BoilviewScalarFieldEnum = {
+  BatchName: 'BatchName',
+  ProductId: 'ProductId',
+  ProductName: 'ProductName',
+  Quantity: 'Quantity',
+  Total: 'Total',
+  BatchDate: 'BatchDate',
+  Plant: 'Plant',
+};
+
+exports.Prisma.Vw_PlanAggregatedScalarFieldEnum = {
+  BatchPK: 'BatchPK',
+  ProductId: 'ProductId',
+  TotalPlanned: 'TotalPlanned',
+  TotalRows: 'TotalRows',
+};
+
+exports.Prisma.Vw_FactWeightingScalarFieldEnum = {
+  BatchPK: 'BatchPK',
+  ProductId: 'ProductId',
+  TotalWeighting: 'TotalWeighting',
+  TotalRows: 'TotalRows',
+};
+
+exports.Prisma.Vw_FactLoadingScalarFieldEnum = {
+  BatchPK: 'BatchPK',
+  ProductId: 'ProductId',
+  TotalLoading: 'TotalLoading',
+  TotalRows: 'TotalRows',
+};
+
+exports.Prisma.Vw_FinalBatchStatusScalarFieldEnum = {
+  BatchPK: 'BatchPK',
+  BatchName: 'BatchName',
+  BatchDate: 'BatchDate',
+  BatchYear: 'BatchYear',
+  BatchMonth: 'BatchMonth',
+  BatchNumber: 'BatchNumber',
+  Plant: 'Plant',
+  BatchProductId: 'BatchProductId',
+  BatchProductMarking: 'BatchProductMarking',
+  ProductId: 'ProductId',
+  ProductName: 'ProductName',
+  ProductMarking: 'ProductMarking',
+  TotalPlanned: 'TotalPlanned',
+  TotalWeighting: 'TotalWeighting',
+  TotalLoading: 'TotalLoading',
+  ProblemStatus: 'ProblemStatus',
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc',
@@ -439,6 +573,19 @@ exports.Prisma.ModelName = {
   UserRoles: 'UserRoles',
   Users: 'Users',
   Weightings: 'Weightings',
+  test: 'test',
+  lotsview: 'lotsview',
+  batchstep: 'batchstep',
+  loadstep: 'loadstep',
+  batchview: 'batchview',
+  loadview: 'loadview',
+  lotdetailview: 'lotdetailview',
+  Docview: 'Docview',
+  boilview: 'boilview',
+  vw_PlanAggregated: 'vw_PlanAggregated',
+  vw_FactWeighting: 'vw_FactWeighting',
+  vw_FactLoading: 'vw_FactLoading',
+  vw_FinalBatchStatus: 'vw_FinalBatchStatus',
 };
 
 /**

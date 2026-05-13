@@ -1,2 +1,2 @@
-export * from "./use-route-title";
-export * from "./use-mobile"
+export * from './use-route-title';
+export * from './use-mobile';
