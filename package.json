@@ -11,7 +11,9 @@
     "format": "prettier --write .",
     "knip": "knip",
     "pre-flight": "npm run format:check && turbo lint type-check && knip && turbo build",
-    "db:generate": "turbo run --filter @repo/db-postgres  db:generate"
+    "db:generate": "turbo run --filter @repo/db db:generate",
+    "db:pull": "turbo run --filter @repo/db db:pull",
+    "schema": "turbo run --filter @repo/api schema"
   },
   "keywords": [],
   "author": "ShavedHedgehog",
@@ -22,7 +24,15 @@
     "dotenv-cli": "^11.0.0",
     "knip": "^6.9.0",
     "prettier": "^3.8.3",
+    "prettier-plugin-tailwindcss": "^0.7.4",
     "turbo": "^2.9.8",
     "typescript": "^5.9.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "^19.0.0",
+      "@types/react-dom": "^19.0.0",
+      "zod": "^4.4.2"
+    }
   }
 }

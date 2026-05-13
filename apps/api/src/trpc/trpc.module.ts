@@ -1,14 +1,12 @@
 import { Module } from '@nestjs/common';
 import { TrpcService } from './trpc.service';
 import { TrpcController } from './trpc.controller';
-import { TrademarkModule } from 'src/trademark/trademark.module';
-// import { EmployeeAppModule } from '../employee.app/employee.app.module';
+import { TrademarkModule } from '../trademark/trademark.module';
+import { BoilModule } from '../boil/boil.module';
+import { AuthModule } from '../auth/auth.module';
 
 @Module({
-  imports: [
-    // EmployeeAppModule,
-    TrademarkModule
-  ],
+  imports: [BoilModule, TrademarkModule, AuthModule],
   providers: [
     {
       provide: 'TRPC_SERVICE',
@@ -17,4 +15,4 @@ import { TrademarkModule } from 'src/trademark/trademark.module';
   ],
   controllers: [TrpcController],
 })
-export class TrpcModule { }
+export class TrpcModule {}

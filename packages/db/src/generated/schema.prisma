@@ -1,6 +1,7 @@
 generator client {
-  provider = "prisma-client-js"
-  output   = "../src/generated"
+  provider        = "prisma-client-js"
+  output          = "../src/generated"
+  previewFeatures = ["views"]
 }
 
 datasource db {
@@ -58,12 +59,12 @@ model Barrels {
 }
 
 model Batchs {
-  BatchPK     Int           @id(map: "PK__Batchs__5D56FBF9027E4597") @default(autoincrement())
-  BatchName   String        @unique(map: "UC_Batchs") @db.VarChar(10)
-  BatchDate   DateTime?     @db.DateTime
-  Plant       String?       @db.NChar(1)
+  BatchPK     Int                   @id(map: "PK__Batchs__5D56FBF9027E4597") @default(autoincrement())
+  BatchName   String                @unique(map: "UC_Batchs") @db.VarChar(10)
+  BatchDate   DateTime?             @db.DateTime
+  Plant       String?               @db.NChar(1)
   BatchNumber Int?
-  BatchMonth  String?       @db.VarChar(1)
+  BatchMonth  String?               @db.VarChar(1)
   BatchYear   Int?
   BoilRecords BoilRecords[]
   Boils       Boils[]
@@ -71,6 +72,7 @@ model Batchs {
   CanRecords  CanRecords[]
   Loads       Loads[]
   Weightings  Weightings[]
+  details     vw_FinalBatchStatus[]
 
   @@index([BatchDate, BatchName, Plant], map: "IX_Batchs_BatchDate_BatchName_Plant_BatchPK")
   @@index([BatchDate, Plant, BatchName], map: "IX_Batchs_BatchDate_Plant_BatchName")
@@ -263,6 +265,7 @@ model Loads {
   @@index([ContainerPK], map: "NonClusteredIndex-20251002-181429")
   @@index([DocumentPK], map: "NonClusteredIndex-20251002-183149")
   @@index([BatchPK], map: "NonClusteredIndex-20251002-183226")
+  @@index([ContainerPK], map: "IX_Loads_ContainerPK")
 }
 
 model Lots {
@@ -350,7 +353,7 @@ model Products {
 
 model Roles {
   RolePK    Int         @id(map: "PK_Roles") @default(autoincrement())
-  RoleName  String      @db.VarChar(100)
+  RoleName  String      @unique(map: "UC_Roles_RoleName") @db.VarChar(100)
   RoleAlias String      @db.VarChar(100)
   UserRoles UserRoles[]
 }
@@ -441,4 +444,142 @@ model Weightings {
   @@index([LotPK], map: "NonClusteredIndex-20251002-172724")
   @@index([ContainerPK], map: "NonClusteredIndex-20251002-173044")
   @@index([Quantity], map: "NonClusteredIndex-20251007-155028")
+  @@index([BatchPK, ProductId], map: "IX_Weightings_BatchPK_ProductId")
+}
+
+view test {
+  BatchName   String?   @db.VarChar(10)
+  BatchDate   DateTime? @db.DateTime
+  Plant       String?   @db.NChar(1)
+  ProductName String?   @db.VarChar(200)
+  Quantity    Decimal   @db.Decimal(9, 5)
+  ProductId   String    @db.Char(6)
+  BatchPK     Int
+}
+
+view lotsview {
+  LotName             String   @db.VarChar(50)
+  BatchName           String   @db.VarChar(10)
+  CreateDate          DateTime @db.DateTime
+  ProductId           String?  @db.Char(6)
+  ProductName         String?  @db.VarChar(200)
+  SellerPK            Int?
+  SellerName          String?  @db.VarChar(200)
+  ManufacturerPK      Int?
+  ManufacturerName    String?  @db.VarChar(200)
+  ManufacturerLotPK   Int?
+  ManufacturerLotName String?  @db.VarChar(200)
+  TrademarkPK         Int?
+  TrademarkName       String?  @db.VarChar(200)
+  BatchPK             Int
+}
+
+view batchstep {
+  BatchName   String  @db.VarChar(10)
+  ProductId   String  @db.Char(6)
+  ProductName String? @db.VarChar(200)
+  LotName     String  @db.VarChar(50)
+  ContainerPK Int
+}
+
+view loadstep {
+  CreateDate  DateTime @db.DateTime
+  ContainerPK Int
+  AuthorName  String   @db.VarChar(50)
+}
+
+view batchview {
+  BatchName   String   @db.VarChar(10)
+  ProductId   String   @db.Char(6)
+  ProductName String?  @db.VarChar(200)
+  LotName     String   @db.VarChar(50)
+  AuthorName  String   @db.VarChar(50)
+  Quantity    Decimal  @db.Decimal(9, 5)
+  CreateDate  DateTime @db.DateTime
+}
+
+view loadview {
+  BatchName   String   @db.VarChar(10)
+  ProductId   String   @db.Char(6)
+  ProductName String?  @db.VarChar(200)
+  LotName     String   @db.VarChar(50)
+  AuthorName  String   @db.VarChar(50)
+  CreateDate  DateTime @db.DateTime
+}
+
+view lotdetailview {
+  ProductName         String?   @db.VarChar(200)
+  ManufacturerLotName String    @db.VarChar(200)
+  ManufacturerName    String    @db.VarChar(200)
+  ProductId           String    @db.Char(6)
+  ManufacturerLotPK   Int
+  ManufacturerPK      Int
+  SellerPK            Int
+  SellerName          String    @db.VarChar(200)
+  LotName             String    @db.VarChar(50)
+  LotDate             DateTime?
+  TrademarkPK         Int
+  TrademarkName       String    @db.VarChar(200)
+}
+
+view Docview {
+  DocumentPK Int
+  DoctypePK  Int
+  AuthorPK   Int
+  CreateDate DateTime @db.DateTime
+  Plant      String?  @db.NChar(1)
+  AuthorName String   @db.VarChar(50)
+}
+
+view boilview {
+  BatchName   String    @db.VarChar(10)
+  ProductId   String    @db.Char(6)
+  ProductName String?   @db.VarChar(200)
+  Quantity    Decimal   @db.Decimal(9, 5)
+  Total       Decimal?  @db.Decimal(38, 5)
+  BatchDate   DateTime? @db.DateTime
+  Plant       String?   @db.NChar(1)
+}
+
+view vw_PlanAggregated {
+  BatchPK      Int
+  ProductId    String   @db.Char(6)
+  TotalPlanned Decimal? @db.Decimal(38, 5)
+  TotalRows    BigInt?
+}
+
+view vw_FactWeighting {
+  BatchPK        Int
+  ProductId      String   @db.Char(6)
+  TotalWeighting Decimal? @db.Decimal(38, 5)
+  TotalRows      BigInt?
+}
+
+view vw_FactLoading {
+  BatchPK      Int
+  ProductId    String   @db.Char(6)
+  TotalLoading Decimal? @db.Decimal(38, 5)
+  TotalRows    BigInt?
+}
+
+view vw_FinalBatchStatus {
+  BatchPK             Int
+  BatchName           String    @db.VarChar(10)
+  BatchDate           DateTime? @db.DateTime
+  BatchYear           Int?
+  BatchMonth          String?   @db.VarChar(1)
+  BatchNumber         Int?
+  Plant               String?   @db.NChar(1)
+  BatchProductId      String?   @db.Char(6)
+  BatchProductMarking String?   @db.VarChar(50)
+  ProductId           String    @db.Char(6)
+  ProductName         String?   @db.VarChar(200)
+  ProductMarking      String?   @db.VarChar(50)
+  TotalPlanned        Decimal?  @db.Decimal(38, 5)
+  TotalWeighting      Decimal?  @db.Decimal(38, 5)
+  TotalLoading        Decimal?  @db.Decimal(38, 5)
+  ProblemStatus       String    @db.VarChar(16)
+  batchs              Batchs    @relation(fields: [BatchPK], references: [BatchPK])
+
+  @@unique([BatchPK, ProductId])
 }

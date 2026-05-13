@@ -38,7 +38,10 @@ export class TrpcController {
       req: req as any,
       res: res as any,
       router: appRouter,
-      createContext: () => trpcService.createContext({ req, res }),
+      createContext: async (opts) => {
+        const baseContext = await trpcService.createContext(opts);
+        return baseContext;
+      },
     });
   }
 }

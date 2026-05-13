@@ -12,6 +12,14 @@
       "outputs": ["generated/**"],
       "cache": true
     },
+    "db:pull": {
+      "inputs": ["../../.env.development"],
+      "outputs": ["prisma/schema.prisma"],
+      "cache": false
+    },
+    "schema": {
+      "cache": true
+    },
     "dev": {
       "cache": false,
       "persistent": true,

@@ -1,23 +1,71 @@
-import MainLayout from "@/app/main-layout";
-import { Trademarks } from "@/pages";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import MainLayout from '@/app/main-layout';
+import { Boils, Login, Trademarks, BoilDetail } from '@/pages';
+import { ROUTE_PATH } from '@/shared/constants';
+import { createBrowserRouter, Navigate, Outlet, RouterProvider } from 'react-router-dom';
+import { AuthProvider, useAuth } from '../../auth-provider';
+
+const RootLayout = () => {
+  return (
+    <AuthProvider>
+      <Outlet />
+    </AuthProvider>
+  );
+};
+
+const ProtectedRoute = () => {
+  const { isAuth, isLoading } = useAuth();
+  if (isLoading) {
+    return <div>...</div>;
+  }
+  return isAuth ? <Outlet /> : <Navigate to="/login" replace />;
+};
+
+const PublicRoute = () => {
+  const { isAuth, isLoading } = useAuth();
+  if (isLoading) {
+    return <div>Загрузка...</div>;
+  }
+  return !isAuth ? <Outlet /> : <Navigate to="/" replace />;
+};
 
 const router = createBrowserRouter([
-    {
-        path: "/login",
-        element: <></>
-    },
-    {
-        path: "/",
-        element: <MainLayout />,
+  {
+    element: <RootLayout />,
+    children: [
+      {
+        element: <PublicRoute />,
         children: [
-            {
+          {
+            path: '/login',
+            element: <Login />,
+          },
+        ],
+      },
+      {
+        element: <ProtectedRoute />,
+        children: [
+          {
+            path: '/',
+            element: <MainLayout />,
+            children: [
+              {
                 index: true,
-                element: <Trademarks />
-            },
-            { path: "./lll", element: <></> }
-        ]
-    }
-])
+                element: <Boils />,
+              },
+              {
+                path: ROUTE_PATH.BOIL_DETAIL,
+                element: <BoilDetail />,
+              },
+              {
+                path: ROUTE_PATH.TRADEMARKS,
+                element: <Trademarks />,
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+]);
 
-export const AppRouter = () => <RouterProvider router={router} />
+export const AppRouter = () => <RouterProvider router={router} />;

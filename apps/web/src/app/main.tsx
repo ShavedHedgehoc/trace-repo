@@ -1,17 +1,20 @@
+import './styles/index.css';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import './styles/index.css';
+
 import { DataProvider, NuqsProvider, ThemeProvider } from './providers';
 import { App } from '.';
+import { Toaster } from 'sonner';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <NuqsProvider>
-      <ThemeProvider>
+    <ThemeProvider>
+      <NuqsProvider>
         <DataProvider>
+          <Toaster position="top-right" richColors />
           <App />
         </DataProvider>
-      </ThemeProvider>
-    </NuqsProvider>
+      </NuqsProvider>
+    </ThemeProvider>
   </StrictMode>,
 );

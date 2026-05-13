@@ -1,50 +1,82 @@
 // components/app-sidebar.tsx
-import { ChevronRight, FileText, Settings, Users } from "lucide-react"
+// import { ChevronRight, Command, FileText, Settings, Users } from 'lucide-react';
 import {
-    Sidebar,
-    SidebarContent,
-    SidebarGroup,
-    SidebarGroupLabel,
-    SidebarMenu,
-    SidebarMenuButton,
-    SidebarMenuItem,
-    SidebarMenuSub,
-    SidebarMenuSubItem,
-    SidebarMenuSubButton,
-} from "@/shared/ui"
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/shared/ui"
+  Sidebar,
+  SidebarContent,
+  // SidebarGroup,
+  // SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  // SidebarMenuSub,
+  // SidebarMenuSubItem,
+  // SidebarMenuSubButton,
+  SidebarHeader,
+  SidebarFooter,
+} from '@/shared/ui';
+// import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/shared/ui';
+import { HedgehogIcon } from '@/shared/assets';
+import { useAuth } from '@/app/providers/auth-provider';
+import { NavUser } from './nav-user';
+import { NavMain } from './nav-main';
+import { navItems } from './items';
 
-export function AppSidebar() {
-    return (
-        <Sidebar>
-            <SidebarContent>
-                <SidebarGroup>
-                    <SidebarGroupLabel>Навигация</SidebarGroupLabel>
-                    <SidebarMenu>
-                        {/* Пример вложенного меню */}
-                        <Collapsible className="group/collapsible">
-                            <SidebarMenuItem>
-                                <CollapsibleTrigger>
-                                    <SidebarMenuButton tooltip="Документы">
-                                        <FileText />
-                                        <span>Документы</span>
-                                        <ChevronRight className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
-                                    </SidebarMenuButton>
-                                </CollapsibleTrigger>
-                                <CollapsibleContent>
-                                    <SidebarMenuSub>
-                                        <SidebarMenuSubItem>
-                                            <SidebarMenuSubButton>
-                                                <a href="/docs/all">Все файлы</a>
-                                            </SidebarMenuSubButton>
-                                        </SidebarMenuSubItem>
-                                    </SidebarMenuSub>
-                                </CollapsibleContent>
-                            </SidebarMenuItem>
-                        </Collapsible>
-                    </SidebarMenu>
-                </SidebarGroup>
-            </SidebarContent>
-        </Sidebar>
-    )
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { user } = useAuth();
+  return (
+    // <Sidebar collapsible="offcanvas" {...props}>
+    //   <SidebarContent>
+    //     <SidebarGroup>
+    //       <SidebarGroupLabel>Навигация</SidebarGroupLabel>
+    //       <SidebarMenu>
+    //         {/* Пример вложенного меню */}
+    //         <Collapsible className="group/collapsible">
+    //           <SidebarMenuItem>
+    //             <CollapsibleTrigger>
+    //               <span>
+    //                 <SidebarMenuButton  >
+    //                   <FileText />
+    //                   <span>Документы</span>
+    //                   <ChevronRight className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
+    //                 </SidebarMenuButton>
+    //               </span>
+    //             </CollapsibleTrigger>
+    //             <CollapsibleContent>
+    //               <SidebarMenuSub>
+    //                 <SidebarMenuSubItem>
+    //                   <SidebarMenuSubButton>
+    //                     <a href="/docs/all">Все файлы</a>
+    //                   </SidebarMenuSubButton>
+    //                 </SidebarMenuSubItem>
+    //               </SidebarMenuSub>
+    //             </CollapsibleContent>
+    //           </SidebarMenuItem>
+    //         </Collapsible>
+    //       </SidebarMenu>
+    //     </SidebarGroup>
+    //   </SidebarContent>
+    // </Sidebar>
+    <Sidebar collapsible="offcanvas" {...props}>
+      <SidebarHeader>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild className="data-[slot=sidebar-menu-button]:p-1.5!">
+              <a href="#">
+                <HedgehogIcon className="size-5!" />
+                <span className="text-base font-semibold">Прослеживаемость 2.0</span>
+              </a>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarHeader>
+      <SidebarContent>
+        <NavMain items={navItems} />
+        {/* <NavDocuments items={data.documents} />
+        <NavSecondary items={data.navSecondary} className="mt-auto" /> */}
+      </SidebarContent>
+      <SidebarFooter>
+        <NavUser user={user} />
+      </SidebarFooter>
+    </Sidebar>
+  );
 }

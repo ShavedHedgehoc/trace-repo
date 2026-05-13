@@ -1,5 +1,3 @@
-
-
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { join } from 'path';
@@ -15,4 +13,4 @@ import { TrpcModule } from './trpc/trpc.module';
     TrpcModule,
   ],
 })
-export class AppModule { }
+export class AppModule {}

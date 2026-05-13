@@ -1,1 +1,5 @@
-export const ROUTE_PATH = {} as const;
+export const ROUTE_PATH = {
+  HOME: '/',
+  BOIL_DETAIL: '/:boilId',
+  TRADEMARKS: '/trademarks',
+} as const;

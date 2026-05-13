@@ -1,45 +1,45 @@
 {
   "$schema": "https://unpkg.com",
-  "ignore": [
-    "**/generated/**",
-    "packages/database/postgres/src/generated/**/*"
-  ],
+  "ignore": [],
   "workspaces": {
-    ".": {},
+    ".": {
+      "ignoreDependencies": [
+        "prettier-plugin-tailwindcss"
+      ]
+    },
     "apps/api": {
-      "entry": [
-        "src/main.ts"
-      ],
       "project": [
         "src/**/*.ts"
       ],
       "ignoreDependencies": [
-        "pg",
-        "pg-hstore",
-        "mssql",
-        "@sequelize/mssql",
-        "swagger-ui-express",
-        "@types/sequelize",
-        "source-map-support"
+        "superjson",
+        "@repo/typescript-config"
       ]
     },
     "apps/web": {
       "entry": [
-        "src/main.{ts,tsx}"
+        "src/app/main.{ts,tsx}"
+      ],
+      "ignore": [
+        "src/shared/lib/tanstack-table.d.ts",
+        "src/shared/ui/*"
       ],
       "project": [
         "src/**/*.{ts,tsx}"
       ],
-      "ignoreDependencies": []
+      "ignoreDependencies": [
+        "@fontsource-variable/*",
+        "tailwindcss",
+        "shadcn",
+        "zod",
+        "prettier-plugin-tailwindcss"
+      ]
     },
-    "packages/database": {
+    "packages/db": {
       "project": [
         "src/**/*.ts"
       ],
-      "ignore": [
-        "src/generated/**/*",
-        "**/generated/**"
-      ],
+      "ignore": [],
       "ignoreDependencies": [
         "@prisma/client"
       ]
@@ -47,7 +47,10 @@
     "packages/trpc": {
       "ignore": [],
       "ignoreDependencies": [
-        "@repo/db"
+        "@repo/db",
+        "@types/express",
+        "@types/express-serve-static-core",
+        "zod"
       ]
     }
   }
