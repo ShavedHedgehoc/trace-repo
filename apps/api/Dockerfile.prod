@@ -71,7 +71,9 @@ RUN pnpm turbo build --filter="@repo/api"
 
 # КРИТИЧЕСКИЙ ШАГ: Очищаем dev-зависимости прямо внутри builder.
 # Переменная CI=true отключает интерактивные вопросы TTY в pnpm v10+
-RUN CI=true pnpm prune --prod --no-optional
+
+
+# RUN CI=true pnpm prune --prod --no-optional
 
 # 3. Runner
 FROM node:20-alpine AS runner
