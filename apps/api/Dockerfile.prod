@@ -83,16 +83,16 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV CI=true
 
-# Копируем из билдера чистую, готовую к продакшену папку node_modules,
-# в которой pnpm уже сам правильно связал `@repo/db` через жесткие ссылки
+# Копируем КОРНЕВУЮ папку зависимостей, где гарантированно есть и @nestjs/core, и все связи воркспейсов
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
 
-# Копируем физические файлы пакета БД со сгенерированным Prisma Client
-COPY --from=builder /app/packages/db ./packages/db
+# Копируем исходники пакетов, так как внутри packages/db/src/generated лежит ваш кастомный клиент Prisma
+COPY --from=builder /app/packages ./packages
+COPY --from=builder /app/apps ./apps
 
-# Копируем скомпилированное NestJS приложение в корень /app/dist
+# Копируем скомпилированный дистрибутив NestJS в корень, как он и просится в ошибке
 COPY --from=builder /app/apps/api/dist ./dist
 
-# Больше никакой установки зависимостей в рантайме! Запускаем напрямую из корня
+# Запускаем из корня рабочей директории
 CMD ["node", "dist/main.js"]
