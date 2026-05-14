@@ -19,10 +19,11 @@ RUN pnpm install --frozen-lockfile
 
 COPY --from=pruner /app/out/full/ .
 
-# Принудительно генерируем Prisma Client внутри папки пакета
-RUN cd packages/db && npx prisma generate
-
+RUN mkdir -p /app/packages/db/src/generated/client
+RUN npx prisma generate --schema=/app/packages/db/prisma/schema.prisma
 RUN echo '{"name": "prisma-client", "type": "module", "main": "./index.js", "exports": {".": "./index.js"}}' > /app/packages/db/src/generated/client/package.json
+
+
 
 # Теперь компилируем NestJS приложение. Компилятор увидит реальные файлы клиента!
 RUN pnpm turbo build --filter="@repo/api"
