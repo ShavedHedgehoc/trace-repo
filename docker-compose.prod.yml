@@ -23,41 +23,41 @@ services:
     restart: always    
     networks:      
       - general  
-  # app:
-  #   container_name: app_container
-  #   build:
-  #     context: .
-  #     dockerfile: docker/application/Dockerfile.prod
-  #     args:
-  #       - NODE_ENV=production
-  #   logging:
-  #     driver: 'json-file'
-  #     options:
-  #       max-size: '10m'
-  #       max-file: '3'
-  #   depends_on:
-  #     - api
-  #   restart: always
-  #   networks:
-  #     - general 
-  # nginx:
-  #   container_name: nginx_container
-  #   build: ./docker/nginx
-  #   logging:
-  #     driver: 'json-file'
-  #     options:
-  #       max-size: '10m'
-  #       max-file: '3'
-  #   restart: always
-  #   ports:
-  #     - '80:80'
-  #     - '3000:3000'
-  #     - '5000:5000'
-  #   networks:
-  #     - general
-  #   depends_on:
-  #     - app
-  #     - workstation
+  app:
+    container_name: app_container
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile.prod
+      args:
+        - NODE_ENV=production
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '10m'
+        max-file: '3'
+    depends_on:
+      - api
+    restart: always
+    networks:
+      - general 
+  nginx:
+    container_name: nginx_container
+    build:
+      context: .
+      dockerfile: packages/gateway/Dockerfile.prod
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '10m'
+        max-file: '3'
+    restart: always
+    ports:
+      - '80:80'          
+    networks:
+      - general
+    depends_on:
+      - app  
+      - api
 networks:
   general:
     driver: bridge

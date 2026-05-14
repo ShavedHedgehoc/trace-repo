@@ -1,0 +1,39 @@
+# 1. Prune Stage
+FROM node:20-alpine3.20 AS pruner
+RUN npm install -g turbo
+WORKDIR /app
+COPY . .
+RUN turbo prune "@repo/web" --docker
+
+# 2. Builder Stage
+FROM node:20-alpine3.20 AS builder
+WORKDIR /app
+# Pre-install server locally to bake it into the cached Docker filesystem layer
+RUN npm install -g pnpm turbo http-server
+
+COPY --from=pruner /app/out/json/ .
+COPY --from=pruner /app/out/pnpm-lock.yaml ./
+
+RUN pnpm config set node-linker hoisted && \
+    pnpm install --frozen-lockfile
+
+COPY --from=pruner /app/out/full/ .
+
+# CRITICAL FIX: Added "..." to build all shared internal packages that @repo/web depends on
+RUN pnpm turbo build --filter="@repo/web..."
+
+# 3. Final Production Runner Stage
+FROM node:20-alpine3.20 AS runner
+WORKDIR /app
+
+# Copy the server layout binary natively from the builder (Zero network overhead on boot)
+COPY --from=builder /usr/local/lib/node_modules/http-server /usr/local/lib/node_modules/http-server
+RUN ln -s /usr/local/lib/node_modules/http-server/bin/http-server /usr/local/bin/http-server
+
+# Copy strictly compiled static frontend assets
+COPY --from=builder /app/apps/web/dist ./dist
+
+EXPOSE 3000
+
+# CRITICAL FIX: Added "-proxy" flag to handle Single Page App (SPA) client-side routing
+CMD ["http-server", "-p", "3000", "--proxy", "http://localhost:3000?", "./dist"]

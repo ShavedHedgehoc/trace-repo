@@ -64,17 +64,12 @@ RUN pnpm config set node-linker hoisted && \
 
 COPY --from=pruner /app/out/full/ .
 
-# Принудительно создаем папку для клиента Prisma 6
-RUN mkdir -p /app/packages/db/src/generated
 
-# Генерируем клиент локальной версией Prisma
+RUN mkdir -p /app/packages/db/src/generated
 RUN pnpm --filter="@repo/db" exec prisma generate --schema=/app/packages/db/prisma/schema.prisma
 
-# Собираем NestJS приложение
 RUN pnpm turbo build --filter="@repo/api"
 
-# [ОПТИМИЗАЦИЯ 1]: Чистим только кэш pnpm и временные файлы сборки, 
-# которые не влияют на работу модулей, но весят сотни мегабайт.
 RUN pnpm store prune && rm -rf /root/.npm /root/.turbo
 
 # 3. Runner
@@ -84,13 +79,9 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV CI=true
 
-# [ОПТИМИЗАЦИЯ 2]: Копируем утилиту tsx из стадии builder прямо в рантайм.
-# Теперь контейнеру больше не нужен интернет при каждом запуске для скачивания через npx.
 COPY --from=builder /usr/local/lib/node_modules/tsx /usr/local/lib/node_modules/tsx
 RUN ln -s /usr/local/lib/node_modules/tsx/dist/cli.mjs /usr/local/bin/tsx
 
-# Копируем полностью собранное рабочее окружение (как у вас)
 COPY --from=builder /app /app
 
-# [ОПТИМИЗАЦИЯ 3]: Запускаем напрямую через локально скопированный бинарник tsx (без npx)
 CMD ["tsx", "apps/api/dist/main.js"]
