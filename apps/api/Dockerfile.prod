@@ -169,7 +169,7 @@ RUN pnpm turbo run generate --filter="@repo/api"
 RUN pnpm turbo build --filter="@repo/api"
 
 # Вытаскиваем API со всеми его зависимостями (включая @repo/db) в изолированную папку
-RUN pnpm --filter="@repo/api" deploy --prod /prod/api
+RUN pnpm --filter="@repo/api" deploy --legacy --prod /prod/api
 
 # 3. Runner (Минимальный продакшн-образ)
 FROM node:20-alpine AS runner
