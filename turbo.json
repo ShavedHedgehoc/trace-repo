@@ -28,7 +28,7 @@
       "outputs": [
         "generated/**"
       ],
-      "cache": true
+      "cache": false
     },
     "db:pull": {
       "inputs": [
