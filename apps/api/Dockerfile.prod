@@ -1,11 +1,54 @@
-# 1. Prune (Подготовка структуры)
+# # 1. Prune (Подготовка структуры)
+# FROM node:20-alpine AS pruner
+# RUN npm install -g turbo
+# WORKDIR /app
+# COPY . .
+# RUN turbo prune "@repo/api" --docker
+
+# # 2. Builder (Установка всех пакетов, генерация Prisma и сборка)
+# FROM node:20-alpine AS builder
+# RUN apk add --no-cache libc6-compat openssl
+# WORKDIR /app
+# RUN npm install -g pnpm turbo
+
+# COPY --from=pruner /app/out/json/ .
+# COPY --from=pruner /app/out/pnpm-lock.yaml ./
+
+# # Ставим зависимости в стандартном изолированном режиме монорепозитория
+# RUN pnpm install --frozen-lockfile
+
+# COPY --from=pruner /app/out/full/ .
+
+# RUN mkdir -p /app/packages/db/src/generated/client
+# RUN npx prisma generate --schema=/app/packages/db/prisma/schema.prisma
+# RUN echo '{"name": "prisma-client", "type": "module", "main": "./index.js", "exports": {".": "./index.js"}}' > /app/packages/db/src/generated/client/package.json
+
+
+
+# # Теперь компилируем NestJS приложение. Компилятор увидит реальные файлы клиента!
+# RUN pnpm turbo build --filter="@repo/api"
+
+# # 3. Runner (Чистый запуск без изменений путей)
+# FROM node:20-alpine AS runner
+# RUN apk add --no-cache openssl
+# WORKDIR /app
+# ENV NODE_ENV=production
+# ENV CI=true
+
+# # Чтобы скомпилированный NestJS (dist) не ругался на пути,
+# # мы копируем АБСОЛЮТНО ВСЁ рабочее окружение из builder целиком.
+# COPY --from=builder /app /app
+
+# # Запускаем приложение в той же структуре, где оно собиралось
+# CMD ["node", "apps/api/dist/main.js"]
+# 1. Prune
 FROM node:20-alpine AS pruner
 RUN npm install -g turbo
 WORKDIR /app
 COPY . .
 RUN turbo prune "@repo/api" --docker
 
-# 2. Builder (Установка всех пакетов, генерация Prisma и сборка)
+# 2. Builder
 FROM node:20-alpine AS builder
 RUN apk add --no-cache libc6-compat openssl
 WORKDIR /app
@@ -14,30 +57,32 @@ RUN npm install -g pnpm turbo
 COPY --from=pruner /app/out/json/ .
 COPY --from=pruner /app/out/pnpm-lock.yaml ./
 
-# Ставим зависимости в стандартном изолированном режиме монорепозитория
-RUN pnpm install --frozen-lockfile
+# Включаем hoisted линкер для создания плоской структуры зависимостей
+RUN pnpm config set node-linker hoisted && \
+    pnpm install --frozen-lockfile
 
 COPY --from=pruner /app/out/full/ .
 
+# КРИТИЧЕСКИЙ ШАГ: Принудительно создаем папку для клиента
 RUN mkdir -p /app/packages/db/src/generated/client
-RUN npx prisma generate --schema=/app/packages/db/prisma/schema.prisma
+
+# ЗАПУСК ГЕНЕРАЦИИ ЧЕРЕЗ PNPM (использует локальную Prisma 6 из package.json)
+RUN pnpm --filter="@repo/db" exec prisma generate --schema=/app/packages/db/prisma/schema.prisma
+
+# Создаем package.json для ESM-совместимости (папка теперь гарантированно на месте)
 RUN echo '{"name": "prisma-client", "type": "module", "main": "./index.js", "exports": {".": "./index.js"}}' > /app/packages/db/src/generated/client/package.json
 
-
-
-# Теперь компилируем NestJS приложение. Компилятор увидит реальные файлы клиента!
+# Теперь компилируем NestJS приложение
 RUN pnpm turbo build --filter="@repo/api"
 
-# 3. Runner (Чистый запуск без изменений путей)
+# 3. Runner
 FROM node:20-alpine AS runner
 RUN apk add --no-cache openssl
 WORKDIR /app
 ENV NODE_ENV=production
 ENV CI=true
 
-# Чтобы скомпилированный NestJS (dist) не ругался на пути,
-# мы копируем АБСОЛЮТНО ВСЁ рабочее окружение из builder целиком.
+# Копируем полностью рабочее окружение сборщика целиком
 COPY --from=builder /app /app
 
-# Запускаем приложение в той же структуре, где оно собиралось
 CMD ["node", "apps/api/dist/main.js"]
