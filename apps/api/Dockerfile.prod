@@ -69,8 +69,8 @@ RUN pnpm config set node-linker hoisted && \
 COPY --from=pruner /app/out/full/ .
 
 # Генерируем типы/клиенты Prisma и собираем NestJS приложение
-RUN pnpm turbo run generate --filter="@repo/db"
-RUN pnpm turbo run generate --filter="@repo/api"
+RUN pnpm turbo run generate --filter="@repo/db" --force
+RUN pnpm turbo run generate --filter="@repo/api" --force
 RUN pnpm turbo build --filter="@repo/api"
 
 # КРИТИЧЕСКИЙ ШАГ: Очищаем dev-зависимости прямо внутри builder.
