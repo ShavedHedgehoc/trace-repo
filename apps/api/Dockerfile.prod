@@ -69,8 +69,10 @@ RUN mkdir -p /app/packages/db/src/generated/client
 # ЗАПУСК ГЕНЕРАЦИИ ЧЕРЕЗ PNPM (использует локальную Prisma 6 из package.json)
 RUN pnpm --filter="@repo/db" exec prisma generate --schema=/app/packages/db/prisma/schema.prisma
 
-# Создаем package.json для ESM-совместимости (папка теперь гарантированно на месте)
-RUN echo '{"name": "prisma-client", "type": "module", "main": "./index.js", "exports": {".": "./index.js"}}' > /app/packages/db/src/generated/client/package.json
+
+# Перезаписываем генерацию package.json с расширенными полями экспорта для ESM
+RUN echo '{"name": "@repo/db-client", "type": "module", "main": "./index.js", "types": "./index.d.ts", "exports": {".": "./index.js", "./*": "./*"}}' > /app/packages/db/src/generated/client/package.json
+
 
 # Теперь компилируем NestJS приложение
 RUN pnpm turbo build --filter="@repo/api"
