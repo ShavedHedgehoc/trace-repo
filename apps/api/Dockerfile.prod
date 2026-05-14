@@ -9,7 +9,7 @@ RUN turbo prune "@repo/api" --docker
 FROM node:20-alpine AS builder
 RUN apk add --no-cache libc6-compat openssl
 WORKDIR /app
-RUN npm install -g pnpm turbo
+RUN npm install -g pnpm turbo tsx
 
 COPY --from=pruner /app/out/json/ .
 COPY --from=pruner /app/out/pnpm-lock.yaml ./
@@ -38,4 +38,4 @@ ENV CI=true
 # Копируем полностью собранное рабочее окружение
 COPY --from=builder /app /app
 
-CMD ["node", "apps/api/dist/main.js"]
+CMD ["npx", "tsx","apps/api/dist/main.js"]
