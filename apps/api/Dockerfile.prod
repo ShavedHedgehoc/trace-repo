@@ -56,18 +56,24 @@ RUN apk add --no-cache libc6-compat openssl
 WORKDIR /app
 RUN npm install -g pnpm turbo
 
+# Копируем структуру монорепозитория и ставим абсолютно все зависимости
 COPY --from=pruner /app/out/json/ .
 COPY --from=pruner /app/out/pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
 
+# Копируем исходный код пакетов и приложений
 COPY --from=pruner /app/out/full/ .
 
-# Генерируем клиенты и собираем приложение
+# Генерируем типы/клиенты Prisma и собираем NestJS приложение
 RUN pnpm turbo run generate --filter="@repo/db"
 RUN pnpm turbo run generate --filter="@repo/api"
 RUN pnpm turbo build --filter="@repo/api"
 
-# 3. Runner (Используем чистый запуск без удаления зависимостей)
+# КРИТИЧЕСКИЙ ШАГ: Очищаем dev-зависимости прямо внутри builder.
+# Переменная CI=true отключает интерактивные вопросы TTY в pnpm v10+
+RUN CI=true pnpm prune --prod --no-optional
+
+# 3. Runner
 FROM node:20-alpine AS runner
 RUN apk add --no-cache openssl
 WORKDIR /app
@@ -75,22 +81,16 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV CI=true
 
-RUN npm install -g pnpm
+# Копируем из билдера чистую, готовую к продакшену папку node_modules,
+# в которой pnpm уже сам правильно связал `@repo/db` через жесткие ссылки
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
 
-# Копируем метаданные
-COPY --from=pruner /app/out/json/ .
-COPY --from=pruner /app/out/pnpm-lock.yaml ./
-
-COPY --from=pruner /app/out/full/ .
-
-# Копируем исходный код пакета базы данных (включая сгенерированный Prisma клиент)
+# Копируем физические файлы пакета БД со сгенерированным Prisma Client
 COPY --from=builder /app/packages/db ./packages/db
 
-# Устанавливаем ВСЕ зависимости (включая локальные линки воркспейсов)
-RUN pnpm config set node-linker hoisted && \
-    pnpm install --frozen-lockfile
-
-# Копируем скомпилированный дистрибутив NestJS
+# Копируем скомпилированное NestJS приложение в корень /app/dist
 COPY --from=builder /app/apps/api/dist ./dist
 
+# Больше никакой установки зависимостей в рантайме! Запускаем напрямую из корня
 CMD ["node", "dist/main.js"]
