@@ -168,7 +168,8 @@ RUN pnpm turbo run generate --filter="@repo/api"
 RUN pnpm turbo build --filter="@repo/api"
 
 # Удаляем dev-зависимости, оставляя только продакшн-структуру и ссылки воркспейсов
-RUN pnpm prune --prod --no-optional
+RUN pnpm config set confirmModulesPurge false && \
+    pnpm prune --prod --no-optional
 
 # 3. Runner (Минимальный продакшн-образ)
 FROM node:20-alpine AS runner
