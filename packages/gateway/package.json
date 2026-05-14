@@ -1,0 +1,10 @@
+{
+    "name": "@repo/gateway",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Nginx Reverse Proxy Gateway",
+    "scripts": {
+        "lint": "echo 'No JS/TS to lint'",
+        "validate:config": "nginx -t -c ./nginx.conf"
+    }
+}

@@ -8,9 +8,7 @@ import { TrpcModule } from './trpc/trpc.module';
     ConfigModule.forRoot({
       envFilePath: join(process.cwd(), '../../', `.env.${process.env.NODE_ENV}`),
     }),
-    //  PrismaModule, // Глобальная база
-    // AuthModule,   // Глобальная авторизация
     TrpcModule,
   ],
 })
-export class AppModule {}
+export class AppModule { }

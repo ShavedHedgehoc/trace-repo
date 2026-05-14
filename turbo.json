@@ -1,20 +1,42 @@
 {
   "$schema": "https://turbo.build.json",
   "ui": "tui",
-  "globalEnv": ["NODE_ENV"],
+  "globalEnv": [
+    "NODE_ENV"
+  ],
   "tasks": {
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        ".next/**"
+      ]
+    },
+    "generate": {
+      "inputs": [
+        "prisma/schema.prisma"
+      ],
+      "cache": false
     },
     "db:generate": {
-      "inputs": ["prisma/schema.prisma", "../../../.env.development"],
-      "outputs": ["generated/**"],
+      "inputs": [
+        "prisma/schema.prisma",
+        "../../../.env.development"
+      ],
+      "outputs": [
+        "generated/**"
+      ],
       "cache": true
     },
     "db:pull": {
-      "inputs": ["../../.env.development"],
-      "outputs": ["prisma/schema.prisma"],
+      "inputs": [
+        "../../.env.development"
+      ],
+      "outputs": [
+        "prisma/schema.prisma"
+      ],
       "cache": false
     },
     "schema": {
@@ -48,7 +70,9 @@
     },
     "type-check": {
       "cache": true,
-      "dependsOn": ["^type-check"]
+      "dependsOn": [
+        "^type-check"
+      ]
     }
   }
 }
