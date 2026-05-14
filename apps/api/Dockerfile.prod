@@ -99,6 +99,7 @@ RUN mkdir -p ./node_modules/@repo && \
     rm -rf ./node_modules/@repo/db && \
     cp -r ./packages/db ./node_modules/@repo/db
 # Копируем скомпилированный дистрибутив NestJS в корень, как он и просится в ошибке
+RUN echo '{"name": "prisma-client", "main": "./index.js", "types": "./index.d.ts"}' > ./node_modules/@repo/db/src/generated/client/package.json
 COPY --from=builder /app/apps/api/dist ./dist
 
 # Запускаем из корня рабочей директории
