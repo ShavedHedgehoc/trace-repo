@@ -1,12 +1,14 @@
+# Working non-optimized
+
 # # 1. Prune (Остается без изменений)
-# FROM node:20-alpine AS pruner
+# FROM node:20-alpine3.20 AS pruner
 # RUN npm install -g turbo
 # WORKDIR /app
 # COPY . .
 # RUN turbo prune "@repo/api" --docker
 
 # # 2. Builder
-# FROM node:20-alpine AS builder
+# FROM node:20-alpine3.20 AS builder
 # RUN apk add --no-cache libc6-compat openssl
 # WORKDIR /app
 # RUN npm install -g pnpm turbo tsx
@@ -29,7 +31,7 @@
 # RUN pnpm turbo build --filter="@repo/api"
 
 # # 3. Runner
-# FROM node:20-alpine AS runner
+# FROM node:20-alpine3.20 AS runner
 # RUN apk add --no-cache openssl
 # WORKDIR /app
 # ENV NODE_ENV=production
@@ -39,45 +41,64 @@
 # COPY --from=builder /app /app
 
 # CMD ["npx", "tsx","apps/api/dist/main.js"]
-
-# 1. Prune (Остается без изменений)
+# 1. Prune Stage
 FROM node:20-alpine3.20 AS pruner
 RUN npm install -g turbo
 WORKDIR /app
 COPY . .
 RUN turbo prune "@repo/api" --docker
 
-# 2. Builder
+# 2. Builder Stage
 FROM node:20-alpine3.20 AS builder
 RUN apk add --no-cache libc6-compat openssl
 WORKDIR /app
-RUN npm install -g pnpm turbo tsx
+RUN npm install -g pnpm turbo
 
 COPY --from=pruner /app/out/json/ .
 COPY --from=pruner /app/out/pnpm-lock.yaml ./
 
+# Install all development and production modules
 RUN pnpm config set node-linker hoisted && \
     pnpm install --frozen-lockfile
 
 COPY --from=pruner /app/out/full/ .
 
-# Принудительно создаем папку для клиента Prisma 6
+# Ensure standard generation paths exist for Prisma 6 stability
 RUN mkdir -p /app/packages/db/src/generated
-
-# Генерируем клиент локальной версией Prisma
 RUN pnpm --filter="@repo/db" exec prisma generate --schema=/app/packages/db/prisma/schema.prisma
 
-# Просто собираем NestJS приложение (tsconfig сам правильно подставит index.js)
+# Build the NestJS application
 RUN pnpm turbo build --filter="@repo/api"
 
-# 3. Runner
+# CRITICAL PRUNING: Strip development tools out safely for runtime
+# CI=true bypasses pnpm v10 interactive prompt loops
+RUN CI=true pnpm prune --prod --no-optional
+
+# 3. Final Production Runner Stage
 FROM node:20-alpine3.20 AS runner
 RUN apk add --no-cache openssl
 WORKDIR /app
+
 ENV NODE_ENV=production
 ENV CI=true
 
-# Копируем полностью собранное рабочее окружение
-COPY --from=builder /app /app
+# Copy runtime node_modules and structural manifests
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
 
-CMD ["npx", "tsx","apps/api/dist/main.js"]
+# Copy only the compiled NestJS runtime build
+COPY --from=builder /app/apps/api/dist ./apps/api/dist
+COPY --from=builder /app/apps/api/package.json ./apps/api/package.json
+
+# Copy only necessary local packages needed at runtime
+COPY --from=builder /app/packages/db/src/generated ./packages/db/src/generated
+COPY --from=builder /app/packages/db/package.json ./packages/db/package.json
+
+# Copy trpc raw sources since it runs uncompiled 
+COPY --from=builder /app/packages/trpc ./packages/trpc
+
+# Install tsx natively local to the runner to avoid on-boot network fetching
+RUN npm install -g tsx
+
+# Execute with the cached binary directly without 'npx' network requests
+CMD ["tsx", "apps/api/dist/main.js"]
