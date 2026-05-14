@@ -20,7 +20,7 @@ RUN pnpm config set node-linker hoisted && \
 COPY --from=pruner /app/out/full/ .
 
 # Принудительно создаем папку для клиента Prisma 6
-RUN mkdir -p /app/packages/db/src/generated/client
+RUN mkdir -p /app/packages/db/src/generated
 
 # Генерируем клиент локальной версией Prisma
 RUN pnpm --filter="@repo/db" exec prisma generate --schema=/app/packages/db/prisma/schema.prisma
