@@ -1,4 +1,4 @@
-# Working non-optimized
+# # Working non-optimized
 
 # # 1. Prune (Остается без изменений)
 # FROM node:20-alpine3.20 AS pruner
@@ -41,64 +41,56 @@
 # COPY --from=builder /app /app
 
 # CMD ["npx", "tsx","apps/api/dist/main.js"]
-# 1. Prune Stage
+
+
+# 1. Prune
 FROM node:20-alpine3.20 AS pruner
 RUN npm install -g turbo
 WORKDIR /app
 COPY . .
 RUN turbo prune "@repo/api" --docker
 
-# 2. Builder Stage
+# 2. Builder
 FROM node:20-alpine3.20 AS builder
 RUN apk add --no-cache libc6-compat openssl
 WORKDIR /app
-RUN npm install -g pnpm turbo
+RUN npm install -g pnpm turbo tsx
 
 COPY --from=pruner /app/out/json/ .
 COPY --from=pruner /app/out/pnpm-lock.yaml ./
 
-# Install all development and production modules
 RUN pnpm config set node-linker hoisted && \
     pnpm install --frozen-lockfile
 
 COPY --from=pruner /app/out/full/ .
 
-# Ensure standard generation paths exist for Prisma 6 stability
+# Принудительно создаем папку для клиента Prisma 6
 RUN mkdir -p /app/packages/db/src/generated
+
+# Генерируем клиент локальной версией Prisma
 RUN pnpm --filter="@repo/db" exec prisma generate --schema=/app/packages/db/prisma/schema.prisma
 
-# Build the NestJS application
+# Собираем NestJS приложение
 RUN pnpm turbo build --filter="@repo/api"
 
-# CRITICAL PRUNING: Strip development tools out safely for runtime
-# CI=true bypasses pnpm v10 interactive prompt loops
-RUN CI=true pnpm prune --prod --no-optional
+# [ОПТИМИЗАЦИЯ 1]: Чистим только кэш pnpm и временные файлы сборки, 
+# которые не влияют на работу модулей, но весят сотни мегабайт.
+RUN pnpm store prune && rm -rf /root/.npm /root/.turbo
 
-# 3. Final Production Runner Stage
+# 3. Runner
 FROM node:20-alpine3.20 AS runner
 RUN apk add --no-cache openssl
 WORKDIR /app
-
 ENV NODE_ENV=production
 ENV CI=true
 
-# Copy runtime node_modules and structural manifests
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./package.json
+# [ОПТИМИЗАЦИЯ 2]: Копируем утилиту tsx из стадии builder прямо в рантайм.
+# Теперь контейнеру больше не нужен интернет при каждом запуске для скачивания через npx.
+COPY --from=builder /usr/local/lib/node_modules/tsx /usr/local/lib/node_modules/tsx
+RUN ln -s /usr/local/lib/node_modules/tsx/dist/cli.mjs /usr/local/bin/tsx
 
-# Copy only the compiled NestJS runtime build
-COPY --from=builder /app/apps/api/dist ./apps/api/dist
-COPY --from=builder /app/apps/api/package.json ./apps/api/package.json
+# Копируем полностью собранное рабочее окружение (как у вас)
+COPY --from=builder /app /app
 
-# Copy only necessary local packages needed at runtime
-COPY --from=builder /app/packages/db/src/generated ./packages/db/src/generated
-COPY --from=builder /app/packages/db/package.json ./packages/db/package.json
-
-# Copy trpc raw sources since it runs uncompiled 
-COPY --from=builder /app/packages/trpc ./packages/trpc
-
-# Install tsx natively local to the runner to avoid on-boot network fetching
-RUN npm install -g tsx
-
-# Execute with the cached binary directly without 'npx' network requests
+# [ОПТИМИЗАЦИЯ 3]: Запускаем напрямую через локально скопированный бинарник tsx (без npx)
 CMD ["tsx", "apps/api/dist/main.js"]
