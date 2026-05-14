@@ -74,6 +74,7 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 ENV CI=true
+RUN npm install -g pnpm
 
 # Копируем метаданные
 COPY --from=pruner /app/out/json/ .
