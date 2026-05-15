@@ -15,4 +15,19 @@ export const navItems: TNavItem[] = [
     title: 'Торговые названия',
     url: ROUTE_PATH.TRADEMARKS,
   },
+  // {
+  //   title: 'Сырье',
+  //   url: ROUTE_PATH.MATERIALS,
+  // },
+  {
+    title: 'Сырье в ячейках',
+    url: ROUTE_PATH.CELLS_CONTAIN,
+  },
+];
+
+export const adminNavItems: TNavItem[] = [
+  {
+    title: 'Пользователи',
+    url: ROUTE_PATH.USERS,
+  },
 ];

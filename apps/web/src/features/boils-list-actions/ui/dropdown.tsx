@@ -9,12 +9,12 @@ import {
   DropdownMenuSeparator,
 } from '@/shared/ui';
 import { ClipboardList, MoreHorizontal } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 
 export function RowDropdown({ boilId }: { boilId: number }) {
-  const navigate = useNavigate();
   const handleDetailClick = () => {
-    navigate(`${ROUTE_PATH.HOME}/${boilId}`);
+    const baseUrl = window.location.origin;
+    const fullUrl = `${baseUrl}${ROUTE_PATH.BOIL_DETAIL_ROOT}/${boilId}`;
+    window.open(fullUrl, '_blank', 'noreferrer');
   };
   return (
     <div>

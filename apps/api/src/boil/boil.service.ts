@@ -19,10 +19,14 @@ import {
 export class BoilService implements IBoilService {
   async getStats(input: TGetBoilsStatsInput): Promise<TBoilStatsResponse> {
     const { startDate, endDate } = input;
+
+    const startOfDay = new Date(startDate);
+    startOfDay.setHours(0, 0, 0, 0);
+
     const endOfDay = new Date(endDate);
     endOfDay.setHours(23, 59, 59, 999);
     const where: Prisma.vw_FinalBatchStatusWhereInput = {
-      BatchDate: { gte: new Date(startDate), lte: endOfDay },
+      BatchDate: { gte: new Date(startOfDay), lte: endOfDay },
     };
 
     const [totalBoilsPskGroup, totalBoilsKlpGroup] = await Promise.all([
@@ -81,11 +85,14 @@ export class BoilService implements IBoilService {
     } = input;
     const skip = (page - 1) * limit;
 
+    const startOfDay = new Date(startDate);
+    startOfDay.setHours(0, 0, 0, 0);
+
     const endOfDay = new Date(endDate);
     endOfDay.setHours(23, 59, 59, 999);
 
     const andConditions: Prisma.vw_FinalBatchStatusWhereInput[] = [
-      { BatchDate: { gte: new Date(startDate), lte: endOfDay } },
+      { BatchDate: { gte: new Date(startOfDay), lte: endOfDay } },
     ];
 
     if (batchName !== '') {
@@ -246,6 +253,10 @@ export class BoilService implements IBoilService {
       date: w.Documents?.CreateDate,
     }));
 
+    const sortedWeightingData = [...castingWeightings].sort((a, b) => {
+      return a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' });
+    });
+
     const castingLoads: TBoilDetailLoadRow[] =
       boil.Loads?.flatMap((ld) => {
         const wRows = ld.Containers?.Weightings ?? [];
@@ -258,6 +269,10 @@ export class BoilService implements IBoilService {
           weight: Number(wr.Quantity),
         }));
       }) ?? [];
+
+    const sortedLoadData = [...castingLoads].sort((a, b) => {
+      return new Date(a.date).getTime() - new Date(b.date).getTime();
+    });
 
     const castingTechRecords: TBoilDetailTechCardRow[] = [
       ...(boil.BoilRecords?.map((br) => ({
@@ -287,7 +302,7 @@ export class BoilService implements IBoilService {
     ];
 
     const sortedTechData = [...castingTechRecords].sort((a, b) => {
-      return new Date(a.date).getTime() - new Date(b.date).getTime(); // От старых к новым
+      return new Date(a.date).getTime() - new Date(b.date).getTime();
     });
 
     return {
@@ -298,8 +313,8 @@ export class BoilService implements IBoilService {
       productMarking: product.ProductMarking || '',
       plantAbb: boil.Plant || '',
       summary: castingWeightingResult,
-      weightings: castingWeightings,
-      loads: castingLoads,
+      weightings: sortedWeightingData,
+      loads: sortedLoadData,
       techCard: sortedTechData,
     };
   }

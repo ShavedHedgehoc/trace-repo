@@ -18,6 +18,8 @@ import { useState } from 'react';
 import { TechCardTable } from './techcard-table';
 import { LoadTable } from './load-table';
 import { WeightingTable } from './weighting-table';
+import { useAuth } from '@/app/providers';
+import { AllXLSXButton, WeightingXLSXButton } from '@/features/weighting-xlsx';
 
 export function TableTabs({
   data,
@@ -29,6 +31,8 @@ export function TableTabs({
   isPlaceholderData: boolean;
 }) {
   const [activeTab, setActiveTab] = useState('summary');
+  const { user } = useAuth();
+  const allowedRole = 'Технолог';
   return (
     <Tabs
       value={activeTab}
@@ -48,7 +52,9 @@ export function TableTabs({
               <SelectItem value="summary">Общая сводка</SelectItem>
               <SelectItem value="weightings">Взвешивания</SelectItem>
               <SelectItem value="loads">Загрузки</SelectItem>
-              <SelectItem value="tech-card">Технологическая карта</SelectItem>
+              {user?.roles.includes(allowedRole) && (
+                <SelectItem value="tech-card">Технологическая карта</SelectItem>
+              )}
             </SelectGroup>
           </SelectContent>
         </Select>
@@ -60,10 +66,18 @@ export function TableTabs({
           <TabsTrigger value="loads">
             Загрузки <Badge variant="secondary">{data?.loads?.length ?? 0}</Badge>
           </TabsTrigger>
-          <TabsTrigger value="tech-card">
-            Технологическая карта <Badge variant="secondary">{data?.techCard?.length ?? 0}</Badge>
-          </TabsTrigger>
+          {user?.roles.includes(allowedRole) && (
+            <TabsTrigger value="tech-card">
+              Технологическая карта <Badge variant="secondary">{data?.techCard?.length ?? 0}</Badge>
+            </TabsTrigger>
+          )}
         </TabsList>
+        {user?.roles.includes(allowedRole) && activeTab === 'weightings' && (
+          <WeightingXLSXButton data={data} />
+        )}
+        {user?.roles.includes(allowedRole) && activeTab === 'summary' && (
+          <AllXLSXButton data={data} />
+        )}
       </div>
       <TabsContent value="summary" className="flex flex-col gap-4 overflow-auto ">
         <SummaryTable
@@ -86,13 +100,15 @@ export function TableTabs({
           isPlaceholderData={isPlaceholderData}
         />
       </TabsContent>
-      <TabsContent value="tech-card" className="flex flex-col gap-4 overflow-auto ">
-        <TechCardTable
-          data={data?.techCard}
-          isFetching={isFetching}
-          isPlaceholderData={isPlaceholderData}
-        />
-      </TabsContent>
+      {user?.roles.includes(allowedRole) && (
+        <TabsContent value="tech-card" className="flex flex-col gap-4 overflow-auto ">
+          <TechCardTable
+            data={data?.techCard}
+            isFetching={isFetching}
+            isPlaceholderData={isPlaceholderData}
+          />
+        </TabsContent>
+      )}
     </Tabs>
   );
 }

@@ -5,6 +5,7 @@ import {
   FilterInput,
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -87,6 +88,7 @@ export function TrademarksFilter() {
         <SheetContent side="bottom" className="h-[90vh] overflow-y-auto ">
           <SheetHeader>
             <SheetTitle>Фильтры</SheetTitle>
+            <SheetDescription className="sr-only">trademark filter</SheetDescription>
           </SheetHeader>
           <div className="flex flex-col gap-4 py-4 px-2">
             {filterFields}

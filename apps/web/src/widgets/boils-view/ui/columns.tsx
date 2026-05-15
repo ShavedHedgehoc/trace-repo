@@ -8,6 +8,7 @@ export const getBoilsColumns = (): ColumnDef<TBoilListRow>[] => {
     ...baseBoilsListColumns,
     {
       id: 'actions',
+
       cell: ({ row }) => {
         return (
           <div className="text-center">

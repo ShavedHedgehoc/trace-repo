@@ -33,7 +33,11 @@ export const baseBoilSummaryColumns: ColumnDef<TBoilListWeightingResult>[] = [
       return (
         <div className="text-center">
           <Button variant="ghost" className={cn('h-8 w-8 p-0')}>
-            {isLoadProblem || isWeightingProblem ? <TriangleAlert /> : <CheckCircle2 />}
+            {isLoadProblem || isWeightingProblem ? (
+              <TriangleAlert className="text-red-700 dark:text-red-500" />
+            ) : (
+              <CheckCircle2 />
+            )}
           </Button>
         </div>
       );
@@ -54,7 +58,12 @@ export const baseBoilSummaryColumns: ColumnDef<TBoilListWeightingResult>[] = [
     cell: ({ row }) => {
       const isWeightingProblem = row.original.planQty !== row.original.factQty;
       return (
-        <div className={cn('text-center', isWeightingProblem && 'font-black')}>
+        <div
+          className={cn(
+            'text-center',
+            isWeightingProblem && 'font-black text-red-700 dark:text-red-500',
+          )}
+        >
           {/* {isWeightingProblem ? <AlertCircle /> : <CheckIcon className='h-4' />} */}
           {row.original.factQty ?? 0}
         </div>
@@ -69,7 +78,8 @@ export const baseBoilSummaryColumns: ColumnDef<TBoilListWeightingResult>[] = [
         <div
           className={cn(
             'text-center',
-            row.original.planQty !== row.original.loadQty && 'font-black',
+            row.original.planQty !== row.original.loadQty &&
+              'font-black  text-red-700 dark:text-red-500',
           )}
         >
           {row.original.loadQty ?? 0}

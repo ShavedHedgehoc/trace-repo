@@ -1,61 +1,22 @@
-// components/app-sidebar.tsx
-// import { ChevronRight, Command, FileText, Settings, Users } from 'lucide-react';
 import {
   Sidebar,
   SidebarContent,
-  // SidebarGroup,
-  // SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  // SidebarMenuSub,
-  // SidebarMenuSubItem,
-  // SidebarMenuSubButton,
   SidebarHeader,
   SidebarFooter,
 } from '@/shared/ui';
-// import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/shared/ui';
 import { HedgehogIcon } from '@/shared/assets';
 import { useAuth } from '@/app/providers/auth-provider';
 import { NavUser } from './nav-user';
 import { NavMain } from './nav-main';
-import { navItems } from './items';
+import { adminNavItems, navItems } from './items';
+import { NavAdmin } from './nav-admin';
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { user } = useAuth();
   return (
-    // <Sidebar collapsible="offcanvas" {...props}>
-    //   <SidebarContent>
-    //     <SidebarGroup>
-    //       <SidebarGroupLabel>Навигация</SidebarGroupLabel>
-    //       <SidebarMenu>
-    //         {/* Пример вложенного меню */}
-    //         <Collapsible className="group/collapsible">
-    //           <SidebarMenuItem>
-    //             <CollapsibleTrigger>
-    //               <span>
-    //                 <SidebarMenuButton  >
-    //                   <FileText />
-    //                   <span>Документы</span>
-    //                   <ChevronRight className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
-    //                 </SidebarMenuButton>
-    //               </span>
-    //             </CollapsibleTrigger>
-    //             <CollapsibleContent>
-    //               <SidebarMenuSub>
-    //                 <SidebarMenuSubItem>
-    //                   <SidebarMenuSubButton>
-    //                     <a href="/docs/all">Все файлы</a>
-    //                   </SidebarMenuSubButton>
-    //                 </SidebarMenuSubItem>
-    //               </SidebarMenuSub>
-    //             </CollapsibleContent>
-    //           </SidebarMenuItem>
-    //         </Collapsible>
-    //       </SidebarMenu>
-    //     </SidebarGroup>
-    //   </SidebarContent>
-    // </Sidebar>
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
         <SidebarMenu>
@@ -71,8 +32,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={navItems} />
-        {/* <NavDocuments items={data.documents} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" /> */}
+        {user.roles.includes('Администратор') && <NavAdmin items={adminNavItems} />}
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={user} />

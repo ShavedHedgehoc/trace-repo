@@ -14,10 +14,7 @@ export const boilsParamsSchema = {
   productMarking: parseAsString.withDefault(''),
   startDate: parseAsIsoDate.withDefault(getMonthBounds().start),
   endDate: parseAsIsoDate.withDefault(getMonthBounds().end),
-  plants: parseAsArrayOf(parseAsString).withDefault(
-    // undefined as unknown as string[],
-    [],
-  ),
+  plants: parseAsArrayOf(parseAsString).withDefault([]),
   problem: parseAsArrayOf(parseAsString).withDefault([]),
   limit: parseAsInteger.withDefault(10),
   page: parseAsInteger.withDefault(1),

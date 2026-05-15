@@ -25,3 +25,6 @@ export * from './filter-input';
 export * from './filter-selector';
 export * from './avatar';
 export * from './tabs';
+export * from './command';
+export * from './dialog';
+export * from './input-group';

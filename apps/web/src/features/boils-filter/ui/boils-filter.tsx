@@ -8,6 +8,7 @@ import {
   FilterSelector,
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -53,17 +54,20 @@ export function BoilsFilter() {
       );
       return;
     }
+
+    const normalizedDate = new Date(val);
+    normalizedDate.setHours(12, 0, 0, 0);
     const updates: Partial<BoilsParams> = { page: 1 };
 
     if (type === 'start') {
-      updates.startDate = val;
-      if (params.endDate && val > params.endDate) {
-        updates.endDate = val;
+      updates.startDate = normalizedDate;
+      if (params.endDate && normalizedDate > params.endDate) {
+        updates.endDate = normalizedDate;
       }
     } else {
-      updates.endDate = val;
-      if (params.startDate && val < params.startDate) {
-        updates.startDate = val;
+      updates.endDate = normalizedDate;
+      if (params.startDate && normalizedDate < params.startDate) {
+        updates.startDate = normalizedDate;
       }
     }
     setParams(updates, { shallow: false });
@@ -169,6 +173,7 @@ export function BoilsFilter() {
         <SheetContent side="bottom" className="h-[90vh] overflow-y-auto ">
           <SheetHeader>
             <SheetTitle>Фильтры</SheetTitle>
+            <SheetDescription className="sr-only">boils filter</SheetDescription>
           </SheetHeader>
           <div className="flex flex-col gap-4 py-4 px-2">
             {filterFields}

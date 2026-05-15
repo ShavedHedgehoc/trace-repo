@@ -11,4 +11,4 @@ import { TrpcModule } from './trpc/trpc.module';
     TrpcModule,
   ],
 })
-export class AppModule { }
+export class AppModule {}

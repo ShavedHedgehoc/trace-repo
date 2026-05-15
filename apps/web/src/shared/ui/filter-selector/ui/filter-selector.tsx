@@ -9,43 +9,43 @@ import {
 } from '@/shared/ui';
 import { useMemo } from 'react';
 
-export interface IListItem {
-  value: string;
+export interface IListItem<T extends string = string> {
+  value: T;
   description: string;
 }
 
-export interface IFilterSelectorProps extends Omit<
+export interface IFilterSelectorProps<T extends string = string> extends Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   'value' | 'onChange'
 > {
-  value: string[] | undefined;
-  onChange: (val: string[] | undefined | null) => void;
+  value: T[] | undefined;
+  onChange: (val: T[] | undefined | null) => void;
   className?: string;
-  items: readonly IListItem[];
+  items: readonly IListItem<T>[];
 }
 
-export function FilterSelector({
+export function FilterSelector<T extends string>({
   value,
   onChange,
   className,
   items,
   ...props
-}: IFilterSelectorProps) {
-  const currentValue = value?.[0] ?? 'All';
+}: IFilterSelectorProps<T>) {
+  const currentValue = (value?.[0] ?? 'All') as T | 'All';
   const currentDescription = useMemo(() => {
-    return items.find((x) => x.value === currentValue)?.description || 'All';
+    return items.find((x) => (x.value as string) === currentValue)?.description || 'All';
   }, [currentValue, items]);
 
   const onValueChange = (val: string) => {
     if (val === 'All') {
       onChange(undefined);
     } else {
-      onChange([val]);
+      onChange([val as T]);
     }
   };
 
   return (
-    <Select value={currentValue} onValueChange={onValueChange}>
+    <Select value={currentValue as string} onValueChange={onValueChange}>
       <SelectTrigger
         {...props}
         size="sm"

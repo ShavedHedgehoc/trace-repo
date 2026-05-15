@@ -1,8 +1,12 @@
 import MainLayout from '@/app/main-layout';
-import { Boils, Login, Trademarks, BoilDetail } from '@/pages';
+import { Boils, Login, Trademarks, BoilDetail, CellsContain, Materials, Users } from '@/pages';
 import { ROUTE_PATH } from '@/shared/constants';
 import { createBrowserRouter, Navigate, Outlet, RouterProvider } from 'react-router-dom';
 import { AuthProvider, useAuth } from '../../auth-provider';
+
+interface ProtectedRouteProps {
+  allowedRoles?: string[];
+}
 
 const RootLayout = () => {
   return (
@@ -12,12 +16,24 @@ const RootLayout = () => {
   );
 };
 
-const ProtectedRoute = () => {
-  const { isAuth, isLoading } = useAuth();
+const ProtectedRoute = ({ allowedRoles }: ProtectedRouteProps) => {
+  const { isAuth, isLoading, user } = useAuth();
   if (isLoading) {
     return <div>...</div>;
   }
-  return isAuth ? <Outlet /> : <Navigate to="/login" replace />;
+
+  if (!isAuth) {
+    return <Navigate to="/login" replace />;
+  }
+
+  if (allowedRoles && user?.roles) {
+    const hasAccess = user.roles.some((role) => allowedRoles.includes(role));
+
+    if (!hasAccess) {
+      return <Navigate to="/forbidden" replace />;
+    }
+  }
+  return <Outlet />;
 };
 
 const PublicRoute = () => {
@@ -36,7 +52,7 @@ const router = createBrowserRouter([
         element: <PublicRoute />,
         children: [
           {
-            path: '/login',
+            path: ROUTE_PATH.LOGIN,
             element: <Login />,
           },
         ],
@@ -60,9 +76,62 @@ const router = createBrowserRouter([
                 path: ROUTE_PATH.TRADEMARKS,
                 element: <Trademarks />,
               },
+              {
+                path: ROUTE_PATH.MATERIALS,
+                element: <Materials />,
+              },
+              {
+                element: <ProtectedRoute allowedRoles={['Специалист']} />,
+                children: [
+                  {
+                    path: ROUTE_PATH.CELLS_CONTAIN,
+                    element: <CellsContain />,
+                  },
+                ],
+              },
+              {
+                element: <ProtectedRoute allowedRoles={['Администратор']} />,
+                children: [
+                  {
+                    path: ROUTE_PATH.USERS,
+                    element: <Users />,
+                  },
+                ],
+              },
+
+              {
+                path: '/forbidden',
+                element: (
+                  <div className="flex min-h-screen flex-col items-center justify-center bg-background text-foreground">
+                    <h1 className="text-4xl font-bold">403</h1>
+                    <p className="text-muted-foreground">
+                      Доступ запрещен. У вас нет необходимых прав.
+                    </p>
+                  </div>
+                ),
+              },
+              {
+                path: '*',
+                element: (
+                  <div className="flex min-h-screen flex-col items-center justify-center bg-background text-foreground">
+                    <h1 className="text-4xl font-bold">404</h1>
+                    <p className="text-muted-foreground">Страница не найдена.</p>
+                  </div>
+                ),
+              },
             ],
           },
         ],
+      },
+
+      {
+        path: '*',
+        element: (
+          <div className="flex min-h-screen flex-col items-center justify-center bg-background text-foreground">
+            <h1 className="text-4xl font-bold">404</h1>
+            <p className="text-muted-foreground">Страница не найдена.</p>
+          </div>
+        ),
       },
     ],
   },

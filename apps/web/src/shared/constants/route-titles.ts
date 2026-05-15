@@ -1,6 +1,10 @@
 export const STATIC_TITLES: Record<string, string> = {
   '/': 'Варки',
   '/trademarks': 'Торговые названия',
+  '/cells-contain': 'Сырье в ячейках',
+  '/material': 'Сырье',
+  '/forbidden': 'Недостаточно прав',
+  '/users': 'Пользователи',
 };
 
-export const DYNAMIC_PATTERNS = [{ path: '/:boilId', title: 'Информация по варке' }];
+export const DYNAMIC_PATTERNS = [{ path: 'boil-detail/:boilId', title: 'Информация по варке' }];

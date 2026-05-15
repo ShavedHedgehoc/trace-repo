@@ -6,13 +6,20 @@ import { BoilService } from '../boil/boil.service';
 import { AuthService } from '../auth/auth.service';
 import { JwtService } from '@nestjs/jwt';
 import { TRegisteredUser } from '@repo/schemas';
+import { CellService } from '../cell/cell.service';
+import { MaterialService } from '../material/material.service';
+import { UserService } from '../user/user.service';
+import { RoleService } from '../role/role.service';
 
 @Injectable()
 export class TrpcService {
   constructor(
     @Inject(forwardRef(() => BoilService)) private readonly boilService: BoilService,
     @Inject(forwardRef(() => TrademarkService)) private readonly trademarkService: TrademarkService,
-    // private readonly moduleRef: ModuleRef
+    @Inject(forwardRef(() => CellService)) private readonly cellService: CellService,
+    @Inject(forwardRef(() => MaterialService)) private readonly materailService: MaterialService,
+    @Inject(forwardRef(() => UserService)) private readonly userService: UserService,
+    @Inject(forwardRef(() => RoleService)) private readonly roleService: RoleService,
     @Inject(forwardRef(() => AuthService)) private readonly authService: AuthService,
   ) {}
 
@@ -39,6 +46,10 @@ export class TrpcService {
       trademarkService: this.trademarkService,
       boilService: this.boilService,
       authService: this.authService,
+      cellService: this.cellService,
+      materialService: this.materailService,
+      userService: this.userService,
+      roleService: this.roleService,
       user: user,
       req,
       res,

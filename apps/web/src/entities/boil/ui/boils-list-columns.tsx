@@ -6,27 +6,26 @@ import { Informer } from './informer';
 
 export const baseBoilsListColumns: ColumnDef<TBoilListRow>[] = [
   {
-    accessorKey: 'noPlan',
-    meta: { hideOnMobile: true },
-    header: () => <div className="text-center"></div>,
-    cell: ({ row }) => {
-      return (
-        <div className="text-center">
-          {(!row.original.wCheck || !row.original.lCheck) && (
-            <Informer variant="common" row={row.original} />
-          )}
-        </div>
-      );
-    },
-  },
-  {
     accessorKey: 'boilName',
     enableResizing: true,
     header: () => <div className="text-center">Варка</div>,
     cell: ({ row }) => {
-      return <div className="text-center">{row.original.batchName}</div>;
+      const showInformer = !row.original.wCheck || !row.original.lCheck;
+
+      return (
+        <div className="flex items-left justify-center w-full">
+          <div className="grid grid-cols-[24px_auto_24px] items-center text-center font-medium">
+            <div className="flex justify-start">
+              {showInformer && <Informer variant="common" row={row.original} />}
+            </div>
+            <span className="px-4 whitespace-nowrap">{row.original.batchName}</span>
+            <div className="w-6" aria-hidden="true" />
+          </div>
+        </div>
+      );
     },
   },
+
   {
     accessorKey: 'boilDate',
     header: () => <div className="text-center">Дата</div>,

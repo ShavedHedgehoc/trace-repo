@@ -22,6 +22,14 @@ export function NavUser({ user }: { user: TRegisteredUser }) {
   const { isMobile } = useSidebar();
   const { logout } = useAuth();
 
+  const initials = user.name
+    ?.split(' ')
+    .filter(Boolean)
+    .map((n) => n[0])
+    .join('')
+    .toUpperCase()
+    .slice(0, 2);
+
   return (
     <SidebarMenu>
       <SidebarMenuItem>
@@ -33,10 +41,10 @@ export function NavUser({ user }: { user: TRegisteredUser }) {
             >
               <Avatar className="h-8 w-8 rounded-lg grayscale">
                 <AvatarImage src={user.name} alt={user.name} />
-                <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                <AvatarFallback className="rounded-lg text-xs">{initials || 'XX'}</AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-medium">{user.name}</span>
+                <span className="truncate font-medium ">{user.name}</span>
                 <span className="truncate text-xs text-muted-foreground">{user.email}</span>
               </div>
               <EllipsisVerticalIcon className="ml-auto size-4" />

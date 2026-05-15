@@ -1,4 +1,4 @@
-services: 
+services:
   api:
     container_name: api_container
     pull_policy: if_not_present
@@ -17,12 +17,12 @@ services:
       MSSQL_PORT: ${MSSQL_PORT}
       MSSQL_USERNAME: ${MSSQL_USERNAME}
       MSSQL_PASSWORD: ${MSSQL_PASSWORD}
-      MSSQL_DB: ${MSSQL_DB}      
-      DATABASE_URL: sqlserver://${MSSQL_HOST}:${MSSQL_PORT};database=${MSSQL_DB};user=${MSSQL_USERNAME};password=${MSSQL_PASSWORD};trustServerCertificate=true   
-      API_PORT: ${API_PORT}      
-    restart: always    
-    networks:      
-      - general  
+      MSSQL_DB: ${MSSQL_DB}
+      DATABASE_URL: sqlserver://${MSSQL_HOST}:${MSSQL_PORT};database=${MSSQL_DB};user=${MSSQL_USERNAME};password=${MSSQL_PASSWORD};trustServerCertificate=true
+      API_PORT: ${API_PORT}
+    restart: always
+    networks:
+      - general
   app:
     container_name: app_container
     build:
@@ -39,7 +39,7 @@ services:
       - api
     restart: always
     networks:
-      - general 
+      - general
   nginx:
     container_name: nginx_container
     build:
@@ -52,11 +52,11 @@ services:
         max-file: '3'
     restart: always
     ports:
-      - '80:80'          
+      - '80:80'
     networks:
       - general
     depends_on:
-      - app  
+      - app
       - api
 networks:
   general:
@@ -65,4 +65,3 @@ networks:
       config:
         - subnet: 172.18.0.0/16
           gateway: 172.18.0.1
-

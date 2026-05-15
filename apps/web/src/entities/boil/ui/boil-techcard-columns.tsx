@@ -9,7 +9,12 @@ export const baseBoilTechCardColumns: ColumnDef<TBoilDetailTechCardRow>[] = [
     header: () => <div className="text-center">Код</div>,
     cell: ({ row }) => {
       return (
-        <div className={cn('text-center', row.original.isOperation && 'font-black')}>
+        <div
+          className={cn(
+            'text-center',
+            row.original.isOperation && 'font-bold text-amber-700 dark:text-amber-500',
+          )}
+        >
           {row.original.code}
         </div>
       );
@@ -20,7 +25,12 @@ export const baseBoilTechCardColumns: ColumnDef<TBoilDetailTechCardRow>[] = [
     header: () => <div className="text-center">Наименование</div>,
     cell: ({ row }) => {
       return (
-        <div className={cn('text-left', row.original.isOperation && 'font-black')}>
+        <div
+          className={cn(
+            'text-left',
+            row.original.isOperation && 'font-bold text-amber-700 dark:text-amber-500',
+          )}
+        >
           {row.original.name}
         </div>
       );
@@ -32,7 +42,12 @@ export const baseBoilTechCardColumns: ColumnDef<TBoilDetailTechCardRow>[] = [
     header: () => <div className="text-center">Квазипартия</div>,
     cell: ({ row }) => {
       return (
-        <div className={cn('text-center', row.original.isOperation && 'font-black')}>
+        <div
+          className={cn(
+            'text-center',
+            row.original.isOperation && 'font-bold text-amber-700 dark:text-amber-500',
+          )}
+        >
           {row.original.lot}
         </div>
       );
@@ -43,7 +58,12 @@ export const baseBoilTechCardColumns: ColumnDef<TBoilDetailTechCardRow>[] = [
     header: () => <div className="text-center">Масса</div>,
     cell: ({ row }) => {
       return (
-        <div className={cn('text-center', row.original.isOperation && 'font-black')}>
+        <div
+          className={cn(
+            'text-center',
+            row.original.isOperation && 'font-bold text-amber-700 dark:text-amber-500',
+          )}
+        >
           {row.original.weight ?? '-'}
         </div>
       );
@@ -55,7 +75,12 @@ export const baseBoilTechCardColumns: ColumnDef<TBoilDetailTechCardRow>[] = [
     header: () => <div className="text-center">Температура</div>,
     cell: ({ row }) => {
       return (
-        <div className={cn('text-center', row.original.isOperation && 'font-black')}>
+        <div
+          className={cn(
+            'text-center',
+            row.original.isOperation && 'font-bold text-amber-700 dark:text-amber-500',
+          )}
+        >
           {row.original.temp ?? '-'}
         </div>
       );
@@ -67,7 +92,12 @@ export const baseBoilTechCardColumns: ColumnDef<TBoilDetailTechCardRow>[] = [
     header: () => <div className="text-center">Выполнил</div>,
     cell: ({ row }) => {
       return (
-        <div className={cn('text-center', row.original.isOperation && 'font-black')}>
+        <div
+          className={cn(
+            'text-center',
+            row.original.isOperation && 'font-bold text-amber-700 dark:text-amber-500',
+          )}
+        >
           {row.original.user}
         </div>
       );
@@ -79,7 +109,12 @@ export const baseBoilTechCardColumns: ColumnDef<TBoilDetailTechCardRow>[] = [
     cell: ({ row }) => {
       const dateObj = row.original.date ? new Date(row.original.date) : null;
       return (
-        <div className={cn('text-center', row.original.isOperation && 'font-black')}>
+        <div
+          className={cn(
+            'text-center',
+            row.original.isOperation && 'font-bold text-amber-700 dark:text-amber-500',
+          )}
+        >
           {dateObj ? format(dateObj, 'dd-MM-yyyy') : '-'}
         </div>
       );
@@ -91,7 +126,12 @@ export const baseBoilTechCardColumns: ColumnDef<TBoilDetailTechCardRow>[] = [
     cell: ({ row }) => {
       const dateObj = row.original.date ? new Date(row.original.date) : null;
       return (
-        <div className={cn('text-center', row.original.isOperation && 'font-black')}>
+        <div
+          className={cn(
+            'text-center',
+            row.original.isOperation && 'font-bold text-amber-700 dark:text-amber-500',
+          )}
+        >
           {dateObj ? format(dateObj, 'HH:mm:ss') : '-'}
         </div>
       );

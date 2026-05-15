@@ -8,7 +8,6 @@ export const authRouter = router({
     .output(loginTrpcResponseSchema)
     .mutation(async ({ input, ctx }) => {
       try {
-        // const { refreshToken, ...rest } = await ctx.authService.login(input);
         const result = await ctx.authService.login(input);
         const isProduction = process.env.NODE_ENV === 'production';
         ctx.res.setHeader(

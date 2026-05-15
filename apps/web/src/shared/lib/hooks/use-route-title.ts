@@ -9,5 +9,5 @@ export function useRouteTitle() {
   }
   const dynamicMatch = DYNAMIC_PATTERNS.find((route) => matchPath(route.path, pathname));
 
-  return dynamicMatch ? dynamicMatch.title : 'Приложение';
+  return dynamicMatch ? dynamicMatch.title : 'Страница не найдена...';
 }

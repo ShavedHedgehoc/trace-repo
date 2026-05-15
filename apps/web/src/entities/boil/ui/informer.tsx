@@ -47,7 +47,7 @@ const InfoBadge = ({ condition }: { condition: boolean }) => {
 
 export function Informer({ row, variant }: IBoilInformerProps) {
   const trigger: React.ReactNode = {
-    common: <TriangleAlert />,
+    common: <TriangleAlert className="text-red-700 dark:text-red-500" />,
     weightings: <InfoBadge condition={row.wCheck} />,
     loads: <InfoBadge condition={row.lCheck} />,
   }[variant as IBoilInformerVariant];
