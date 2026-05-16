@@ -139,6 +139,20 @@ export class AuthService implements IAuthService {
     }
 
     const tokens = await this.generateTokens(user);
+    await mssqlPrisma
+      .$transaction([
+        mssqlPrisma.tokens.delete({ where: { TokenPK: tokenInDb.TokenPK } }),
+        mssqlPrisma.tokens.create({
+          data: {
+            TokenData: tokens.refreshToken,
+            UserPK: user.UserPK,
+          },
+        }),
+      ])
+      .catch((err) => {
+        console.error('Ошибка при ротации токенов в БД:', err);
+        throw new Error('Ошибка обновления сессии в базе данных');
+      });
 
     return {
       user: mapper.toRegisteredUserData(user),
