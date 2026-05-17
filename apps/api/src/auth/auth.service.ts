@@ -38,7 +38,7 @@ export class AuthService implements IAuthService {
     const [accessToken, refreshToken] = await Promise.all([
       this.jwtService.signAsync(payload, {
         secret: 'JWT_ACCESS_SECRET',
-        expiresIn: '30m',
+        expiresIn: '1m',
       }),
       this.jwtService.signAsync(payload, {
         secret: 'JWT_REFRESH_SECRET',
@@ -119,7 +119,7 @@ export class AuthService implements IAuthService {
     try {
       await this.jwtService.verify(oldToken, { secret: 'JWT_REFRESH_SECRET' });
     } catch (_error) {
-      await mssqlPrisma.tokens.delete({ where: { TokenPK: tokenInDb.TokenPK } }).catch(() => {});
+      await mssqlPrisma.tokens.delete({ where: { TokenPK: tokenInDb.TokenPK } }).catch(() => { });
       throw new Error('Сессия истекла');
     }
 
