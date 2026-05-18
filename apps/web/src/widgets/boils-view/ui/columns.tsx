@@ -12,10 +12,7 @@ export const getBoilsColumns = (): ColumnDef<TBoilListRow>[] => {
       cell: ({ row }) => {
         return (
           <div className="text-center">
-            <RowDropdown
-              boilId={row.original.boilId}
-              // isInactive={row.original.isInactive}
-            />
+            <RowDropdown boilId={row.original.boilId} />
           </div>
         );
       },

@@ -11,15 +11,10 @@ export const authRouter = router({
     .mutation(async ({ input, ctx }) => {
       try {
         const result = await ctx.authService.login(input);
-        // const isProduction = process.env.NODE_ENV === 'production';
         ctx.res.setHeader(
           'Set-Cookie',
           `${COOKIE_NAME}=${result.refreshToken}; HttpOnly; Path=/; Max-Age=${7 * 24 * 60 * 60}; SameSite=Strict`,
         );
-        // ctx.res.setHeader(
-        //   'Set-Cookie',
-        //   `refreshToken=${result.refreshToken}; HttpOnly; Path=/; Max-Age=${7 * 24 * 60 * 60}; SameSite=Strict${isProduction ? '; Secure' : ''}`,
-        // );
         return {
           user: result.user,
           accessToken: result.accessToken,
@@ -39,11 +34,6 @@ export const authRouter = router({
     .mutation(async ({ input, ctx }) => {
       try {
         const result = await ctx.authService.register(input);
-        // const isProduction = process.env.NODE_ENV === 'production';
-        // ctx.res.setHeader(
-        //   'Set-Cookie',
-        //   `refreshToken=${result.refreshToken}; HttpOnly; Path=/; Max-Age=${7 * 24 * 60 * 60}; SameSite=Strict${isProduction ? '; Secure' : ''}`,
-        // );
         ctx.res.setHeader(
           'Set-Cookie',
           `${COOKIE_NAME}=${result.refreshToken}; HttpOnly; Path=/; Max-Age=${7 * 24 * 60 * 60}; SameSite=Strict`,
@@ -72,11 +62,6 @@ export const authRouter = router({
       if (refreshToken) {
         await ctx.authService.logout(refreshToken);
       }
-      // const isProduction = process.env.NODE_ENV === 'production';
-      // ctx.res.setHeader(
-      //   'Set-Cookie',
-      //   `refreshToken=; HttpOnly; Path=/; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Strict${isProduction ? '; Secure' : ''}`,
-      // );
       ctx.res.setHeader(
         'Set-Cookie',
         `${COOKIE_NAME}=; HttpOnly; Path=/; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Strict`,
@@ -100,12 +85,6 @@ export const authRouter = router({
       }
 
       const result = await ctx.authService.refresh(oldRefreshToken);
-      // const isProduction = process.env.NODE_ENV === 'production';
-
-      // ctx.res.setHeader(
-      //   'Set-Cookie',
-      //   `refreshToken=${result.refreshToken}; HttpOnly; Path=/; Max-Age=${7 * 24 * 60 * 60}; SameSite=Strict${isProduction ? '; Secure' : ''}`,
-      // );
       ctx.res.setHeader(
         'Set-Cookie',
         `${COOKIE_NAME}=${result.refreshToken}; HttpOnly; Path=/; Max-Age=${7 * 24 * 60 * 60}; SameSite=Strict`,

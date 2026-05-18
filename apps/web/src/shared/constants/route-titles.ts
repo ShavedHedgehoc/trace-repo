@@ -7,4 +7,7 @@ export const STATIC_TITLES: Record<string, string> = {
   '/users': 'Пользователи',
 };
 
-export const DYNAMIC_PATTERNS = [{ path: 'boil-detail/:boilId', title: 'Информация по варке' }];
+export const DYNAMIC_PATTERNS = [
+  { path: 'boil-detail/:boilId', title: 'Информация по варке' },
+  { path: 'lot-detail/:lotId', title: 'Информация по квазипартии' },
+];

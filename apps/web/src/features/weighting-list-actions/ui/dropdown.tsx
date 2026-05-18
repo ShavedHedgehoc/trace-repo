@@ -10,22 +10,16 @@ import {
 } from '@/shared/ui';
 import { ClipboardList, MoreHorizontal } from 'lucide-react';
 
-export function RowDropdown({
-  boilId,
-  isInactive = false,
-}: {
-  boilId: number;
-  isInactive?: boolean;
-}) {
+export function RowDropdown({ lotId }: { lotId: number }) {
   const handleDetailClick = () => {
     const baseUrl = window.location.origin;
-    const fullUrl = `${baseUrl}${ROUTE_PATH.BOIL_DETAIL_ROOT}/${boilId}`;
+    const fullUrl = `${baseUrl}${ROUTE_PATH.LOT_DETAIL_ROOT}/${lotId}`;
     window.open(fullUrl, '_blank', 'noreferrer');
   };
   return (
     <div>
       <DropdownMenu>
-        <DropdownMenuTrigger asChild disabled={isInactive}>
+        <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="h-8 w-8 p-0">
             <span className="sr-only">Open menu</span>
             <MoreHorizontal className="h-4 w-4" />
@@ -36,7 +30,7 @@ export function RowDropdown({
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={handleDetailClick}>
             <ClipboardList />
-            Подробно
+            Квазипартия
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

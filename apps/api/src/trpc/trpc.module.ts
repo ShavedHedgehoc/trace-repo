@@ -7,7 +7,8 @@ import { AuthModule } from '../auth/auth.module';
 import { CellModule } from '../cell/cell.module';
 import { MaterialModule } from '../material/material.module';
 import { UserModule } from '../user/user.module';
-import { RoleModule } from 'src/role/role.module';
+import { RoleModule } from '../role/role.module';
+import { LotModule } from '../lot/lot.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { RoleModule } from 'src/role/role.module';
     MaterialModule,
     UserModule,
     RoleModule,
+    LotModule,
   ],
   providers: [
     {

@@ -5,3 +5,4 @@ export * from './cells';
 export * from './material';
 export * from './user';
 export * from './role';
+export * from './lot';

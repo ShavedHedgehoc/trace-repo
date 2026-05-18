@@ -22,7 +22,8 @@
       ],
       "ignore": [
         "src/shared/lib/tanstack-table.d.ts",
-        "src/shared/ui/*"
+        "src/shared/ui/*",
+        "src/widgets/lot-details-view/ui/header.tsx"
       ],
       "project": [
         "src/**/*.{ts,tsx}"

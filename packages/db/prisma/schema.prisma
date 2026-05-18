@@ -59,20 +59,21 @@ model Barrels {
 }
 
 model Batchs {
-  BatchPK     Int                   @id(map: "PK__Batchs__5D56FBF9027E4597") @default(autoincrement())
-  BatchName   String                @unique(map: "UC_Batchs") @db.VarChar(10)
-  BatchDate   DateTime?             @db.DateTime
-  Plant       String?               @db.NChar(1)
-  BatchNumber Int?
-  BatchMonth  String?               @db.VarChar(1)
-  BatchYear   Int?
-  BoilRecords BoilRecords[]
-  Boils       Boils[]
-  BtProducts  BtProducts[]
-  CanRecords  CanRecords[]
-  Loads       Loads[]
-  Weightings  Weightings[]
-  details     vw_FinalBatchStatus[]
+  BatchPK           Int                   @id(map: "PK__Batchs__5D56FBF9027E4597") @default(autoincrement())
+  BatchName         String                @unique(map: "UC_Batchs") @db.VarChar(10)
+  BatchDate         DateTime?             @db.DateTime
+  Plant             String?               @db.NChar(1)
+  BatchNumber       Int?
+  BatchMonth        String?               @db.VarChar(1)
+  BatchYear         Int?
+  BoilRecords       BoilRecords[]
+  Boils             Boils[]
+  BtProducts        BtProducts[]
+  CanRecords        CanRecords[]
+  Loads             Loads[]
+  Weightings        Weightings[]
+  details           vw_FinalBatchStatus[]
+  vwPlanAggregateds vw_PlanAggregated[]
 
   @@index([BatchDate, BatchName, Plant], map: "IX_Batchs_BatchDate_BatchName_Plant_BatchPK")
   @@index([BatchDate, Plant, BatchName], map: "IX_Batchs_BatchDate_Plant_BatchName")
@@ -546,6 +547,7 @@ view vw_PlanAggregated {
   ProductId    String   @db.Char(6)
   TotalPlanned Decimal? @db.Decimal(38, 5)
   TotalRows    BigInt?
+  batchs       Batchs   @relation(fields: [BatchPK], references: [BatchPK])
 }
 
 view vw_FactWeighting {

@@ -5,3 +5,4 @@ export { BoilDetail } from './boil-detail';
 export { CellsContain } from './cells-contain';
 export { Materials } from './materials';
 export { Users } from './users';
+export { LotDetail } from './lot-detail';

@@ -10,6 +10,7 @@ import { CellService } from '../cell/cell.service';
 import { MaterialService } from '../material/material.service';
 import { UserService } from '../user/user.service';
 import { RoleService } from '../role/role.service';
+import { LotService } from '../lot/lot.service';
 
 @Injectable()
 export class TrpcService {
@@ -20,6 +21,7 @@ export class TrpcService {
     @Inject(forwardRef(() => MaterialService)) private readonly materailService: MaterialService,
     @Inject(forwardRef(() => UserService)) private readonly userService: UserService,
     @Inject(forwardRef(() => RoleService)) private readonly roleService: RoleService,
+    @Inject(forwardRef(() => LotService)) private readonly lotService: LotService,
     @Inject(forwardRef(() => AuthService)) private readonly authService: AuthService,
   ) {}
 
@@ -50,6 +52,7 @@ export class TrpcService {
       materialService: this.materailService,
       userService: this.userService,
       roleService: this.roleService,
+      lotService: this.lotService,
       user: user,
       req,
       res,

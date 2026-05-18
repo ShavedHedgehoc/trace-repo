@@ -1,9 +1,8 @@
-import { baseBoilWeightingColumns } from '@/entities/boil';
 import { useIsMobile } from '@/shared/lib';
 import { TableLayout, type TDataTableProps } from '@/shared/ui';
 import type { TBoilDetailWeightingRow } from '@repo/schemas';
-import type { ColumnDef } from '@tanstack/react-table';
 import { useMemo } from 'react';
+import { getBoilWeightingsColumns } from './weighting-columns';
 
 interface IWeightingTableProps {
   data: TBoilDetailWeightingRow[];
@@ -12,12 +11,8 @@ interface IWeightingTableProps {
 }
 export function WeightingTable({ data, isFetching, isPlaceholderData }: IWeightingTableProps) {
   const isMobile = useIsMobile();
-  const getBoilsColumns = (): ColumnDef<TBoilDetailWeightingRow>[] => {
-    return [...baseBoilWeightingColumns];
-  };
-
   const columns = useMemo(() => {
-    const base = getBoilsColumns();
+    const base = getBoilWeightingsColumns();
     return isMobile ? base.filter((col) => !col.meta?.hideOnMobile) : base;
   }, [isMobile]);
 

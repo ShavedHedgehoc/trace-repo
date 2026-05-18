@@ -9,11 +9,13 @@ import type {
   TGetBoilsListInput,
   TGetBoilsStatsInput,
   TGetCellsContainListInput,
+  TGetLotDetailInput,
   TGetMaterialsListInput,
   TGetTrademarksListInput,
   TGetUsersListInput,
   TLoginInput,
   TLoginResponse,
+  TLotDetailResponse,
   TMaterialsListResponse,
   TRegisteredUser,
   TRegisterInput,
@@ -60,6 +62,10 @@ export interface IRoleService {
   getRoles: () => Promise<TRolesListResponse>;
 }
 
+export interface ILotService {
+  getDetail: (input: TGetLotDetailInput) => Promise<TLotDetailResponse>;
+}
+
 export interface ITrpcContext {
   authService: IAuthService;
   trademarkService: ITrademarkService;
@@ -68,6 +74,7 @@ export interface ITrpcContext {
   materialService: IMaterialService;
   userService: IUserService;
   roleService: IRoleService;
+  lotService: ILotService;
   res: any;
   req: any;
   user: TRegisteredUser | null;

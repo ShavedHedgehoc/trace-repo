@@ -1,5 +1,14 @@
 import MainLayout from '@/app/main-layout';
-import { Boils, Login, Trademarks, BoilDetail, CellsContain, Materials, Users } from '@/pages';
+import {
+  Boils,
+  Login,
+  Trademarks,
+  BoilDetail,
+  CellsContain,
+  Materials,
+  Users,
+  LotDetail,
+} from '@/pages';
 import { ROUTE_PATH } from '@/shared/constants';
 import { createBrowserRouter, Navigate, Outlet, RouterProvider } from 'react-router-dom';
 import { AuthProvider, useAuth } from '../../auth-provider';
@@ -71,6 +80,10 @@ const router = createBrowserRouter([
               {
                 path: ROUTE_PATH.BOIL_DETAIL,
                 element: <BoilDetail />,
+              },
+              {
+                path: ROUTE_PATH.LOT_DETAIL,
+                element: <LotDetail />,
               },
               {
                 path: ROUTE_PATH.TRADEMARKS,
