@@ -132,7 +132,7 @@ export class BoilService implements IBoilService {
     const boils = await mssqlPrisma.batchs.findMany({
       where: { BatchPK: { in: pagedIds } },
       include: { details: true },
-      orderBy: [{ BatchDate: 'asc' }, { BatchYear: 'asc' }, { BatchMonth: 'asc' }, { BatchNumber: 'asc' }],
+      orderBy: [{ BatchYear: 'asc' }, { BatchMonth: 'asc' }, { BatchNumber: 'asc' }],
     });
 
     const rows: TBoilListRow[] = boils.map((b): TBoilListRow => {
