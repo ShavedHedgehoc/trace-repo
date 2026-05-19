@@ -44,7 +44,7 @@ export function BoilsSectionCards({ startDate, endDate }: TGetBoilsStatsInput) {
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">Масса загруженного сырья</div>
-          <div className="text-muted-foreground">{`Общее количество загрузок за период: ${data?.totalLoadActionsPsk}`}</div>
+          <div className="text-muted-foreground">{`Общее количество загрузок за период: ${data?.totalLoadActionsPsk ?? ''}`}</div>
         </CardFooter>
       </Card>
       <Card className="@container/card">
@@ -57,7 +57,7 @@ export function BoilsSectionCards({ startDate, endDate }: TGetBoilsStatsInput) {
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">Масса загруженного сырья</div>
           {/* <div className="text-muted-foreground">Общее количество за период</div> */}
-          <div className="text-muted-foreground">{`Общее количество загрузок за период: ${data?.totalLoadActionsKlp}`}</div>
+          <div className="text-muted-foreground">{`Общее количество загрузок за период: ${data?.totalLoadActionsKlp ?? ''}`}</div>
         </CardFooter>
       </Card>
     </div>
