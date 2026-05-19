@@ -29,28 +29,35 @@ export class BoilService implements IBoilService {
       BatchDate: { gte: new Date(startOfDay), lte: endOfDay },
     };
 
-    const [totalBoilsPskGroup, totalBoilsKlpGroup] = await Promise.all([
-      mssqlPrisma.vw_FinalBatchStatus.groupBy({
-        where: { AND: [where, { Plant: 'П' }] },
-        by: ['BatchPK'],
-        _count: {
-          BatchPK: true,
-        },
-        _sum: {
-          TotalLoading: true,
-        },
-      }),
-      mssqlPrisma.vw_FinalBatchStatus.groupBy({
-        where: { AND: [where, { Plant: 'К' }] },
-        by: ['BatchPK'],
-        _count: {
-          BatchPK: true,
-        },
-        _sum: {
-          TotalLoading: true,
-        },
-      }),
-    ]);
+    const [totalBoilsPskGroup, totalBoilsKlpGroup, totalLoadActionsPsk, totalLoadActionsKlp] =
+      await Promise.all([
+        mssqlPrisma.vw_FinalBatchStatus.groupBy({
+          where: { AND: [where, { Plant: 'П' }] },
+          by: ['BatchPK'],
+          _count: {
+            BatchPK: true,
+          },
+          _sum: {
+            TotalLoading: true,
+          },
+        }),
+        mssqlPrisma.vw_FinalBatchStatus.groupBy({
+          where: { AND: [where, { Plant: 'К' }] },
+          by: ['BatchPK'],
+          _count: {
+            BatchPK: true,
+          },
+          _sum: {
+            TotalLoading: true,
+          },
+        }),
+        mssqlPrisma.vw_FinalBatchStatus.count({
+          where: { AND: [where, { Plant: 'П' }, { TotalLoading: { not: null } }] },
+        }),
+        mssqlPrisma.vw_FinalBatchStatus.count({
+          where: { AND: [where, { Plant: 'К' }, { TotalLoading: { not: null } }] },
+        }),
+      ]);
 
     const totalBoilsPsk = totalBoilsPskGroup.length;
     const totalBoilsKlp = totalBoilsKlpGroup.length;
@@ -68,6 +75,8 @@ export class BoilService implements IBoilService {
       totalLoadsPsk,
       totalBoilsKlp,
       totalLoadsKlp,
+      totalLoadActionsPsk,
+      totalLoadActionsKlp,
     };
   }
 

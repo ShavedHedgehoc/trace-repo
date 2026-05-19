@@ -32,6 +32,8 @@ export const boilsStatsResponseSchema = z.object({
   totalBoilsKlp: z.number(),
   totalLoadsPsk: z.number(),
   totalLoadsKlp: z.number(),
+  totalLoadActionsPsk: z.number(),
+  totalLoadActionsKlp: z.number(),
 });
 
 export const weightingRowSchema = z.object({
