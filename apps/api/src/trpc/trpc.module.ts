@@ -9,6 +9,7 @@ import { MaterialModule } from '../material/material.module';
 import { UserModule } from '../user/user.module';
 import { RoleModule } from '../role/role.module';
 import { LotModule } from '../lot/lot.module';
+import { PlanModule } from '../plan/plan.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { LotModule } from '../lot/lot.module';
     UserModule,
     RoleModule,
     LotModule,
+    PlanModule,
   ],
   providers: [
     {

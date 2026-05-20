@@ -11,6 +11,7 @@ import { MaterialService } from '../material/material.service';
 import { UserService } from '../user/user.service';
 import { RoleService } from '../role/role.service';
 import { LotService } from '../lot/lot.service';
+import { PlanService } from '../plan/plan.service';
 
 @Injectable()
 export class TrpcService {
@@ -22,6 +23,7 @@ export class TrpcService {
     @Inject(forwardRef(() => UserService)) private readonly userService: UserService,
     @Inject(forwardRef(() => RoleService)) private readonly roleService: RoleService,
     @Inject(forwardRef(() => LotService)) private readonly lotService: LotService,
+    @Inject(forwardRef(() => PlanService)) private readonly planService: PlanService,
     @Inject(forwardRef(() => AuthService)) private readonly authService: AuthService,
   ) {}
 
@@ -53,6 +55,7 @@ export class TrpcService {
       userService: this.userService,
       roleService: this.roleService,
       lotService: this.lotService,
+      planService: this.planService,
       user: user,
       req,
       res,

@@ -3,6 +3,7 @@ import type {
   TBoilListResponse,
   TBoilStatsResponse,
   TCellsContainListResponse,
+  TDeleteBoilPlanInput,
   TDeleteCellsContainRecordInput,
   TDeleteUserRecordInput,
   TGetBoilDetailInput,
@@ -66,6 +67,10 @@ export interface ILotService {
   getDetail: (input: TGetLotDetailInput) => Promise<TLotDetailResponse>;
 }
 
+export interface IPlanService {
+  deletePlan: (input: TDeleteBoilPlanInput) => Promise<{ success: boolean }>;
+}
+
 export interface ITrpcContext {
   authService: IAuthService;
   trademarkService: ITrademarkService;
@@ -75,6 +80,7 @@ export interface ITrpcContext {
   userService: IUserService;
   roleService: IRoleService;
   lotService: ILotService;
+  planService: IPlanService;
   res: any;
   req: any;
   user: TRegisteredUser | null;
