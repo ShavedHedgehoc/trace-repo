@@ -1,8 +1,9 @@
-import { useBoilsSearchParams, type BoilsParams } from '@/entities/boil';
+import { useLotDetailSearchParams, type LotDetailsParams } from '@/entities/lot';
 import { PLANT_LIST_ITEMS } from '@/shared/constants';
 import { cn, getMonthBounds, useIsMobile } from '@/shared/lib';
 import {
   Button,
+  FilterResetButton,
   FilterDatePicker,
   FilterInput,
   FilterSelector,
@@ -13,20 +14,17 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/shared/ui';
-import type { IListItem } from '@/shared/ui';
-import { FilterResetButton } from '@/shared/ui';
-import { Search, SlidersHorizontal } from 'lucide-react';
+import { SlidersHorizontal, Search } from 'lucide-react';
 import { throttle } from 'nuqs';
 import React from 'react';
 
-const problemListItems: IListItem[] = [
-  { value: 'All', description: 'Все варки' },
-  { value: '1', description: 'С проблемами' },
-];
+type Props = {
+  actions?: React.ReactNode;
+};
 
-export function BoilsFilter() {
+export function LotDetailFilter({ actions }: Props) {
   const isMobile = useIsMobile();
-  const { params, setParams } = useBoilsSearchParams();
+  const { params, setParams } = useLotDetailSearchParams();
   const [open, setOpen] = React.useState(false);
 
   const isMounted = React.useSyncExternalStore(
@@ -43,8 +41,7 @@ export function BoilsFilter() {
     !!params.productId ||
     !!params.productMarking ||
     !!params.batchName ||
-    (params.plants && params.plants.length > 0) ||
-    (params.problem && params.problem.length > 0);
+    (params.plants && params.plants.length > 0);
 
   const handleDateChange = (type: 'start' | 'end', val: Date | undefined) => {
     if (!val) {
@@ -57,7 +54,7 @@ export function BoilsFilter() {
 
     const normalizedDate = new Date(val);
     normalizedDate.setHours(12, 0, 0, 0);
-    const updates: Partial<BoilsParams> = { page: 1 };
+    const updates: Partial<LotDetailsParams> = { page: 1 };
 
     if (type === 'start') {
       updates.startDate = normalizedDate;
@@ -144,21 +141,6 @@ export function BoilsFilter() {
           );
         }}
       />
-      <FilterSelector
-        id={'problems'}
-        className={cn(isMobile ? 'w-full' : 'w-[200px]')}
-        items={problemListItems}
-        value={params.problem ?? []}
-        onChange={(val) => {
-          setParams(
-            {
-              problem: val || null,
-              page: 1,
-            },
-            { shallow: false },
-          );
-        }}
-      />
     </>
   );
   if (isMobile) {
@@ -184,6 +166,7 @@ export function BoilsFilter() {
                 onClick={() => setParams(null)}
                 className="w-full h-9"
               />
+              {actions}
               <Button className="w-full h-9 text-xs" onClick={() => setOpen(false)}>
                 <Search /> Показать
               </Button>
@@ -194,14 +177,17 @@ export function BoilsFilter() {
     );
   }
   return (
-    <div className="flex gap-2">
-      {filterFields}
-      <FilterResetButton
-        id={'reset'}
-        mobile={isMobile}
-        onClick={() => setParams(null)}
-        isDirty={isDirty}
-      />
+    <div className="flex gap-2 justify-between">
+      <div className="flex gap-2">
+        {filterFields}
+        <FilterResetButton
+          id={'reset'}
+          mobile={isMobile}
+          onClick={() => setParams(null)}
+          isDirty={isDirty}
+        />
+      </div>
+      <div className="flex">{actions}</div>
     </div>
   );
 }

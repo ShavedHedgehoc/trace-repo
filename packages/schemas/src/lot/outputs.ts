@@ -3,6 +3,8 @@ import { z } from 'zod';
 export const lotDataSchema = z.object({
   lotId: z.number(),
   lotName: z.string(),
+  productId: z.string(),
+  productName: z.string(),
   sellerId: z.number(),
   sellerName: z.string(),
   manufacturerId: z.number(),
@@ -30,6 +32,12 @@ export const lotDetailResponseSchema = z.object({
   totalPages: z.number(),
 });
 
+export const lotDetailXLSXResponseSchema = z.object({
+  data: lotDataSchema,
+  rows: z.array(lotDetailBoilRowSchema),
+});
+
 export type TLotDetailData = z.infer<typeof lotDataSchema>;
 export type TLotDetailBoilRow = z.infer<typeof lotDetailBoilRowSchema>;
 export type TLotDetailResponse = z.infer<typeof lotDetailResponseSchema>;
+export type TLotDetailXLSXResponse = z.infer<typeof lotDetailXLSXResponseSchema>;

@@ -29,8 +29,8 @@ export function RowDropdown({ lotId }: { lotId: number }) {
           <DropdownMenuLabel>Действия</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={handleDetailClick}>
-            <ClipboardList />
-            Квазипартия
+            <ClipboardList className="h-4 w-4" />
+            <span>Квазипартия</span>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
