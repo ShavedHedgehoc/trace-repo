@@ -17,6 +17,7 @@ import type {
   TLoginInput,
   TLoginResponse,
   TLotDetailResponse,
+  TLotDetailXLSXResponse,
   TMaterialsListResponse,
   TRegisteredUser,
   TRegisterInput,
@@ -65,6 +66,7 @@ export interface IRoleService {
 
 export interface ILotService {
   getDetail: (input: TGetLotDetailInput) => Promise<TLotDetailResponse>;
+  getDetailXLSX: (input: TGetLotDetailInput) => Promise<TLotDetailXLSXResponse>;
 }
 
 export interface IPlanService {

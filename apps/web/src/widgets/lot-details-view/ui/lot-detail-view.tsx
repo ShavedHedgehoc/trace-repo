@@ -12,7 +12,9 @@ import {
 } from '@/shared/ui';
 import type { TLotDetailBoilRow } from '@repo/schemas';
 import { useLotDetailSearchParams, type LotDetailsParams } from '@/entities/lot';
-// import { LotDetailHeader } from './header';
+import { LotDetailFilter } from '@/features/lot-detail-filter';
+import { LotDetailHeader } from './header';
+import { MakeLotXLSXButton } from '@/features/lot-detail-xlsx';
 
 export function LotDetailView() {
   const isMobile = useIsMobile();
@@ -51,7 +53,8 @@ export function LotDetailView() {
 
   return (
     <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6 px-6">
-      {/* <LotDetailHeader data={data?.data} /> */}
+      <LotDetailHeader data={data?.data} />
+      <LotDetailFilter actions={<MakeLotXLSXButton lotId={lotId} mobile={isMobile} />} />
       <TableLayout {...tableLayoutProps} />
       <TablePagination {...paginationProps} />
     </div>

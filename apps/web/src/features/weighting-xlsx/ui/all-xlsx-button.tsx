@@ -8,7 +8,7 @@ export function AllXLSXButton({ data }: { data: TBoilDetailResponse }) {
     makeAllXLSX(data);
   };
   return (
-    <Button variant="ghost" onClick={handleClick}>
+    <Button variant="ghost" size="sm" onClick={handleClick}>
       <Sheet />
       Скачать все
     </Button>

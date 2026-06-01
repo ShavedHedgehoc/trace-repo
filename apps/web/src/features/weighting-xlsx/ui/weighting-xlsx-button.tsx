@@ -8,7 +8,7 @@ export function WeightingXLSXButton({ data }: { data: TBoilDetailResponse }) {
     makeWeightingXLSX(data);
   };
   return (
-    <Button variant="ghost" onClick={handleClick}>
+    <Button variant="ghost" size="sm" onClick={handleClick}>
       <Sheet />
       Скачать взвешивания
     </Button>
