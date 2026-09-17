@@ -19,7 +19,11 @@ import { TechCardTable } from './techcard-table';
 import { LoadTable } from './load-table';
 import { WeightingTable } from './weighting-table';
 import { useAuth } from '@/app/providers';
-import { AllXLSXButton, WeightingXLSXButton } from '@/features/weighting-xlsx';
+import {
+  AllXLSXButton,
+  TechnologyXLSXButton,
+  WeightingXLSXButton,
+} from '@/features/weighting-xlsx';
 
 export function TableTabs({
   data,
@@ -33,6 +37,7 @@ export function TableTabs({
   const [activeTab, setActiveTab] = useState('summary');
   const { user } = useAuth();
   const allowedRole = 'Технолог';
+  const allowedTechRole = 'Технология';
   return (
     <Tabs
       value={activeTab}
@@ -77,6 +82,9 @@ export function TableTabs({
         )}
         {user?.roles.includes(allowedRole) && activeTab === 'summary' && (
           <AllXLSXButton data={data} />
+        )}
+        {user?.roles.includes(allowedTechRole) && activeTab === 'tech-card' && (
+          <TechnologyXLSXButton data={data} />
         )}
       </div>
       <TabsContent value="summary" className="flex flex-col gap-4 overflow-auto ">
